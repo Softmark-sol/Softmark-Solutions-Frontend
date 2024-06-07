@@ -5,21 +5,9 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-const clientsLeftToRight = [
-  { id: 1, backgroundColor: '#848484', imageUrl: '/assets/client1.png' },
-  { id: 2, backgroundColor: '#848484', imageUrl: '/assets/client2.png' },
-  // Add more client objects as needed
-];
-
-const clientsRightToLeft = [
-  { id: 1, backgroundColor: '#848484', imageUrl: '/assets/client3.png' },
-  { id: 2, backgroundColor: '#848484', imageUrl: '/assets/client4.png' },
-  // Add more client objects as needed
-];
-
 const firstMap = [
   { imageUrl: 'https://logos-world.net/wp-content/uploads/2023/08/React-Symbol.png', alt: "react" },
-  { imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGgyp0cGPFS4V3HEtHeE2hO0udk6QbTA5Kcg&s', alt: "vue" },
+  { imageUrl: 'https://e7.pngegg.com/pngimages/436/593/png-clipart-vue-js-logo-landscape-tech-companies.png', alt: "vue" },
   { imageUrl: 'https://cdn.worldvectorlogo.com/logos/angular-3.svg', alt: "angular" },
   { imageUrl: 'https://miro.medium.com/v2/resize:fit:678/0*kxPYwfJmkXZ3iCWy.png', alt: "mern" },
   { imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Node.js_logo_2015.svg/2560px-Node.js_logo_2015.svg.png', alt: "node" },
@@ -40,7 +28,7 @@ export default function OurClients() {
   const sliderSettingsLeftToRight = {
     dots: false,
     infinite: true,
-    speed: 5000,
+    speed: 10000,
     slidesToShow: 6,
     slidesToScroll: 5,
     autoplay: true,
@@ -72,7 +60,7 @@ export default function OurClients() {
   const sliderSettingsRightToLeft = {
     dots: false,
     infinite: true,
-    speed: 5000,
+    speed: 10000,
     slidesToShow: 6,
     slidesToScroll: 2,
     autoplay: true,
@@ -113,14 +101,14 @@ export default function OurClients() {
                   display: 'flex',
                   justifyContent: 'center',
                   alignItems: 'center',
-                  height: '100px', // Adjust height as needed
+                  height: '100px', 
                 }}
               >
                 <Box
                   component="img"
                   src={client.imageUrl}
                   alt={client.alt}
-                  sx={{ width: '100px', height: 'auto' }} // Adjust width and height as needed
+                  sx={{ width: '100px', height: 'auto' }} 
                 />
               </Box>
             ))}

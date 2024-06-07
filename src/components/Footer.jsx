@@ -38,7 +38,7 @@ const Footer = () => {
       <div className="footer-social">
         <a href="https://www.linkedin.com/company/softmark-solutions-llc/"><i className="fab fa-linkedin"></i></a>
         <a href="https://www.facebook.com/SoftMarkSolutionsLLC"><i className="fab fa-facebook"></i></a>
-        <a href=""><i className="fab fa-twitter"></i></a>
+        <a href="https://x.com/SoftMark_sol"><i className="fab fa-twitter"></i></a>
         <p>admin@softmarksolutions.com</p>
       </div>
     </footer>
