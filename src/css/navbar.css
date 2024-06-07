@@ -14,13 +14,11 @@
 }
 
 .navbar-logo {
-    width: 40%;
     cursor: pointer;
 }
 
 .navbar-btns {
     display: flex;
-    width: 60%;
     justify-content: center;
     align-items: center;
     flex-direction: row;

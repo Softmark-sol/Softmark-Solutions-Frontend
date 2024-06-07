@@ -12,14 +12,14 @@ import OurClients from "./components/Slider";
 const App = () => {
   return (
     <>
-      <Navbar/>
+      {/* <Navbar/>
       <HeroSection/>
       <Cards/>
       <OurClients />
       <ContactForm/>
-      <Footer/>
+      <Footer/> */}
 
-      {/* <Plans /> */}
+      <Plans />
     </>
   );
 };
