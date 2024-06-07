@@ -4,7 +4,7 @@ import HeroSection from './components/HeroSection'
 import Cards from './components/Cards'
 import ContactForm from './components/ContactForm'
 import Footer from './components/Footer'
-import Plans from './pages/Plans'
+import AboutUs from './pages/AboutUs'
 import OurClients from './components/Slider'
 
 const App = () => {
@@ -16,7 +16,7 @@ const App = () => {
       <OurClients />
       <ContactForm />
       <Footer /> */}
-      <Plans />
+      <AboutUs />
     </>
   )
 }
