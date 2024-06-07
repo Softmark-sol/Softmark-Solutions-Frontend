@@ -7,6 +7,8 @@ import Footer from './components/Footer'
 import AboutUs from './pages/AboutUs'
 import OurClients from './components/Slider'
 
+import Router from './config/router'
+
 const App = () => {
   return (
     <>
@@ -16,7 +18,7 @@ const App = () => {
       <OurClients />
       <ContactForm />
       <Footer /> */}
-      <AboutUs />
+      <Router />
     </>
   )
 }
