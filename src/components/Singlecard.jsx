@@ -1,25 +1,25 @@
-import '../css/Singlecard.css'
-import React from 'react'
+import '../css/Singlecard.css';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
+const Singlecard = ({ path, title, description, route }) => {
+  const navigate = useNavigate();
 
-const Singlecard = ({path,title,description}) => {
+  const handleClick = () => {
+    navigate(route);
+  };
+
   return (
-    <div>
-      <div className="card">
-  <div className="header">
-    <img src={path}/>
-  </div>
-
-  <h3 >{title}</h3>
-
-  <p className="message">
-  {description}
-  </p>
-  
-</div>
-
+    <div className="card" onClick={handleClick} style={{ cursor: 'pointer' }}>
+      <div className="header">
+        <img src={path} alt={title} />
+      </div>
+      <h3>{title}</h3>
+      <p className="message">
+        {description}
+      </p>
     </div>
-  )
-}
+  );
+};
 
-export default Singlecard
+export default Singlecard;
