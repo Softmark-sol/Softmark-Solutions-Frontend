@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "../css/navbar.css";
 import Logo from "../assets/images/Logo-no-bg.png";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -6,7 +6,7 @@ import LeftDrawer from "./LeftDrawer";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Fade from "@mui/material/Fade";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -18,15 +18,20 @@ const Navbar = () => {
   const handleClose = () => {
     setAnchorEl(null);
   };
-  const AboutUs = ()=>{
-    navigate("/aboutUs")
-  }
+  const AboutUs = () => {
+    navigate("/aboutUs");
+  };
 
   return (
     <div className="navbar">
       <div className="container">
         <div className="navbar-logo">
-          <img src={Logo} alt="Softmark Solutions Logo" className="logo" />
+          <img
+            src={Logo}
+            alt="Softmark Solutions Logo"
+            className="logo"
+            onClick={() => navigate("/")}
+          />
         </div>
         <div className="navbar-btns">
           <span className="nav-btn">Home</span>
@@ -66,7 +71,7 @@ const Navbar = () => {
         onClose={handleClose}
         TransitionComponent={Fade}
       >
-        <MenuItem onClick={()=>AboutUs()}>About Us</MenuItem>
+        <MenuItem onClick={() => AboutUs()}>About Us</MenuItem>
         <MenuItem>Why Us</MenuItem>
       </Menu>
     </div>
