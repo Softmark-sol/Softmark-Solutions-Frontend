@@ -19,7 +19,7 @@
   bottom: -5px;
   transform: translateX(-50%);
   width: 50%;
-  height: 3px; /* Adjust the height as needed */
+  height: 3px;
   background-color: rgb(220, 166, 66);
 }
 
@@ -63,7 +63,15 @@
   font-size: 14px;
 }
 
+.drop-down {
+  width: 100%;
+}
+
 .form-control::placeholder {
+  color: #aaa;
+}
+
+#dropdown-placeholder {
   color: #aaa;
 }
 
@@ -95,7 +103,6 @@ textarea.form-control {
   transition: 0.5s ease;
 }
 
-/* Media Queries */
 @media (max-width: 768px) {
   .form-group {
     flex-direction: column;
@@ -123,4 +130,16 @@ textarea.form-control {
   .submit-btn {
     padding: 10px 15px;
   }
+}
+
+select.form-control:invalid {
+  color: #aaa;
+}
+
+select.form-control:invalid option {
+  color: #aaa;
+}
+
+select.form-control {
+  color: #333;
 }
