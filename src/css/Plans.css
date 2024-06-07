@@ -1,0 +1,90 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+
+.plans-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 40px 0;
+  background: linear-gradient(to right, #f3f4f6, #f3f4f6);
+}
+
+.plan-card {
+  max-width: 300px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+}
+
+.plan-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.plans-cont {
+  text-align: center;
+  padding: 20px;
+  padding-top: 20px;
+}
+
+.plan-header {
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.plan-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.plan-price {
+  font-size: 20px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.select-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.select-button:hover {
+  background-color: #0056b3;
+}
+
+.plan-features-container {
+  padding: 0 20px;
+}
+
+.plan-features {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  color: #555;
+  text-align: left;
+}
+
+.plan-features li {
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+.plan-features li i {
+  color: #007bff;
+  margin-right: 10px;
+}

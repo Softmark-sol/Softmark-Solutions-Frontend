@@ -3,11 +3,17 @@ import '../css/aboutUs.css'
 
 const AboutUs = () => {
   return (
-    <div className='about-us'>
+    <div className='about-us container'>
       <section className='about'>
         <div className='about-header'>
-          <h2>Dedicated to delivering excellence</h2>
-          <p>Everyone has a story. Here is ours.</p>
+          <h2>Where technology Meets Marketing</h2>
+          <p>
+            At Softmark Solutions, we don&#39;t just build websites and
+            applications; we craft digital experiences that leave a lasting
+            impression. Our journey began with a simple idea – to revolutionize
+            the digital landscape and empower businesses to thrive in an
+            ever-changing world.
+          </p>
         </div>
         <div className='timeline'>
           <div className='timeline-item'>
@@ -15,10 +21,16 @@ const AboutUs = () => {
               <img src='path/to/your/image1.jpg' alt='The Beginning' />
             </div>
             <div className='timeline-content'>
-              <h3>The Beginning</h3>
+              <h3>Mission</h3>
               <p>
-                The Bitrupt journey began in 2020 when three university friends
-                got together and started building awesome software.
+                At Softmark Solutions, our mission is simple yet profound: to
+                empower businesses with innovative digital solutions that drive
+                success. We believe in leveraging cutting-edge technology and
+                creative thinking to create meaningful digital experiences that
+                inspire, engage, and deliver results. With a relentless
+                commitment to excellence and a passion for innovation, we strive
+                to be the catalyst for our clients&#39; growth and success in
+                the ever-evolving digital landscape.
               </p>
             </div>
           </div>
