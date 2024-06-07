@@ -8,7 +8,8 @@ const ContactForm = () => {
     email: '',
     phone: '',
     company: '',
-    message: ''
+    message: '',
+    serviceType: '' // Add new field for the dropdown
   })
 
   const handleChange = (e) => {
@@ -27,7 +28,8 @@ const ContactForm = () => {
           email: '',
           phone: '',
           company: '',
-          message: ''
+          message: '',
+          serviceType: '' // Reset new field
         })
       }
     } catch (error) {
@@ -79,6 +81,27 @@ const ContactForm = () => {
               value={formData.company}
               onChange={handleChange}
             />
+          </div>
+          <div className='form-group'>
+            <select
+              name='serviceType'
+              className='form-control drop-down'
+              value={formData.serviceType}
+              onChange={handleChange}
+              required
+            >
+              <option id='dropdown-placeholder' value='' disabled>
+                Select a service
+              </option>
+              <option value='Web Development'>Web Development</option>
+              <option value='Mobile App Development'>
+                Mobile App Development
+              </option>
+              <option value='Search Engine Optimization'>
+                Search Engine Optimization
+              </option>
+              <option value='Digital Marketing'>Digital Marketing</option>
+            </select>
           </div>
           <div className='form-group'>
             <textarea
