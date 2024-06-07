@@ -8,13 +8,14 @@
 }
 
 .about-header h2 {
+  padding-top: 50px;
   font-size: 2.5em;
   font-weight: bold;
   margin-bottom: 10px;
 }
 
 .about-header p {
-  font-size: 1.2em;
+  font-size: 1em;
   color: #555;
 }
 
@@ -65,24 +66,25 @@
 }
 
 .timeline-img img {
-  width: 100%;
+  width: 60%;
   height: auto;
   border-radius: 10px;
 }
 
 .timeline-content h3 {
-  font-size: 1.5em;
+  font-size: 1.8em;
   margin-bottom: 10px;
 }
 
 .timeline-content p {
-  font-size: 1em;
+  font-size: 0.9rem;
   color: #666;
 }
 
 .why-us {
   text-align: center;
   margin-top: 60px;
+  padding-bottom: 20px;
 }
 
 .why-us h2 {
@@ -100,6 +102,22 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .timeline-content h3,
+  p {
+    padding-left: 18px;
+  }
+
+  .timeline-img {
+    display: flex;
+    justify-content: center;
+    width: 55%;
+  }
+
+  /* .timeline-img img {
+    width: 55%;
+    
+  } */
+
   .timeline {
     padding: 0;
   }
@@ -119,11 +137,11 @@
   }
 
   .timeline-item::before {
-    left: 20px;
+    left: 1px;
   }
 
   .timeline::before {
-    left: 20px;
+    left: 1px;
   }
 
   .why-us p {
