@@ -9,7 +9,7 @@ export default function Plans() {
   const plans = [
     {
       name: "Basic",
-      price: 37,
+      price: 0,
       features: [
         "Functional website",
         "1 page",
@@ -20,7 +20,7 @@ export default function Plans() {
     },
     {
       name: "Standard",
-      price: 97,
+      price: 0,
       features: [
         "Functional website",
         "5 page",
@@ -36,11 +36,20 @@ export default function Plans() {
     },
     {
       name: "Premium",
-      price: 358,
+      price: 0,
       features: [
-        "Everything in Hyper Growth +",
-        "500,000 Emails Monthly",
-        "100,000 Active Leads"
+        "Functional website",
+        "10 page",
+        "Content upload",
+        "8 plugins/extensions",
+        "E-commerce functionality",
+        "10 products",
+        "Payment processing",
+        "Opt-in form",
+        "Autoresponder integration",
+        "Speed optimization",
+        "Hosting setup",
+        "Social media icons",
       ]
     }
   ];
