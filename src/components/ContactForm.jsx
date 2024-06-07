@@ -1,45 +1,45 @@
-import React, { useState } from 'react'
-import axios from 'axios'
-import '../css/contactForm.css'
+import React, { useState } from 'react';
+import axios from 'axios';
+import '../css/contactForm.css';
 
 const ContactForm = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    company: '',
-    message: '',
-    serviceType: '' // Add new field for the dropdown
-  })
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        phone: '',
+        company: '',
+        message: '',
+        serviceType: ''
+    });
 
-  const handleChange = (e) => {
-    const { name, value } = e.target
-    setFormData({ ...formData, [name]: value })
-  }
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
+    };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-    try {
-      const response = await axios.post('http://localhost:3001/send', formData)
-      if (response.status === 200) {
-        alert('Message sent successfully!')
-        setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          company: '',
-          message: '',
-          serviceType: '' // Reset new field
-        })
-      }
-    } catch (error) {
-      alert('Failed to send message. Please try again later.')
-    }
-  }
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await axios.post('http://localhost:4000/contact-us', formData); // Ensure this matches your backend port
+            if (response.status === 200) {
+                alert('Message sent successfully!');
+                setFormData({
+                    name: '',
+                    email: '',
+                    phone: '',
+                    company: '',
+                    message: '',
+                    serviceType: ''
+                });
+            }
+        } catch (error) {
+            alert('Failed to send message. Please try again later.');
+        }
+    };
 
   return (
     <>
-      <div className='card-heading-service' id='form'>
+      <div className='card-heading-service'>
         <h2 className='heading-underline-service'>Contact Form</h2>
       </div>
       <div className='form-container container'>
@@ -124,4 +124,4 @@ const ContactForm = () => {
   )
 }
 
-export default ContactForm
+export default ContactForm;
