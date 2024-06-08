@@ -22,11 +22,11 @@ const Navbar = () => {
   };
 
   const handleMenuItemClick = (destination) => {
-    const isHomePage = location.pathname === '/';
+    const isHomePage = location.pathname === "/";
     if (isHomePage) {
-      const contactForm = document.getElementById('form');
+      const contactForm = document.getElementById("form");
       if (contactForm) {
-        contactForm.scrollIntoView({ behavior: 'smooth' });
+        contactForm.scrollIntoView({ behavior: "smooth" });
       }
     } else {
       navigate("/contactUs");
@@ -50,7 +50,9 @@ const Navbar = () => {
           <span className="nav-btn" onClick={() => navigate("/")}>
             Home
           </span>
-          <span className="nav-btn">Services</span>
+          <span className="nav-btn" onClick={() => navigate("/plans")}>
+            Services
+          </span>
           <span
             className="nav-btn"
             id="fade-button"
@@ -93,14 +95,12 @@ const Navbar = () => {
         <MenuItem onClick={() => handleMenuItemClick("/aboutUs")}>
           About Us
         </MenuItem>
-        <MenuItem onClick={() => handleMenuItemClick("/whyUs")}>Why Us</MenuItem>
+        <MenuItem onClick={() => handleMenuItemClick("/whyUs")}>
+          Why Us
+        </MenuItem>
       </Menu>
     </div>
   );
 };
 
 export default Navbar;
-
-
-
-
