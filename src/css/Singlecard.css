@@ -9,6 +9,7 @@
     cursor: pointer;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
+    min-height: 320px;
     }
 
     .card:hover {
@@ -50,4 +51,8 @@
     text-transform: justify;
   }
   
+  .card-img{
+    height: 100px;
+    width: 100px !important;
+  }
   

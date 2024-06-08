@@ -1,25 +1,29 @@
 import React, { useState } from "react";
 import "../css/navbar.css";
 import Logo from "../assets/images/Logo-no-bg.png";
-import "bootstrap/dist/css/bootstrap.min.css";
 import LeftDrawer from "./LeftDrawer";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Fade from "@mui/material/Fade";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+  const location = useLocation();
   const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
+
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
+
   const handleClose = () => {
     setAnchorEl(null);
   };
-  const AboutUs = () => {
-    navigate("/aboutUs");
+
+  const handleMenuItemClick = (destination) => {
+    handleClose();
+    navigate(destination);
   };
 
   return (
@@ -48,18 +52,20 @@ const Navbar = () => {
           >
             About Us
           </span>
-          {/* <span className="nav-btn">Company</span> */}
           <a
-            href="https://www.linkedin.com/company/softmark-solutions-llc"
+            href="/contactUs"
             style={{ textDecoration: "none" }}
             rel="noreferrer"
             className="nav-btn"
           >
             Careers
           </a>
-          <a href="#form" style={{ textDecoration: "none" }}>
-            <span className="nav-btn contact-us">Contact Us</span>
-          </a>
+          <span
+            className="nav-btn contact-us"
+            onClick={() => navigate("/contactUs")}
+          >
+            Contact Us
+          </span>
         </div>
         <div className="navbar-menu">
           <LeftDrawer />
@@ -75,8 +81,10 @@ const Navbar = () => {
         onClose={handleClose}
         TransitionComponent={Fade}
       >
-        <MenuItem onClick={() => AboutUs()}>About Us</MenuItem>
-        <MenuItem>Why Us</MenuItem>
+        <MenuItem onClick={() => handleMenuItemClick("/aboutUs")}>
+          About Us
+        </MenuItem>
+        <MenuItem onClick={() => handleMenuItemClick("/whyUs")}>Why Us</MenuItem>
       </Menu>
     </div>
   );

@@ -4,18 +4,31 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Plans from "../pages/Plans";
 import AboutUs from "../pages/AboutUs";
+import WhyUs from "../pages/WhyUs";
+import ContactForm from "../components/ContactForm";
 
 function Router() {
   return (
     <>
       <BrowserRouter>
-      <Navbar />
+        <Navbar />
         <Routes>
+          {/* Home Page */}
           <Route path="/" element={<Home />} />
+
+          {/* Plans Page */}
           <Route path="/plans" element={<Plans />} />
+
+          {/* About Us Page */}
           <Route path="/aboutUs" element={<AboutUs />} />
+
+          {/* Why Page */}
+          <Route path="/whyUs" element={<WhyUs />} />
+
+          {/* Contact Us Component */}
+          <Route path="/contactUs" element={<ContactForm />} />
         </Routes>
-      <Footer />
+        <Footer />
       </BrowserRouter>
     </>
   );

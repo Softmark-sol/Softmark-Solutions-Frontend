@@ -1,7 +1,11 @@
 import React from 'react'
 import '../css/aboutUs.css'
+import "../css/Whyus/Btn.scss";
+import { useNavigate } from "react-router-dom";
 
 const AboutUs = () => {
+  const navigate = useNavigate();
+
   return (
     <div className='about-us container'>
       <section className='about'>
@@ -88,6 +92,9 @@ const AboutUs = () => {
           approach that puts your needs first, choosing Softmark Solutions means
           choosing a trusted ally on your journey to digital success.
         </p>
+        <div class="button-effect" style={{paddingTop: "20px"}} onClick={()=>navigate("/whyUs")}>
+    <a class="effect effect-1" href="#" title="Learn More">Why Us</a>
+  </div>
       </section>
     </div>
   )

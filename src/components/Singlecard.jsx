@@ -12,7 +12,7 @@ const Singlecard = ({ path, title, description, route }) => {
   return (
     <div className="card" onClick={handleClick} style={{ cursor: 'pointer' }}>
       <div className="header">
-        <img src={path} alt={title} />
+        <img src={path} alt={title} className='card-img'/>
       </div>
       <h3>{title}</h3>
       <p className="message">
