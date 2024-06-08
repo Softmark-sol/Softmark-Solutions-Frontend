@@ -7,7 +7,6 @@
   flex-wrap: wrap;
   gap: 20px;
   padding: 40px 0;
-  /* background: linear-gradient(to right, #f3f4f6, #f3f4f6); */
 }
 
 .plan-card {
@@ -52,7 +51,7 @@
 
 .select-button {
   padding: 10px 20px;
-  background-color: #007bff;
+  background-color: #4599B4;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -63,7 +62,7 @@
 }
 
 .select-button:hover {
-  background-color: #0056b3;
+  background-color: #F3972B;
 }
 
 .plan-features-container {
@@ -85,6 +84,6 @@
 }
 
 .plan-features li i {
-  color: #007bff;
+  color: #4599B4;
   margin-right: 10px;
 }

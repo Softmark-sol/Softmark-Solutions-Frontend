@@ -3,7 +3,6 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import { CardActionArea } from "@mui/material";
 import "../css/Plans.css";
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function Plans() {
   const plans = [
