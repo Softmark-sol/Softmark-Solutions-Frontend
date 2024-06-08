@@ -35,7 +35,7 @@ const Navbar = () => {
         </div>
         <div className="navbar-btns">
           <span className="nav-btn">Home</span>
-          <span className="nav-btn">Services</span>
+          <span className="nav-btn" id="services">Services</span>
           <span
             className="nav-btn"
             id="fade-button"

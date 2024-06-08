@@ -37,7 +37,7 @@ const Cards = () => {
   return (
     <div>
       <div className="card-heading-service">
-        <h2 className="heading-underline-service">Our Services</h2>
+        <h2 className="heading-underline-service" id="services">Our Services</h2>
       </div>
       <div className="cards-container container">
         {data.map((item, index) => (
