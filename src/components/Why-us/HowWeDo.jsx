@@ -23,7 +23,7 @@ const HowWeDo = () => {
           of innovation and growth, led by Softmark Solutions.
         </span>
         <div class="button-effect">
-    <a class="effect effect-1" href="#" title="Learn More" onClick={() => navigate("/plans")}>Explore Our Services</a>
+    <a class="effect effect-1" href="#" title="Learn More" >Explore Our Services</a>
   </div>
       </div>
       <div className="HowWeDoImg">

@@ -50,9 +50,16 @@ const Navbar = () => {
           <span className="nav-btn" onClick={() => navigate("/")}>
             Home
           </span>
-          <span className="nav-btn" onClick={() => navigate("/plans")}>
+          {/* <a
+            href="#services"
+            style={{ textDecoration: "none" }}
+            rel="noreferrer"
+            className="nav-btn"
+          > */}
+          <span className="nav-btn" >
             Services
           </span>
+          {/* </a> */}
           <span
             className="nav-btn"
             id="fade-button"

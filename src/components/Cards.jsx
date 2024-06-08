@@ -36,7 +36,7 @@ const data = [
 const Cards = () => {
   return (
     <div>
-      <div className="card-heading-service">
+      <div className="card-heading-service" id="services">
         <h2 className="heading-underline-service" id="services">Our Services</h2>
       </div>
       <div className="cards-container container">
