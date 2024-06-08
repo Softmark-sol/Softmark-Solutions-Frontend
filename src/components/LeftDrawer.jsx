@@ -35,6 +35,7 @@ const LeftDrawer = () => {
         navigate('/');
         break;
       case 'Services':
+        navigate('/plans');
         break;
       case 'About Us':
         navigate('/aboutUs');

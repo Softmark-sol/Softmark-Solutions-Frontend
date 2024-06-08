@@ -22,6 +22,15 @@ const Navbar = () => {
   };
 
   const handleMenuItemClick = (destination) => {
+    const isHomePage = location.pathname === '/';
+    if (isHomePage) {
+      const contactForm = document.getElementById('form');
+      if (contactForm) {
+        contactForm.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      navigate("/contactUs");
+    }
     handleClose();
     navigate(destination);
   };
@@ -91,3 +100,7 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+
+
+

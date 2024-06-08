@@ -1,9 +1,11 @@
 import React from "react";
 import "../../css/Whyus/HowWeDo.css";
 import "../../css/Whyus/Btn.scss";
-
+import {  useNavigate } from "react-router-dom";
 
 const HowWeDo = () => {
+    const navigate = useNavigate();
+
   return (
     <div className="howWeDo container">
       <div className="HowWeDoPara">
@@ -21,7 +23,7 @@ const HowWeDo = () => {
           of innovation and growth, led by Softmark Solutions.
         </span>
         <div class="button-effect">
-    <a class="effect effect-1" href="#" title="Learn More">Explore Our Services</a>
+    <a class="effect effect-1" href="#" title="Learn More" onClick={() => navigate("/plans")}>Explore Our Services</a>
   </div>
       </div>
       <div className="HowWeDoImg">
