@@ -34,7 +34,9 @@ const Navbar = () => {
           />
         </div>
         <div className="navbar-btns">
-          <span className="nav-btn">Home</span>
+          <span className="nav-btn" onClick={() => navigate("/")}>
+            Home
+          </span>
           <span className="nav-btn">Services</span>
           <span
             className="nav-btn"
@@ -55,7 +57,9 @@ const Navbar = () => {
           >
             Careers
           </a>
-          <span className="nav-btn contact-us">Contact Us</span>
+          <a href="#form" style={{ textDecoration: "none" }}>
+            <span className="nav-btn contact-us">Contact Us</span>
+          </a>
         </div>
         <div className="navbar-menu">
           <LeftDrawer />
