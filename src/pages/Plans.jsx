@@ -1,10 +1,25 @@
+
+
 import * as React from "react";
+
+import { useState } from 'react';
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import { CardActionArea } from "@mui/material";
 import "../css/Plans.css";
+import Modalform from "../components/Modal-Form";
+
 
 export default function Plans() {
+
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+
+
+
   const plans = [
     {
       name: "Basic",
@@ -54,6 +69,7 @@ export default function Plans() {
   ];
 
   return (
+    <>
     <div className="plans-container container">
       {plans.map((plan, index) => (
         <Card className={`plan-card plan-card-${index}`} key={index}>
@@ -63,7 +79,7 @@ export default function Plans() {
                 <div className="plan-header">
                   <span className="plan-title">{plan.name}</span>
                   <span className="plan-price">{`$${plan.price}/mo`}</span>
-                  <button className="select-button">START YOUR PLAN</button>
+                  <button className="select-button"  onClick={handleShow}>START YOUR PLAN</button>
                 </div>
                 <div className="plan-features-container">
                   <ul className="plan-features">
@@ -80,5 +96,9 @@ export default function Plans() {
         </Card>
       ))}
     </div>
+
+      <Modalform isOpened={show}/>
+
+    </>
   );
 }
