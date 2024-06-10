@@ -19,7 +19,6 @@ export default function Plans() {
   const plans = [
     {
       name: 'Basic',
-      formName:'Basic Plan',
       // price: '10',
       features: [
         'Functional website',
@@ -31,7 +30,6 @@ export default function Plans() {
     },
     {
       name: 'Standard',
-      formName:'Standard Plan',
       // price: '20',
       features: [
         'Functional website',
@@ -48,7 +46,6 @@ export default function Plans() {
     },
     {
       name: 'Premium',
-      formName:'Premium Plan',
       // price: '30',
       features: [
         'Functional website',
@@ -103,7 +100,7 @@ export default function Plans() {
 
       <Modalform
         isOpened={show}
-        heading={selectedPlan}
+        heading={selectedPlan + ' Plan'}
         handleClose={handleClose}
       />
     </>
