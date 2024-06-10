@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import Modal from 'react-bootstrap/Modal'
 
-function Modalform({ isOpened, heading, handleClose }) {
+function ModalformBasic({ isOpened, heading, handleClose }) {
   const [show, setShow] = useState(isOpened)
 
   useEffect(() => {
@@ -18,6 +18,13 @@ function Modalform({ isOpened, heading, handleClose }) {
         </Modal.Header>
         <Modal.Body>
           <Form>
+            <Form.Group
+              className='mb-3'
+              controlId='exampleForm.ControlTextarea1'
+            >
+              <Form.Label>Name</Form.Label>
+              <Form.Control type='input' placeholder='Josh Anton' rows={3} />
+            </Form.Group>
             <Form.Group className='mb-3' controlId='exampleForm.ControlInput1'>
               <Form.Label>Email address</Form.Label>
               <Form.Control
@@ -30,8 +37,22 @@ function Modalform({ isOpened, heading, handleClose }) {
               className='mb-3'
               controlId='exampleForm.ControlTextarea1'
             >
-              <Form.Label>Example textarea</Form.Label>
-              <Form.Control as='textarea' rows={3} />
+              <Form.Label>Company Name</Form.Label>
+              <Form.Control type='input' placeholder='Company' rows={3} />
+            </Form.Group>
+            <Form.Group
+              className='mb-3'
+              controlId='exampleForm.ControlTextarea1'
+            >
+              <Form.Label>Reference Websites</Form.Label>
+              <Form.Control type='input' placeholder='mycompany.com' rows={3} />
+            </Form.Group>
+            <Form.Group
+              className='mb-3'
+              controlId='exampleForm.ControlTextarea1'
+            >
+              <Form.Label style={{ display: 'flex' }}>Graphics</Form.Label>
+              <input type='file' placeholder='mycompany.com' rows={3} />
             </Form.Group>
           </Form>
         </Modal.Body>
@@ -39,8 +60,8 @@ function Modalform({ isOpened, heading, handleClose }) {
           <Button variant='secondary' onClick={handleClose}>
             Close
           </Button>
-          <Button variant='primary' onClick={handleClose}>
-            Save Changes
+          <Button style={{ backgroundColor: '#4599b4' }} onClick={handleClose}>
+            Send Message
           </Button>
         </Modal.Footer>
       </Modal>
@@ -48,4 +69,4 @@ function Modalform({ isOpened, heading, handleClose }) {
   )
 }
 
-export default Modalform
+export default ModalformBasic

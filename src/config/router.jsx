@@ -6,7 +6,6 @@ import Plans from '../pages/Plans'
 import AboutUs from '../pages/AboutUs'
 import WhyUs from '../pages/WhyUs'
 import ContactForm from '../components/ContactForm'
-import Modalform from '../components/Modal-Form'
 
 function Router() {
   return (

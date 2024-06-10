@@ -4,22 +4,31 @@ import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import { CardActionArea } from '@mui/material'
 import '../css/Plans.css'
-import Modalform from '../components/Modal-Form'
+import ModalformBasic from '../components/Modal/Modal-Form-Basic'
+import ModalformStandard from '../components/Modal/Modal-Form-Standard'
+import ModalformPremium from '../components/Modal/Modal-Form-Premium'
 
 export default function Plans() {
-  const [show, setShow] = useState(false)
+  const [showBasic, setShowBasic] = useState(false)
+  const [showStandard, setShowStandard] = useState(false)
+  const [showPremium, setShowPremium] = useState(false)
   const [selectedPlan, setSelectedPlan] = useState('')
 
-  const handleClose = () => setShow(false)
+  const handleCloseBasic = () => setShowBasic(false)
+  const handleCloseStandard = () => setShowStandard(false)
+  const handleClosePremium = () => setShowPremium(false)
+
   const handleShow = (planName) => {
     setSelectedPlan(planName)
-    setShow(true)
+    if (planName === 'Basic') setShowBasic(true)
+    if (planName === 'Standard') setShowStandard(true)
+    if (planName === 'Premium') setShowPremium(true)
   }
 
   const plans = [
     {
       name: 'Basic',
-      // price: '10',
+      price: '10',
       features: [
         'Functional website',
         '1 page',
@@ -30,7 +39,7 @@ export default function Plans() {
     },
     {
       name: 'Standard',
-      // price: '20',
+      price: '20',
       features: [
         'Functional website',
         '5 page',
@@ -46,7 +55,7 @@ export default function Plans() {
     },
     {
       name: 'Premium',
-      // price: '30',
+      price: '30',
       features: [
         'Functional website',
         '10 page',
@@ -98,10 +107,22 @@ export default function Plans() {
         ))}
       </div>
 
-      <Modalform
-        isOpened={show}
+      <ModalformBasic
+        isOpened={showBasic}
         heading={selectedPlan + ' Plan'}
-        handleClose={handleClose}
+        handleClose={handleCloseBasic}
+      />
+
+      <ModalformStandard
+        isOpened={showStandard}
+        heading={selectedPlan + ' Plan'}
+        handleClose={handleCloseStandard}
+      />
+
+      <ModalformPremium
+        isOpened={showPremium}
+        heading={selectedPlan + ' Plan'}
+        handleClose={handleClosePremium}
       />
     </>
   )
