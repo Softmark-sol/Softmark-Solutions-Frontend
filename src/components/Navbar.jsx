@@ -71,7 +71,8 @@ const Navbar = () => {
             About Us
           </span>
           <a
-            href="/contactUs"
+            href="https://www.linkedin.com/company/softmark-solutions-llc"
+            target="_blank"
             style={{ textDecoration: "none" }}
             rel="noreferrer"
             className="nav-btn"
