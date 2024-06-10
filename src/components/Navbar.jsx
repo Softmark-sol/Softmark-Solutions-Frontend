@@ -70,6 +70,16 @@ const Navbar = () => {
           >
             About Us
           </span>
+          <span
+            className="nav-btn"
+            id="fade-button"
+            aria-controls={open ? "fade-menu" : undefined}
+            aria-haspopup="true"
+            aria-expanded={open ? "true" : undefined}
+            onClick={()=>{navigate('/Ourservices')}}
+          >
+            Our Work
+          </span>
           <a
             href="https://www.linkedin.com/company/softmark-solutions-llc"
             target="_blank"

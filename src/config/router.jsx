@@ -6,6 +6,7 @@ import Plans from '../pages/Plans'
 import AboutUs from '../pages/AboutUs'
 import WhyUs from '../pages/WhyUs'
 import ContactForm from '../components/ContactForm'
+import Ourservices from '../pages/Ourservices'
 
 function Router() {
   return (
@@ -27,6 +28,8 @@ function Router() {
 
           {/* Contact Us Component */}
           <Route path='/contactUs' element={<ContactForm />} />
+          {/* Our Work */}
+          <Route path='/Ourservices' element={<Ourservices />} />
         </Routes>
         <Footer />
       </BrowserRouter>
