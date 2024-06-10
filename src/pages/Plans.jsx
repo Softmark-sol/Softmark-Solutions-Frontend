@@ -19,7 +19,8 @@ export default function Plans() {
   const plans = [
     {
       name: 'Basic',
-      price: '10',
+      formName:'Basic Plan',
+      // price: '10',
       features: [
         'Functional website',
         '1 page',
@@ -30,7 +31,8 @@ export default function Plans() {
     },
     {
       name: 'Standard',
-      price: '20',
+      formName:'Standard Plan',
+      // price: '20',
       features: [
         'Functional website',
         '5 page',
@@ -46,7 +48,8 @@ export default function Plans() {
     },
     {
       name: 'Premium',
-      price: '30',
+      formName:'Premium Plan',
+      // price: '30',
       features: [
         'Functional website',
         '10 page',
@@ -77,7 +80,7 @@ export default function Plans() {
                     <span className='plan-price'>{`$${plan.price}/mo`}</span>
                     <button
                       className='select-button'
-                      onClick={() => handleShow(plan.name)}
+                      onClick={() => handleShow(plan.formName)}
                     >
                       START YOUR PLAN
                     </button>
