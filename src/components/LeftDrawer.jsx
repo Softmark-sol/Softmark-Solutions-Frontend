@@ -40,6 +40,9 @@ const LeftDrawer = () => {
       case 'About Us':
         navigate('/aboutUs');
         break;
+        case 'Our Work':
+        navigate('/Ourservices');
+        break;
       case 'Careers':
         window.location.href = 'https://www.linkedin.com/company/softmark-solutions-llc';
         break;
@@ -59,7 +62,7 @@ const LeftDrawer = () => {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {['Home', 'Services', 'About Us', 'Careers', 'Contact Us'].map((text) => (
+        {['Home', 'Services', 'About Us','Our Work', 'Careers', 'Contact Us'].map((text) => (
           <ListItem key={text} disablePadding>
             <ListItemButton onClick={() => handleNavigation(text)}>
               <ListItemText primary={text} />
