@@ -53,6 +53,7 @@ function ModalformStandard({ isOpened, heading, handleClose }) {
         body: JSON.stringify(formData)
       })
       const result = await response.json()
+      alert('Message send Sucessfully')
       console.log('Success:', result)
     } catch (error) {
       console.error('Error:', error)

@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react'
-import Button from 'react-bootstrap/Button'
-import Form from 'react-bootstrap/Form'
-import Modal from 'react-bootstrap/Modal'
-import axios from 'axios'
+import { useState, useEffect } from 'react';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import Modal from 'react-bootstrap/Modal';
+import axios from 'axios';
 
 function ModalformBasic({ isOpened, heading, handleClose }) {
   const [formData, setFormData] = useState({
@@ -10,7 +10,7 @@ function ModalformBasic({ isOpened, heading, handleClose }) {
     email: '',
     company: '',
     reference: ''
-  })
+  });
 
   useEffect(() => {
     if (isOpened) {
@@ -22,14 +22,23 @@ function ModalformBasic({ isOpened, heading, handleClose }) {
       })
     }
   }, [isOpened])
+    if (isOpened) {
+      setFormData({
+        name: '',
+        email: '',
+        company: '',
+        reference: ''
+      });
+    }
+  }, [isOpened]);
 
   const handleChange = (e) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
-  }
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     try {
       const response = await axios.post(
         'https://jsonplaceholder.typicode.com/posts',
@@ -40,11 +49,16 @@ function ModalformBasic({ isOpened, heading, handleClose }) {
         console.log('Data:', formData)
         alert('Message sent successfully!')
         handleClose() // Close the modal after successful submission
+      const response = await axios.post('https://jsonplaceholder.typicode.com/posts', formData);
+      if (response.status === 201) { // 201 is the status code for successful creation
+        console.log('Data:', formData);
+        alert('Message sent successfully!');
+        handleClose(); // Close the modal after successful submission
       }
     } catch (error) {
-      alert('Failed to send message. Please try again later.')
+      alert('Failed to send message. Please try again later.');
     }
-  }
+  };
 
   return (
     <Modal show={isOpened} onHide={handleClose} backdrop='static'>
@@ -112,7 +126,7 @@ function ModalformBasic({ isOpened, heading, handleClose }) {
         </Form>
       </Modal.Body>
     </Modal>
-  )
+  );
 }
 
-export default ModalformBasic
+export default ModalformBasic;
