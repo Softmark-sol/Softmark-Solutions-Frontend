@@ -11,13 +11,13 @@ const data = [
     path: img1,
     title: "Web Development",
     desc: "Our battle tested team of Web Developers use rapid development methodologies & incorporated frameworks that result in growth and productivity for an organization.",
-    route: "/plans",
+    route: "/webPlans",
   },
   {
     path: img2,
     title: "Mobile App Development",
     desc: "Novatore aims to help businesses connect with their customers by crafting Custom App experiences. Our solutions empower the connected lifestyle.",
-    // route: '/web-development'
+    route: '/appPlans'
   },
   {
     path: img3,

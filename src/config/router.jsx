@@ -9,6 +9,8 @@ import ContactForm from '../components/ContactForm';
 import Ourservices from '../pages/Ourservices';
 import ScrollToTop from '../components/ScrollTop'; 
 import Cards from '../components/Cards';
+import WebPlans from '../components/PlansData';
+import { AppPlans } from '../components/PlansData';
 
 function Router() {
   return (
@@ -21,8 +23,11 @@ function Router() {
           {/* Home Page */}
           <Route path='/' element={<Home />} />
 
-          {/* Plans Page */}
-          <Route path='/plans' element={<Plans />} />
+          {/* Web Plans Page */}
+          <Route path='/webPlans' element={<Plans plans={WebPlans}/>} />
+
+          {/* App Plans Page */}
+          <Route path='/appPlans' element={<Plans plans={AppPlans}/>} />
 
           {/* About Us Page */}
           <Route path='/aboutUs' element={<AboutUs />} />

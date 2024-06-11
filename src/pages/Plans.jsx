@@ -8,7 +8,7 @@ import ModalformBasic from '../components/Modal/Modal-Form-Basic'
 import ModalformStandard from '../components/Modal/Modal-Form-Standard'
 import ModalformPremium from '../components/Modal/Modal-Form-Premium'
 
-export default function Plans() {
+export default function Plans({plans}) {
   const [showBasic, setShowBasic] = useState(false)
   const [showStandard, setShowStandard] = useState(false)
   const [showPremium, setShowPremium] = useState(false)
@@ -25,53 +25,7 @@ export default function Plans() {
     if (planName === 'Premium') setShowPremium(true)
   }
 
-  const plans = [
-    {
-      name: 'Basic',
-      price: '',
-      features: [
-        'Functional website',
-        '1 page',
-        '5 plugins/extensions',
-        'Payment processing',
-        'Hosting setup'
-      ]
-    },
-    {
-      name: 'Standard',
-      price: '',
-      features: [
-        'Functional website',
-        '5 page',
-        'Content upload',
-        '8 plugins/extensions',
-        'E-commerce functionality',
-        '5 products',
-        'Payment processing',
-        'Speed optimization',
-        'Hosting setup',
-        'Social media icons'
-      ]
-    },
-    {
-      name: 'Premium',
-      price: '',
-      features: [
-        'Functional website',
-        '10 page',
-        'Content upload',
-        '8 plugins/extensions',
-        'E-commerce functionality',
-        '10 products',
-        'Payment processing',
-        'Opt-in form',
-        'Autoresponder integration',
-        'Speed optimization',
-        'Hosting setup',
-        'Social media icons'
-      ]
-    }
-  ]
+  
 
   return (
     <>
