@@ -13,12 +13,14 @@ function ModalformBasic({ isOpened, heading, handleClose }) {
   })
 
   useEffect(() => {
-    setFormData({
-      name: '',
-      email: '',
-      company: '',
-      reference: ''
-    })
+    if (isOpened) {
+      setFormData({
+        name: '',
+        email: '',
+        company: '',
+        reference: ''
+      })
+    }
   }, [isOpened])
 
   const handleChange = (e) => {
@@ -33,8 +35,9 @@ function ModalformBasic({ isOpened, heading, handleClose }) {
         'https://jsonplaceholder.typicode.com/posts',
         formData
       )
-      if (response.status === 200) {
-        console.log('data', formData)
+      if (response.status === 201) {
+        // 201 is the status code for successful creation
+        console.log('Data:', formData)
         alert('Message sent successfully!')
         handleClose() // Close the modal after successful submission
       }
@@ -50,57 +53,53 @@ function ModalformBasic({ isOpened, heading, handleClose }) {
       </Modal.Header>
       <Modal.Body>
         <Form style={{ overflowY: 'scroll' }} onSubmit={handleSubmit}>
-          <Form.Group className='mb-3' controlId='exampleForm.ControlTextarea1'>
+          <Form.Group className='mb-3' controlId='name'>
             <Form.Label>Name</Form.Label>
             <Form.Control
               type='input'
               placeholder='Josh Anton'
-              rows={3}
               name='name'
               value={formData.name}
               onChange={handleChange}
               required
             />
           </Form.Group>
-          <Form.Group className='mb-3' controlId='exampleForm.ControlInput1'>
+          <Form.Group className='mb-3' controlId='email'>
             <Form.Label>Email address</Form.Label>
             <Form.Control
               type='email'
               placeholder='name@example.com'
-              autoFocus
               name='email'
               value={formData.email}
               onChange={handleChange}
               required
             />
           </Form.Group>
-          <Form.Group className='mb-3' controlId='exampleForm.ControlTextarea2'>
+          <Form.Group className='mb-3' controlId='company'>
             <Form.Label>Company Name</Form.Label>
             <Form.Control
               type='input'
               placeholder='Company'
-              rows={3}
               name='company'
               value={formData.company}
               onChange={handleChange}
               required
             />
           </Form.Group>
-          <Form.Group className='mb-3' controlId='exampleForm.ControlTextarea3'>
+          <Form.Group className='mb-3' controlId='reference'>
             <Form.Label>Reference Websites</Form.Label>
             <Form.Control
               type='input'
               placeholder='mycompany.com'
-              rows={3}
               name='reference'
               value={formData.reference}
               onChange={handleChange}
               required
             />
           </Form.Group>
-          <Form.Group className='mb-3' controlId='exampleForm.ControlTextarea4'>
+          <Form.Group className='mb-3' controlId='graphics'>
             <Form.Label style={{ display: 'flex' }}>Graphics</Form.Label>
-            <input type='file' placeholder='mycompany.com' rows={3} />
+            <input type='file' name='graphics' placeholder='Upload graphics' />
           </Form.Group>
           <Modal.Footer>
             <Button type='submit' style={{ backgroundColor: '#4599b4' }}>
