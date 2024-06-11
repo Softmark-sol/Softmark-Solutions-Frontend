@@ -7,6 +7,16 @@ function ModalformPremium({ isOpened, heading, handleClose }) {
   const [show, setShow] = useState(isOpened)
 
   useEffect(() => {
+    setFormData({
+      name: '',
+      email: '',
+      company: '',
+      referenceSites: '',
+      graphicsLink: '',
+      animationReferences: '',
+      domain: '',
+      checkedOptions: []
+    })
     setShow(isOpened)
   }, [isOpened])
 
@@ -20,18 +30,59 @@ function ModalformPremium({ isOpened, heading, handleClose }) {
     { id: 7, label: 'Quality Assurance' }
   ]
 
-  // State to track checked options
-  const [checkedOptions, setCheckedOptions] = useState([])
+  // State to track form inputs
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    company: '',
+    referenceSites: '',
+    graphicsLink: '',
+    animationReferences: '',
+    domain: '',
+    checkedOptions: []
+  })
+
+  // Handle form input changes
+  const handleInputChange = (e) => {
+    const { id, value } = e.target
+    setFormData((prev) => ({
+      ...prev,
+      [id]: value
+    }))
+  }
 
   // Handle checkbox change
   const handleCheckboxChange = (e) => {
     const { id, checked } = e.target
     const label = options.find((option) => option.id.toString() === id).label
-    setCheckedOptions((prev) =>
-      checked
-        ? [...prev, label]
-        : prev.filter((optionLabel) => optionLabel !== label)
-    )
+    setFormData((prev) => ({
+      ...prev,
+      checkedOptions: checked
+        ? [...prev.checkedOptions, label]
+        : prev.checkedOptions.filter((optionLabel) => optionLabel !== label)
+    }))
+  }
+
+  // Handle form submission
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    const apiEndpoint = 'https://jsonplaceholder.typicode.com/posts' // Dummy API endpoint
+
+    try {
+      const response = await fetch(apiEndpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      })
+      const result = await response.json()
+      console.log('Success:', result)
+    } catch (error) {
+      console.error('Error:', error)
+    }
+
+    handleClose() // Close the modal after submission
   }
 
   return (
@@ -41,45 +92,71 @@ function ModalformPremium({ isOpened, heading, handleClose }) {
           <Modal.Title>{heading}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form style={{ overflowY: 'scroll' }}>
-            <Form.Group className='mb-3' controlId='exampleForm.ControlInput1'>
+          <Form style={{ overflowY: 'scroll' }} onSubmit={handleSubmit}>
+            <Form.Group className='mb-3' controlId='name'>
               <Form.Label>Name</Form.Label>
-              <Form.Control type='input' placeholder='Josh Anton' autoFocus />
+              <Form.Control
+                type='input'
+                placeholder='Josh Anton'
+                autoFocus
+                value={formData.name}
+                onChange={handleInputChange}
+              />
             </Form.Group>
-            <Form.Group className='mb-3' controlId='exampleForm.ControlInput2'>
+            <Form.Group className='mb-3' controlId='email'>
               <Form.Label>Email address</Form.Label>
-              <Form.Control type='email' placeholder='name@example.com' />
+              <Form.Control
+                type='email'
+                placeholder='name@example.com'
+                value={formData.email}
+                onChange={handleInputChange}
+              />
             </Form.Group>
-            <Form.Group className='mb-3' controlId='exampleForm.ControlInput3'>
+            <Form.Group className='mb-3' controlId='company'>
               <Form.Label>Company</Form.Label>
-              <Form.Control type='input' placeholder='Company' />
+              <Form.Control
+                type='input'
+                placeholder='Company'
+                value={formData.company}
+                onChange={handleInputChange}
+              />
             </Form.Group>
-            <Form.Group className='mb-3' controlId='exampleForm.ControlInput4'>
+            <Form.Group className='mb-3' controlId='referenceSites'>
               <Form.Label>Reference Sites</Form.Label>
-              <Form.Control type='input' placeholder='XYZ, XYZ, ABC' />
+              <Form.Control
+                type='input'
+                placeholder='XYZ, XYZ, ABC'
+                value={formData.referenceSites}
+                onChange={handleInputChange}
+              />
             </Form.Group>
-            <Form.Group className='mb-3' controlId='exampleForm.ControlInput5'>
+            <Form.Group className='mb-3' controlId='graphicsLink'>
               <Form.Label>Link to Graphics</Form.Label>
               <Form.Control
                 type='input'
                 placeholder='Google drive link or any drive link for graphics'
+                value={formData.graphicsLink}
+                onChange={handleInputChange}
               />
             </Form.Group>
-            <Form.Group className='mb-3' controlId='exampleForm.ControlInput6'>
+            <Form.Group className='mb-3' controlId='animationReferences'>
               <Form.Label>Animation References</Form.Label>
               <Form.Control
                 type='input'
                 placeholder='3 Reference sites to be added'
+                value={formData.animationReferences}
+                onChange={handleInputChange}
               />
             </Form.Group>
-            <Form.Group className='mb-3' controlId='exampleForm.ControlInput6'>
+            <Form.Group className='mb-3' controlId='domain'>
               <Form.Label>Domain (If purchased)</Form.Label>
               <Form.Control
                 type='input'
                 placeholder='www.xyz.com OR three hosting options'
+                value={formData.domain}
+                onChange={handleInputChange}
               />
             </Form.Group>
-
             <Form.Group>
               <Form.Label>Complex Functionalities</Form.Label>
               {options.map((option) => (
@@ -88,28 +165,32 @@ function ModalformPremium({ isOpened, heading, handleClose }) {
                   type='checkbox'
                   id={option.id.toString()}
                   label={option.label}
-                  checked={checkedOptions.includes(option.label)}
+                  checked={formData.checkedOptions.includes(option.label)}
                   onChange={handleCheckboxChange}
                 />
               ))}
             </Form.Group>
             <Form.Label style={{ paddingTop: '12px' }}>Attach Files</Form.Label>
             <input style={{ display: 'flex' }} type='file' />
+            <Modal.Footer>
+              <Button variant='secondary' onClick={handleClose}>
+                Close
+              </Button>
+              <Button
+                type='submit'
+                style={{ backgroundColor: '#4599b4' }}
+                onMouseEnter={(e) =>
+                  (e.target.style.backgroundColor = '#f3972b')
+                }
+                onMouseLeave={(e) =>
+                  (e.target.style.backgroundColor = '#4599b4')
+                }
+              >
+                Send Message
+              </Button>
+            </Modal.Footer>
           </Form>
         </Modal.Body>
-        <Modal.Footer>
-          <Button variant='secondary' onClick={handleClose}>
-            Close
-          </Button>
-          <Button
-            style={{ backgroundColor: '#4599b4' }}
-            onMouseEnter={(e) => (e.target.style.backgroundColor = '#f3972b')}
-            onMouseLeave={(e) => (e.target.style.backgroundColor = '#4599b4')}
-            onClick={handleClose}
-          >
-            Send Message
-          </Button>
-        </Modal.Footer>
       </Modal>
     </>
   )
