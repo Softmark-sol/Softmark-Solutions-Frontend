@@ -40,7 +40,6 @@ function ModalformStandard({ isOpened, heading, handleClose }) {
                 type='input'
                 placeholder='Google drive link or any drive link for graphics'
               />
-              <Form.Control type='file' />
             </Form.Group>
             <Form.Group className='mb-3' controlId='exampleForm.ControlInput6'>
               <Form.Label>Animation References</Form.Label>
@@ -56,6 +55,9 @@ function ModalformStandard({ isOpened, heading, handleClose }) {
                 placeholder='www.xyz.com OR three hosting options'
               />
             </Form.Group>
+
+            <Form.Label>Attach Files</Form.Label>
+            <input style={{ display: 'flex' }} type='file' />
           </Form>
         </Modal.Body>
         <Modal.Footer>

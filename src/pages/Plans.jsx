@@ -86,7 +86,7 @@ export default function Plans() {
                     <span className='plan-price'>{`$${plan.price}/mo`}</span>
                     <button
                       className='select-button'
-                      onClick={() => handleShow(plan.formName)}
+                      onClick={() => handleShow(plan.name)}
                     >
                       START YOUR PLAN
                     </button>

@@ -17,7 +17,7 @@ function ModalformBasic({ isOpened, heading, handleClose }) {
           <Modal.Title>{heading}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form>
+          <Form style={{ overflowY: 'scroll' }}>
             <Form.Group
               className='mb-3'
               controlId='exampleForm.ControlTextarea1'

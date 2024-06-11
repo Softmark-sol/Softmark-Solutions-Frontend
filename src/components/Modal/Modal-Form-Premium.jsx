@@ -41,7 +41,7 @@ function ModalformPremium({ isOpened, heading, handleClose }) {
           <Modal.Title>{heading}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form>
+          <Form style={{ overflowY: 'scroll' }}>
             <Form.Group className='mb-3' controlId='exampleForm.ControlInput1'>
               <Form.Label>Name</Form.Label>
               <Form.Control type='input' placeholder='Josh Anton' autoFocus />
@@ -64,7 +64,6 @@ function ModalformPremium({ isOpened, heading, handleClose }) {
                 type='input'
                 placeholder='Google drive link or any drive link for graphics'
               />
-              <Form.Control type='file' />
             </Form.Group>
             <Form.Group className='mb-3' controlId='exampleForm.ControlInput6'>
               <Form.Label>Animation References</Form.Label>
@@ -80,6 +79,7 @@ function ModalformPremium({ isOpened, heading, handleClose }) {
                 placeholder='www.xyz.com OR three hosting options'
               />
             </Form.Group>
+
             <Form.Group>
               <Form.Label>Complex Functionalities</Form.Label>
               {options.map((option) => (
@@ -93,6 +93,8 @@ function ModalformPremium({ isOpened, heading, handleClose }) {
                 />
               ))}
             </Form.Group>
+            <Form.Label style={{ paddingTop: '12px' }}>Attach Files</Form.Label>
+            <input style={{ display: 'flex' }} type='file' />
           </Form>
         </Modal.Body>
         <Modal.Footer>
