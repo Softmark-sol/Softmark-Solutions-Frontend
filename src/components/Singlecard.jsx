@@ -14,7 +14,7 @@ const Singlecard = ({ path, title, description, route }) => {
           setAnimated(true);
         }
       },
-      { threshold: 0.5 } // Adjust threshold as needed
+      { threshold: 0.5 } 
     );
 
     if (cardRef.current) {

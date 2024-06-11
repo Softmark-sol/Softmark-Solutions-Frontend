@@ -29,7 +29,7 @@ const data = [
     path: img4,
     title: "Digital Marketing",
     desc: "Maximize your brand's impact with our comprehensive digital marketing solutions. We specialize in social media, PPC, content marketing, and email campaigns to increase engagement, conversions, and ROI.",
-    // route: '/digital-marketing'
+    route: '/digitalMarketing'
   },
 ];
 

@@ -11,6 +11,7 @@ import ScrollToTop from '../components/ScrollTop';
 import Cards from '../components/Cards';
 import WebPlans from '../components/PlansData';
 import { AppPlans } from '../components/PlansData';
+import DigitalMarketing from '../pages/DigitalMarketing';
 
 function Router() {
   return (
@@ -31,6 +32,9 @@ function Router() {
 
           {/* About Us Page */}
           <Route path='/aboutUs' element={<AboutUs />} />
+
+           {/* Digital Marketing Page */}
+           <Route path='/digitalMarketing' element={<DigitalMarketing />} />
 
           {/* Why Page */}
           <Route path='/whyUs' element={<WhyUs />} />
