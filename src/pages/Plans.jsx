@@ -28,7 +28,7 @@ export default function Plans() {
   const plans = [
     {
       name: 'Basic',
-      price: '10',
+      // price: '10',
       features: [
         'Functional website',
         '1 page',
@@ -39,7 +39,7 @@ export default function Plans() {
     },
     {
       name: 'Standard',
-      price: '20',
+      // price: '20',
       features: [
         'Functional website',
         '5 page',
@@ -55,7 +55,7 @@ export default function Plans() {
     },
     {
       name: 'Premium',
-      price: '30',
+      // price: '30',
       features: [
         'Functional website',
         '10 page',

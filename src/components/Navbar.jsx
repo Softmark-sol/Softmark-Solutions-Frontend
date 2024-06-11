@@ -21,16 +21,38 @@ const Navbar = () => {
     setAnchorEl(null);
   };
 
-  const handleMenuItemClick = (destination) => {
+  const Contact = () => {
     const isHomePage = location.pathname === "/";
     if (isHomePage) {
       const contactForm = document.getElementById("form");
+      console.log(contactForm)
+
       if (contactForm) {
         contactForm.scrollIntoView({ behavior: "smooth" });
       }
     } else {
       navigate("/contactUs");
     }
+  };
+
+  const Services = () => {
+    const isHomePage = location.pathname === "/";
+    if (isHomePage) {
+      const servicesSection = document.getElementById("services");
+      console.log(servicesSection); 
+  
+      if (servicesSection) {
+        servicesSection.scrollIntoView({ behavior: "smooth" });
+      } else {
+        console.error("Services section not found");
+      }
+    } else {
+      navigate("/services");
+    }
+  };
+  
+
+  const handleMenuItemClick = (destination) => {
     handleClose();
     navigate(destination);
   };
@@ -50,16 +72,9 @@ const Navbar = () => {
           <span className="nav-btn" onClick={() => navigate("/")}>
             Home
           </span>
-          {/* <a
-            href="#services"
-            style={{ textDecoration: "none" }}
-            rel="noreferrer"
-            className="nav-btn"
-          > */}
-          <span className="nav-btn" >
+          <span className="nav-btn" onClick={()=> Services()}>
             Services
           </span>
-          {/* </a> */}
           <span
             className="nav-btn"
             id="fade-button"
@@ -91,7 +106,7 @@ const Navbar = () => {
           </a>
           <span
             className="nav-btn contact-us"
-            onClick={() => navigate("/contactUs")}
+            onClick={() => Contact()}
           >
             Contact Us
           </span>
@@ -110,10 +125,10 @@ const Navbar = () => {
         onClose={handleClose}
         TransitionComponent={Fade}
       >
-        <MenuItem onClick={() => handleMenuItemClick("/aboutUs")}>
+        <MenuItem onClick={()=>{handleMenuItemClick("/aboutUs")}}>
           About Us
         </MenuItem>
-        <MenuItem onClick={() => handleMenuItemClick("/whyUs")}>
+        <MenuItem onClick={()=>{handleMenuItemClick("/whyUs")}}>
           Why Us
         </MenuItem>
       </Menu>

@@ -40,14 +40,14 @@
     font: inherit;
     cursor: pointer;
     text-decoration: none;
+    transition: all 0.3s ease; 
   }
   
   .footer-bottom ul li button:hover {
-    text-decoration: underline;
-    font-size: large;
     text-decoration-thickness: 1.2px;
     color: rgb(250, 224, 140);
   }
+  
   
   .footer-contact {
     margin-bottom: 20px;
@@ -56,7 +56,7 @@
   .footer-social {
     display: flex;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
     margin-top: 20px;
     flex-wrap: wrap;
   }
@@ -75,8 +75,10 @@
   
   .footer-social p {
     margin-left: 10px;
+    font-size: 1.2rem;
     color: #f3f2ef;
   }
+
   
   /* Media Queries */
   @media (max-width: 1024px) {

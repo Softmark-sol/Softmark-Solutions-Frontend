@@ -1,26 +1,35 @@
 import React from 'react';
-import '../css/footer.css'; // You will create this CSS file next
+import '../css/footer.css'; 
+import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
+  const navigate = useNavigate();
+
   return (
     <footer className="footer">
       <div className="footer-bottom">
         <div className="footer-left">
           <ul>
-            <li><button onClick={() => { window.location.href = '#'; }}>HOME</button></li>
-            <li><button onClick={() => { window.location.href = '#'; }}>WORK</button></li>
-            <li><button onClick={() => { window.location.href = '#'; }}>OUR PROCESS</button></li>
-            <li><button onClick={() => { window.location.href = '#'; }}>COMPANY</button></li>
-            <li><button onClick={() => { window.location.href = '#'; }}>CAREERS</button></li>
-            <li><button onClick={() => { window.location.href = '#'; }}>CONTACT US</button></li>
+            <li><button onClick={() => navigate("/")}>Home</button></li>
+            <li><button onClick={() => navigate("/Ourservices")}>Work</button></li>
+            <li><button onClick={() => navigate("/aboutUs")}>About Us</button></li>
+            <li><button onClick={() => navigate("/whyUs")}>Why Us</button></li>
+            <a
+              href="https://www.linkedin.com/company/softmark-solutions-llc"
+              target="_blank"
+              style={{ textDecoration: "none" }}
+            >
+                <li><button>Careers</button></li>
+            </a>
+            <li><button onClick={() => navigate("/contactUs")}>Contact Us</button></li>
           </ul>
         </div>
         <div className="footer-center">
           <ul>
-            <li><button onClick={() => { window.location.href = '#'; }}>WEB APP DEVELOPMENT</button></li>
-            <li><button onClick={() => { window.location.href = '#'; }}>BUSINESS PROCESS AUTOMATION</button></li>
-            <li><button onClick={() => { window.location.href = '#'; }}>MOBILE APP DEVELOPMENT</button></li>
-            <li><button onClick={() => { window.location.href = '#'; }}>Search Engine Optimization</button></li>
+            <li><button onClick={() => navigate("/plans")}>Web App Development</button></li>
+            <li><button onClick={() => navigate("/plans")}>Mobile App Development</button></li>
+            <li><button onClick={() => navigate("/plans")}>Search Engine Optimization</button></li>
+            <li><button onClick={() => navigate("/plans")}>Digital Marketing</button></li>
           </ul>
         </div>
         <div className="footer-right">
@@ -29,7 +38,7 @@ const Footer = () => {
             <p>307, Wyoming</p>
           </div>
           <div className="footer-contact">
-            <p>Pakistan office</p>
+            <p>Pakistan Office</p>
             <p>705, Noor Trade Tower, Gulshan e Iqbal 13 A</p>
             <p>Karachi</p>
           </div>
@@ -39,7 +48,7 @@ const Footer = () => {
         <a href="https://www.linkedin.com/company/softmark-solutions-llc/"><i className="fab fa-linkedin"></i></a>
         <a href="https://www.facebook.com/SoftMarkSolutionsLLC"><i className="fab fa-facebook"></i></a>
         <a href="https://x.com/SoftMark_sol"><i className="fab fa-twitter"></i></a>
-        <p>admin@softmarksolutions.com</p>
+        <a href="mailto:admin@softmarksolutions.com"><p>admin@softmarksolutions.com</p></a>
       </div>
     </footer>
   );

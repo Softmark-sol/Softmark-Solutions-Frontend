@@ -42,8 +42,8 @@ const app=[{
   const navigate=useNavigate()
  
   return (
-    <>
-      <div className="card-heading-service container">
+    <div id="services">
+      <div className="card-heading-service container" >
         <h1 className="heading-underline-service" >
           Our Work
         </h1>
@@ -110,7 +110,7 @@ const app=[{
         </p>
         <button className="contact-btn" onClick={()=>{navigate('/contactUs')}}>Contact Us</button>
       </div>
-    </>
+    </div>
   );
 };
 
