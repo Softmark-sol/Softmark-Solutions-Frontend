@@ -8,7 +8,6 @@ import WhyUs from '../pages/WhyUs';
 import ContactForm from '../components/ContactForm';
 import Ourservices from '../pages/Ourservices';
 import ScrollToTop from '../components/ScrollTop'; 
-import { Card } from 'react-bootstrap';
 import Cards from '../components/Cards';
 
 function Router() {

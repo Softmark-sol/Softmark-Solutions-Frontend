@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import Modal from 'react-bootstrap/Modal'
 import axios from 'axios'
+import Swal from 'sweetalert2'
 
 function ModalformBasic({ isOpened, heading, handleClose }) {
   const [formData, setFormData] = useState({
@@ -36,13 +37,18 @@ function ModalformBasic({ isOpened, heading, handleClose }) {
         formData
       )
       if (response.status === 201) {
-        // 201 is the status code for successful creation
         console.log('Data:', formData)
-        alert('Message sent successfully!')
-        handleClose() // Close the modal after successful submission
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Message sent successfully",
+          showConfirmButton: false,
+          timer: 1500
+        });
+        handleClose() 
       }
     } catch (error) {
-      alert('Failed to send message. Please try again later.')
+      console.log("Failed to send message. Please try again later.")
     }
   }
 

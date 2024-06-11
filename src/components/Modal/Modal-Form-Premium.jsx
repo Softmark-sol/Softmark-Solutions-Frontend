@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import Modal from 'react-bootstrap/Modal'
+import Swal from 'sweetalert2'
 
 function ModalformPremium({ isOpened, heading, handleClose }) {
   const [show, setShow] = useState(isOpened)
@@ -78,6 +79,13 @@ function ModalformPremium({ isOpened, heading, handleClose }) {
       })
       const result = await response.json()
       console.log('Success:', result)
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "Message sent successfully",
+        showConfirmButton: false,
+        timer: 1500
+      });
     } catch (error) {
       console.error('Error:', error)
     }
