@@ -14,7 +14,7 @@ const Singlecard = ({ path, title, description, route }) => {
       <div className="header">
         <img src={path} alt={title} className='card-img'/>
       </div>
-      <h3>{title}</h3>
+      <h4>{title}</h4>
       <p className="message">
         {description}
       </p>
