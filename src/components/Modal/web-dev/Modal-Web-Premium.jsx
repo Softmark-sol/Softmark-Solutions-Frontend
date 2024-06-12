@@ -197,6 +197,7 @@ function ModalformPremiumWeb({ isOpened, heading, handleClose }) {
             >
               <Form.Label>Description</Form.Label>
               <Form.Control
+                name='description'
                 as='textarea'
                 rows={3}
                 placeholder='Describe your requirements here'
