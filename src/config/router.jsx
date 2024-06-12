@@ -12,6 +12,7 @@ import Cards from '../components/Cards';
 import WebPlans from '../components/PlansData';
 import { AppPlans } from '../components/PlansData';
 import DigitalMarketing from '../pages/DigitalMarketing';
+import NotFound from '../components/NotFound';
 
 function Router() {
   return (
@@ -47,6 +48,9 @@ function Router() {
 
           {/* Services Component */}
           <Route path='/services' element={<Cards />} />
+
+          {/* 404*/}
+          <Route path='*' element={<NotFound />} />
           
         </Routes>
         <Footer />
@@ -56,3 +60,6 @@ function Router() {
 }
 
 export default Router;
+
+
+// Typography, Loading indicators, animations

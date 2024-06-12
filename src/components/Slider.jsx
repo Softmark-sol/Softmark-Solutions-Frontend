@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Typography } from '@mui/material';
+import { Box } from '@mui/material';
 import Container from '@mui/material/Container';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
