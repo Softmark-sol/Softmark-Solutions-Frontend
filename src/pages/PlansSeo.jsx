@@ -8,7 +8,7 @@ import ModalformBasicWeb from '../components/Modal/web-dev/Modal-Web-Basic'
 import ModalformStandardWeb from '../components/Modal/web-dev/Modal-Web-Standard'
 import ModalformPremiumWeb from '../components/Modal/web-dev/Modal-Web-Premium'
 
-export default function PlansWeb({ plans }) {
+export default function PlansSeo({ plans }) {
   const [showBasic, setShowBasic] = useState(false)
   const [showStandard, setShowStandard] = useState(false)
   const [showPremium, setShowPremium] = useState(false)
@@ -59,7 +59,7 @@ export default function PlansWeb({ plans }) {
         ))}
       </div>
 
-      <ModalformBasicWeb
+      <ModalformBasicSeo
         isOpened={showBasic}
         heading={selectedPlan + ' Plan'}
         handleClose={handleCloseBasic}

@@ -23,7 +23,7 @@ const data = [
     path: img3,
     title: "Search Engine Optimization",
     desc: "Boost your online presence with our expert SEO services. We use advanced strategies to improve your search rankings, and enhance website authority for sustainable business growth.",
-    // route: '/seo'
+    route: '/seo'
   },
   {
     path: img4,

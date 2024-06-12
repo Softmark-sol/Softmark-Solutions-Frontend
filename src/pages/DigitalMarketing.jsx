@@ -6,7 +6,6 @@ import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import axios from "axios";
 import Swal from "sweetalert2";
-
 import img1 from '../assets/ppc.png'
 import img2 from '../assets/social.png'
 import img3 from '../assets/content-marketing.png'
