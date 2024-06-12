@@ -107,33 +107,33 @@ function ModalformStandardApp({ isOpened, heading, handleClose }) {
                 onChange={handleInputChange}
               />
             </Form.Group>
-            <Form.Group className='mb-3' controlId='reference'>
+            <Form.Group className='mb-3' controlId='reference_sites'>
               <Form.Label>Reference Apps</Form.Label>
               <Form.Control
                 type='input'
                 placeholder='Application Name XYZ, ABC, XYZ'
                 name='reference'
-                value={formData.reference}
+                value={formData.reference_sites}
                 onChange={handleInputChange}
               />
             </Form.Group>
-            <Form.Group className='mb-3' controlId='iconssLink'>
+            <Form.Group className='mb-3' controlId='drive_link'>
               <Form.Label>Link to Icons</Form.Label>
               <Form.Control
                 type='input'
                 placeholder='Google drive link or any drive link for icons'
-                value={formData.graphicsLink}
+                value={formData.drive_link}
                 onChange={handleInputChange}
               />
             </Form.Group>
-            <Form.Group className='mb-3' controlId='animationReferences'>
+            <Form.Group className='mb-3' controlId='animation'>
               <Form.Label>Animation References</Form.Label>
               <Form.Control
                 as='textarea'
                 rows={3}
                 placeholder='custom notes with app names and which animation
 is being referred'
-                value={formData.animationReferences}
+                value={formData.animation}
                 onChange={handleInputChange}
               />
             </Form.Group>

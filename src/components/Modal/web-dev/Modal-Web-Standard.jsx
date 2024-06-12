@@ -107,30 +107,30 @@ function ModalformStandardWeb({ isOpened, heading, handleClose }) {
                 onChange={handleInputChange}
               />
             </Form.Group>
-            <Form.Group className='mb-3' controlId='referenceSites'>
+            <Form.Group className='mb-3' controlId='reference_sites'>
               <Form.Label>Reference Sites</Form.Label>
               <Form.Control
                 type='input'
                 placeholder='XYZ, XYZ, ABC'
-                value={formData.referenceSites}
+                value={formData.reference_sites}
                 onChange={handleInputChange}
               />
             </Form.Group>
-            <Form.Group className='mb-3' controlId='graphicsLink'>
+            <Form.Group className='mb-3' controlId='drive_link'>
               <Form.Label>Link to Graphics</Form.Label>
               <Form.Control
                 type='input'
                 placeholder='Google drive link or any drive link for graphics'
-                value={formData.graphicsLink}
+                value={formData.drive_link}
                 onChange={handleInputChange}
               />
             </Form.Group>
-            <Form.Group className='mb-3' controlId='animationReferences'>
+            <Form.Group className='mb-3' controlId='animation'>
               <Form.Label>Animation References</Form.Label>
               <Form.Control
                 type='input'
                 placeholder='3 Reference sites to be added'
-                value={formData.animationReferences}
+                value={formData.animation}
                 onChange={handleInputChange}
               />
             </Form.Group>
