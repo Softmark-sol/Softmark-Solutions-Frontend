@@ -4,25 +4,17 @@ import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import { CardActionArea } from '@mui/material'
 import '../css/Plans.css'
-import ModalformBasicWeb from '../components/Modal/web-dev/Modal-Web-Basic'
-import ModalformStandardWeb from '../components/Modal/web-dev/Modal-Web-Standard'
-import ModalformPremiumWeb from '../components/Modal/web-dev/Modal-Web-Premium'
+import ModalformSeo from '../components/Modal/Seo/Modal-Seo'
 
 export default function PlansSeo({ plans }) {
-  const [showBasic, setShowBasic] = useState(false)
-  const [showStandard, setShowStandard] = useState(false)
-  const [showPremium, setShowPremium] = useState(false)
+  const [showModal, setShowModal] = useState(false)
   const [selectedPlan, setSelectedPlan] = useState('')
 
-  const handleCloseBasic = () => setShowBasic(false)
-  const handleCloseStandard = () => setShowStandard(false)
-  const handleClosePremium = () => setShowPremium(false)
+  const handleCloseModal = () => setShowModal(false)
 
   const handleShow = (planName) => {
     setSelectedPlan(planName)
-    if (planName === 'Basic') setShowBasic(true)
-    if (planName === 'Standard') setShowStandard(true)
-    if (planName === 'Premium') setShowPremium(true)
+    setShowModal(true)
   }
 
   return (
@@ -35,7 +27,6 @@ export default function PlansSeo({ plans }) {
                 <div className='plans-cont'>
                   <div className='plan-header'>
                     <span className='plan-title'>{plan.name}</span>
-                    {/* <span className='plan-price'>{`$${plan.price}/mo`}</span> */}
                     <button
                       className='select-button'
                       onClick={() => handleShow(plan.name)}
@@ -59,22 +50,10 @@ export default function PlansSeo({ plans }) {
         ))}
       </div>
 
-      <ModalformBasicWeb
-        isOpened={showBasic}
-        heading={selectedPlan + ' Plan'}
-        handleClose={handleCloseBasic}
-      />
-
-      <ModalformStandardWeb
-        isOpened={showStandard}
-        heading={selectedPlan + ' Plan'}
-        handleClose={handleCloseStandard}
-      />
-
-      <ModalformPremiumWeb
-        isOpened={showPremium}
-        heading={selectedPlan + ' Plan'}
-        handleClose={handleClosePremium}
+      <ModalformSeo
+        isOpened={showModal}
+        heading={selectedPlan}
+        handleClose={handleCloseModal}
       />
     </>
   )

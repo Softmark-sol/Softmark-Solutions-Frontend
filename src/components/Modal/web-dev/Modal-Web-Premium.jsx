@@ -77,7 +77,7 @@ function ModalformPremiumWeb({ isOpened, heading, handleClose }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    const apiEndpoint = 'https://jsonplaceholder.typicode.com/posts' // Replace with your actual API endpoint
+    const apiEndpoint = 'http://localhost:4000/web-premium-plane' // Replace with your actual API endpoint
 
     const data = new FormData()
     for (const key in formData) {
@@ -97,22 +97,29 @@ function ModalformPremiumWeb({ isOpened, heading, handleClose }) {
         method: 'POST',
         body: data
       })
-      const result = await response.json()
-      if (response.ok) {
-        Swal.fire({
-          position: 'top-end',
-          icon: 'success',
-          title: 'Message sent successfully',
-          showConfirmButton: false,
-          timer: 1500
-        })
 
-        handleClose()
-      } else {
-        console.error('Error:', result)
+      if (!response.ok) {
+        const errorText = await response.text()
+        throw new Error(`Network response was not ok: ${errorText}`)
       }
+
+      const result = await response.json()
+      Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Message sent successfully',
+        showConfirmButton: false,
+        timer: 1500
+      })
+
+      handleClose()
     } catch (error) {
-      console.error('Error:', error)
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Something went wrong!'
+      })
+      console.error('Error:', error.message)
     }
   }
 
@@ -197,7 +204,6 @@ function ModalformPremiumWeb({ isOpened, heading, handleClose }) {
             >
               <Form.Label>Description</Form.Label>
               <Form.Control
-                name='description'
                 as='textarea'
                 rows={3}
                 placeholder='Describe your requirements here'

@@ -4,7 +4,7 @@ import Form from 'react-bootstrap/Form'
 import Modal from 'react-bootstrap/Modal'
 import axios from 'axios'
 import Swal from 'sweetalert2'
-function ModalformBasic({ isOpened, heading, handleClose }) {
+function ModalformBasicWeb({ isOpened, heading, handleClose }) {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -47,7 +47,7 @@ function ModalformBasic({ isOpened, heading, handleClose }) {
     }
     try {
       const response = await axios.post(
-        'https://jsonplaceholder.typicode.com/posts',
+        'http://localhost:4000/web-basic-plane',
         data,
         {
           headers: {
@@ -110,6 +110,7 @@ function ModalformBasic({ isOpened, heading, handleClose }) {
               name='company'
               value={formData.company}
               onChange={handleChange}
+              required
             />
           </Form.Group>
           <Form.Group className='mb-3' controlId='reference_sites'>
@@ -122,28 +123,24 @@ function ModalformBasic({ isOpened, heading, handleClose }) {
               onChange={handleChange}
             />
           </Form.Group>
-          <Form.Group
-            style={{ paddingTop: '10px' }}
-            className='mb-3'
-            controlId='description'
-          >
+          <Form.Group className='mb-3' controlId='description'>
             <Form.Label>Description</Form.Label>
             <Form.Control
-              name='description'
               as='textarea'
               rows={3}
-              placeholder='Describe your requirements here'
+              placeholder='description or meaage '
+              name='description'
               value={formData.description}
               onChange={handleChange}
+              required
             />
           </Form.Group>
           <Form.Group className='mb-3' controlId='Link_to_Graphics'>
             <Form.Label style={{ display: 'flex' }}>Graphics</Form.Label>
             <input
+              multiple
               type='file'
               name='Link_to_Graphics'
-              value={formData.Link_to_Graphics}
-              multiple
               placeholder='Upload graphics'
               onChange={handleChange}
             />
@@ -161,4 +158,4 @@ function ModalformBasic({ isOpened, heading, handleClose }) {
     </Modal>
   )
 }
-export default ModalformBasic
+export default ModalformBasicWeb
