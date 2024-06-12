@@ -14,6 +14,7 @@ import { AppPlans } from '../components/PlansData'
 import DigitalMarketing from '../pages/DigitalMarketing'
 import PlansWeb from '../pages/PlansWeb'
 import PlansApp from '../pages/PlansApp'
+import NotFound from '../components/NotFound'
 
 function Router() {
   return (

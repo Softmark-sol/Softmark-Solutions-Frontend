@@ -12,10 +12,6 @@ import img2 from '../assets/social.png'
 import img3 from '../assets/content-marketing.png'
 import img4 from '../assets/email-marketing.png'
 import ScrollToTopButton from "../components/ScrollUpButton";
-import img1 from "../assets/ppc.png";
-import img2 from "../assets/social.png";
-import img3 from "../assets/content-marketing.png";
-import img4 from "../assets/email-marketing.png";
 
 const DigitalMarketing = () => {
   const [formData, setFormData] = useState({
