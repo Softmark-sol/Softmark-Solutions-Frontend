@@ -20,7 +20,7 @@ export default function PlansApp({ plans }) {
 
   const handleShow = (planName) => {
     setSelectedPlan(planName)
-    if (planName === 'Basic') setShowBasic(true)
+    if (planName === ' Basic ') setShowBasic(true)
     if (planName === 'Standard') setShowStandard(true)
     if (planName === 'Premium') setShowPremium(true)
   }
