@@ -26,10 +26,10 @@ const Footer = () => {
         </div>
         <div className="footer-center">
           <ul>
-            <li><button onClick={() => navigate("/plans")}>Web App Development</button></li>
-            <li><button onClick={() => navigate("/plans")}>Mobile App Development</button></li>
+            <li><button onClick={() => navigate("/webPlans")}>Web App Development</button></li>
+            <li><button onClick={() => navigate("/appPlans")}>Mobile App Development</button></li>
             <li><button onClick={() => navigate("/plans")}>Search Engine Optimization</button></li>
-            <li><button onClick={() => navigate("/plans")}>Digital Marketing</button></li>
+            <li><button onClick={() => navigate("/digitalMarketing")}>Digital Marketing</button></li>
           </ul>
         </div>
         <div className="footer-right">
