@@ -8,8 +8,13 @@ import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import { GiHamburgerMenu } from 'react-icons/gi';
+import { AiFillHome, AiFillInfoCircle, AiFillPhone } from 'react-icons/ai';
+import { FaServicestack } from 'react-icons/fa';
+import { IoIosPeople } from 'react-icons/io';
+import { MdWork, MdContactMail } from 'react-icons/md';
 import '../css/navbar.css';
-import { GiHamburgerMenu } from "react-icons/gi";
 
 const LeftDrawer = () => {
   const location = useLocation();
@@ -35,7 +40,7 @@ const LeftDrawer = () => {
     const isHomePage = location.pathname === "/";
     if (isHomePage) {
       const contactForm = document.getElementById("form");
-      console.log(contactForm)
+      console.log(contactForm);
 
       if (contactForm) {
         contactForm.scrollIntoView({ behavior: "smooth" });
@@ -56,17 +61,17 @@ const LeftDrawer = () => {
       case 'About Us':
         navigate('/aboutUs');
         break;
-        case 'Why Us':
+      case 'Why Us':
         navigate('/whyUs');
         break;
-        case 'Our Work':
+      case 'Our Work':
         navigate('/Ourservices');
         break;
       case 'Careers':
         window.location.href = 'https://www.linkedin.com/company/softmark-solutions-llc';
         break;
       case 'Contact Us':
-        Contact()
+        Contact();
         break;
       default:
         break;
@@ -81,9 +86,25 @@ const LeftDrawer = () => {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {['Home', 'Services', 'About Us', 'Why Us','Our Work', 'Careers', 'Contact Us'].map((text) => (
+        {[
+          { text: 'Home', icon: <AiFillHome color="#4599B4" /> },
+          { text: 'Services', icon: <FaServicestack color="#4599B4" /> },
+          { text: 'About Us', icon: <AiFillInfoCircle color="#4599B4" /> },
+          { text: 'Why Us', icon: <IoIosPeople color="#4599B4" /> },
+          { text: 'Our Work', icon: <MdWork color="#4599B4" /> },
+          { text: 'Careers', icon: <MdContactMail color="#4599B4" /> },
+          { text: 'Contact Us', icon: <AiFillPhone color="#4599B4" /> },
+        ].map(({ text, icon }) => (
           <ListItem key={text} disablePadding>
-            <ListItemButton onClick={() => handleNavigation(text)}>
+            <ListItemButton
+              onClick={() => handleNavigation(text)}
+              sx={{ paddingLeft: '8px' }}
+            >
+              <ListItemIcon
+                sx={{ minWidth: '35px', color: '#1976d2' }}
+              >
+                {icon}
+              </ListItemIcon>
               <ListItemText primary={text} />
             </ListItemButton>
           </ListItem>

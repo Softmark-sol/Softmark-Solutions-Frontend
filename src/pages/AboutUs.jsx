@@ -2,6 +2,7 @@ import React from 'react'
 import '../css/aboutUs.css'
 import '../css/Whyus/Btn.scss'
 import { useNavigate } from 'react-router-dom'
+import ScrollToTopButton from '../components/ScrollUpButton'
 
 const AboutUs = () => {
   const navigate = useNavigate()
@@ -102,6 +103,8 @@ const AboutUs = () => {
           </a>
         </div>
       </section>
+      <ScrollToTopButton/>
+
     </div>
   )
 }

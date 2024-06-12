@@ -11,6 +11,7 @@ import img5 from "../assets/App2.jpg";
 import img6 from "../assets/App3.jpg";
 
 import { useNavigate } from "react-router-dom";
+import ScrollToTopButton from "../components/ScrollUpButton";
 
 
 
@@ -110,6 +111,7 @@ const app=[{
         </p>
         <button className="contact-btn" onClick={()=>{navigate('/contactUs')}}>Contact Us</button>
       </div>
+      <ScrollToTopButton/>
     </div>
   );
 };

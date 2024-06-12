@@ -1,3 +1,8 @@
+@font-face {
+    font-family: PoppinsBold;
+    src: url("../assets/fonts/Poppins-Bold.ttf");
+  }
+
 .hero {
     background-image: url("../assets/images/banner.jpg");
     background-size: cover;
@@ -15,6 +20,7 @@
 
 .hero span {
     font-weight: bold;
+    font-family: PoppinsBold;
 }
 
 .hero-btn-div {

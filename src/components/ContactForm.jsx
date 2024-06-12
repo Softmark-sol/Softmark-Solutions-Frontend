@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import '../css/contactForm.css';
+import Swal from 'sweetalert2'
+
 
 const ContactForm = () => {
   
@@ -21,10 +23,16 @@ const ContactForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:4000/contact-us', formData); // Ensure this matches your backend port
+            const response = await axios.post('http://localhost:4000/contact-us', formData); 
             if (response.status === 200) {
-                alert('Message sent successfully!');
-                setFormData({
+              Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "Message sent successfully",
+                showConfirmButton: false,
+                timer: 1500
+              });
+              setFormData({
                     name: '',
                     email: '',
                     phone: '',
@@ -34,7 +42,7 @@ const ContactForm = () => {
                 });
             }
         } catch (error) {
-            alert('Failed to send message. Please try again later.');
+            console.log('Failed to send message. Please try again later.');
         }
     };
 
