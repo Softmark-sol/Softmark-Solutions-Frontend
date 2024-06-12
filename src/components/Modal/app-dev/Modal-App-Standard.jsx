@@ -130,10 +130,24 @@ function ModalformStandardApp({ isOpened, heading, handleClose }) {
               <Form.Label>Animation References</Form.Label>
               <Form.Control
                 as='textarea'
-                row={3}
+                rows={3}
                 placeholder='custom notes with app names and which animation
 is being referred'
                 value={formData.animationReferences}
+                onChange={handleInputChange}
+              />
+            </Form.Group>
+            <Form.Group
+              style={{ paddingTop: '10px' }}
+              className='mb-3'
+              controlId='description'
+            >
+              <Form.Label>Description</Form.Label>
+              <Form.Control
+                as='textarea'
+                rows={3}
+                placeholder='Describe your requirements here'
+                value={formData.description}
                 onChange={handleInputChange}
               />
             </Form.Group>

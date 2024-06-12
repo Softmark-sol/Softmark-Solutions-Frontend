@@ -143,6 +143,20 @@ function ModalformStandardWeb({ isOpened, heading, handleClose }) {
                 onChange={handleInputChange}
               />
             </Form.Group>
+            <Form.Group
+              style={{ paddingTop: '10px' }}
+              className='mb-3'
+              controlId='description'
+            >
+              <Form.Label>Description</Form.Label>
+              <Form.Control
+                as='textarea'
+                rows={3}
+                placeholder='Describe your requirements here'
+                value={formData.description}
+                onChange={handleInputChange}
+              />
+            </Form.Group>
             <Form.Label>Attach Files</Form.Label>
             <input style={{ display: 'flex' }} type='file' multiple />
             <Modal.Footer>
