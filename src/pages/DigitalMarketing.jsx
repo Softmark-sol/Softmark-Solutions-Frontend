@@ -229,15 +229,8 @@ const DigitalMarketing = () => {
               </Form.Group>
               <Form.Group className="mb-3" controlId="reference">
                 <Form.Label>Access and Permissions</Form.Label>
-                <Form.Control
-                  as="textarea"
-                  rows={2}
-                  placeholder="asking for access to their social media accounts or 
-                  permissions to create new accounts if necessary"
-                  name="reference"
-                  value={formData.reference}
-                  onChange={handleChange}
-                />
+                <p style={{color:'red'}}>asking for access to their social media accounts or 
+                permissions to create new accounts if necessary</p>
               </Form.Group>
               <Form.Group>
                 {options.map((option) => (
