@@ -2,7 +2,6 @@ import { Route, Routes, BrowserRouter } from 'react-router-dom'
 import Home from '../pages/Home'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
-import Plans from '../pages/PlansWeb'
 import AboutUs from '../pages/AboutUs'
 import WhyUs from '../pages/WhyUs'
 import ContactForm from '../components/ContactForm'
@@ -14,6 +13,8 @@ import { AppPlans } from '../components/PlansData'
 import DigitalMarketing from '../pages/DigitalMarketing'
 import PlansWeb from '../pages/PlansWeb'
 import PlansApp from '../pages/PlansApp'
+import NotFound from '../components/NotFound'
+import Seo from '../pages/Seo'
 
 function Router() {
   return (
@@ -44,11 +45,18 @@ function Router() {
           {/* Our Work Page*/}
           <Route path='/Ourservices' element={<Ourservices />} />
 
+          {/* SEO Page*/}
+          <Route path='/seo' element={<Seo />} />
+
           {/* Contact Us Component */}
           <Route path='/contactUs' element={<ContactForm />} />
 
           {/* Services Component */}
           <Route path='/services' element={<Cards />} />
+
+          {/* 404*/}
+          <Route path='*' element={<NotFound />} />
+          
         </Routes>
         <Footer />
       </BrowserRouter>
