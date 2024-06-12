@@ -1,25 +1,25 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "../css/digital.css";
 import Singlecard from "../components/Singlecard";
-import { useState, useEffect } from 'react'
-import Button from 'react-bootstrap/Button'
-import Form from 'react-bootstrap/Form'
-import Modal from 'react-bootstrap/Modal'
-import axios from 'axios'
-import Swal from 'sweetalert2'
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
+import Modal from "react-bootstrap/Modal";
+import axios from "axios";
+import Swal from "sweetalert2";
 
-import img1 from '../assets/ppc.png'
-import img2 from '../assets/social.png'
-import img3 from '../assets/content-marketing.png'
-import img4 from '../assets/email-marketing.png'
+import img1 from "../assets/ppc.png";
+import img2 from "../assets/social.png";
+import img3 from "../assets/content-marketing.png";
+import img4 from "../assets/email-marketing.png";
 
 const DigitalMarketing = () => {
-
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    company: '',
-    reference: ''
+    name: "",
+    email: "",
+    company: "",
+    reference: "",
+    functionalities: [], // Initialize functionalities as an empty array
+    description: "", // Initialize description to avoid other possible errors
   });
   const [show, setShow] = useState(false);
 
@@ -29,67 +29,85 @@ const DigitalMarketing = () => {
   useEffect(() => {
     if (show) {
       setFormData({
-        name: '',
-        email: '',
-        company: '',
-        referencelink: ''
-      })
+        name: "",
+        email: "",
+        company: "",
+        reference: "",
+        functionalities: [],
+        description: "",
+      });
     }
-  }, [show])
+  }, [show]);
+
+  const options = [
+    { id: 1, label: 'Yes' },
+    { id: 2, label: 'No' },
+  ];
 
   const handleChange = (e) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
-  }
+    const { id, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [id]: value,
+    }));
+  };
+
+  const handleCheckboxChange = (e) => {
+    const { id, checked } = e.target;
+    const label = options.find((option) => option.id.toString() === id).label;
+    setFormData((prev) => ({
+      ...prev,
+      functionalities: checked
+        ? [...prev.functionalities, label]
+        : prev.functionalities.filter((optionLabel) => optionLabel !== label),
+    }));
+  };
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     try {
       const response = await axios.post(
-        'https://jsonplaceholder.typicode.com/posts',
+        "https://jsonplaceholder.typicode.com/posts",
         formData
-      )
+      );
       if (response.status === 201) {
-        console.log('Data:', formData)
+        console.log("Data:", formData);
         Swal.fire({
           position: "top-end",
           icon: "success",
           title: "Message sent successfully",
           showConfirmButton: false,
-          timer: 1500
+          timer: 1500,
         });
-        handleClose() 
+        handleClose();
       }
     } catch (error) {
-      console.log("Failed to send message. Please try again later.")
+      console.log("Failed to send message. Please try again later.");
     }
-  }
-
+  };
 
   const services = [
     {
-      path:img1,
+      path: img1,
       title: "Pay-Per-Click (PPC)",
       desc: "Reach your target audience at the right time and place with targeted PPC campaigns. Our certified PPC specialists will create compelling ads, optimize your ad spend, and drive conversions across platforms like Google Ads, Bing Ads, and social media channels.",
     },
     {
-      path:img2,
+      path: img2,
       title: "Social Media Marketing",
       desc: "Engage with your audience and build brand loyalty through strategic social media marketing campaigns. From content creation and community management to paid advertising and influencer partnerships, we'll help you connect with your customers and drive engagement.",
     },
     {
-      path:img3,
+      path: img3,
       title: "Content Marketing",
       desc: "Create valuable, relevant content that resonates with your audience and drives action. Our content marketing services include blog posts, articles and email newsletters designed to establish your brand as a thought leader in your industry and attract and retain customers.",
     },
     {
-      path:img4,
+      path: img4,
       title: "EMAIL Marketing",
       desc: "Nurture leads and drive conversions with targeted email campaigns. From automation workflows and segmentation to A/B testing and analytics, we'll help you deliver personalized messages that drive engagement and ROI.",
     },
   ];
-
-  
 
   return (
     <div>
@@ -115,7 +133,14 @@ const DigitalMarketing = () => {
       </div>
       <div className="main-cards">
         {services.map((item, index) => {
-          return <Singlecard path={item.path} title={item.title} description={item.desc} />;
+          return (
+            <Singlecard
+              key={index}
+              path={item.path}
+              title={item.title}
+              description={item.desc}
+            />
+          );
         })}
       </div>
 
@@ -130,82 +155,134 @@ const DigitalMarketing = () => {
       </div>
 
       <div className="modalbtn">
-        <button onClick={handleShow}
-        style={{ backgroundColor: '#4599b4',border:'none',padding:'12px 18px',color:'white' }}
-        onMouseEnter={(e) =>
-          (e.target.style.backgroundColor = '#f3972b')
-        }
-        onMouseLeave={(e) =>
-          (e.target.style.backgroundColor = '#4599b4')
-        }>
+        <button
+          onClick={handleShow}
+          style={{
+            backgroundColor: "#4599b4",
+            border: "none",
+            padding: "12px 18px",
+            color: "white",
+          }}
+          onMouseEnter={(e) => (e.target.style.backgroundColor = "#f3972b")}
+          onMouseLeave={(e) => (e.target.style.backgroundColor = "#4599b4")}
+        >
           Get a free strategy
         </button>
 
-        <Modal show={show} onHide={handleClose} backdrop='static'>
-      <Modal.Header closeButton>
-        <Modal.Title>Digital Marketing Plan</Modal.Title>
-      </Modal.Header>
-      <Modal.Body>
-        <Form style={{ overflowY: 'scroll' }} onSubmit={handleSubmit}>
-          <Form.Group className='mb-3' controlId='name'>
-            <Form.Label>Name</Form.Label>
-            <Form.Control
-              type='input'
-              placeholder='Josh Anton'
-              name='name'
-              value={formData.name}
-              onChange={handleChange}
-              required
-            />
-          </Form.Group>
-          <Form.Group className='mb-3' controlId='email'>
-            <Form.Label>Email address</Form.Label>
-            <Form.Control
-              type='email'
-              placeholder='name@example.com'
-              name='email'
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
-          </Form.Group>
-          <Form.Group className='mb-3' controlId='company'>
-            <Form.Label>Company Name</Form.Label>
-            <Form.Control
-              type='input'
-              placeholder='Company'
-              name='company'
-              value={formData.company}
-              onChange={handleChange}
-            />
-          </Form.Group>
-          <Form.Group className='mb-3' controlId='reference'>
-            <Form.Label>Links to social media platform</Form.Label>
-            <Form.Control
-              type='input'
-              placeholder='fb, insta, linkedin, xyz'
-              name='referencelink'
-              value={formData.reference}
-              onChange={handleChange}
-            />
-          </Form.Group>
-          <Modal.Footer>
-            <Button type='submit' style={{ backgroundColor: '#4599b4' }}
-                onMouseEnter={(e) =>
-                  (e.target.style.backgroundColor = '#f3972b')
-                }
-                onMouseLeave={(e) =>
-                  (e.target.style.backgroundColor = '#4599b4')
-                }>
-              Send Message
-            </Button>
-            <Button variant='secondary' onClick={handleClose}>
-              Close
-            </Button>
-          </Modal.Footer>
-        </Form>
-      </Modal.Body>
-    </Modal>
+        <Modal show={show} onHide={handleClose} backdrop="static">
+          <Modal.Header closeButton>
+            <Modal.Title>Digital Marketing Plan</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <Form style={{ overflowY: "scroll" }} onSubmit={handleSubmit}>
+              <Form.Group className="mb-3" controlId="name">
+                <Form.Label>Name</Form.Label>
+                <Form.Control
+                  type="input"
+                  placeholder="Josh Anton"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                />
+              </Form.Group>
+              <Form.Group className="mb-3" controlId="email">
+                <Form.Label>Email address</Form.Label>
+                <Form.Control
+                  type="email"
+                  placeholder="name@example.com"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                />
+              </Form.Group>
+              <Form.Group className="mb-3" controlId="company">
+                <Form.Label>Company Name</Form.Label>
+                <Form.Control
+                  type="input"
+                  placeholder="Company"
+                  name="company"
+                  value={formData.company}
+                  onChange={handleChange}
+                />
+              </Form.Group>
+              <Form.Group className="mb-3" controlId="reference">
+                <Form.Label>Links to social media platform</Form.Label>
+                <Form.Control
+                  type="input"
+                  placeholder="fb, insta, linkedin, xyz"
+                  name="reference"
+                  value={formData.reference}
+                  onChange={handleChange}
+                />
+              </Form.Group>
+              <Form.Group className="mb-3" controlId="reference">
+                <Form.Label>Target audience</Form.Label>
+                <Form.Control
+                  type="input"
+                  placeholder="information about their main competitors"
+                  name="reference"
+                  value={formData.reference}
+                  onChange={handleChange}
+                />
+              </Form.Group>
+              <Form.Group className="mb-3" controlId="reference">
+                <Form.Label>Access and Permissions</Form.Label>
+                <Form.Control
+                  as="textarea"
+                  rows={2}
+                  placeholder="asking for access to their social media accounts or 
+                  permissions to create new accounts if necessary"
+                  name="reference"
+                  value={formData.reference}
+                  onChange={handleChange}
+                />
+              </Form.Group>
+              <Form.Group>
+                {options.map((option) => (
+                  <Form.Check
+                    key={option.id}
+                    type="radio"
+                    name="name"
+                    id={option.id.toString()}
+                    label={option.label}
+                    checked={formData.functionalities.includes(option.label)}
+                    onChange={handleCheckboxChange}
+                  />
+                ))}
+              </Form.Group>
+              <br/>
+              <Form.Group className="mb-3" controlId="description">
+                <Form.Label>Description</Form.Label>
+                <Form.Control
+                  as="textarea"
+                  rows={3}
+                  placeholder="Describe your project"
+                  value={formData.description}
+                  onChange={handleChange}
+                />
+              </Form.Group>
+              <Modal.Footer>
+                <Button
+                  type="submit"
+                  style={{ backgroundColor: "#4599b4" }}
+                  onMouseEnter={(e) =>
+                    (e.target.style.backgroundColor = "#f3972b")
+                  }
+                  onMouseLeave={(e) =>
+                    (e.target.style.backgroundColor = "#4599b4")
+                  }
+                >
+                  Send Message
+                </Button>
+                <Button variant="secondary" onClick={handleClose}>
+                  Close
+                </Button>
+              </Modal.Footer>
+            </Form>
+          </Modal.Body>
+        </Modal>
       </div>
     </div>
   );
