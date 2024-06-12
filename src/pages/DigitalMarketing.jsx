@@ -32,7 +32,7 @@ const DigitalMarketing = () => {
         name: '',
         email: '',
         company: '',
-        reference: ''
+        referencelink: ''
       })
     }
   }, [show])
@@ -130,9 +130,16 @@ const DigitalMarketing = () => {
       </div>
 
       <div className="modalbtn">
-        <Button variant="primary" onClick={handleShow}>
+        <button onClick={handleShow}
+        style={{ backgroundColor: '#4599b4',border:'none',padding:'12px 18px',color:'white' }}
+        onMouseEnter={(e) =>
+          (e.target.style.backgroundColor = '#f3972b')
+        }
+        onMouseLeave={(e) =>
+          (e.target.style.backgroundColor = '#4599b4')
+        }>
           Get a free strategy
-        </Button>
+        </button>
 
         <Modal show={show} onHide={handleClose} backdrop='static'>
       <Modal.Header closeButton>
@@ -170,26 +177,26 @@ const DigitalMarketing = () => {
               name='company'
               value={formData.company}
               onChange={handleChange}
-              required
             />
           </Form.Group>
           <Form.Group className='mb-3' controlId='reference'>
-            <Form.Label>Reference Websites</Form.Label>
+            <Form.Label>Links to social media platform</Form.Label>
             <Form.Control
               type='input'
-              placeholder='mycompany.com'
-              name='reference'
+              placeholder='fb, insta, linkedin, xyz'
+              name='referencelink'
               value={formData.reference}
               onChange={handleChange}
-              required
             />
           </Form.Group>
-          <Form.Group className='mb-3' controlId='graphics'>
-            <Form.Label style={{ display: 'flex' }}>Graphics</Form.Label>
-            <input type='file' name='graphics' placeholder='Upload graphics' />
-          </Form.Group>
           <Modal.Footer>
-            <Button type='submit' style={{ backgroundColor: '#4599b4' }}>
+            <Button type='submit' style={{ backgroundColor: '#4599b4' }}
+                onMouseEnter={(e) =>
+                  (e.target.style.backgroundColor = '#f3972b')
+                }
+                onMouseLeave={(e) =>
+                  (e.target.style.backgroundColor = '#4599b4')
+                }>
               Send Message
             </Button>
             <Button variant='secondary' onClick={handleClose}>
