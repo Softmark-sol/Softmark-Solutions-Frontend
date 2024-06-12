@@ -4,7 +4,7 @@ import Form from 'react-bootstrap/Form'
 import Modal from 'react-bootstrap/Modal'
 import axios from 'axios'
 import Swal from 'sweetalert2'
-function ModalformBasicSeo({ isOpened, heading, handleClose }) {
+function ModalformSeo({ isOpened, heading, handleClose }) {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -160,4 +160,4 @@ function ModalformBasicSeo({ isOpened, heading, handleClose }) {
     </Modal>
   )
 }
-export default ModalformBasicSeo
+export default ModalformSeo
