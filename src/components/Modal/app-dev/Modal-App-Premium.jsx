@@ -4,7 +4,7 @@ import Form from 'react-bootstrap/Form'
 import Modal from 'react-bootstrap/Modal'
 import Swal from 'sweetalert2'
 
-function ModalformStandard({ isOpened, heading, handleClose }) {
+function ModalformPremiumApp({ isOpened, heading, handleClose }) {
   const [show, setShow] = useState(isOpened)
 
   useEffect(() => {
@@ -15,10 +15,22 @@ function ModalformStandard({ isOpened, heading, handleClose }) {
       referenceSites: '',
       graphicsLink: '',
       animationReferences: '',
-      domain: ''
+      domain: '',
+      checkedOptions: []
     })
     setShow(isOpened)
   }, [isOpened])
+
+  const options = [
+    { id: 1, label: 'DataBase' },
+    { id: 2, label: 'Admin Console' },
+    { id: 3, label: 'Custom Avatars' },
+    { id: 4, label: 'AWS Integration' },
+    { id: 5, label: 'Chat Bots' },
+    { id: 6, label: 'Server Maintenance' },
+    { id: 7, label: 'Code Correction' },
+    { id: 8, label: 'Quality Assurance' }
+  ]
 
   // State to track form inputs
   const [formData, setFormData] = useState({
@@ -28,7 +40,8 @@ function ModalformStandard({ isOpened, heading, handleClose }) {
     referenceSites: '',
     graphicsLink: '',
     animationReferences: '',
-    domain: ''
+    domain: '',
+    checkedOptions: []
   })
 
   // Handle form input changes
@@ -37,6 +50,18 @@ function ModalformStandard({ isOpened, heading, handleClose }) {
     setFormData((prev) => ({
       ...prev,
       [id]: value
+    }))
+  }
+
+  // Handle checkbox change
+  const handleCheckboxChange = (e) => {
+    const { id, checked } = e.target
+    const label = options.find((option) => option.id.toString() === id).label
+    setFormData((prev) => ({
+      ...prev,
+      checkedOptions: checked
+        ? [...prev.checkedOptions, label]
+        : prev.checkedOptions.filter((optionLabel) => optionLabel !== label)
     }))
   }
 
@@ -54,14 +79,14 @@ function ModalformStandard({ isOpened, heading, handleClose }) {
         body: JSON.stringify(formData)
       })
       const result = await response.json()
+      console.log('Success:', result)
       Swal.fire({
-        position: "top-end",
-        icon: "success",
-        title: "Message sent successfully",
+        position: 'top-end',
+        icon: 'success',
+        title: 'Message sent successfully',
         showConfirmButton: false,
         timer: 1500
-      });
-      console.log('Success:', result)
+      })
     } catch (error) {
       console.error('Error:', error)
     }
@@ -82,9 +107,9 @@ function ModalformStandard({ isOpened, heading, handleClose }) {
               <Form.Control
                 type='input'
                 placeholder='Josh Anton'
-                autoFocus
                 value={formData.name}
                 onChange={handleInputChange}
+                required
               />
             </Form.Group>
             <Form.Group className='mb-3' controlId='email'>
@@ -94,6 +119,7 @@ function ModalformStandard({ isOpened, heading, handleClose }) {
                 placeholder='name@example.com'
                 value={formData.email}
                 onChange={handleInputChange}
+                required
               />
             </Form.Group>
             <Form.Group className='mb-3' controlId='company'>
@@ -105,20 +131,21 @@ function ModalformStandard({ isOpened, heading, handleClose }) {
                 onChange={handleInputChange}
               />
             </Form.Group>
-            <Form.Group className='mb-3' controlId='referenceSites'>
-              <Form.Label>Reference Sites</Form.Label>
+            <Form.Group className='mb-3' controlId='reference'>
+              <Form.Label>Reference Apps</Form.Label>
               <Form.Control
                 type='input'
-                placeholder='XYZ, XYZ, ABC'
-                value={formData.referenceSites}
+                placeholder='Application Name XYZ, ABC, XYZ'
+                name='reference'
+                value={formData.reference}
                 onChange={handleInputChange}
               />
             </Form.Group>
             <Form.Group className='mb-3' controlId='graphicsLink'>
-              <Form.Label>Link to Graphics</Form.Label>
+              <Form.Label>Drive Link to Icons</Form.Label>
               <Form.Control
                 type='input'
-                placeholder='Google drive link or any drive link for graphics'
+                placeholder='Google drive link or any drive link for icons'
                 value={formData.graphicsLink}
                 onChange={handleInputChange}
               />
@@ -126,23 +153,29 @@ function ModalformStandard({ isOpened, heading, handleClose }) {
             <Form.Group className='mb-3' controlId='animationReferences'>
               <Form.Label>Animation References</Form.Label>
               <Form.Control
-                type='input'
-                placeholder='3 Reference sites to be added'
+                as='textarea'
+                row={3}
+                placeholder='custom notes with app names and which animation
+is being referred'
                 value={formData.animationReferences}
                 onChange={handleInputChange}
               />
             </Form.Group>
-            <Form.Group className='mb-3' controlId='domain'>
-              <Form.Label>Domain (If purchased)</Form.Label>
-              <Form.Control
-                type='input'
-                placeholder='www.xyz.com OR three hosting options'
-                value={formData.domain}
-                onChange={handleInputChange}
-              />
+            <Form.Group>
+              <Form.Label>Complex Functionalities</Form.Label>
+              {options.map((option) => (
+                <Form.Check
+                  key={option.id}
+                  type='checkbox'
+                  id={option.id.toString()}
+                  label={option.label}
+                  checked={formData.checkedOptions.includes(option.label)}
+                  onChange={handleCheckboxChange}
+                />
+              ))}
             </Form.Group>
-            <Form.Label>Attach Files</Form.Label>
-            <input style={{ display: 'flex' }} type='file' />
+            <Form.Label style={{ paddingTop: '12px' }}>Attach Files</Form.Label>
+            <input style={{ display: 'flex' }} type='file' multiple />
             <Modal.Footer>
               <Button variant='secondary' onClick={handleClose}>
                 Close
@@ -167,4 +200,4 @@ function ModalformStandard({ isOpened, heading, handleClose }) {
   )
 }
 
-export default ModalformStandard
+export default ModalformPremiumApp

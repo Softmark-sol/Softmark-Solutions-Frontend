@@ -4,11 +4,11 @@ import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import { CardActionArea } from '@mui/material'
 import '../css/Plans.css'
-import ModalformBasic from '../components/Modal/Modal-Form-Basic'
-import ModalformStandard from '../components/Modal/Modal-Form-Standard'
-import ModalformPremium from '../components/Modal/Modal-Form-Premium'
+import ModalformBasicApp from '../components/Modal/app-dev/Modal-App-Basic'
+import ModalformStandardApp from '../components/Modal/app-dev/Modal-App-Standard'
+import ModalformPremiumApp from '../components/Modal/app-dev/Modal-App-Premium'
 
-export default function Plans({plans}) {
+export default function PlansApp({ plans }) {
   const [showBasic, setShowBasic] = useState(false)
   const [showStandard, setShowStandard] = useState(false)
   const [showPremium, setShowPremium] = useState(false)
@@ -24,8 +24,6 @@ export default function Plans({plans}) {
     if (planName === 'Standard') setShowStandard(true)
     if (planName === 'Premium') setShowPremium(true)
   }
-
-  
 
   return (
     <>
@@ -61,19 +59,19 @@ export default function Plans({plans}) {
         ))}
       </div>
 
-      <ModalformBasic
+      <ModalformBasicApp
         isOpened={showBasic}
         heading={selectedPlan + ' Plan'}
         handleClose={handleCloseBasic}
       />
 
-      <ModalformStandard
+      <ModalformStandardApp
         isOpened={showStandard}
         heading={selectedPlan + ' Plan'}
         handleClose={handleCloseStandard}
       />
 
-      <ModalformPremium
+      <ModalformPremiumApp
         isOpened={showPremium}
         heading={selectedPlan + ' Plan'}
         handleClose={handleClosePremium}

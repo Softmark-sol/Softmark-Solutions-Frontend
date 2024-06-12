@@ -5,7 +5,7 @@ import Modal from 'react-bootstrap/Modal'
 import axios from 'axios'
 import Swal from 'sweetalert2'
 
-function ModalformBasic({ isOpened, heading, handleClose }) {
+function ModalformBasicWeb({ isOpened, heading, handleClose }) {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -39,16 +39,16 @@ function ModalformBasic({ isOpened, heading, handleClose }) {
       if (response.status === 201) {
         console.log('Data:', formData)
         Swal.fire({
-          position: "top-end",
-          icon: "success",
-          title: "Message sent successfully",
+          position: 'top-end',
+          icon: 'success',
+          title: 'Message sent successfully',
           showConfirmButton: false,
           timer: 1500
-        });
-        handleClose() 
+        })
+        handleClose()
       }
     } catch (error) {
-      console.log("Failed to send message. Please try again later.")
+      console.log('Failed to send message. Please try again later.')
     }
   }
 
@@ -89,7 +89,6 @@ function ModalformBasic({ isOpened, heading, handleClose }) {
               name='company'
               value={formData.company}
               onChange={handleChange}
-              required
             />
           </Form.Group>
           <Form.Group className='mb-3' controlId='reference'>
@@ -100,15 +99,24 @@ function ModalformBasic({ isOpened, heading, handleClose }) {
               name='reference'
               value={formData.reference}
               onChange={handleChange}
-              required
             />
           </Form.Group>
           <Form.Group className='mb-3' controlId='graphics'>
             <Form.Label style={{ display: 'flex' }}>Graphics</Form.Label>
-            <input type='file' name='graphics' placeholder='Upload graphics' />
+            <input
+              type='file'
+              name='graphics'
+              placeholder='Upload graphics'
+              multiple
+            />
           </Form.Group>
           <Modal.Footer>
-            <Button type='submit' style={{ backgroundColor: '#4599b4' }}>
+            <Button
+              type='submit'
+              style={{ backgroundColor: '#4599b4' }}
+              onMouseEnter={(e) => (e.target.style.backgroundColor = '#f3972b')}
+              onMouseLeave={(e) => (e.target.style.backgroundColor = '#4599b4')}
+            >
               Send Message
             </Button>
             <Button variant='secondary' onClick={handleClose}>
@@ -121,4 +129,4 @@ function ModalformBasic({ isOpened, heading, handleClose }) {
   )
 }
 
-export default ModalformBasic
+export default ModalformBasicWeb
