@@ -140,11 +140,10 @@ function ModalformBasic({ isOpened, heading, handleClose }) {
           <Form.Group className='mb-3' controlId='Link_to_Graphics'>
             <Form.Label style={{ display: 'flex' }}>Graphics</Form.Label>
             <input
+              style={{ display: 'flex' }}
               type='file'
               name='Link_to_Graphics'
-              value={formData.Link_to_Graphics}
               multiple
-              placeholder='Upload graphics'
               onChange={handleChange}
             />
           </Form.Group>
