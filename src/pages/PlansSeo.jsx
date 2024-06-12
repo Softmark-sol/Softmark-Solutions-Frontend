@@ -59,7 +59,7 @@ export default function PlansSeo({ plans }) {
         ))}
       </div>
 
-      <ModalformBasicSeo
+      <ModalformBasicWeb
         isOpened={showBasic}
         heading={selectedPlan + ' Plan'}
         handleClose={handleCloseBasic}

@@ -1,6 +1,6 @@
 const WebPlans = [
     {
-      name: 'Basic',
+      name: ' Basic ',
       price: '',
       features: [
         'Functional website',
@@ -89,7 +89,7 @@ const WebPlans = [
 
  export const AppPlans = [
     {
-      name: 'Basic',
+      name: ' Basic ',
       price: '',
       features: [
         'Functional Android app',
