@@ -1,0 +1,22 @@
+.seo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 50px;
+    text-align: center;
+    word-spacing: 2px;
+}
+
+.seo-p{
+    text-align: center;
+    font-size: 1rem;
+}
+
+.seo-img{
+    width: 55%;
+}
+
+.seo-h{
+    margin-bottom: 50px;
+}

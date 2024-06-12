@@ -35,7 +35,7 @@ export default function PlansApp({ plans }) {
                 <div className='plans-cont'>
                   <div className='plan-header'>
                     <span className='plan-title'>{plan.name}</span>
-                    <span className='plan-price'>{`$${plan.price}/mo`}</span>
+                    {/* <span className='plan-price'>{`$${plan.price}/mo`}</span> */}
                     <button
                       className='select-button'
                       onClick={() => handleShow(plan.name)}

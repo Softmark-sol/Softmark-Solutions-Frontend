@@ -46,6 +46,47 @@ const WebPlans = [
     }
   ]
 
+  export const SeoPlans = [
+    {
+      name: '03-month Plan',
+      price: '',
+      features: [
+        'Basic keyword research',
+        'On-page optimization',
+        'Monthly performance reports',
+        'Limited off-page optimization',
+        'Suitable for business looking for a short-term SEO boost',
+        'Perfect for startup and small business on a small budget',
+      ]
+    },
+    {
+      name: '06-month Plan',
+      price: '',
+      features: [
+        'Comprehensive keyword research',
+        'On-page and off-page optimization',
+        'Content creation and optimization',
+        'Competitor analysis',
+        'Monthly analytics reporting',
+        'Ideal for businesses seeking sustainable SEO growth',
+        'Suitable for medium-sized business looking for a mid-term SEO solution',
+      ]
+    },
+    {
+      name: '12-month Plan',
+      price: '',
+      features: [
+      'Advanced keyword research and optimiation',
+        'On-page, off-page and technical SEO',
+        'Regular content updates and optimization',
+        'Ongoing competitor analysis and strategy refinement',
+        'Detailed monthly performance tracking and reporting',
+        'Designed for long-term SEO success and maximum ROI',
+        'Recommended for larger enterprises and businesses with aggressive growth goals',
+      ]
+    }
+  ]
+
  export const AppPlans = [
     {
       name: 'Basic',
