@@ -4,7 +4,7 @@ import Form from 'react-bootstrap/Form'
 import Modal from 'react-bootstrap/Modal'
 import Swal from 'sweetalert2'
 
-function ModalformPremiumWeb({ isOpened, heading, handleClose }) {
+function ModalformPremiumSeo({ isOpened, heading, handleClose }) {
   const [show, setShow] = useState(isOpened)
 
   const options = [
@@ -249,4 +249,4 @@ function ModalformPremiumWeb({ isOpened, heading, handleClose }) {
   )
 }
 
-export default ModalformPremiumWeb
+export default ModalformPremiumSeo

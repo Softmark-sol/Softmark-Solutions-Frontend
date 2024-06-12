@@ -4,9 +4,12 @@ import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import { CardActionArea } from '@mui/material'
 import '../css/Plans.css'
-import ModalformBasicWeb from '../components/Modal/web-dev/Modal-Web-Basic'
 import ModalformStandardWeb from '../components/Modal/web-dev/Modal-Web-Standard'
 import ModalformPremiumWeb from '../components/Modal/web-dev/Modal-Web-Premium'
+import ModalformBasicWeb from '../components/Modal/web-dev/Modal-Web-Basic'
+import ModalformBasicSeo from '../components/Modal/Seo/Modal-Seo-Basic'
+import ModalformStandardSeo from '../components/Modal/Seo/Modal-Seo-Standard'
+import ModalformPremiumSeo from '../components/Modal/Seo/Modal-Seo-Premium'
 
 export default function PlansSeo({ plans }) {
   const [showBasic, setShowBasic] = useState(false)
@@ -65,13 +68,13 @@ export default function PlansSeo({ plans }) {
         handleClose={handleCloseBasic}
       />
 
-      <ModalformStandardWeb
+      <ModalformStandardSeo
         isOpened={showStandard}
         heading={selectedPlan + ' Plan'}
         handleClose={handleCloseStandard}
       />
 
-      <ModalformPremiumWeb
+      <ModalformPremiumSeo
         isOpened={showPremium}
         heading={selectedPlan + ' Plan'}
         handleClose={handleClosePremium}
