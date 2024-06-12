@@ -4,54 +4,75 @@ import Form from 'react-bootstrap/Form'
 import Modal from 'react-bootstrap/Modal'
 import axios from 'axios'
 import Swal from 'sweetalert2'
-
 function ModalformBasic({ isOpened, heading, handleClose }) {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     company: '',
-    reference: ''
+    reference_sites: '',
+    description: '',
+    Link_to_Graphics: []
   })
-
   useEffect(() => {
     if (isOpened) {
       setFormData({
         name: '',
         email: '',
         company: '',
-        reference: ''
+        reference_sites: '',
+        description: '',
+        Link_to_Graphics: []
       })
     }
   }, [isOpened])
-
   const handleChange = (e) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
+    const { name, value, files } = e.target
+    if (name === 'Link_to_Graphics') {
+      setFormData((prev) => ({ ...prev, [name]: files }))
+    } else {
+      setFormData((prev) => ({ ...prev, [name]: value }))
+    }
   }
-
   const handleSubmit = async (e) => {
     e.preventDefault()
+    const data = new FormData()
+    for (const key in formData) {
+      if (key === 'Link_to_Graphics') {
+        for (let i = 0; i < formData[key].length; i++) {
+          data.append(key, formData[key][i])
+        }
+      } else {
+        data.append(key, formData[key])
+      }
+    }
     try {
       const response = await axios.post(
         'https://jsonplaceholder.typicode.com/posts',
-        formData
+        data,
+        {
+          headers: {
+            'Content-Type': 'multipart/form-data'
+          }
+        }
       )
       if (response.status === 201) {
         console.log('Data:', formData)
         Swal.fire({
-          position: "top-end",
-          icon: "success",
-          title: "Message sent successfully",
+          position: 'top-end',
+          icon: 'success',
+          title: 'Message sent successfully',
           showConfirmButton: false,
           timer: 1500
-        });
-        handleClose() 
+        })
+        handleClose()
       }
     } catch (error) {
-      console.log("Failed to send message. Please try again later.")
+      console.error(
+        'Failed to send message. Please try again later.',
+        error.response.data
+      )
     }
   }
-
   return (
     <Modal show={isOpened} onHide={handleClose} backdrop='static'>
       <Modal.Header closeButton>
@@ -62,7 +83,7 @@ function ModalformBasic({ isOpened, heading, handleClose }) {
           <Form.Group className='mb-3' controlId='name'>
             <Form.Label>Name</Form.Label>
             <Form.Control
-              type='input'
+              type='text'
               placeholder='Josh Anton'
               name='name'
               value={formData.name}
@@ -84,31 +105,50 @@ function ModalformBasic({ isOpened, heading, handleClose }) {
           <Form.Group className='mb-3' controlId='company'>
             <Form.Label>Company Name</Form.Label>
             <Form.Control
-              type='input'
+              type='text'
               placeholder='Company'
               name='company'
               value={formData.company}
               onChange={handleChange}
-              required
             />
           </Form.Group>
-          <Form.Group className='mb-3' controlId='reference'>
+          <Form.Group className='mb-3' controlId='reference_sites'>
             <Form.Label>Reference Websites</Form.Label>
             <Form.Control
-              type='input'
+              type='text'
               placeholder='mycompany.com'
-              name='reference'
-              value={formData.reference}
+              name='reference_sites'
+              value={formData.reference_sites}
               onChange={handleChange}
-              required
             />
           </Form.Group>
-          <Form.Group className='mb-3' controlId='graphics'>
+          <Form.Group
+            style={{ paddingTop: '10px' }}
+            className='mb-3'
+            controlId='description'
+          >
+            <Form.Label>Description</Form.Label>
+            <Form.Control
+              as='textarea'
+              rows={3}
+              placeholder='Describe your requirements here'
+              value={formData.description}
+              onChange={handleChange}
+            />
+          </Form.Group>
+          <Form.Group className='mb-3' controlId='Link_to_Graphics'>
             <Form.Label style={{ display: 'flex' }}>Graphics</Form.Label>
-            <input type='file' name='graphics' placeholder='Upload graphics' />
+            <input
+              type='file'
+              name='Link_to_Graphics'
+              value={formData.Link_to_Graphics}
+              multiple
+              placeholder='Upload graphics'
+              onChange={handleChange}
+            />
           </Form.Group>
           <Modal.Footer>
-            <Button type='submit' style={{ backgroundColor: '#4599b4' }}>
+            <Button type='submit' style={{ backgroundColor: '#4599B4' }}>
               Send Message
             </Button>
             <Button variant='secondary' onClick={handleClose}>
@@ -120,5 +160,4 @@ function ModalformBasic({ isOpened, heading, handleClose }) {
     </Modal>
   )
 }
-
 export default ModalformBasic

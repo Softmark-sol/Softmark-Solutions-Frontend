@@ -4,7 +4,7 @@ import Form from 'react-bootstrap/Form'
 import Modal from 'react-bootstrap/Modal'
 import Swal from 'sweetalert2'
 
-function ModalformStandard({ isOpened, heading, handleClose }) {
+function ModalformStandardWeb({ isOpened, heading, handleClose }) {
   const [show, setShow] = useState(isOpened)
 
   useEffect(() => {
@@ -55,12 +55,12 @@ function ModalformStandard({ isOpened, heading, handleClose }) {
       })
       const result = await response.json()
       Swal.fire({
-        position: "top-end",
-        icon: "success",
-        title: "Message sent successfully",
+        position: 'top-end',
+        icon: 'success',
+        title: 'Message sent successfully',
         showConfirmButton: false,
         timer: 1500
-      });
+      })
       console.log('Success:', result)
     } catch (error) {
       console.error('Error:', error)
@@ -85,6 +85,7 @@ function ModalformStandard({ isOpened, heading, handleClose }) {
                 autoFocus
                 value={formData.name}
                 onChange={handleInputChange}
+                required
               />
             </Form.Group>
             <Form.Group className='mb-3' controlId='email'>
@@ -94,6 +95,7 @@ function ModalformStandard({ isOpened, heading, handleClose }) {
                 placeholder='name@example.com'
                 value={formData.email}
                 onChange={handleInputChange}
+                required
               />
             </Form.Group>
             <Form.Group className='mb-3' controlId='company'>
@@ -105,30 +107,30 @@ function ModalformStandard({ isOpened, heading, handleClose }) {
                 onChange={handleInputChange}
               />
             </Form.Group>
-            <Form.Group className='mb-3' controlId='referenceSites'>
+            <Form.Group className='mb-3' controlId='reference_sites'>
               <Form.Label>Reference Sites</Form.Label>
               <Form.Control
                 type='input'
                 placeholder='XYZ, XYZ, ABC'
-                value={formData.referenceSites}
+                value={formData.reference_sites}
                 onChange={handleInputChange}
               />
             </Form.Group>
-            <Form.Group className='mb-3' controlId='graphicsLink'>
+            <Form.Group className='mb-3' controlId='drive_link'>
               <Form.Label>Link to Graphics</Form.Label>
               <Form.Control
                 type='input'
                 placeholder='Google drive link or any drive link for graphics'
-                value={formData.graphicsLink}
+                value={formData.drive_link}
                 onChange={handleInputChange}
               />
             </Form.Group>
-            <Form.Group className='mb-3' controlId='animationReferences'>
+            <Form.Group className='mb-3' controlId='animation'>
               <Form.Label>Animation References</Form.Label>
               <Form.Control
                 type='input'
                 placeholder='3 Reference sites to be added'
-                value={formData.animationReferences}
+                value={formData.animation}
                 onChange={handleInputChange}
               />
             </Form.Group>
@@ -141,8 +143,22 @@ function ModalformStandard({ isOpened, heading, handleClose }) {
                 onChange={handleInputChange}
               />
             </Form.Group>
+            <Form.Group
+              style={{ paddingTop: '10px' }}
+              className='mb-3'
+              controlId='description'
+            >
+              <Form.Label>Description</Form.Label>
+              <Form.Control
+                as='textarea'
+                rows={3}
+                placeholder='Describe your requirements here'
+                value={formData.description}
+                onChange={handleInputChange}
+              />
+            </Form.Group>
             <Form.Label>Attach Files</Form.Label>
-            <input style={{ display: 'flex' }} type='file' />
+            <input style={{ display: 'flex' }} type='file' multiple />
             <Modal.Footer>
               <Button variant='secondary' onClick={handleClose}>
                 Close
@@ -167,4 +183,4 @@ function ModalformStandard({ isOpened, heading, handleClose }) {
   )
 }
 
-export default ModalformStandard
+export default ModalformStandardWeb
