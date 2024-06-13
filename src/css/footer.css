@@ -9,6 +9,7 @@
   .footer-top {
     display: flex;
     justify-content: center;
+    align-items: center;
     margin-bottom: 20px;
   }
   
@@ -16,6 +17,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    align-items: center;
     padding-top: 20px;
   }
   
@@ -30,6 +32,12 @@
   
   .footer-bottom ul li {
     margin: 10px 0;
+  }
+  .footer-right p{
+    color: #ffff;
+    text-align: left;
+    cursor: pointer;
+    font-size: 1rem;
   }
   
   .footer-bottom ul li button {
@@ -52,12 +60,14 @@
   .footer-contact {
     margin-bottom: 20px;
   }
+ 
   
   .footer-social {
     display: flex;
     justify-content: center;
     /* align-items: center; */
     margin-top: 20px;
+    padding-top: 30px;
     flex-wrap: wrap;
   }
   

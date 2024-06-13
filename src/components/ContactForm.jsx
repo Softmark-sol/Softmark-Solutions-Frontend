@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import '../css/contactForm.css'
+import Swal from 'sweetalert2'
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -25,7 +26,6 @@ const ContactForm = () => {
         formData
       ) // Ensure this matches your backend port
       if (response.status === 200) {
-        alert('Message sent successfully!')
         setFormData({
           name: '',
           email: '',
@@ -34,9 +34,16 @@ const ContactForm = () => {
           message: '',
           serviceType: ''
         })
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'Message sent successfully',
+          showConfirmButton: false,
+          timer: 1500
+        })
       }
     } catch (error) {
-      alert('Failed to send message. Please try again later.')
+      console.log('Failed to send message. Please try again later.')
     }
   }
 
