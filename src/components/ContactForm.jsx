@@ -71,7 +71,7 @@ const ContactForm = () => {
             <input
               type='text'
               name='phone'
-              className='form-control'
+              className='form-control '
               placeholder='Phone'
               value={formData.phone}
               onChange={handleChange}
@@ -79,7 +79,7 @@ const ContactForm = () => {
             <input
               type='text'
               name='company'
-              className='form-control'
+              className='form-control '
               placeholder='Company'
               value={formData.company}
               onChange={handleChange}
