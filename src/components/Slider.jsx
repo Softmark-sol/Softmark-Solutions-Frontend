@@ -29,7 +29,7 @@ export default function OurClients() {
     dots: false,
     infinite: true,
     speed: 10000,
-    slidesToShow: 6,
+    slidesToShow: 2,
     slidesToScroll: 5,
     autoplay: true,
     autoplaySpeed: 0,
@@ -62,7 +62,7 @@ export default function OurClients() {
     infinite: true,
     speed: 10000,
     slidesToShow: 6,
-    slidesToScroll: 2,
+    slidesToScroll: 5,
     autoplay: true,
     autoplaySpeed: 0,
     arrows: false,
@@ -101,14 +101,13 @@ export default function OurClients() {
                   display: 'flex',
                   justifyContent: 'center',
                   alignItems: 'center',
-                  height: '100px', 
+                  height: '100px', // Set the height of the container
                 }}
               >
-                <Box
-                  component="img"
+                <img // Use img directly instead of Box component
                   src={client.imageUrl}
                   alt={client.alt}
-                  sx={{ width: '100px', height: 'auto' }} 
+                  style={{ maxWidth: '100%', maxHeight: '100%' }} // Set max-width and max-height to maintain aspect ratio
                 />
               </Box>
             ))}
@@ -124,14 +123,13 @@ export default function OurClients() {
                   display: 'flex',
                   justifyContent: 'center',
                   alignItems: 'center',
-                  height: '100px', 
+                  height: '100px', // Set the height of the container
                 }}
               >
-                <Box
-                  component="img"
+                <img // Use img directly instead of Box component
                   src={client.imageUrl}
                   alt={client.alt}
-                  sx={{ width: '100px', height: 'auto' }} 
+                  style={{ maxWidth: '100%', maxHeight: '100%' }} // Set max-width and max-height to maintain aspect ratio
                 />
               </Box>
             ))}

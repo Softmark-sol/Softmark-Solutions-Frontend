@@ -1,34 +1,41 @@
 import React from "react";
 import "../css/Cards.css";
 import Singlecard from "./Singlecard";
-import img1 from "../assets/code.png";
-import img2 from "../assets/mobile-development.png";
-import img3 from "../assets/seo.png";
-import img4 from "../assets/marketing.png";
+import img1 from "../assets/images/web-dev.png";
+import img2 from "../assets/images/mobile-app.png";
+import img3 from "../assets/images/searchengine.png";
+import img4 from "../assets/images/video.png";
+import img5 from "../assets/images/logo-design.png";
 
 const data = [
   {
     path: img1,
     title: "Web Development",
-    desc: "Our battle tested team of Web Developers use rapid development methodologies & incorporated frameworks that result in growth and productivity for an organization.",
+    desc: "Transforming your digital vision into reality with expert web development services. Empower your online presence with cutting-edge design and functionality.",
     route: "/webPlans",
   },
   {
     path: img2,
     title: "Mobile App Development",
-    desc: "Novatore aims to help businesses connect with their customers by crafting Custom App experiences. Our solutions empower the connected lifestyle.",
+    desc: "Crafting seamless and intuitive mobile experiences tailored to your unique vision. From concept to launch, trust our team to bring your app idea to life with precision and innovation.",
     route: '/appPlans'
   },
   {
     path: img3,
     title: "Search Engine Optimization",
-    desc: "Boost your online presence with our expert SEO services. We use advanced strategies to improve your search rankings, and enhance website authority for sustainable business growth.",
+    desc: "Maximize your online visibility and drive organic traffic to your website with our strategic SEO solutions. Dominate search engine rankings and connect with your target audience effectively.",
     route: '/seo'
   },
   {
     path: img4,
     title: "Digital Marketing",
-    desc: "Maximize your brand's impact with our comprehensive digital marketing solutions. We specialize in social media, PPC, content marketing, and email campaigns to increase engagement, and ROI.",
+    desc: "Amplify your brand's reach and engagement through strategic digital marketing campaigns. From social media management to content creation, let us elevate your online presence and drive measurable results",
+    route: '/digitalMarketing'
+  },
+  {
+    path: img5,
+    title: "Logo Design",
+    desc: "Unlock the power of visual identity with our bespoke logo designs. Let us bring your brand's story to life through creativity and precision. Elevate your online presence with our professional logo design services.",
     route: '/digitalMarketing'
   },
 ];
