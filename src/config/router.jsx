@@ -15,6 +15,7 @@ import PlansWeb from '../pages/PlansWeb'
 import PlansApp from '../pages/PlansApp'
 import NotFound from '../components/NotFound'
 import Seo from '../pages/Seo'
+import Logo from '../pages/Logo'
 
 function Router() {
   return (
@@ -39,14 +40,17 @@ function Router() {
           {/* Digital Marketing Page */}
           <Route path='/digitalMarketing' element={<DigitalMarketing />} />
 
+          {/* Logo Page */}
+          <Route path='/logo' element={<Logo />} />
+
           {/* Why Page */}
           <Route path='/whyUs' element={<WhyUs />} />
 
-          {/* Our Work Page*/}
-          <Route path='/Ourservices' element={<Ourservices />} />
-
           {/* SEO Page*/}
           <Route path='/seo' element={<Seo />} />
+
+          {/* Our Work Page*/}
+          <Route path='/Ourservices' element={<Ourservices />} />
 
           {/* Contact Us Component */}
           <Route path='/contactUs' element={<ContactForm />} />
