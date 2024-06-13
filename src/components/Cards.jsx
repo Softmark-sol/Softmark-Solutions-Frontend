@@ -36,7 +36,7 @@ const data = [
     path: img5,
     title: "Logo Design",
     desc: "Unlock the power of visual identity with our bespoke logo designs. Let us bring your brand's story to life through creativity and precision. Elevate your online presence with our professional logo design services.",
-    // route: '/digitalMarketing'
+    route: '/logoPlans'
   },
 ];
 

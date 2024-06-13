@@ -3,9 +3,9 @@
   height: 300px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   padding: 14px;
- /* added !important */
+  /* added !important */
 }
-.maincard{
+.maincard {
   transition: box-shadow 0.3s ease, transform 0.3s ease;
   transform: translateY(10px);
   background: linear-gradient(white, white) padding-box,
@@ -31,8 +31,9 @@
 
 .card:hover {
   box-shadow: 0 0 10px rgba(0, 2, 0, 0.2);
-  transform: translateY(0px);
+  transform: translateY(-10px);
 }
+
 
 h5 {
   text-align: center;
@@ -40,11 +41,25 @@ h5 {
   margin-top: 10px;
 }
 
+h5 {
+  text-align: center;
+  /* font-size: 1.50rem; */
+  margin-top: 10px;
+}
+p {
+  color: gray;
+  text-align: center;
+  font-size: 12px;
+}
+
 p {
   color: gray;
   text-align: center;
   font-size: 12px;
   margin-top: 0px;
+}
+.card img {
+  display: block;
 }
 
 .card img {
