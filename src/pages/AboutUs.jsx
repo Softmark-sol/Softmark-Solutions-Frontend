@@ -3,6 +3,8 @@ import '../css/aboutUs.css'
 import '../css/Whyus/Btn.scss'
 import { useNavigate } from 'react-router-dom'
 import ScrollToTopButton from '../components/ScrollUpButton'
+import { motion } from 'framer-motion'
+import { fadeIn, textVariant } from '../utils/motion'
 
 const AboutUs = () => {
   const navigate = useNavigate()
@@ -10,7 +12,7 @@ const AboutUs = () => {
   return (
     <div className='about-us container'>
       <section className='about'>
-        <div className='about-header'>
+        <motion.div className='about-header' variants={textVariant()}>
           <h2>Where technology Meets Marketing</h2>
           <p>
             At Softmark Solutions, we don&#39;t just build websites and
@@ -19,9 +21,12 @@ const AboutUs = () => {
             the digital landscape and empower businesses to thrive in an
             ever-changing world.
           </p>
-        </div>
+        </motion.div>
         <div className='timeline'>
-          <div className='timeline-item'>
+          <motion.div
+            className='timeline-item'
+            variants={fadeIn('left', 'spring', 0.3, 1)}
+          >
             <div className='timeline-img'>
               <img
                 src='https://img.freepik.com/free-vector/staff-management-perspective-definition-target-orientation-teamwork-organization-business-coach-company-executive-personnel-cartoon-characters_335657-2967.jpg?t=st=1717779992~exp=1717783592~hmac=08671b6d109d778978a8c5644362de53af8f54c279fbda16199d39902ce50c1c&w=740'
@@ -41,8 +46,11 @@ const AboutUs = () => {
                 the ever-evolving digital landscape.
               </p>
             </div>
-          </div>
-          <div className='timeline-item'>
+          </motion.div>
+          <motion.div
+            className='timeline-item'
+            variants={fadeIn('right', 'spring', 0.5, 1)}
+          >
             <div className='timeline-img'>
               <img
                 src='https://img.freepik.com/free-vector/think-outside-box-concept-illustration_114360-18016.jpg?t=st=1717780408~exp=1717784008~hmac=431e4e4a459bb3dc01084ed7c1db2f7e967c8e0d35e20a40261cecb4d291b1b7&w=740'
@@ -59,8 +67,11 @@ const AboutUs = () => {
                 possible in the digital realm.
               </p>
             </div>
-          </div>
-          <div className='timeline-item'>
+          </motion.div>
+          <motion.div
+            className='timeline-item'
+            variants={fadeIn('left', 'spring', 0.7, 1)}
+          >
             <div className='timeline-img'>
               <img
                 src='https://img.freepik.com/free-vector/milestones-business-projects-concept-illustration_114360-8653.jpg?t=st=1717780556~exp=1717784156~hmac=839702380a0412267af3ab8aafbea7cef9b8ab9478638e5702aae86b3108c875&w=740'
@@ -77,34 +88,36 @@ const AboutUs = () => {
                 digital age.
               </p>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       <section className='why-us'>
-        <h2>Why Us</h2>
-        <p>
-          At Softmark Solutions, we pride ourselves on being more than just a
-          service provider; we&#39;re your strategic partner in navigating the
-          digital world. With a team of skilled professionals who are passionate
-          about innovation and dedicated to excellence, we offer tailored
-          solutions that not only meet but exceed your expectations. From our
-          commitment to delivering measurable results to our collaborative
-          approach that puts your needs first, choosing Softmark Solutions means
-          choosing a trusted ally on your journey to digital success.
-        </p>
-        <div
-          class='button-effect'
-          style={{ paddingTop: '20px' }}
-          onClick={() => navigate('/whyUs')}
-        >
-          <a class='effect effect-1' href='#' title='Learn More'>
-            Why Us
-          </a>
-        </div>
+        <motion.div variants={textVariant()}>
+          <h2>Why Us</h2>
+          <p>
+            At Softmark Solutions, we pride ourselves on being more than just a
+            service provider; we&#39;re your strategic partner in navigating the
+            digital world. With a team of skilled professionals who are
+            passionate about innovation and dedicated to excellence, we offer
+            tailored solutions that not only meet but exceed your expectations.
+            From our commitment to delivering measurable results to our
+            collaborative approach that puts your needs first, choosing Softmark
+            Solutions means choosing a trusted ally on your journey to digital
+            success.
+          </p>
+          <div
+            className='button-effect'
+            style={{ paddingTop: '20px' }}
+            onClick={() => navigate('/whyUs')}
+          >
+            <a className='effect effect-1' href='#' title='Learn More'>
+              Why Us
+            </a>
+          </div>
+        </motion.div>
       </section>
-      <ScrollToTopButton/>
-
+      <ScrollToTopButton />
     </div>
   )
 }
