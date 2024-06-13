@@ -31,7 +31,7 @@ export default function OurClients() {
   const sliderSettingsLeftToRight = {
     dots: false,
     infinite: true,
-    speed: 10000,
+    speed: 15000,
     slidesToShow: 2,
     slidesToScroll: 5,
     autoplay: true,
@@ -63,7 +63,7 @@ export default function OurClients() {
   const sliderSettingsRightToLeft = {
     dots: false,
     infinite: true,
-    speed: 10000,
+    speed: 15000,
     slidesToShow: 6,
     slidesToScroll: 5,
     autoplay: true,
