@@ -232,8 +232,7 @@ const DigitalMarketing = () => {
               </Form.Group>
               <Form.Group className="mb-3" controlId="functionalities">
                 <Form.Label>Access and Permissions</Form.Label>
-                <p style={{color:'red'}}>asking for access to their social media accounts or 
-                permissions to create new accounts if necessary</p>
+                <p style={{color:'red'}}>Are you willing to provide access to your current social media accounts or permission to create new ones for digital marketing purposes?</p>
               </Form.Group>
               <Form.Group>
                 {options.map((option) => (
