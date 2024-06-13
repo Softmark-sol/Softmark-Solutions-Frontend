@@ -1,27 +1,27 @@
-
-
-
-
-import React from 'react'
-
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import Modal from 'react-bootstrap/Modal'
 import axios from 'axios'
 import Swal from 'sweetalert2'
+import Dropdown from 'react-bootstrap/Dropdown'
+import DropdownButton from 'react-bootstrap/DropdownButton'
 
-const Modalbusniess = ({ isOpened, heading, handleClose }) => {
-
+const Modalbusiness = ({ isOpened, heading, handleClose }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     company: '',
     reference_logos: '',
-    reference_templete:'',
+    reference_templete: '',
+    reference_website: '',
     description: '',
-    Link_to_Graphics: []
+    drive_link: '',
+    Link_to_Graphics: [],
+    product_design: ''
   })
+  const [showCustomDetails, setShowCustomDetails] = useState(false)
+
   useEffect(() => {
     if (isOpened) {
       setFormData({
@@ -29,13 +29,17 @@ const Modalbusniess = ({ isOpened, heading, handleClose }) => {
         email: '',
         company: '',
         reference_logos: '',
-        reference_templete:'',
-        reference_website:'',
+        reference_templete: '',
+        reference_website: '',
         description: '',
-        Link_to_Graphics: []
+        drive_link: '',
+        Link_to_Graphics: [],
+        product_design: ''
       })
+      setShowCustomDetails(false)
     }
   }, [isOpened])
+
   const handleChange = (e) => {
     const { name, value, files } = e.target
     if (name === 'Link_to_Graphics') {
@@ -44,6 +48,17 @@ const Modalbusniess = ({ isOpened, heading, handleClose }) => {
       setFormData((prev) => ({ ...prev, [name]: value }))
     }
   }
+
+  const handleDropdownSelect = (eventKey) => {
+    if (eventKey === 'Other') {
+      setShowCustomDetails(true)
+      setFormData((prev) => ({ ...prev, product_design: '' }))
+    } else {
+      setShowCustomDetails(false)
+      setFormData((prev) => ({ ...prev, product_design: eventKey }))
+    }
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault()
     const data = new FormData()
@@ -88,110 +103,159 @@ const Modalbusniess = ({ isOpened, heading, handleClose }) => {
   return (
     <div>
       <Modal show={isOpened} onHide={handleClose} backdrop='static'>
-      <Modal.Header closeButton>
-        <Modal.Title>{heading}</Modal.Title>
-      </Modal.Header>
-      <Modal.Body>
-        <Form style={{ overflowY: 'scroll',overflowX:'hidden' }} onSubmit={handleSubmit}>
-          <Form.Group className='mb-3' controlId='name'>
-            <Form.Label>Name</Form.Label>
-            <Form.Control
-              type='text'
-              placeholder='Josh Anton'
-              name='name'
-              value={formData.name}
-              onChange={handleChange}
-              required
-            />
-          </Form.Group>
-          <Form.Group className='mb-3' controlId='email'>
-            <Form.Label>Email address</Form.Label>
-            <Form.Control
-              type='email'
-              placeholder='name@example.com'
-              name='email'
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
-          </Form.Group>
-          <Form.Group className='mb-3' controlId='company'>
-            <Form.Label>Company Name</Form.Label>
-            <Form.Control
-              type='text'
-              placeholder='Company'
-              name='company'
-              value={formData.company}
-              onChange={handleChange}
-              required
-            />
-          </Form.Group>
-          <Form.Group className='mb-3' controlId='reference_logos'>
-            <Form.Label>Reference logos</Form.Label>
-            <Form.Control
-              type='text'
-              placeholder='drive link (require 3 references)'
-              name='reference_logos'
-              value={formData.reference_logos}
-              onChange={handleChange}
-            />
-          </Form.Group>
-          <Form.Group className='mb-3' controlId='reference_templete'>
-            <Form.Label>Reference Templete</Form.Label>
-            <Form.Control
-              type='text'
-              placeholder='for brochures, flyers
+        <Modal.Header closeButton>
+          <Modal.Title>{heading}</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Form
+            style={{ overflowY: 'scroll', overflowX: 'hidden' }}
+            onSubmit={handleSubmit}
+          >
+            <Form.Group className='mb-3' controlId='name'>
+              <Form.Label>Name</Form.Label>
+              <Form.Control
+                type='text'
+                placeholder='Josh Anton'
+                name='name'
+                value={formData.name}
+                onChange={handleChange}
+                required
+              />
+            </Form.Group>
+            <Form.Group className='mb-3' controlId='email'>
+              <Form.Label>Email address</Form.Label>
+              <Form.Control
+                type='email'
+                placeholder='name@example.com'
+                name='email'
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
+            </Form.Group>
+            <Form.Group className='mb-3' controlId='company'>
+              <Form.Label>Company Name</Form.Label>
+              <Form.Control
+                type='text'
+                placeholder='Company'
+                name='company'
+                value={formData.company}
+                onChange={handleChange}
+                required
+              />
+            </Form.Group>
+            <Form.Group className='mb-3' controlId='reference_logos'>
+              <Form.Label>Reference logos</Form.Label>
+              <Form.Control
+                type='text'
+                placeholder='drive link (require 3 references)'
+                name='reference_logos'
+                value={formData.reference_logos}
+                onChange={handleChange}
+              />
+            </Form.Group>
+            <Form.Group className='mb-3' controlId='reference_templete'>
+              <Form.Label>Reference Template</Form.Label>
+              <Form.Control
+                type='text'
+                placeholder='for brochures, flyers
               Stationary design reference images (require 3 references)'
-              name='reference_templete'
-              value={formData.reference_templete}
-              onChange={handleChange}
-            />
-          </Form.Group>
-          <Form.Group className='mb-3' controlId='reference_website'>
-            <Form.Label>Reference websites for design concept</Form.Label>
-            <Form.Control
-              type='text'
-              placeholder='XYZ,ABC,XYZ'
-              name='reference_website'
-              value={formData.reference_website}
-              onChange={handleChange}
-            />
-          </Form.Group>
-          <Form.Group className='mb-3' controlId='description'>
-            <Form.Label>Description</Form.Label>
-            <Form.Control
-              as='textarea'
-              rows={3}
-              placeholder='description or message'
-              name='description'
-              value={formData.description}
-              onChange={handleChange}
-              required
-            />
-          </Form.Group>
-          <Form.Group className='mb-3' controlId='Link_to_Graphics'>
-            <Form.Label style={{ display: 'flex' }}>Stationary design reference images</Form.Label>
-            <input
-              multiple
-              type='file'
-              name='Link_to_Graphics'
-              placeholder='Upload graphics'
-              onChange={handleChange}
-            />
-          </Form.Group>
-          <Modal.Footer>
-            <Button type='submit' style={{ backgroundColor: '#4599B4' }}>
-              Send Message
-            </Button>
-            <Button variant='secondary' onClick={handleClose}>
-              Close
-            </Button>
-          </Modal.Footer>
-        </Form>
-      </Modal.Body>
-    </Modal>
+                name='reference_templete'
+                value={formData.reference_templete}
+                onChange={handleChange}
+              />
+            </Form.Group>
+            <Form.Group className='mb-3' controlId='reference_website'>
+              <Form.Label>Reference websites for design concept</Form.Label>
+              <Form.Control
+                type='text'
+                placeholder='XYZ,ABC,XYZ'
+                name='reference_website'
+                value={formData.reference_website}
+                onChange={handleChange}
+              />
+            </Form.Group>
+            <Form.Group className='mb-3' controlId='description'>
+              <Form.Label>Description</Form.Label>
+              <Form.Control
+                as='textarea'
+                rows={3}
+                placeholder='description or message'
+                name='description'
+                value={formData.description}
+                onChange={handleChange}
+                required
+              />
+            </Form.Group>
+            <Form.Group className='mb-3' controlId='product_design'>
+              <Form.Label>Product Design</Form.Label>
+              <DropdownButton
+                style={{ color: '#4599b4' }}
+                id='dropdown-basic-button'
+                title='Select Product Design'
+                onSelect={handleDropdownSelect}
+              >
+                <Dropdown.Item eventKey='Clothing'>Clothing</Dropdown.Item>
+                <Dropdown.Item eventKey='Gadgets'>Gadgets</Dropdown.Item>
+                <Dropdown.Item eventKey='Other'>Other</Dropdown.Item>
+              </DropdownButton>
+            </Form.Group>
+            {showCustomDetails && (
+              <Form.Group className='mb-3' controlId='custom_product_design'>
+                <Form.Label>Provide custom details</Form.Label>
+                <Form.Control
+                  type='input'
+                  placeholder='Provide custom details'
+                  name='product_design'
+                  value={formData.product_design}
+                  onChange={handleChange}
+                />
+              </Form.Group>
+            )}
+            <Form.Group className='mb-3' controlId='drive_link'>
+              <Form.Label>Drive Link to reference images</Form.Label>
+              <Form.Control
+                type='input'
+                placeholder='Google drive link or any drive link for icons'
+                name='drive_link'
+                value={formData.drive_link}
+                onChange={handleChange}
+              />
+            </Form.Group>
+            <Form.Group className='mb-3' controlId='Link_to_Graphics'>
+              <Form.Label style={{ display: 'flex' }}>
+                Or Attach reference images
+              </Form.Label>
+              <input
+                multiple
+                type='file'
+                name='Link_to_Graphics'
+                placeholder='Upload graphics'
+                onChange={handleChange}
+              />
+            </Form.Group>
+            <Modal.Footer>
+              <Button
+                type='submit'
+                style={{ backgroundColor: '#4599b4' }}
+                onMouseEnter={(e) =>
+                  (e.target.style.backgroundColor = '#f3972b')
+                }
+                onMouseLeave={(e) =>
+                  (e.target.style.backgroundColor = '#4599b4')
+                }
+              >
+                Send Message
+              </Button>
+              <Button variant='secondary' onClick={handleClose}>
+                Close
+              </Button>
+            </Modal.Footer>
+          </Form>
+        </Modal.Body>
+      </Modal>
     </div>
   )
 }
 
-export default Modalbusniess
+export default Modalbusiness

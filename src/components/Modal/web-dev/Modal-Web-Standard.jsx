@@ -177,9 +177,6 @@ function ModalformStandardWeb({ isOpened, heading, handleClose }) {
             />
           </Form.Group>
           <Modal.Footer>
-            <Button variant='secondary' onClick={handleClose}>
-              Close
-            </Button>
             <Button
               type='submit'
               style={{ backgroundColor: '#4599B4' }}
@@ -187,6 +184,9 @@ function ModalformStandardWeb({ isOpened, heading, handleClose }) {
               onMouseLeave={(e) => (e.target.style.backgroundColor = '#4599B4')}
             >
               Send Message
+            </Button>
+            <Button variant='secondary' onClick={handleClose}>
+              Close
             </Button>
           </Modal.Footer>
         </Form>

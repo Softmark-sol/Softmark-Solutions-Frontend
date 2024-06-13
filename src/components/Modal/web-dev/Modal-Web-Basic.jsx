@@ -146,7 +146,12 @@ function ModalformBasicWeb({ isOpened, heading, handleClose }) {
             />
           </Form.Group>
           <Modal.Footer>
-            <Button type='submit' style={{ backgroundColor: '#4599B4' }}>
+            <Button
+              type='submit'
+              style={{ backgroundColor: '#4599b4' }}
+              onMouseEnter={(e) => (e.target.style.backgroundColor = '#f3972b')}
+              onMouseLeave={(e) => (e.target.style.backgroundColor = '#4599b4')}
+            >
               Send Message
             </Button>
             <Button variant='secondary' onClick={handleClose}>
