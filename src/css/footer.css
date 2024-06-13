@@ -31,6 +31,9 @@
   .footer-bottom ul li {
     margin: 10px 0;
   }
+  .footer-right p{
+    color: #ffff;
+  }
   
   .footer-bottom ul li button {
     background: none;
@@ -52,6 +55,7 @@
   .footer-contact {
     margin-bottom: 20px;
   }
+ 
   
   .footer-social {
     display: flex;
