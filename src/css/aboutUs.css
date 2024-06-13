@@ -43,6 +43,11 @@
   position: relative;
 }
 
+.timeline-item.journey,
+.timeline-item.ideas {
+  padding-top: 90px;
+}
+
 .timeline-item:nth-child(odd) {
   flex-direction: row-reverse;
 }
@@ -66,9 +71,13 @@
 }
 
 .timeline-img img {
-  width: 60%;
+  width: 70%;
   height: auto;
   border-radius: 10px;
+}
+
+.timeline-img.ideas {
+  padding-top: 20px;
 }
 
 .timeline-content h3 {
@@ -77,8 +86,13 @@
 }
 
 .timeline-content p {
-  font-size: 0.9rem;
+  font-size: 1.2rem;
   color: #666;
+  text-align: justify;
+}
+
+.timeline-content.ideas {
+  padding-top: 20px;
 }
 
 .why-us {

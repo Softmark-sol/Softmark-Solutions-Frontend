@@ -3,9 +3,9 @@
   height: 300px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   padding: 14px;
- /* added !important */
+  /* added !important */
 }
-.maincard{
+.maincard {
   transition: box-shadow 0.3s ease, transform 0.3s ease;
   transform: translateY(10px);
   background: linear-gradient(white, white) padding-box,
@@ -37,6 +37,7 @@ h5 {
   text-align: center;
   /* font-size: 1.50rem; */
   margin-top: 10px;
+}
 
 h5 {
   text-align: center;
@@ -47,6 +48,7 @@ p {
   color: gray;
   text-align: center;
   font-size: 12px;
+}
 
 p {
   color: gray;
@@ -56,6 +58,7 @@ p {
 }
 .card img {
   display: block;
+}
 
 .card img {
   display: block;
