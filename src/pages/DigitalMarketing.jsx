@@ -18,8 +18,9 @@ const DigitalMarketing = () => {
     email: "",
     company: "",
     reference: "",
-    functionalities: [], // Initialize functionalities as an empty array
-    description: "", // Initialize description to avoid other possible errors
+    targetaudience:'',
+    description: "",
+    functionalities:[]
   });
   const [show, setShow] = useState(false);
 
@@ -33,8 +34,10 @@ const DigitalMarketing = () => {
         email: "",
         company: "",
         reference: "",
-        functionalities: [],
+        targetaudience:'',
         description: "",
+        functionalities:[]
+
       });
     }
   }, [show]);
@@ -217,17 +220,17 @@ const DigitalMarketing = () => {
                   onChange={handleChange}
                 />
               </Form.Group>
-              <Form.Group className="mb-3" controlId="reference">
+              <Form.Group className="mb-3" controlId="targetaudience">
                 <Form.Label>Target audience</Form.Label>
                 <Form.Control
                   type="input"
                   placeholder="information about their main competitors"
-                  name="reference"
-                  value={formData.reference}
+                  name="targetaudience"
+                  value={formData.targetaudience}
                   onChange={handleChange}
                 />
               </Form.Group>
-              <Form.Group className="mb-3" controlId="reference">
+              <Form.Group className="mb-3" controlId="functionalities">
                 <Form.Label>Access and Permissions</Form.Label>
                 <p style={{color:'red'}}>asking for access to their social media accounts or 
                 permissions to create new accounts if necessary</p>
@@ -237,7 +240,7 @@ const DigitalMarketing = () => {
                   <Form.Check
                     key={option.id}
                     type="radio"
-                    name="name"
+                    name="check"
                     id={option.id.toString()}
                     label={option.label}
                     checked={formData.functionalities.includes(option.label)}
