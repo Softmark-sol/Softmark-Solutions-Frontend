@@ -9,76 +9,78 @@ import Modal from 'react-bootstrap/Modal'
 import axios from 'axios'
 import Swal from 'sweetalert2'
 
-const Modalbasic = ({ isOpened, heading, handleClose }) => {
+const Modalpremium = ({ isOpened, heading, handleClose }) => {
 
-    const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    company: '',
+    reference_logos: '',
+    reference_templete:'',
+    description: '',
+    Link_to_Graphics: []
+  })
+  useEffect(() => {
+    if (isOpened) {
+      setFormData({
         name: '',
         email: '',
         company: '',
         reference_logos: '',
+        reference_templete:'',
         description: '',
         Link_to_Graphics: []
       })
-      useEffect(() => {
-        if (isOpened) {
-          setFormData({
-            name: '',
-            email: '',
-            company: '',
-            reference_logos: '',
-            description: '',
-            Link_to_Graphics: []
-          })
+    }
+  }, [isOpened])
+  const handleChange = (e) => {
+    const { name, value, files } = e.target
+    if (name === 'Link_to_Graphics') {
+      setFormData((prev) => ({ ...prev, [name]: files }))
+    } else {
+      setFormData((prev) => ({ ...prev, [name]: value }))
+    }
+  }
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    const data = new FormData()
+    for (const key in formData) {
+      if (key === 'Link_to_Graphics') {
+        for (let i = 0; i < formData[key].length; i++) {
+          data.append(key, formData[key][i])
         }
-      }, [isOpened])
-      const handleChange = (e) => {
-        const { name, value, files } = e.target
-        if (name === 'Link_to_Graphics') {
-          setFormData((prev) => ({ ...prev, [name]: files }))
-        } else {
-          setFormData((prev) => ({ ...prev, [name]: value }))
-        }
+      } else {
+        data.append(key, formData[key])
       }
-      const handleSubmit = async (e) => {
-        e.preventDefault()
-        const data = new FormData()
-        for (const key in formData) {
-          if (key === 'Link_to_Graphics') {
-            for (let i = 0; i < formData[key].length; i++) {
-              data.append(key, formData[key][i])
-            }
-          } else {
-            data.append(key, formData[key])
+    }
+    try {
+      const response = await axios.post(
+        'http://localhost:4000/web-basic-plane',
+        data,
+        {
+          headers: {
+            'Content-Type': 'multipart/form-data'
           }
         }
-        try {
-          const response = await axios.post(
-            'http://localhost:4000/web-basic-plane',
-            data,
-            {
-              headers: {
-                'Content-Type': 'multipart/form-data'
-              }
-            }
-          )
-          if (response.status === 201) {
-            console.log('Data:', formData)
-            Swal.fire({
-              position: 'top-end',
-              icon: 'success',
-              title: 'Message sent successfully',
-              showConfirmButton: false,
-              timer: 1500
-            })
-            handleClose()
-          }
-        } catch (error) {
-          console.error(
-            'Failed to send message. Please try again later.',
-            error.response.data
-          )
-        }
+      )
+      if (response.status === 201) {
+        console.log('Data:', formData)
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'Message sent successfully',
+          showConfirmButton: false,
+          timer: 1500
+        })
+        handleClose()
       }
+    } catch (error) {
+      console.error(
+        'Failed to send message. Please try again later.',
+        error.response.data
+      )
+    }
+  }
 
   return (
     <div>
@@ -131,6 +133,17 @@ const Modalbasic = ({ isOpened, heading, handleClose }) => {
               onChange={handleChange}
             />
           </Form.Group>
+          <Form.Group className='mb-3' controlId='reference_templete'>
+            <Form.Label>Reference Templete</Form.Label>
+            <Form.Control
+              type='text'
+              placeholder='for brochures, flyers
+              Stationary design reference images (require 3 references)'
+              name='reference_templete'
+              value={formData.reference_templete}
+              onChange={handleChange}
+            />
+          </Form.Group>
           <Form.Group className='mb-3' controlId='description'>
             <Form.Label>Description</Form.Label>
             <Form.Control
@@ -168,4 +181,4 @@ const Modalbasic = ({ isOpened, heading, handleClose }) => {
   )
 }
 
-export default Modalbasic
+export default Modalpremium
