@@ -177,7 +177,7 @@ const DigitalMarketing = () => {
             <Modal.Title>Digital Marketing Plan</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <Form style={{ overflowY: "scroll" }} onSubmit={handleSubmit}>
+            <Form style={{ overflowY: "scroll",overflowX:'hidden' }} onSubmit={handleSubmit}>
               <Form.Group className="mb-3" controlId="name">
                 <Form.Label>Name</Form.Label>
                 <Form.Control

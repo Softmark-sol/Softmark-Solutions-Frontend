@@ -1,15 +1,24 @@
+
+
+
+
+import React from 'react'
+
 import { useState, useEffect } from 'react'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import Modal from 'react-bootstrap/Modal'
 import axios from 'axios'
 import Swal from 'sweetalert2'
-function ModalformBasicWeb({ isOpened, heading, handleClose }) {
+
+const Modalbusniess = ({ isOpened, heading, handleClose }) => {
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     company: '',
-    reference_sites: '',
+    reference_logos: '',
+    reference_templete:'',
     description: '',
     Link_to_Graphics: []
   })
@@ -19,7 +28,9 @@ function ModalformBasicWeb({ isOpened, heading, handleClose }) {
         name: '',
         email: '',
         company: '',
-        reference_sites: '',
+        reference_logos: '',
+        reference_templete:'',
+        reference_website:'',
         description: '',
         Link_to_Graphics: []
       })
@@ -73,13 +84,15 @@ function ModalformBasicWeb({ isOpened, heading, handleClose }) {
       )
     }
   }
+
   return (
-    <Modal show={isOpened} onHide={handleClose} backdrop='static'>
+    <div>
+      <Modal show={isOpened} onHide={handleClose} backdrop='static'>
       <Modal.Header closeButton>
         <Modal.Title>{heading}</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <Form style={{ overflowY: 'scroll' }} onSubmit={handleSubmit}>
+        <Form style={{ overflowY: 'scroll',overflowX:'hidden' }} onSubmit={handleSubmit}>
           <Form.Group className='mb-3' controlId='name'>
             <Form.Label>Name</Form.Label>
             <Form.Control
@@ -113,13 +126,34 @@ function ModalformBasicWeb({ isOpened, heading, handleClose }) {
               required
             />
           </Form.Group>
-          <Form.Group className='mb-3' controlId='reference_sites'>
-            <Form.Label>Reference Websites</Form.Label>
+          <Form.Group className='mb-3' controlId='reference_logos'>
+            <Form.Label>Reference logos</Form.Label>
             <Form.Control
               type='text'
-              placeholder='mycompany.com'
-              name='reference_sites'
-              value={formData.reference_sites}
+              placeholder='drive link (require 3 references)'
+              name='reference_logos'
+              value={formData.reference_logos}
+              onChange={handleChange}
+            />
+          </Form.Group>
+          <Form.Group className='mb-3' controlId='reference_templete'>
+            <Form.Label>Reference Templete</Form.Label>
+            <Form.Control
+              type='text'
+              placeholder='for brochures, flyers
+              Stationary design reference images (require 3 references)'
+              name='reference_templete'
+              value={formData.reference_templete}
+              onChange={handleChange}
+            />
+          </Form.Group>
+          <Form.Group className='mb-3' controlId='reference_website'>
+            <Form.Label>Reference websites for design concept</Form.Label>
+            <Form.Control
+              type='text'
+              placeholder='XYZ,ABC,XYZ'
+              name='reference_website'
+              value={formData.reference_website}
               onChange={handleChange}
             />
           </Form.Group>
@@ -128,7 +162,7 @@ function ModalformBasicWeb({ isOpened, heading, handleClose }) {
             <Form.Control
               as='textarea'
               rows={3}
-              placeholder='description or message '
+              placeholder='description or message'
               name='description'
               value={formData.description}
               onChange={handleChange}
@@ -136,7 +170,7 @@ function ModalformBasicWeb({ isOpened, heading, handleClose }) {
             />
           </Form.Group>
           <Form.Group className='mb-3' controlId='Link_to_Graphics'>
-            <Form.Label style={{ display: 'flex' }}>Graphics</Form.Label>
+            <Form.Label style={{ display: 'flex' }}>Stationary design reference images</Form.Label>
             <input
               multiple
               type='file'
@@ -156,6 +190,8 @@ function ModalformBasicWeb({ isOpened, heading, handleClose }) {
         </Form>
       </Modal.Body>
     </Modal>
+    </div>
   )
 }
-export default ModalformBasicWeb
+
+export default Modalbusniess
