@@ -1,50 +1,44 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import '../css/contactForm.css';
-import Swal from 'sweetalert2'
-
+import React, { useState } from 'react'
+import axios from 'axios'
+import '../css/contactForm.css'
 
 const ContactForm = () => {
-  
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        phone: '',
-        company: '',
-        message: '',
-        serviceType: ''
-    });
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    company: '',
+    message: '',
+    serviceType: ''
+  })
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({ ...formData, [name]: value });
-    };
+  const handleChange = (e) => {
+    const { name, value } = e.target
+    setFormData({ ...formData, [name]: value })
+  }
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        try {
-            const response = await axios.post('http://localhost:4000/contact-us', formData); 
-            if (response.status === 200) {
-              Swal.fire({
-                position: "top-end",
-                icon: "success",
-                title: "Message sent successfully",
-                showConfirmButton: false,
-                timer: 1500
-              });
-              setFormData({
-                    name: '',
-                    email: '',
-                    phone: '',
-                    company: '',
-                    message: '',
-                    serviceType: ''
-                });
-            }
-        } catch (error) {
-            console.log('Failed to send message. Please try again later.');
-        }
-    };
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    try {
+      const response = await axios.post(
+        'http://localhost:4000/contact-us',
+        formData
+      ) // Ensure this matches your backend port
+      if (response.status === 200) {
+        alert('Message sent successfully!')
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          company: '',
+          message: '',
+          serviceType: ''
+        })
+      }
+    } catch (error) {
+      alert('Failed to send message. Please try again later.')
+    }
+  }
 
   return (
     <>
@@ -94,7 +88,7 @@ const ContactForm = () => {
           <div className='form-group'>
             <select
               name='serviceType'
-              className='form-control drop-down'
+              className='form-control full-width drop-down'
               value={formData.serviceType}
               onChange={handleChange}
               required
@@ -115,7 +109,7 @@ const ContactForm = () => {
           <div className='form-group'>
             <textarea
               name='message'
-              className='form-control'
+              className='form-control full-width'
               placeholder='Write your Message here....'
               value={formData.message}
               onChange={handleChange}
@@ -133,4 +127,4 @@ const ContactForm = () => {
   )
 }
 
-export default ContactForm;
+export default ContactForm
