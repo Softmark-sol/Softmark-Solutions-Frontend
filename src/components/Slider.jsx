@@ -4,10 +4,13 @@ import Container from '@mui/material/Container';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import DigitalMarketing from "../assets/images/digitalmarketing.png";
+import Seo from "../assets/images/seo.png";
+import Vue from "../assets/images/vue.png";
 
 const firstMap = [
   { imageUrl: 'https://logos-world.net/wp-content/uploads/2023/08/React-Symbol.png', alt: "react" },
-  { imageUrl: 'https://e7.pngegg.com/pngimages/436/593/png-clipart-vue-js-logo-landscape-tech-companies.png', alt: "vue" },
+  { imageUrl: Vue, alt: "vue" },
   { imageUrl: 'https://cdn.worldvectorlogo.com/logos/angular-3.svg', alt: "angular" },
   { imageUrl: 'https://miro.medium.com/v2/resize:fit:678/0*kxPYwfJmkXZ3iCWy.png', alt: "mern" },
   { imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Node.js_logo_2015.svg/2560px-Node.js_logo_2015.svg.png', alt: "node" },
@@ -17,11 +20,11 @@ const firstMap = [
 const secondMap = [
   { imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/2560px-Amazon_Web_Services_Logo.svg.png', alt: "aws" },
   { imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Microsoft_Azure_Logo.svg/2560px-Microsoft_Azure_Logo.svg.png', alt: "azure" },
-  { imageUrl: 'https://static.vecteezy.com/system/resources/thumbnails/008/384/074/small/seo-sign-logo-search-engine-optimization-symbol-flat-design-illustration-free-vector.jpg', alt: "seo" },
-  { imageUrl: 'https://t4.ftcdn.net/jpg/05/04/20/75/360_F_504207567_5GWwqsazyOyHwYXUf3CrqbilLPL4qkYJ.jpg', alt: "digital marketing" },
-  { imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Microsoft_Azure_Logo.svg/2560px-Microsoft_Azure_Logo.svg.png', alt: "azure" },
-  { imageUrl: 'https://static.vecteezy.com/system/resources/thumbnails/008/384/074/small/seo-sign-logo-search-engine-optimization-symbol-flat-design-illustration-free-vector.jpg', alt: "seo" },
-
+  { imageUrl: Seo, alt: "seo" },
+  { imageUrl: DigitalMarketing, alt: "digital marketing" },
+  { imageUrl: 'https://logowik.com/content/uploads/images/301_docker.jpg', alt: "docker" },
+  { imageUrl: 'https://cdn.freelogovectors.net/wp-content/uploads/2023/09/next-js-logo-freelogovectors.net_.png', alt: "next" },
+  { imageUrl: 'https://devtop.io/wp-content/uploads/2022/10/react-native-1.png', alt: "react-native" },
 ];
 
 export default function OurClients() {
@@ -32,7 +35,7 @@ export default function OurClients() {
     slidesToShow: 2,
     slidesToScroll: 5,
     autoplay: true,
-    autoplaySpeed: 0,
+    autoplaySpeed: 2000,
     rtl: true,
     arrows: false,
     responsive: [
@@ -64,7 +67,7 @@ export default function OurClients() {
     slidesToShow: 6,
     slidesToScroll: 5,
     autoplay: true,
-    autoplaySpeed: 0,
+    autoplaySpeed: 2000,
     arrows: false,
     responsive: [
       {
@@ -101,13 +104,13 @@ export default function OurClients() {
                   display: 'flex',
                   justifyContent: 'center',
                   alignItems: 'center',
-                  height: '100px', // Set the height of the container
+                  height: '90px', 
                 }}
               >
-                <img // Use img directly instead of Box component
+                <img 
                   src={client.imageUrl}
                   alt={client.alt}
-                  style={{ maxWidth: '100%', maxHeight: '100%' }} // Set max-width and max-height to maintain aspect ratio
+                  style={{ maxWidth: '80%', maxHeight: '80%', objectFit: 'cover' }} 
                 />
               </Box>
             ))}
@@ -123,13 +126,13 @@ export default function OurClients() {
                   display: 'flex',
                   justifyContent: 'center',
                   alignItems: 'center',
-                  height: '100px', // Set the height of the container
+                  height: '90px',
                 }}
               >
-                <img // Use img directly instead of Box component
+                <img
                   src={client.imageUrl}
                   alt={client.alt}
-                  style={{ maxWidth: '100%', maxHeight: '100%' }} // Set max-width and max-height to maintain aspect ratio
+                  style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }} 
                 />
               </Box>
             ))}
