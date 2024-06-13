@@ -15,7 +15,7 @@ function ModalformSeo({ isOpened, heading, handleClose }) {
     web_competitor: "",
     access_permissions:'',
     current_seo:'',
-    Link_to_Graphics: [],
+    functionalities:[]
   });
   useEffect(() => {
     if (isOpened) {
@@ -29,39 +29,40 @@ function ModalformSeo({ isOpened, heading, handleClose }) {
         web_competitor: "",
         access_permissions:'',
         current_seo:'',
-        Link_to_Graphics: [],
+        functionalities:[]
       });
     }
   }, [isOpened]);
+  const options = [
+    { id: 1, label: 'Yes' },
+    { id: 2, label: 'No' },
+  ];
+
   const handleChange = (e) => {
-    const { name, value, files } = e.target;
-    if (name === "Link_to_Graphics") {
-      setFormData((prev) => ({ ...prev, [name]: files }));
-    } else {
-      setFormData((prev) => ({ ...prev, [name]: value }));
-    }
+    const { id, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [id]: value,
+    }));
   };
+
+  const handleCheckboxChange = (e) => {
+    const { id, checked } = e.target;
+    const label = options.find((option) => option.id.toString() === id).label;
+    setFormData((prev) => ({
+      ...prev,
+      functionalities: checked
+        ? [...prev.functionalities, label]
+        : prev.functionalities.filter((optionLabel) => optionLabel !== label),
+    }));
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const data = new FormData();
-    for (const key in formData) {
-      if (key === "Link_to_Graphics") {
-        for (let i = 0; i < formData[key].length; i++) {
-          data.append(key, formData[key][i]);
-        }
-      } else {
-        data.append(key, formData[key]);
-      }
-    }
     try {
       const response = await axios.post(
         "https://jsonplaceholder.typicode.com/posts",
-        data,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
+        formData
       );
       if (response.status === 201) {
         console.log("Data:", formData);
@@ -75,10 +76,7 @@ function ModalformSeo({ isOpened, heading, handleClose }) {
         handleClose();
       }
     } catch (error) {
-      console.error(
-        "Failed to send message. Please try again later.",
-        error.response.data
-      );
+      console.log("Failed to send message. Please try again later.");
     }
   };
   return (
@@ -87,7 +85,7 @@ function ModalformSeo({ isOpened, heading, handleClose }) {
         <Modal.Title>{heading}</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <Form style={{ overflowY: "scroll" }} onSubmit={handleSubmit}>
+        <Form style={{ overflowY: "scroll",overflowX:'hidden' }} onSubmit={handleSubmit}>
           <Form.Group className="mb-3" controlId="name">
             <Form.Label>Name</Form.Label>
             <Form.Control
@@ -153,28 +151,33 @@ function ModalformSeo({ isOpened, heading, handleClose }) {
           <Form.Group className="mb-3" controlId="reference_sites">
             <Form.Label>Current SEO Efforts</Form.Label>
             <Form.Control
-              as='textarea'
-              rows={3}
+              type="text"
               name="current_seo"
-              placeholder="Inquire about any previous SEO efforts they have 
-              undertaken, including any strategies, tactics, or tools they have used in the past"
+              placeholder=""
               value={formData.current_seo}
               onChange={handleChange}
             />
           </Form.Group>
-          <Form.Group className="mb-3" controlId="reference_sites">
-            <Form.Label>Access and Permissions</Form.Label>
-            <Form.Control
-              as='textarea'
-              rows={4}
-              name="access_permissions"
-              placeholder="Request access to their website backend, Google 
-              Analytics, Google Search Console, and any other relevant tools or platforms 
-              needed to implement SEO strategies effectively"
-              value={formData.access_permissions}
-              onChange={handleChange}
-            />
-          </Form.Group>
+          <Form.Group className="mb-3" controlId="functionalities">
+                <Form.Label>Access and Permissions</Form.Label>
+                <p style={{color:'red'}}>Request access to their website backend, Google 
+              Analytics, Google Search Console, and any other relevant tools or  platforms 
+              needed to implement SEO strategies effectively</p>
+              </Form.Group>
+              <Form.Group>
+                {options.map((option) => (
+                  <Form.Check
+                    key={option.id}
+                    type="radio"
+                    name="check"
+                    id={option.id.toString()}
+                    label={option.label}
+                    checked={formData.functionalities.includes(option.label)}
+                    onChange={handleCheckboxChange}
+                  />
+                ))}
+              </Form.Group>
+              <br/>
           <Form.Group
             style={{ paddingTop: "10px" }}
             className="mb-3"

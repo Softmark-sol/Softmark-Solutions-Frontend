@@ -45,18 +45,36 @@
 }
 
 .contact-form {
-  background: linear-gradient(45deg, #4599b4, #f3972b);
+  background: linear-gradient(white, white) padding-box,
+    linear-gradient(145deg, transparent 0%, #4599b4, #eca553) border-box;
+  background-size: 600% 600%;
+  border: 2px solid transparent;
   padding: 30px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   width: 100%;
   border-radius: 15px;
+  animation: gradient 5s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .form-group {
   display: flex;
   justify-content: space-between;
   margin-bottom: 15px;
-  padding: 11px;
+  padding: 1px;
 }
 
 .form-control {
@@ -102,7 +120,7 @@ textarea.form-control.full-width {
   color: #fff;
   border: none;
   border-radius: 40px;
-  padding: 10px 20px;
+  padding: 15px 30px;
   cursor: pointer;
   transition: background-color 0.5s ease;
 }
@@ -127,7 +145,10 @@ textarea.form-control.full-width {
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
+  .textarea.form-control.full-width {
+    height: 100px;
+  }
   .form-container {
     padding: 10px;
   }
