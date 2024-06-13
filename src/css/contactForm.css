@@ -47,9 +47,9 @@
 .contact-form {
   background: linear-gradient(white, white) padding-box,
     linear-gradient(145deg, transparent 0%, #4599b4, #eca553) border-box;
-  background-size: 600% 600%;
   border: 2px solid transparent;
   padding: 30px;
+  background-size: 200%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   width: 100%;
   border-radius: 15px;
