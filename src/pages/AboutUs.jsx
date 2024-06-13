@@ -1,11 +1,28 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import '../css/aboutUs.css'
 import '../css/Whyus/Btn.scss'
 import { useNavigate } from 'react-router-dom'
+import { motion, useInView } from 'framer-motion'
 import ScrollToTopButton from '../components/ScrollUpButton'
 
 const AboutUs = () => {
   const navigate = useNavigate()
+
+  const springAnimation = {
+    type: 'spring',
+    stiffness: 95,
+    damping: 10,
+    delay: 0.05
+  }
+
+  const refMission = useRef(null)
+  const inViewMission = useInView(refMission, { once: true })
+
+  const refInnovation = useRef(null)
+  const inViewInnovation = useInView(refInnovation, { once: true })
+
+  const refJourney = useRef(null)
+  const inViewJourney = useInView(refJourney, { once: true })
 
   return (
     <div className='about-us container'>
@@ -22,13 +39,25 @@ const AboutUs = () => {
         </div>
         <div className='timeline'>
           <div className='timeline-item'>
-            <div className='timeline-img'>
+            <motion.div
+              className='timeline-img'
+              ref={refMission}
+              initial={{ x: -100, opacity: 0 }}
+              animate={inViewMission ? { x: 0, opacity: 1 } : {}}
+              transition={springAnimation}
+            >
               <img
                 src='https://img.freepik.com/free-vector/staff-management-perspective-definition-target-orientation-teamwork-organization-business-coach-company-executive-personnel-cartoon-characters_335657-2967.jpg?t=st=1717779992~exp=1717783592~hmac=08671b6d109d778978a8c5644362de53af8f54c279fbda16199d39902ce50c1c&w=740'
                 alt='Mission'
               />
-            </div>
-            <div className='timeline-content'>
+            </motion.div>
+            <motion.div
+              className='timeline-content'
+              ref={refMission}
+              initial={{ x: 100, opacity: 0 }}
+              animate={inViewMission ? { x: 0, opacity: 1 } : {}}
+              transition={springAnimation}
+            >
               <h3>Mission</h3>
               <p>
                 At Softmark Solutions, our mission is simple yet profound: to
@@ -40,16 +69,28 @@ const AboutUs = () => {
                 to be the catalyst for our clients&#39; growth and success in
                 the ever-evolving digital landscape.
               </p>
-            </div>
+            </motion.div>
           </div>
-          <div className='timeline-item'>
-            <div className='timeline-img'>
+          <div className='timeline-item ideas'>
+            <motion.div
+              className='timeline-img'
+              ref={refInnovation}
+              initial={{ x: -100, opacity: 0 }}
+              animate={inViewInnovation ? { x: 0, opacity: 1 } : {}}
+              transition={springAnimation}
+            >
               <img
                 src='https://img.freepik.com/free-vector/think-outside-box-concept-illustration_114360-18016.jpg?t=st=1717780408~exp=1717784008~hmac=431e4e4a459bb3dc01084ed7c1db2f7e967c8e0d35e20a40261cecb4d291b1b7&w=740'
                 alt='Our Passion for Innovation'
               />
-            </div>
-            <div className='timeline-content'>
+            </motion.div>
+            <motion.div
+              className='timeline-content'
+              ref={refInnovation}
+              initial={{ x: 100, opacity: 0 }}
+              animate={inViewInnovation ? { x: 0, opacity: 1 } : {}}
+              transition={springAnimation}
+            >
               <h3>Our Passion for Innovation</h3>
               <p>
                 From the moment you step into our world, you&#39;ll feel the
@@ -58,16 +99,28 @@ const AboutUs = () => {
                 creators, and innovators on a mission to redefine what&#39;s
                 possible in the digital realm.
               </p>
-            </div>
+            </motion.div>
           </div>
-          <div className='timeline-item'>
-            <div className='timeline-img'>
+          <div className='timeline-item journey'>
+            <motion.div
+              className='timeline-img'
+              ref={refJourney}
+              initial={{ x: -100, opacity: 0 }}
+              animate={inViewJourney ? { x: 0, opacity: 1 } : {}}
+              transition={springAnimation}
+            >
               <img
                 src='https://img.freepik.com/free-vector/milestones-business-projects-concept-illustration_114360-8653.jpg?t=st=1717780556~exp=1717784156~hmac=839702380a0412267af3ab8aafbea7cef9b8ab9478638e5702aae86b3108c875&w=740'
                 alt='Join Us on the Journey'
               />
-            </div>
-            <div className='timeline-content'>
+            </motion.div>
+            <motion.div
+              className='timeline-content'
+              ref={refJourney}
+              initial={{ x: 100, opacity: 0 }}
+              animate={inViewJourney ? { x: 0, opacity: 1 } : {}}
+              transition={springAnimation}
+            >
               <h3>Join Us on the Journey</h3>
               <p>
                 Whether you&#39;re a seasoned entrepreneur or just starting out
@@ -76,7 +129,7 @@ const AboutUs = () => {
                 barriers, and unlock the full potential of your business in the
                 digital age.
               </p>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -94,17 +147,16 @@ const AboutUs = () => {
           choosing a trusted ally on your journey to digital success.
         </p>
         <div
-          class='button-effect'
+          className='button-effect'
           style={{ paddingTop: '20px' }}
           onClick={() => navigate('/whyUs')}
         >
-          <a class='effect effect-1' href='#' title='Learn More'>
+          <a className='effect effect-1' href='#' title='Learn More'>
             Why Us
           </a>
         </div>
       </section>
-      <ScrollToTopButton/>
-
+      <ScrollToTopButton />
     </div>
   )
 }
