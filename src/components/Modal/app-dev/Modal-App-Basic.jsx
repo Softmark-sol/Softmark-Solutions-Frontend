@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import '../../../css/modal.css'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
@@ -88,9 +89,9 @@ function ModalformBasicApp({ isOpened, heading, handleClose }) {
         <Modal.Title>{heading}</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <Form style={{ overflowY: 'scroll' }} onSubmit={handleSubmit}>
+        <Form style={{ overflowY: 'scroll',paddingRight:'20px' }} onSubmit={handleSubmit}>
           <Form.Group className="mb-3" controlId="name">
-            <Form.Label>Name</Form.Label>
+            <Form.Label className='custom-text'>Name</Form.Label>
             <Form.Control
               type="input"
               placeholder="Josh Anton"
@@ -101,7 +102,7 @@ function ModalformBasicApp({ isOpened, heading, handleClose }) {
             />
           </Form.Group>
           <Form.Group className="mb-3" controlId="email">
-            <Form.Label>Email address</Form.Label>
+            <Form.Label className='custom-text'>Email address</Form.Label>
             <Form.Control
               type="email"
               placeholder="name@example.com"
@@ -112,7 +113,7 @@ function ModalformBasicApp({ isOpened, heading, handleClose }) {
             />
           </Form.Group>
           <Form.Group className="mb-3" controlId="company">
-            <Form.Label>Company Name</Form.Label>
+            <Form.Label className='custom-text'>Company Name</Form.Label>
             <Form.Control
               type="input"
               placeholder="Company"
@@ -122,7 +123,7 @@ function ModalformBasicApp({ isOpened, heading, handleClose }) {
             />
           </Form.Group>
           <Form.Group className="mb-3" controlId="reference_App">
-            <Form.Label>Reference Apps</Form.Label>
+            <Form.Label className='custom-text'>Reference Apps</Form.Label>
             <Form.Control
               name="reference_App"
               type="input"
@@ -133,7 +134,7 @@ function ModalformBasicApp({ isOpened, heading, handleClose }) {
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="drive_links_to_icons">
-            <Form.Label>Drive Link to Icons</Form.Label>
+            <Form.Label className='custom-text'>Drive Link to Icons</Form.Label>
             <Form.Control
               name="drive_links_to_icons"
               type="input"
@@ -148,7 +149,7 @@ function ModalformBasicApp({ isOpened, heading, handleClose }) {
             className="mb-3"
             controlId="description"
           >
-            <Form.Label>Description</Form.Label>
+            <Form.Label className='custom-text'>Description</Form.Label>
             <Form.Control
               name="description"
               as="textarea"

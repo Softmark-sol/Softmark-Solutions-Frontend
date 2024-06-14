@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import '../../../css/modal.css'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import Modal from 'react-bootstrap/Modal'

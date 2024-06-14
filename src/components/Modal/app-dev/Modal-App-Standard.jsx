@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import '../../../css/modal.css'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
@@ -93,9 +94,9 @@ function ModalformStandardApp({ isOpened, heading, handleClose }) {
           <Modal.Title>{heading}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form style={{ overflowY: 'scroll' }} onSubmit={handleSubmit}>
+          <Form style={{ overflowY: 'scroll',paddingRight:'20px' }} onSubmit={handleSubmit}>
             <Form.Group className='mb-3' controlId='name'>
-              <Form.Label>Name</Form.Label>
+              <Form.Label className='custom-text'>Name</Form.Label>
               <Form.Control
                 type='input'
                 placeholder='Josh Anton'
@@ -106,7 +107,7 @@ function ModalformStandardApp({ isOpened, heading, handleClose }) {
               />
             </Form.Group>
             <Form.Group className='mb-3' controlId='email'>
-              <Form.Label>Email address</Form.Label>
+              <Form.Label className='custom-text'>Email address</Form.Label>
               <Form.Control
                 type='email'
                 placeholder='name@example.com'
@@ -116,7 +117,7 @@ function ModalformStandardApp({ isOpened, heading, handleClose }) {
               />
             </Form.Group>
             <Form.Group className='mb-3' controlId='company'>
-              <Form.Label>Company</Form.Label>
+              <Form.Label className='custom-text'>Company</Form.Label>
               <Form.Control
                 type='input'
                 placeholder='Company'
@@ -126,7 +127,7 @@ function ModalformStandardApp({ isOpened, heading, handleClose }) {
             </Form.Group>
 
             <Form.Group className='mb-3' controlId='reference_App'>
-              <Form.Label>Reference Apps</Form.Label>
+              <Form.Label className='custom-text'>Reference Apps</Form.Label>
               <Form.Control
                 type='input'
                 placeholder='Application Name XYZ, ABC, XYZ'
@@ -137,7 +138,7 @@ function ModalformStandardApp({ isOpened, heading, handleClose }) {
             </Form.Group>
 
             <Form.Group className='mb-3' controlId='drive_links_to_icons'>
-              <Form.Label>Link to Icons</Form.Label>
+              <Form.Label className='custom-text'>Link to Icons</Form.Label>
               <Form.Control
                 type='input'
                 placeholder='Google drive link or any drive link for icons'
@@ -147,7 +148,7 @@ function ModalformStandardApp({ isOpened, heading, handleClose }) {
             </Form.Group>
 
             <Form.Group className='mb-3' controlId='animation_Reference'>
-              <Form.Label>Animation References</Form.Label>
+              <Form.Label className='custom-text'>Animation References</Form.Label>
               <Form.Control
                 as='textarea'
                 rows={3}
@@ -162,7 +163,7 @@ function ModalformStandardApp({ isOpened, heading, handleClose }) {
               className='mb-3'
               controlId='description'
             >
-              <Form.Label>Description</Form.Label>
+              <Form.Label className='custom-text'>Description</Form.Label>
               <Form.Control
                 name='description'
                 as='textarea'
