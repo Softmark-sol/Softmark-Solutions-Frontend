@@ -4,8 +4,6 @@ import Form from 'react-bootstrap/Form'
 import Modal from 'react-bootstrap/Modal'
 import axios from 'axios'
 import Swal from 'sweetalert2'
-import Dropdown from 'react-bootstrap/Dropdown'
-import DropdownButton from 'react-bootstrap/DropdownButton'
 
 const Modalbusiness = ({ isOpened, heading, handleClose }) => {
   const [formData, setFormData] = useState({
@@ -18,7 +16,8 @@ const Modalbusiness = ({ isOpened, heading, handleClose }) => {
     description: '',
     drive_link: '',
     Link_to_Graphics: [],
-    product_design: ''
+    product_design: '',
+    custom_product_design: ''
   })
   const [showCustomDetails, setShowCustomDetails] = useState(false)
 
@@ -34,7 +33,8 @@ const Modalbusiness = ({ isOpened, heading, handleClose }) => {
         description: '',
         drive_link: '',
         Link_to_Graphics: [],
-        product_design: ''
+        product_design: '',
+        custom_product_design: ''
       })
       setShowCustomDetails(false)
     }
@@ -49,13 +49,22 @@ const Modalbusiness = ({ isOpened, heading, handleClose }) => {
     }
   }
 
-  const handleDropdownSelect = (eventKey) => {
-    if (eventKey === 'Other') {
+  const handleDropdownChange = (e) => {
+    const value = e.target.value
+    if (value === 'Other') {
       setShowCustomDetails(true)
-      setFormData((prev) => ({ ...prev, product_design: '' }))
+      setFormData((prev) => ({
+        ...prev,
+        product_design: '',
+        custom_product_design: ''
+      }))
     } else {
       setShowCustomDetails(false)
-      setFormData((prev) => ({ ...prev, product_design: eventKey }))
+      setFormData((prev) => ({
+        ...prev,
+        product_design: value,
+        custom_product_design: ''
+      }))
     }
   }
 
@@ -108,11 +117,11 @@ const Modalbusiness = ({ isOpened, heading, handleClose }) => {
         </Modal.Header>
         <Modal.Body>
           <Form
-            style={{ overflowY: 'scroll', overflowX: 'hidden' }}
+            style={{ overflowY: 'scroll', paddingRight: '20px' }}
             onSubmit={handleSubmit}
           >
             <Form.Group className='mb-3' controlId='name'>
-              <Form.Label>Name</Form.Label>
+              <Form.Label className='custom-text'>Name</Form.Label>
               <Form.Control
                 type='text'
                 placeholder='Josh Anton'
@@ -123,7 +132,7 @@ const Modalbusiness = ({ isOpened, heading, handleClose }) => {
               />
             </Form.Group>
             <Form.Group className='mb-3' controlId='email'>
-              <Form.Label>Email address</Form.Label>
+              <Form.Label className='custom-text'>Email address</Form.Label>
               <Form.Control
                 type='email'
                 placeholder='name@example.com'
@@ -134,7 +143,7 @@ const Modalbusiness = ({ isOpened, heading, handleClose }) => {
               />
             </Form.Group>
             <Form.Group className='mb-3' controlId='company'>
-              <Form.Label>Company Name</Form.Label>
+              <Form.Label className='custom-text'>Company Name</Form.Label>
               <Form.Control
                 type='text'
                 placeholder='Company'
@@ -145,7 +154,7 @@ const Modalbusiness = ({ isOpened, heading, handleClose }) => {
               />
             </Form.Group>
             <Form.Group className='mb-3' controlId='reference_logos'>
-              <Form.Label>Reference logos</Form.Label>
+              <Form.Label className='custom-text'>Reference logos</Form.Label>
               <Form.Control
                 type='text'
                 placeholder='drive link (require 3 references)'
@@ -155,18 +164,22 @@ const Modalbusiness = ({ isOpened, heading, handleClose }) => {
               />
             </Form.Group>
             <Form.Group className='mb-3' controlId='reference_templete'>
-              <Form.Label>Reference Template</Form.Label>
+              <Form.Label className='custom-text'>
+                Reference Template
+              </Form.Label>
               <Form.Control
-                type='text'
-                placeholder='for brochures, flyers
-              Stationary design reference images (require 3 references)'
+                as='textarea'
+                rows={2}
+                placeholder='for brochures, flyers Stationary design reference images (require 3 references)'
                 name='reference_templete'
                 value={formData.reference_templete}
                 onChange={handleChange}
               />
             </Form.Group>
             <Form.Group className='mb-3' controlId='reference_website'>
-              <Form.Label>Reference websites for design concept</Form.Label>
+              <Form.Label className='custom-text'>
+                Reference websites for design concept
+              </Form.Label>
               <Form.Control
                 type='text'
                 placeholder='XYZ,ABC,XYZ'
@@ -176,7 +189,7 @@ const Modalbusiness = ({ isOpened, heading, handleClose }) => {
               />
             </Form.Group>
             <Form.Group className='mb-3' controlId='description'>
-              <Form.Label>Description</Form.Label>
+              <Form.Label className='custom-text'>Description</Form.Label>
               <Form.Control
                 as='textarea'
                 rows={3}
@@ -187,33 +200,44 @@ const Modalbusiness = ({ isOpened, heading, handleClose }) => {
                 required
               />
             </Form.Group>
+
             <Form.Group className='mb-3' controlId='product_design'>
-              <Form.Label>Product Design</Form.Label>
-              <DropdownButton
-                style={{ color: '#4599b4' }}
-                id='dropdown-basic-button'
-                title='Select Product Design'
-                onSelect={handleDropdownSelect}
+              <Form.Label className='custom-text'>Product Design</Form.Label>
+              <select
+                name='product_design'
+                className='form-control'
+                value={formData.product_design}
+                onChange={handleDropdownChange}
+                required
               >
-                <Dropdown.Item eventKey='Clothing'>Clothing</Dropdown.Item>
-                <Dropdown.Item eventKey='Gadgets'>Gadgets</Dropdown.Item>
-                <Dropdown.Item eventKey='Other'>Other</Dropdown.Item>
-              </DropdownButton>
+                <option value='' disabled>
+                  Select a Product Design
+                </option>
+                <option value='Clothing'>Clothing</option>
+                <option value='Gadgets'>Gadgets</option>
+                <option value='Other'>Other</option>
+              </select>
             </Form.Group>
+
             {showCustomDetails && (
               <Form.Group className='mb-3' controlId='custom_product_design'>
-                <Form.Label>Provide custom details</Form.Label>
+                <Form.Label className='custom-text'>
+                  Provide custom details
+                </Form.Label>
                 <Form.Control
                   type='input'
                   placeholder='Provide custom details'
-                  name='product_design'
-                  value={formData.product_design}
+                  name='custom_product_design'
+                  value={formData.custom_product_design}
                   onChange={handleChange}
                 />
               </Form.Group>
             )}
+
             <Form.Group className='mb-3' controlId='drive_link'>
-              <Form.Label>Drive Link to reference images</Form.Label>
+              <Form.Label className='custom-text'>
+                Drive Link to reference images
+              </Form.Label>
               <Form.Control
                 type='input'
                 placeholder='Google drive link or any drive link for icons'
