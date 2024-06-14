@@ -1,6 +1,63 @@
+button {
+  font-family: inherit;
+  font-size: 20px;
+  background: #4599b4;
+  color: white;
+  border-radius: 18px !important;
+  padding: 0.7em 1em;
+  padding-left: 0.9em;
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+button span {
+  display: block;
+  margin-left: 0.3em;
+  transition: all 0.3s ease-in-out;
+}
+
+button svg {
+  display: block;
+  transform-origin: center center;
+  transition: transform 0.3s ease-in-out;
+}
+button:hover {
+  background: #f3972b;
+}
+.svg-wrapper {
+  animation: fly-1 0.6s ease-in-out infinite alternate;
+}
+
+button:hover svg {
+  transform: translateX(3.7em) rotate(45deg) scale(1.1);
+}
+
+button:hover span {
+  transform: translateX(10em);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+@keyframes fly-1 {
+  from {
+    transform: translateY(0.1em);
+  }
+
+  to {
+    transform: translateY(-0.1em);
+  }
+}
+
 .card-heading-service {
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   font-family: 'Lucida Sans', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
   padding-top: 50px;
   margin-bottom: 30px;
@@ -123,11 +180,6 @@ textarea.form-control.full-width {
   padding: 15px 30px;
   cursor: pointer;
   transition: background-color 0.5s ease;
-}
-
-.submit-btn:hover {
-  background-color: #f3972b;
-  transition: 0.5s ease;
 }
 
 @media (max-width: 768px) {
