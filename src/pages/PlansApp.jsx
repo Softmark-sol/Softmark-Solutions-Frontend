@@ -7,8 +7,8 @@ import '../css/Plans.css'
 import ModalformBasicApp from '../components/Modal/app-dev/Modal-App-Basic'
 import ModalformStandardApp from '../components/Modal/app-dev/Modal-App-Standard'
 import ModalformPremiumApp from '../components/Modal/app-dev/Modal-App-Premium'
-import PlanCard from '../components/PlansCard'
 import Plancards from '../components/PlanCards'
+import {data2} from "../components/PlanCardData"
 
 export default function PlansApp({ plans }) {
   const [showBasic, setShowBasic] = useState(false)
@@ -27,48 +27,26 @@ export default function PlansApp({ plans }) {
     if (planName === 'Premium') setShowPremium(true)
   }
 
-  const data=[{
-    title: "Custom Website Design",
-    desc: "Tailored designs that reflect your brand identity and engage your target audience",
-  },
-  {
-    title: "Responsive Web Design",
-    desc: " Ensuring your website looks great and functions flawlessly on all devices",
-  },
-  {
-    title: "E-commerce Solutions",
-    desc: "Building secure, scalable online stores to boost your sales and enhance customer experience",
-
-  },
-  {
-    title: "Content Management Systems (CMS)",
-    desc: "Empowering you to manage and update your website content with ease",
-  },
-  {
-    title: "Website Maintenance & Support",
-    desc: "Providing ongoing support to keep your website up-to-date and running smoothly",
-  }]
+ 
 
   return (
     <>
     <div className="main-container container">
-        <h2>SoftMark Solutions - Building Your Digital Future</h2>
+        <h2>SoftMark Solutions - Innovating the Mobile Experience</h2>
         <h6 className="sub-paragraph">
-          At SoftMark Solutions, we recognize the critical role a well-crafted
-          website plays in your business success. Our expert team specializes in
-          creating responsive, user- friendly, and visually stunning websites
-          that not only captivate your audience but also drive business growth.
-          Whether you need a simple informational site or a complex e-commerce
-          platform, we are dedicated to bringing your vision to life and
-          ensuring your online presence stands out in a crowded digital
-          landscape
+        In today's mobile-first world, having a robust and intuitive mobile application is 
+essential for reaching and engaging your audience. At SoftMark Solutions, we 
+specialize in developing high-quality mobile apps that deliver seamless user 
+experiences and drive business growth. From concept to launch, our team is 
+committed to providing innovative solutions that meet your specific needs and keep
+you ahead in the competitive mobile landscape.
         </h6>
       </div>
 
       <div className="card-heading-service">
-        <h2 className="heading-underline-service">Our Web Development Services</h2>
+        <h2 className="heading-underline-service">Our Mobile App Development Services Include</h2>
       </div>
-      <Plancards/>
+      <Plancards data={data2}/>
       <div className='plans-container container'>
         {plans.map((plan, index) => (
           <Card className={`plan-card plan-card-${index}`} key={index}>
@@ -99,6 +77,13 @@ export default function PlansApp({ plans }) {
             </CardActionArea>
           </Card>
         ))}
+      </div>
+
+      <div>
+        <p>Choose SoftMark Solutions for your mobile app development needs and unlock the 
+potential of your business with a powerful mobile presence. Let us help you connect
+with your audience and achieve your goals through innovative mobile solutions. 
+Explore our plans below to find the perfect fit for your business.</p>
       </div>
 
       <ModalformBasicApp
