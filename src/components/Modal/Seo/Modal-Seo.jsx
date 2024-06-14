@@ -163,7 +163,7 @@ function ModalformSeo({ isOpened, heading, handleClose }) {
             />
           </Form.Group>
           <Form.Group className='mb-3' controlId='functionalities'>
-            <Form.Label>Access and Permissions</Form.Label>
+            <Form.Label className='custom-text'>Access and Permissions</Form.Label>
             <p style={{ color: 'red' }}>
               Request access to their website backend, Google Analytics, Google
               Search Console, and any other relevant tools or platforms needed
@@ -173,6 +173,7 @@ function ModalformSeo({ isOpened, heading, handleClose }) {
           <Form.Group>
             {options.map((option) => (
               <Form.Check
+              className='custom-text'
                 key={option.id}
                 type='radio'
                 name='check'
@@ -199,17 +200,6 @@ function ModalformSeo({ isOpened, heading, handleClose }) {
               onChange={handleChange}
             />
           </Form.Group>
-          {/* <Form.Group className='mb-3' controlId='Link_to_Graphics'>
-            <Form.Label style={{ display: 'flex' }}>Graphics</Form.Label>
-            <input
-              type='file'
-              name='Link_to_Graphics'
-              value={formData.Link_to_Graphics}
-              multiple
-              placeholder='Upload graphics'
-              onChange={handleChange}
-            />
-          </Form.Group> */}
           <Modal.Footer>
           <Button
               type='submit'
