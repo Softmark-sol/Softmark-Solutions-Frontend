@@ -1,6 +1,6 @@
-$bg-color: #F1E9DA;
+$bg-color: #f1e9da;
 $link-text-color: #fff;
-$button-bg-1: #F3972B;
+$button-bg-1: #f3972b;
 $border-radius: 6px;
 
 /* effect-1 styles */
@@ -11,9 +11,9 @@ $border-radius: 6px;
   text-decoration: none;
   color: $link-text-color;
   text-transform: capitalize;
-  background-color: $button-bg-1; /* Specify background color for effect 1 */
+  background-color: $button-bg-1;
   font: {
-    family: 'Roboto', sans-serif; /* Specify font-family */
+    family: 'Roboto', sans-serif;
     size: 18px;
   }
   padding: 20px 0px;
@@ -23,9 +23,8 @@ $border-radius: 6px;
   transition: all 0.2s linear 0s;
   margin-top: 30px;
 
-
   &:before {
-    content: "\f178";
+    content: '\f178';
     font-family: FontAwesome;
     font-size: 15px;
     position: absolute;
@@ -51,10 +50,10 @@ $border-radius: 6px;
 }
 
 @media screen and (max-width: 1024px) {
-    .effect.effect-1{
-        padding: 10px 0px;
-        width: 150px;
-        font-size: 12px;
-        margin-top: 30px;
-    }
+  .effect.effect-1 {
+    padding: 10px 0px;
+    width: 150px;
+    font-size: 12px;
+    margin-top: 30px;
   }
+}

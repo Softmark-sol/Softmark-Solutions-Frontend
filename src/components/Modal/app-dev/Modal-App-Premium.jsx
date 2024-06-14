@@ -96,6 +96,8 @@ function ModalformPremiumApp({ isOpened, heading, handleClose }) {
         body: data
       })
       const result = await response.json()
+
+      console.log(result)
       if (response.ok) {
         Swal.fire({
           position: 'top-end',
