@@ -8,6 +8,8 @@ import "../css/planweb.css";
 import ModalformBasicWeb from "../components/Modal/web-dev/Modal-Web-Basic";
 import ModalformStandardWeb from "../components/Modal/web-dev/Modal-Web-Standard";
 import ModalformPremiumWeb from "../components/Modal/web-dev/Modal-Web-Premium";
+import Plancards from "../components/PlanCards";
+import PlanCard from "../components/PlansCard";
 
 export default function PlansWeb({ plans }) {
   const [showBasic, setShowBasic] = useState(false);
@@ -46,6 +48,23 @@ export default function PlansWeb({ plans }) {
 
       <div className="card-heading-service">
         <h2 className="heading-underline-service">Our Web Development Services</h2>
+      </div>
+
+      <div className="webpan-cards container">{data.map((item)=>{
+        return <PlanCard title={item.title} desciptions={item.desc}/>
+      })}</div>
+
+      <div className="container">
+      <h6 className="last-paragraph">
+          At SoftMark Solutions, we recognize the critical role a well-crafted
+          website plays in your business success. Our expert team specializes in
+          creating responsive, user- friendly, and visually stunning websites
+          that not only captivate your audience but also drive business growth.
+          Whether you need a simple informational site or a complex e-commerce
+          platform, we are dedicated to bringing your vision to life and
+          ensuring your online presence stands out in a crowded digital
+          landscape
+        </h6>
       </div>
 
 
