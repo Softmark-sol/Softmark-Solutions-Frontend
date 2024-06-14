@@ -9,6 +9,9 @@
     font-family: 'Lucida Sans', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
     padding-top: 30px;
   }
+  .custom-text{
+    margin-left: 10px;
+  }
   
   .card-heading-service .heading-underline-service {
     position: relative;

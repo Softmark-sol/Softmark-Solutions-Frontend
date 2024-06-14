@@ -179,7 +179,7 @@ const DigitalMarketing = () => {
           <Modal.Body>
             <Form style={{ overflowY: "scroll",overflowX:'hidden' }} onSubmit={handleSubmit}>
               <Form.Group className="mb-3" controlId="name">
-                <Form.Label>Name</Form.Label>
+                <Form.Label className="custom-text">Name</Form.Label>
                 <Form.Control
                   type="input"
                   placeholder="Josh Anton"
@@ -190,7 +190,7 @@ const DigitalMarketing = () => {
                 />
               </Form.Group>
               <Form.Group className="mb-3" controlId="email">
-                <Form.Label>Email address</Form.Label>
+                <Form.Label className="custom-text">Email address</Form.Label>
                 <Form.Control
                   type="email"
                   placeholder="name@example.com"
@@ -201,7 +201,7 @@ const DigitalMarketing = () => {
                 />
               </Form.Group>
               <Form.Group className="mb-3" controlId="company">
-                <Form.Label>Company Name</Form.Label>
+                <Form.Label className="custom-text">Company Name</Form.Label>
                 <Form.Control
                   type="input"
                   placeholder="Company"
@@ -211,7 +211,7 @@ const DigitalMarketing = () => {
                 />
               </Form.Group>
               <Form.Group className="mb-3" controlId="reference">
-                <Form.Label>Links to social media platform</Form.Label>
+                <Form.Label className="custom-text">Links to social media platform</Form.Label>
                 <Form.Control
                   type="input"
                   placeholder="fb, insta, linkedin, xyz"
@@ -221,7 +221,7 @@ const DigitalMarketing = () => {
                 />
               </Form.Group>
               <Form.Group className="mb-3" controlId="targetaudience">
-                <Form.Label>Target audience</Form.Label>
+                <Form.Label className="custom-text">Target audience</Form.Label>
                 <Form.Control
                   type="input"
                   placeholder="information about their main competitors"
@@ -249,11 +249,11 @@ const DigitalMarketing = () => {
               </Form.Group>
               <br/>
               <Form.Group className="mb-3" controlId="description">
-                <Form.Label>Description</Form.Label>
+                <Form.Label className="custom-text">Description</Form.Label>
                 <Form.Control
                   as="textarea"
                   rows={3}
-                  placeholder="Describe your project"
+                  placeholder="Describe your project requirement"
                   value={formData.description}
                   onChange={handleChange}
                 />

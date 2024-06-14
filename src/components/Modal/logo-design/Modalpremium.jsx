@@ -1,5 +1,5 @@
 import React from 'react'
-
+import '../../../css/modal.css'
 import { useState, useEffect } from 'react'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
@@ -87,11 +87,11 @@ const Modalpremium = ({ isOpened, heading, handleClose }) => {
         </Modal.Header>
         <Modal.Body>
           <Form
-            style={{ overflowY: 'scroll', overflowX: 'hidden' }}
+            style={{ overflowY: 'scroll', paddingRight:'20px' }}
             onSubmit={handleSubmit}
           >
             <Form.Group className='mb-3' controlId='name'>
-              <Form.Label>Name</Form.Label>
+              <Form.Label className='custom-text'>Name</Form.Label>
               <Form.Control
                 type='text'
                 placeholder='Josh Anton'
@@ -102,7 +102,7 @@ const Modalpremium = ({ isOpened, heading, handleClose }) => {
               />
             </Form.Group>
             <Form.Group className='mb-3' controlId='email'>
-              <Form.Label>Email address</Form.Label>
+              <Form.Label className='custom-text'>Email address</Form.Label>
               <Form.Control
                 type='email'
                 placeholder='name@example.com'
@@ -113,7 +113,7 @@ const Modalpremium = ({ isOpened, heading, handleClose }) => {
               />
             </Form.Group>
             <Form.Group className='mb-3' controlId='company'>
-              <Form.Label>Company Name</Form.Label>
+              <Form.Label className='custom-text'>Company Name</Form.Label>
               <Form.Control
                 type='text'
                 placeholder='Company'
@@ -124,7 +124,7 @@ const Modalpremium = ({ isOpened, heading, handleClose }) => {
               />
             </Form.Group>
             <Form.Group className='mb-3' controlId='reference_logos'>
-              <Form.Label>Reference logos</Form.Label>
+              <Form.Label className='custom-text'>Reference logos</Form.Label>
               <Form.Control
                 type='text'
                 placeholder='drive link (require 3 references)'
@@ -134,18 +134,18 @@ const Modalpremium = ({ isOpened, heading, handleClose }) => {
               />
             </Form.Group>
             <Form.Group className='mb-3' controlId='reference_templete'>
-              <Form.Label>Reference Templete</Form.Label>
+              <Form.Label className='custom-text'>Reference Templete</Form.Label>
               <Form.Control
-                type='text'
-                placeholder='for brochures, flyers
-              Stationary design reference images (require 3 references)'
+                as='textarea'
+                rows={2}
+                placeholder='For brochures,flyers Stationary design reference images(require 3 references)'
                 name='reference_templete'
                 value={formData.reference_templete}
                 onChange={handleChange}
               />
             </Form.Group>
             <Form.Group className='mb-3' controlId='description'>
-              <Form.Label>Description</Form.Label>
+              <Form.Label className='custom-text'>Description</Form.Label>
               <Form.Control
                 as='textarea'
                 rows={3}
