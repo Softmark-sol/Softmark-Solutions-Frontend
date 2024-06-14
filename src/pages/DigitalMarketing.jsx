@@ -196,9 +196,6 @@ const DigitalMarketing = () => {
             >
               <Form.Group className='mb-3' controlId='name'>
                 <Form.Label className='custom-text'>Name</Form.Label>
-            <Form style={{ overflowY: "scroll",paddingRight:'18px' }} onSubmit={handleSubmit}>
-              <Form.Group className="mb-3" controlId="name">
-                <Form.Label className="custom-text">Name</Form.Label>
                 <Form.Control
                   type='input'
                   placeholder='Josh Anton'
