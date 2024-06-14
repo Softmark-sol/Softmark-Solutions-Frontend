@@ -8,8 +8,8 @@ import "../css/planweb.css";
 import ModalformBasicWeb from "../components/Modal/web-dev/Modal-Web-Basic";
 import ModalformStandardWeb from "../components/Modal/web-dev/Modal-Web-Standard";
 import ModalformPremiumWeb from "../components/Modal/web-dev/Modal-Web-Premium";
-import Plancards from "../components/PlanCards";
 import PlanCard from "../components/PlansCard";
+import data from "../components/PlanCardData"
 
 export default function PlansWeb({ plans }) {
   const [showBasic, setShowBasic] = useState(false);
