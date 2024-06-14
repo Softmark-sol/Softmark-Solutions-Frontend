@@ -173,8 +173,13 @@ function ModalformSeo({ isOpened, heading, handleClose }) {
               onChange={handleChange}
             />
           </Form.Group>
+<<<<<<< HEAD
           <Form.Group className='mb-3' controlId='access_and_permissions'>
             <Form.Label>Access and Permissions</Form.Label>
+=======
+          <Form.Group className='mb-3' controlId='functionalities'>
+            <Form.Label className='custom-text'>Access and Permissions</Form.Label>
+>>>>>>> 57f64cce4e472ca8b957172b540b81de72d14fde
             <p style={{ color: 'red' }}>
               Request access to their website backend, Google Analytics, Google Search Console, and any other relevant tools or platforms needed to implement SEO strategies effectively
             </p>
@@ -182,6 +187,7 @@ function ModalformSeo({ isOpened, heading, handleClose }) {
           <Form.Group>
             {options.map((option) => (
               <Form.Check
+              className='custom-text'
                 key={option.id}
                 type='radio'
                 name='access_and_permissions'

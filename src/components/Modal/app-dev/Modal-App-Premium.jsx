@@ -122,9 +122,12 @@ function ModalformPremiumApp({ isOpened, heading, handleClose }) {
           <Modal.Title>{heading}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form style={{ overflowY: 'scroll' }} onSubmit={handleSubmit}>
+          <Form
+            style={{ overflowY: 'scroll', paddingRight: '20px' }}
+            onSubmit={handleSubmit}
+          >
             <Form.Group className='mb-3' controlId='name'>
-              <Form.Label>Name</Form.Label>
+              <Form.Label className='custom-text'>Name</Form.Label>
               <Form.Control
                 type='input'
                 placeholder='Josh Anton'
@@ -134,7 +137,7 @@ function ModalformPremiumApp({ isOpened, heading, handleClose }) {
               />
             </Form.Group>
             <Form.Group className='mb-3' controlId='email'>
-              <Form.Label>Email address</Form.Label>
+              <Form.Label className='custom-text'>Email address</Form.Label>
               <Form.Control
                 type='email'
                 placeholder='name@example.com'
@@ -144,7 +147,7 @@ function ModalformPremiumApp({ isOpened, heading, handleClose }) {
               />
             </Form.Group>
             <Form.Group className='mb-3' controlId='company'>
-              <Form.Label>Company</Form.Label>
+              <Form.Label className='custom-text'>Company</Form.Label>
               <Form.Control
                 type='input'
                 placeholder='Company'
@@ -152,9 +155,9 @@ function ModalformPremiumApp({ isOpened, heading, handleClose }) {
                 onChange={handleInputChange}
               />
             </Form.Group>
-   
+
             <Form.Group className='mb-3' controlId='reference_App'>
-              <Form.Label>Reference Apps</Form.Label>
+              <Form.Label className='custom-text'>Reference Apps</Form.Label>
               <Form.Control
                 type='input'
                 placeholder='Application Name XYZ, ABC, XYZ'
@@ -163,9 +166,11 @@ function ModalformPremiumApp({ isOpened, heading, handleClose }) {
                 onChange={handleInputChange}
               />
             </Form.Group>
-   
+
             <Form.Group className='mb-3' controlId='drive_links_to_icons'>
-              <Form.Label>Drive Link to Icons</Form.Label>
+              <Form.Label className='custom-text'>
+                Drive Link to Icons
+              </Form.Label>
               <Form.Control
                 type='input'
                 placeholder='Google drive link or any drive link for icons'
@@ -173,14 +178,15 @@ function ModalformPremiumApp({ isOpened, heading, handleClose }) {
                 onChange={handleInputChange}
               />
             </Form.Group>
-  
+
             <Form.Group className='mb-3' controlId='animation_Reference'>
-              <Form.Label>Animation References</Form.Label>
+              <Form.Label className='custom-text'>
+                Animation References
+              </Form.Label>
               <Form.Control
                 as='textarea'
                 rows={3}
-                placeholder='custom notes with app names and which animation
-                             is being referred'
+                placeholder='custom notes with app names and which animation is being referred'
                 value={formData.animation_Reference}
                 onChange={handleInputChange}
               />
@@ -190,7 +196,7 @@ function ModalformPremiumApp({ isOpened, heading, handleClose }) {
               className='mb-3'
               controlId='description'
             >
-              <Form.Label>Description</Form.Label>
+              <Form.Label className='custom-text'>Description</Form.Label>
               <Form.Control
                 name='description'
                 as='textarea'
@@ -201,7 +207,6 @@ function ModalformPremiumApp({ isOpened, heading, handleClose }) {
               />
             </Form.Group>
             <Form.Group>
-
               <Form.Label>Complex Functionalities</Form.Label>
               {options.map((option) => (
                 <Form.Check
@@ -224,9 +229,6 @@ function ModalformPremiumApp({ isOpened, heading, handleClose }) {
               onChange={handleFileChange}
             />
             <Modal.Footer>
-              <Button variant='secondary' onClick={handleClose}>
-                Close
-              </Button>
               <Button
                 type='submit'
                 style={{ backgroundColor: '#4599b4' }}
@@ -238,6 +240,9 @@ function ModalformPremiumApp({ isOpened, heading, handleClose }) {
                 }
               >
                 Send Message
+              </Button>
+              <Button variant='secondary' onClick={handleClose}>
+                Close
               </Button>
             </Modal.Footer>
           </Form>
