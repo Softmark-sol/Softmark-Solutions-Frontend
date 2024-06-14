@@ -1,10 +1,10 @@
-import { useState, useEffect } from 'react';
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import Modal from 'react-bootstrap/Modal';
-import axios from 'axios';
-import Swal from 'sweetalert2';
-import '../../../css/seo.css';
+import { useState, useEffect } from 'react'
+import Button from 'react-bootstrap/Button'
+import Form from 'react-bootstrap/Form'
+import Modal from 'react-bootstrap/Modal'
+import axios from 'axios'
+import Swal from 'sweetalert2'
+import '../../../css/seo.css'
 
 function ModalformSeo({ isOpened, heading, handleClose }) {
   const [formData, setFormData] = useState({
@@ -16,8 +16,8 @@ function ModalformSeo({ isOpened, heading, handleClose }) {
     competitor_website_reference: '',
     access_and_permissions: '',
     current_SEO_Efforts: '',
-    description: '',
-  });
+    description: ''
+  })
 
   useEffect(() => {
     if (isOpened) {
@@ -30,35 +30,34 @@ function ModalformSeo({ isOpened, heading, handleClose }) {
         competitor_website_reference: '',
         access_and_permissions: '',
         current_SEO_Efforts: '',
-        description: '',
-      });
+        description: ''
+      })
     }
-  }, [isOpened]);
-
+  }, [isOpened])
 
   const options = [
     { id: 1, label: 'Yes' },
-    { id: 2, label: 'No' },
-  ];
+    { id: 2, label: 'No' }
+  ]
   const handleCheckboxChange = (e) => {
-    const { id, checked } = e.target;
-    const label = options.find((option) => option.id.toString() === id).label;
+    const { id, checked } = e.target
+    const label = options.find((option) => option.id.toString() === id).label
     setFormData((prev) => ({
       ...prev,
-      access_and_permissions: checked ? label : '',
-    }));
-  };
+      access_and_permissions: checked ? label : ''
+    }))
+  }
   const handleChange = (e) => {
-    const { id, value } = e.target;
+    const { id, value } = e.target
     setFormData((prev) => ({
       ...prev,
-      [id]: value,
-    }));
-  };
+      [id]: value
+    }))
+  }
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    e.preventDefault()
     try {
-      const response = await axios.post('http://localhost:4000/seo', formData);
+      const response = await axios.post('http://localhost:4000/seo', formData)
       console.log(response)
       if (response.status === 200) {
         Swal.fire({
@@ -66,8 +65,8 @@ function ModalformSeo({ isOpened, heading, handleClose }) {
           icon: 'success',
           title: 'Message sent successfully',
           showConfirmButton: false,
-          timer: 1500,
-        });
+          timer: 1500
+        })
         setFormData({
           name: '',
           email: '',
@@ -77,22 +76,21 @@ function ModalformSeo({ isOpened, heading, handleClose }) {
           competitor_website_reference: '',
           access_and_permissions: '',
           current_SEO_Efforts: '',
-          description: '',
-        });
-        handleClose();
+          description: ''
+        })
+        handleClose()
       }
     } catch (error) {
       Swal.fire({
         icon: 'error',
         title: 'Oops...',
-        text: error.response?.data?.message || 'Failed to send message. Please try again later.',
-      });
-      console.error('Error:', error);
+        text:
+          error.response?.data?.message ||
+          'Failed to send message. Please try again later.'
+      })
+      console.error('Error:', error)
     }
-  };
-  
-
-
+  }
 
   return (
     <Modal show={isOpened} onHide={handleClose} backdrop='static'>
@@ -100,7 +98,10 @@ function ModalformSeo({ isOpened, heading, handleClose }) {
         <Modal.Title>{heading}</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <Form style={{ overflowY: 'scroll', paddingRight: '20px' }} onSubmit={handleSubmit}>
+        <Form
+          style={{ overflowY: 'scroll', paddingRight: '20px' }}
+          onSubmit={handleSubmit}
+        >
           <Form.Group className='mb-3' controlId='name'>
             <Form.Label className='custom-text'>Name</Form.Label>
             <Form.Control
@@ -134,7 +135,9 @@ function ModalformSeo({ isOpened, heading, handleClose }) {
             />
           </Form.Group>
           <Form.Group className='mb-3' controlId='Website_of_the_client'>
-            <Form.Label className='custom-text'>Website of the client</Form.Label>
+            <Form.Label className='custom-text'>
+              Website of the client
+            </Form.Label>
             <Form.Control
               type='text'
               placeholder='live website link'
@@ -144,7 +147,9 @@ function ModalformSeo({ isOpened, heading, handleClose }) {
             />
           </Form.Group>
           <Form.Group className='mb-3' controlId='Platform_of_the_website'>
-            <Form.Label className='custom-text'>Platform of the website</Form.Label>
+            <Form.Label className='custom-text'>
+              Platform of the website
+            </Form.Label>
             <Form.Control
               type='text'
               name='Platform_of_the_website'
@@ -154,7 +159,9 @@ function ModalformSeo({ isOpened, heading, handleClose }) {
             />
           </Form.Group>
           <Form.Group className='mb-3' controlId='competitor_website_reference'>
-            <Form.Label className='custom-text'>Competitor website reference</Form.Label>
+            <Form.Label className='custom-text'>
+              Competitor website reference
+            </Form.Label>
             <Form.Control
               type='text'
               name='competitor_website_reference'
@@ -173,21 +180,20 @@ function ModalformSeo({ isOpened, heading, handleClose }) {
               onChange={handleChange}
             />
           </Form.Group>
-<<<<<<< HEAD
-          <Form.Group className='mb-3' controlId='access_and_permissions'>
-            <Form.Label>Access and Permissions</Form.Label>
-=======
           <Form.Group className='mb-3' controlId='functionalities'>
-            <Form.Label className='custom-text'>Access and Permissions</Form.Label>
->>>>>>> 57f64cce4e472ca8b957172b540b81de72d14fde
+            <Form.Label className='custom-text'>
+              Access and Permissions
+            </Form.Label>
             <p style={{ color: 'red' }}>
-              Request access to their website backend, Google Analytics, Google Search Console, and any other relevant tools or platforms needed to implement SEO strategies effectively
+              Request access to their website backend, Google Analytics, Google
+              Search Console, and any other relevant tools or platforms needed
+              to implement SEO strategies effectively
             </p>
           </Form.Group>
           <Form.Group>
             {options.map((option) => (
               <Form.Check
-              className='custom-text'
+                className='custom-text'
                 key={option.id}
                 type='radio'
                 name='access_and_permissions'
@@ -199,7 +205,11 @@ function ModalformSeo({ isOpened, heading, handleClose }) {
             ))}
           </Form.Group>
           <br />
-          <Form.Group style={{ paddingTop: '10px' }} className='mb-3' controlId='description'>
+          <Form.Group
+            style={{ paddingTop: '10px' }}
+            className='mb-3'
+            controlId='description'
+          >
             <Form.Label className='custom-text'>Description</Form.Label>
             <Form.Control
               name='description'
@@ -226,7 +236,7 @@ function ModalformSeo({ isOpened, heading, handleClose }) {
         </Form>
       </Modal.Body>
     </Modal>
-  );
+  )
 }
 
-export default ModalformSeo;
+export default ModalformSeo

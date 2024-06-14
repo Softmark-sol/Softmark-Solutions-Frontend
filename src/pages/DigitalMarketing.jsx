@@ -1,81 +1,84 @@
-import React, { useState, useEffect } from "react";
-import "../css/digital.css";
-import Singlecard from "../components/Singlecard";
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
-import Modal from "react-bootstrap/Modal";
-import axios from "axios";
-import Swal from "sweetalert2";
-import img1 from '../assets/ppc.png';
-import img2 from '../assets/social.png';
-import img3 from '../assets/content-marketing.png';
-import img4 from '../assets/email-marketing.png';
-import ScrollToTopButton from "../components/ScrollUpButton";
+import React, { useState, useEffect } from 'react'
+import '../css/digital.css'
+import Singlecard from '../components/Singlecard'
+import Button from 'react-bootstrap/Button'
+import Form from 'react-bootstrap/Form'
+import Modal from 'react-bootstrap/Modal'
+import axios from 'axios'
+import Swal from 'sweetalert2'
+import img1 from '../assets/ppc.png'
+import img2 from '../assets/social.png'
+import img3 from '../assets/content-marketing.png'
+import img4 from '../assets/email-marketing.png'
+import ScrollToTopButton from '../components/ScrollUpButton'
 
 const DigitalMarketing = () => {
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    company: "",
+    name: '',
+    email: '',
+    company: '',
     links_to_social_media: '',
     target_audience: '',
     access_and_permissions: '',
-    description: '',
-  });
-  const [show, setShow] = useState(false);
+    description: ''
+  })
+  const [show, setShow] = useState(false)
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const handleClose = () => setShow(false)
+  const handleShow = () => setShow(true)
 
   useEffect(() => {
     if (show) {
       setFormData({
-        name: "",
-        email: "",
-        company: "",
+        name: '',
+        email: '',
+        company: '',
         links_to_social_media: '',
         target_audience: '',
         access_and_permissions: '',
-        description: '',
-      });
+        description: ''
+      })
     }
-  }, [show]);
+  }, [show])
 
   const options = [
     { id: 1, label: 'Yes' },
-    { id: 2, label: 'No' },
-  ];
+    { id: 2, label: 'No' }
+  ]
 
   const handleCheckboxChange = (e) => {
-    const { id, checked } = e.target;
-    const label = options.find((option) => option.id.toString() === id).label;
+    const { id, checked } = e.target
+    const label = options.find((option) => option.id.toString() === id).label
     setFormData((prev) => ({
       ...prev,
-      access_and_permissions: checked ? label : '',
-    }));
-  };
+      access_and_permissions: checked ? label : ''
+    }))
+  }
 
   const handleChange = (e) => {
-    const { id, value } = e.target;
+    const { id, value } = e.target
     setFormData((prev) => ({
       ...prev,
-      [id]: value,
-    }));
-  };
+      [id]: value
+    }))
+  }
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    e.preventDefault()
     try {
-      const response = await axios.post('http://localhost:4000/digital-marketing', formData);
-      console.log(response);
+      const response = await axios.post(
+        'http://localhost:4000/digital-marketing',
+        formData
+      )
+      console.log(response)
       if (response.status === 200) {
         Swal.fire({
           position: 'top-end',
           icon: 'success',
           title: 'Message sent successfully',
           showConfirmButton: false,
-          timer: 1500,
-        });
+          timer: 1500
+        })
         setFormData({
           name: '',
           email: '',
@@ -83,50 +86,50 @@ const DigitalMarketing = () => {
           links_to_social_media: '',
           target_audience: '',
           access_and_permissions: '',
-          description: '',
-        });
-        handleClose();
+          description: ''
+        })
+        handleClose()
       }
     } catch (error) {
-      let errorMessage = 'Failed to send message. Please try again later.';
+      let errorMessage = 'Failed to send message. Please try again later.'
       if (error.response) {
-        errorMessage = error.response.data.message || errorMessage;
+        errorMessage = error.response.data.message || errorMessage
       }
       Swal.fire({
         icon: 'error',
         title: 'Oops...',
-        text: errorMessage,
-      });
-      console.error('Error:', error);
+        text: errorMessage
+      })
+      console.error('Error:', error)
     }
-  };
+  }
 
   const services = [
     {
       path: img1,
-      title: "Pay-Per-Click (PPC)",
-      desc: "Reach your target audience at the right time and place with targeted PPC campaigns. Our certified PPC specialists will create compelling ads, optimize your ad spend, and drive conversions across platforms like Google Ads, Bing Ads, and social media channels.",
+      title: 'Pay-Per-Click (PPC)',
+      desc: 'Reach your target audience at the right time and place with targeted PPC campaigns. Our certified PPC specialists will create compelling ads, optimize your ad spend, and drive conversions across platforms like Google Ads, Bing Ads, and social media channels.'
     },
     {
       path: img2,
-      title: "Social Media Marketing",
-      desc: "Engage with your audience and build brand loyalty through strategic social media marketing campaigns. From content creation and community management to paid advertising and influencer partnerships, we'll help you connect with your customers and drive engagement.",
+      title: 'Social Media Marketing',
+      desc: "Engage with your audience and build brand loyalty through strategic social media marketing campaigns. From content creation and community management to paid advertising and influencer partnerships, we'll help you connect with your customers and drive engagement."
     },
     {
       path: img3,
-      title: "Content Marketing",
-      desc: "Create valuable, relevant content that resonates with your audience and drives action. Our content marketing services include blog posts, articles and email newsletters designed to establish your brand as a thought leader in your industry and attract and retain customers.",
+      title: 'Content Marketing',
+      desc: 'Create valuable, relevant content that resonates with your audience and drives action. Our content marketing services include blog posts, articles and email newsletters designed to establish your brand as a thought leader in your industry and attract and retain customers.'
     },
     {
       path: img4,
-      title: "Email Marketing",
-      desc: "Nurture leads and drive conversions with targeted email campaigns. From automation workflows and segmentation to A/B testing and analytics, we'll help you deliver personalized messages that drive engagement and ROI.",
-    },
-  ];
+      title: 'Email Marketing',
+      desc: "Nurture leads and drive conversions with targeted email campaigns. From automation workflows and segmentation to A/B testing and analytics, we'll help you deliver personalized messages that drive engagement and ROI."
+    }
+  ]
 
   return (
     <div>
-      <div className="container main-container">
+      <div className='container main-container'>
         <h6>
           At Softmark Solutions we specialize in delivering tailored digital
           marketing solutions that drive growth, engagement, and results for
@@ -135,9 +138,9 @@ const DigitalMarketing = () => {
           achieve your business goals.
         </h6>
       </div>
-      <div className="card-heading-service container">
-        <h2 className="heading-underline-service">Our Approach</h2>
-        <p className="paragraph">
+      <div className='card-heading-service container'>
+        <h2 className='heading-underline-service'>Our Approach</h2>
+        <p className='paragraph'>
           We believe in a data-driven, customer-centric approach to digital
           marketing. Our team of experts works closely with each client to
           understand their unique needs, goals, and target audience. By
@@ -146,7 +149,7 @@ const DigitalMarketing = () => {
           maximize ROI.
         </p>
       </div>
-      <div className="main-cards">
+      <div className='main-cards'>
         {services.map((item, index) => (
           <Singlecard
             key={index}
@@ -157,9 +160,9 @@ const DigitalMarketing = () => {
         ))}
       </div>
 
-      <div className="card-heading-service container">
-        <h2 className="heading-underline-service">Get Started Today</h2>
-        <p className="paragraph">
+      <div className='card-heading-service container'>
+        <h2 className='heading-underline-service'>Get Started Today</h2>
+        <p className='paragraph'>
           Ready to take your digital marketing efforts to the next level?
           Contact us today to schedule a consultation and learn how [Your
           Company Name] can help you achieve your goals and grow your business
@@ -167,88 +170,98 @@ const DigitalMarketing = () => {
         </p>
       </div>
 
-      <div className="modalbtn">
+      <div className='modalbtn'>
         <button
           onClick={handleShow}
           style={{
-            backgroundColor: "#4599b4",
-            border: "none",
-            padding: "12px 18px",
-            color: "white",
+            backgroundColor: '#4599b4',
+            border: 'none',
+            padding: '12px 18px',
+            color: 'white'
           }}
-          onMouseEnter={(e) => (e.target.style.backgroundColor = "#f3972b")}
-          onMouseLeave={(e) => (e.target.style.backgroundColor = "#4599b4")}
+          onMouseEnter={(e) => (e.target.style.backgroundColor = '#f3972b')}
+          onMouseLeave={(e) => (e.target.style.backgroundColor = '#4599b4')}
         >
           Get a free strategy
         </button>
 
-        <Modal show={show} onHide={handleClose} backdrop="static">
+        <Modal show={show} onHide={handleClose} backdrop='static'>
           <Modal.Header closeButton>
             <Modal.Title>Digital Marketing Plan</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <Form style={{ overflowY: "scroll",paddingRight:'18px' }} onSubmit={handleSubmit}>
-            <Form style={{ overflowY: "scroll", overflowX: 'hidden' }} onSubmit={handleSubmit}>
-              <Form.Group className="mb-3" controlId="name">
-                <Form.Label className="custom-text">Name</Form.Label>
+            <Form
+              style={{ overflowY: 'scroll', paddingRight: '18px' }}
+              onSubmit={handleSubmit}
+            >
+              <Form.Group className='mb-3' controlId='name'>
+                <Form.Label className='custom-text'>Name</Form.Label>
                 <Form.Control
-                  type="input"
-                  placeholder="Josh Anton"
-                  name="name"
+                  type='input'
+                  placeholder='Josh Anton'
+                  name='name'
                   value={formData.name}
                   onChange={handleChange}
                   required
                 />
               </Form.Group>
-              <Form.Group className="mb-3" controlId="email">
-                <Form.Label className="custom-text">Email address</Form.Label>
+              <Form.Group className='mb-3' controlId='email'>
+                <Form.Label className='custom-text'>Email address</Form.Label>
                 <Form.Control
-                  type="email"
-                  placeholder="name@example.com"
-                  name="email"
+                  type='email'
+                  placeholder='name@example.com'
+                  name='email'
                   value={formData.email}
                   onChange={handleChange}
                   required
                 />
               </Form.Group>
-              <Form.Group className="mb-3" controlId="company">
-                <Form.Label className="custom-text">Company Name</Form.Label>
+              <Form.Group className='mb-3' controlId='company'>
+                <Form.Label className='custom-text'>Company Name</Form.Label>
                 <Form.Control
-                  type="input"
-                  placeholder="Company"
-                  name="company"
+                  type='input'
+                  placeholder='Company'
+                  name='company'
                   value={formData.company}
                   onChange={handleChange}
                 />
               </Form.Group>
-              <Form.Group className="mb-3" controlId="links_to_social_media">
-                <Form.Label className="custom-text">Links to Social Media Platforms</Form.Label>
+              <Form.Group className='mb-3' controlId='links_to_social_media'>
+                <Form.Label className='custom-text'>
+                  Links to Social Media Platforms
+                </Form.Label>
                 <Form.Control
-                  type="input"
-                  placeholder="Enter links separated by commas"
-                  name="links_to_social_media"
+                  type='input'
+                  placeholder='Enter links separated by commas'
+                  name='links_to_social_media'
                   value={formData.links_to_social_media}
                   onChange={handleChange}
                 />
               </Form.Group>
-              <Form.Group className="mb-3" controlId="target_audience">
-                <Form.Label className="custom-text">Target Audience</Form.Label>
+              <Form.Group className='mb-3' controlId='target_audience'>
+                <Form.Label className='custom-text'>Target Audience</Form.Label>
                 <Form.Control
-                  type="input"
-                  placeholder="Describe your target audience"
-                  name="target_audience"
+                  type='input'
+                  placeholder='Describe your target audience'
+                  name='target_audience'
                   value={formData.target_audience}
                   onChange={handleChange}
                 />
               </Form.Group>
-              <Form.Group className="mb-3" controlId="access_and_permissions">
-                <Form.Label className="custom-text">Access and Permissions</Form.Label>
-                <p style={{ color: 'red' }}>Are you willing to provide access to your current social media accounts or permission to create new ones for digital marketing purposes?</p>
+              <Form.Group className='mb-3' controlId='access_and_permissions'>
+                <Form.Label className='custom-text'>
+                  Access and Permissions
+                </Form.Label>
+                <p style={{ color: 'red' }}>
+                  Are you willing to provide access to your current social media
+                  accounts or permission to create new ones for digital
+                  marketing purposes?
+                </p>
                 {options.map((option) => (
                   <Form.Check
                     key={option.id}
-                    type="radio"
-                    name="access_and_permissions"
+                    type='radio'
+                    name='access_and_permissions'
                     id={option.id.toString()}
                     label={option.label}
                     checked={formData.access_and_permissions === option.label}
@@ -256,35 +269,35 @@ const DigitalMarketing = () => {
                   />
                 ))}
               </Form.Group>
-              <Form.Group className="mb-3" controlId="description">
-                <Form.Label className="custom-text">Description</Form.Label>
+              <Form.Group className='mb-3' controlId='description'>
+                <Form.Label className='custom-text'>Description</Form.Label>
                 <Form.Control
-                  as="textarea"
+                  as='textarea'
                   rows={3}
-                  placeholder="Describe your project requirement"
+                  placeholder='Describe your project requirement'
                   value={formData.description}
                   onChange={handleChange}
                 />
               </Form.Group>
               <Modal.Footer>
                 <Button
-                  type="submit"
+                  type='submit'
                   style={{
-                    backgroundColor: "#4599b4",
-                    color: "white",
-                    border: "none",
-                    padding: "12px 18px",
+                    backgroundColor: '#4599b4',
+                    color: 'white',
+                    border: 'none',
+                    padding: '12px 18px'
                   }}
                   onMouseEnter={(e) =>
-                    (e.target.style.backgroundColor = "#f3972b")
+                    (e.target.style.backgroundColor = '#f3972b')
                   }
                   onMouseLeave={(e) =>
-                    (e.target.style.backgroundColor = "#4599b4")
+                    (e.target.style.backgroundColor = '#4599b4')
                   }
                 >
                   Send Message
                 </Button>
-                <Button variant="secondary" onClick={handleClose}>
+                <Button variant='secondary' onClick={handleClose}>
                   Close
                 </Button>
               </Modal.Footer>
@@ -294,7 +307,7 @@ const DigitalMarketing = () => {
       </div>
       <ScrollToTopButton />
     </div>
-  );
-};
+  )
+}
 
-export default DigitalMarketing;
+export default DigitalMarketing
