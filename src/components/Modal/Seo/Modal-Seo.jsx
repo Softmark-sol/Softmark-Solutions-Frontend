@@ -4,6 +4,7 @@ import Form from 'react-bootstrap/Form'
 import Modal from 'react-bootstrap/Modal'
 import axios from 'axios'
 import Swal from 'sweetalert2'
+import '../../../css/seo.css'
 function ModalformSeo({ isOpened, heading, handleClose }) {
   const [formData, setFormData] = useState({
     name: '',
@@ -86,11 +87,11 @@ function ModalformSeo({ isOpened, heading, handleClose }) {
       </Modal.Header>
       <Modal.Body>
         <Form
-          style={{ overflowY: 'scroll', overflowX: 'hidden' }}
+          style={{ overflowY: 'scroll', paddingRight:'20px'}}
           onSubmit={handleSubmit}
         >
           <Form.Group className='mb-3' controlId='name'>
-            <Form.Label>Name</Form.Label>
+            <Form.Label className='custom-text'>Name</Form.Label>
             <Form.Control
               type='text'
               placeholder='Josh Anton'
@@ -101,7 +102,7 @@ function ModalformSeo({ isOpened, heading, handleClose }) {
             />
           </Form.Group>
           <Form.Group className='mb-3' controlId='email'>
-            <Form.Label>Email address</Form.Label>
+            <Form.Label className='custom-text'>Email address</Form.Label>
             <Form.Control
               type='email'
               placeholder='name@example.com'
@@ -112,7 +113,7 @@ function ModalformSeo({ isOpened, heading, handleClose }) {
             />
           </Form.Group>
           <Form.Group className='mb-3' controlId='company'>
-            <Form.Label>Company Name</Form.Label>
+            <Form.Label className='custom-text'>Company Name</Form.Label>
             <Form.Control
               type='text'
               placeholder='Company'
@@ -122,7 +123,7 @@ function ModalformSeo({ isOpened, heading, handleClose }) {
             />
           </Form.Group>
           <Form.Group className='mb-3' controlId='reference_sites'>
-            <Form.Label>Website of the client</Form.Label>
+            <Form.Label className='custom-text'>Website of the client</Form.Label>
             <Form.Control
               type='text'
               placeholder='live website link'
@@ -132,7 +133,7 @@ function ModalformSeo({ isOpened, heading, handleClose }) {
             />
           </Form.Group>
           <Form.Group className='mb-3' controlId='reference_sites'>
-            <Form.Label>Platform of the website</Form.Label>
+            <Form.Label className='custom-text'>Platform of the website</Form.Label>
             <Form.Control
               type='text'
               name='web_platform'
@@ -142,7 +143,7 @@ function ModalformSeo({ isOpened, heading, handleClose }) {
             />
           </Form.Group>
           <Form.Group className='mb-3' controlId='reference_sites'>
-            <Form.Label>Competitor website reference</Form.Label>
+            <Form.Label className='custom-text'>Competitor website reference</Form.Label>
             <Form.Control
               type='text'
               name='web_competitor'
@@ -152,7 +153,7 @@ function ModalformSeo({ isOpened, heading, handleClose }) {
             />
           </Form.Group>
           <Form.Group className='mb-3' controlId='reference_sites'>
-            <Form.Label>Current SEO Efforts</Form.Label>
+            <Form.Label className='custom-text'>Current SEO Efforts</Form.Label>
             <Form.Control
               type='text'
               name='current_seo'
@@ -188,7 +189,7 @@ function ModalformSeo({ isOpened, heading, handleClose }) {
             className='mb-3'
             controlId='description'
           >
-            <Form.Label>Description</Form.Label>
+            <Form.Label className='custom-text'>Description</Form.Label>
             <Form.Control
               name='description'
               as='textarea'
@@ -210,16 +211,16 @@ function ModalformSeo({ isOpened, heading, handleClose }) {
             />
           </Form.Group> */}
           <Modal.Footer>
-            <Button type='submit' style={{ backgroundColor: '#4599B4' }}>
-              Send Message
-            </Button>
-            <Button
+          <Button
               type='submit'
               style={{ backgroundColor: '#4599b4' }}
               onMouseEnter={(e) => (e.target.style.backgroundColor = '#f3972b')}
               onMouseLeave={(e) => (e.target.style.backgroundColor = '#4599b4')}
             >
               Send Message
+            </Button>
+            <Button variant='secondary' onClick={handleClose}>
+              Close
             </Button>
           </Modal.Footer>
         </Form>

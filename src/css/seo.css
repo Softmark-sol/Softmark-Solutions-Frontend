@@ -21,6 +21,10 @@
     margin-bottom: 50px;
 }
 
+.custom-text{
+    margin-left: 10px;
+}
+
 @media (max-width: 768px) {
     .seo-img{
         width: 90%;
