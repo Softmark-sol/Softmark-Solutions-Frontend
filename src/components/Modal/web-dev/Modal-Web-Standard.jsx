@@ -91,9 +91,9 @@ function ModalformStandardWeb({ isOpened, heading, handleClose }) {
         <Modal.Title>{heading}</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <Form style={{ overflowY: 'scroll' }} onSubmit={handleSubmit}>
+        <Form style={{ overflowY: 'scroll',paddingRight:'20px' }} onSubmit={handleSubmit}>
           <Form.Group className='mb-3' controlId='name'>
-            <Form.Label>Name</Form.Label>
+            <Form.Label className='custom-text'>Name</Form.Label>
             <Form.Control
               type='input'
               placeholder='Josh Anton'
@@ -103,7 +103,7 @@ function ModalformStandardWeb({ isOpened, heading, handleClose }) {
             />
           </Form.Group>
           <Form.Group className='mb-3' controlId='email'>
-            <Form.Label>Email address</Form.Label>
+            <Form.Label className='custom-text'>Email address</Form.Label>
             <Form.Control
               type='email'
               placeholder='name@example.com'
@@ -112,7 +112,7 @@ function ModalformStandardWeb({ isOpened, heading, handleClose }) {
             />
           </Form.Group>
           <Form.Group className='mb-3' controlId='company'>
-            <Form.Label>Company</Form.Label>
+            <Form.Label className='custom-text'>Company</Form.Label>
             <Form.Control
               type='input'
               placeholder='Company'
@@ -121,7 +121,7 @@ function ModalformStandardWeb({ isOpened, heading, handleClose }) {
             />
           </Form.Group>
           <Form.Group className='mb-3' controlId='reference_sites'>
-            <Form.Label>Reference Sites</Form.Label>
+            <Form.Label className='custom-text'>Reference Sites</Form.Label>
             <Form.Control
               type='input'
               placeholder='XYZ, XYZ, ABC'
@@ -131,7 +131,7 @@ function ModalformStandardWeb({ isOpened, heading, handleClose }) {
           </Form.Group>
 
           <Form.Group className='mb-3' controlId='drive_link'>
-            <Form.Label>Link to Graphics</Form.Label>
+            <Form.Label className='custom-text'>Link to Graphics</Form.Label>
             <Form.Control
               type='input'
               placeholder='Google drive link or any drive link for graphics'
@@ -140,7 +140,7 @@ function ModalformStandardWeb({ isOpened, heading, handleClose }) {
             />
           </Form.Group>
           <Form.Group className='mb-3' controlId='animation'>
-            <Form.Label>Animation References</Form.Label>
+            <Form.Label className='custom-text'>Animation References</Form.Label>
             <Form.Control
               type='input'
               placeholder='3 Reference sites to be added'
@@ -149,7 +149,7 @@ function ModalformStandardWeb({ isOpened, heading, handleClose }) {
             />
           </Form.Group>
           <Form.Group className='mb-3' controlId='domain'>
-            <Form.Label>Domain (If purchased)</Form.Label>
+            <Form.Label className='custom-text'>Domain (If purchased)</Form.Label>
             <Form.Control
               type='input'
               placeholder='www.xyz.com OR three hosting options'
@@ -158,11 +158,11 @@ function ModalformStandardWeb({ isOpened, heading, handleClose }) {
             />
           </Form.Group>
           <Form.Group className='mb-3' controlId='description'>
-            <Form.Label>Description</Form.Label>
+            <Form.Label className='custom-text'>Description</Form.Label>
             <Form.Control
               as='textarea'
               rows={3}
-              placeholder='XYZ'
+              placeholder='Describe your requirements here'
               value={formData.description}
               onChange={handleInputChange}
             />
