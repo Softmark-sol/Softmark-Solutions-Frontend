@@ -21,13 +21,12 @@ function ModalformPremiumApp({ isOpened, heading, handleClose }) {
     name: '',
     email: '',
     company: '',
-    reference_sites: '',
-    drive_link: '',
-    animation: '',
-    domain: '',
-    description: '',
+    reference_App: '',
+    drive_links_to_icons: '',
+    Link_to_Graphics: [],
+    animation_Reference: '',
     functionalities: [],
-    Link_to_Graphics: []
+    description: ''
   })
 
   useEffect(() => {
@@ -37,13 +36,12 @@ function ModalformPremiumApp({ isOpened, heading, handleClose }) {
         name: '',
         email: '',
         company: '',
-        reference_sites: '',
-        drive_link: '',
-        animation: '',
-        domain: '',
-        description: '',
+        reference_App: '',
+        drive_links_to_icons: '',
+        Link_to_Graphics: [],
+        animation_Reference: '',
         functionalities: [],
-        Link_to_Graphics: []
+        description: ''
       })
     }
   }, [isOpened])
@@ -77,7 +75,7 @@ function ModalformPremiumApp({ isOpened, heading, handleClose }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    const apiEndpoint = 'http://localhost:4000/web-premium-plane' // Replace with your actual API endpoint
+    const apiEndpoint = 'http://localhost:4000/app-premium-plane' // Replace with your actual API endpoint
 
     const data = new FormData()
     for (const key in formData) {
@@ -152,33 +150,36 @@ function ModalformPremiumApp({ isOpened, heading, handleClose }) {
                 onChange={handleInputChange}
               />
             </Form.Group>
-            <Form.Group className='mb-3' controlId='reference_sites'>
+   
+            <Form.Group className='mb-3' controlId='reference_App'>
               <Form.Label>Reference Apps</Form.Label>
               <Form.Control
                 type='input'
                 placeholder='Application Name XYZ, ABC, XYZ'
-                name='reference'
-                value={formData.reference_sites}
+                name='reference_App'
+                value={formData.reference_App}
                 onChange={handleInputChange}
               />
             </Form.Group>
-            <Form.Group className='mb-3' controlId='drive_link'>
+   
+            <Form.Group className='mb-3' controlId='drive_links_to_icons'>
               <Form.Label>Drive Link to Icons</Form.Label>
               <Form.Control
                 type='input'
                 placeholder='Google drive link or any drive link for icons'
-                value={formData.drive_link}
+                value={formData.drive_links_to_icons}
                 onChange={handleInputChange}
               />
             </Form.Group>
-            <Form.Group className='mb-3' controlId='animation'>
+  
+            <Form.Group className='mb-3' controlId='animation_Reference'>
               <Form.Label>Animation References</Form.Label>
               <Form.Control
                 as='textarea'
                 rows={3}
                 placeholder='custom notes with app names and which animation
-is being referred'
-                value={formData.animation}
+                             is being referred'
+                value={formData.animation_Reference}
                 onChange={handleInputChange}
               />
             </Form.Group>
@@ -198,6 +199,7 @@ is being referred'
               />
             </Form.Group>
             <Form.Group>
+
               <Form.Label>Complex Functionalities</Form.Label>
               {options.map((option) => (
                 <Form.Check
