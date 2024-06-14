@@ -26,6 +26,28 @@ export default function PlansWeb({ plans }) {
     if (planName === "Premium") setShowPremium(true);
   };
 
+  const data=[{
+    title: "Custom Website Design",
+    desc: "Tailored designs that reflect your brand identity and engage your target audience",
+  },
+  {
+    title: "Responsive Web Design",
+    desc: " Ensuring your website looks great and functions flawlessly on all devices",
+  },
+  {
+    title: "E-commerce Solutions",
+    desc: "Building secure, scalable online stores to boost your sales and enhance customer experience",
+
+  },
+  {
+    title: "Content Management Systems (CMS)",
+    desc: "Empowering you to manage and update your website content with ease",
+  },
+  {
+    title: "Website Maintenance & Support",
+    desc: "Providing ongoing support to keep your website up-to-date and running smoothly",
+  }]
+
   return (
     <>
       <div className="main-container container">
@@ -46,7 +68,7 @@ export default function PlansWeb({ plans }) {
         <h2 className="heading-underline-service">Our Web Development Services</h2>
       </div>
 
-    
+
       <div className="plans-container container">
         {plans.map((plan, index) => (
           <Card className={`plan-card plan-card-${index}`} key={index}>
