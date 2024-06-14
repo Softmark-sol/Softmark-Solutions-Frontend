@@ -6,10 +6,10 @@ import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import axios from "axios";
 import Swal from "sweetalert2";
-import img1 from '../assets/ppc.png'
-import img2 from '../assets/social.png'
-import img3 from '../assets/content-marketing.png'
-import img4 from '../assets/email-marketing.png'
+import img1 from '../assets/ppc.png';
+import img2 from '../assets/social.png';
+import img3 from '../assets/content-marketing.png';
+import img4 from '../assets/email-marketing.png';
 import ScrollToTopButton from "../components/ScrollUpButton";
 
 const DigitalMarketing = () => {
@@ -17,10 +17,10 @@ const DigitalMarketing = () => {
     name: "",
     email: "",
     company: "",
-    reference: "",
-    targetaudience:'',
-    description: "",
-    functionalities:[]
+    links_to_social_media: '',
+    target_audience: '',
+    access_and_permissions: '',
+    description: '',
   });
   const [show, setShow] = useState(false);
 
@@ -33,11 +33,10 @@ const DigitalMarketing = () => {
         name: "",
         email: "",
         company: "",
-        reference: "",
-        targetaudience:'',
-        description: "",
-        functionalities:[]
-
+        links_to_social_media: '',
+        target_audience: '',
+        access_and_permissions: '',
+        description: '',
       });
     }
   }, [show]);
@@ -47,6 +46,15 @@ const DigitalMarketing = () => {
     { id: 2, label: 'No' },
   ];
 
+  const handleCheckboxChange = (e) => {
+    const { id, checked } = e.target;
+    const label = options.find((option) => option.id.toString() === id).label;
+    setFormData((prev) => ({
+      ...prev,
+      access_and_permissions: checked ? label : '',
+    }));
+  };
+
   const handleChange = (e) => {
     const { id, value } = e.target;
     setFormData((prev) => ({
@@ -55,37 +63,41 @@ const DigitalMarketing = () => {
     }));
   };
 
-  const handleCheckboxChange = (e) => {
-    const { id, checked } = e.target;
-    const label = options.find((option) => option.id.toString() === id).label;
-    setFormData((prev) => ({
-      ...prev,
-      functionalities: checked
-        ? [...prev.functionalities, label]
-        : prev.functionalities.filter((optionLabel) => optionLabel !== label),
-    }));
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(
-        "https://jsonplaceholder.typicode.com/posts",
-        formData
-      );
-      if (response.status === 201) {
-        console.log("Data:", formData);
+      const response = await axios.post('http://localhost:4000/digital-marketing', formData);
+      console.log(response);
+      if (response.status === 200) {
         Swal.fire({
-          position: "top-end",
-          icon: "success",
-          title: "Message sent successfully",
+          position: 'top-end',
+          icon: 'success',
+          title: 'Message sent successfully',
           showConfirmButton: false,
           timer: 1500,
+        });
+        setFormData({
+          name: '',
+          email: '',
+          company: '',
+          links_to_social_media: '',
+          target_audience: '',
+          access_and_permissions: '',
+          description: '',
         });
         handleClose();
       }
     } catch (error) {
-      console.log("Failed to send message. Please try again later.");
+      let errorMessage = 'Failed to send message. Please try again later.';
+      if (error.response) {
+        errorMessage = error.response.data.message || errorMessage;
+      }
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: errorMessage,
+      });
+      console.error('Error:', error);
     }
   };
 
@@ -107,7 +119,7 @@ const DigitalMarketing = () => {
     },
     {
       path: img4,
-      title: "EMAIL Marketing",
+      title: "Email Marketing",
       desc: "Nurture leads and drive conversions with targeted email campaigns. From automation workflows and segmentation to A/B testing and analytics, we'll help you deliver personalized messages that drive engagement and ROI.",
     },
   ];
@@ -135,16 +147,14 @@ const DigitalMarketing = () => {
         </p>
       </div>
       <div className="main-cards">
-        {services.map((item, index) => {
-          return (
-            <Singlecard
-              key={index}
-              path={item.path}
-              title={item.title}
-              description={item.desc}
-            />
-          );
-        })}
+        {services.map((item, index) => (
+          <Singlecard
+            key={index}
+            path={item.path}
+            title={item.title}
+            description={item.desc}
+          />
+        ))}
       </div>
 
       <div className="card-heading-service container">
@@ -178,6 +188,7 @@ const DigitalMarketing = () => {
           </Modal.Header>
           <Modal.Body>
             <Form style={{ overflowY: "scroll",paddingRight:'18px' }} onSubmit={handleSubmit}>
+            <Form style={{ overflowY: "scroll", overflowX: 'hidden' }} onSubmit={handleSubmit}>
               <Form.Group className="mb-3" controlId="name">
                 <Form.Label className="custom-text">Name</Form.Label>
                 <Form.Control
@@ -210,44 +221,41 @@ const DigitalMarketing = () => {
                   onChange={handleChange}
                 />
               </Form.Group>
-              <Form.Group className="mb-3" controlId="reference">
-                <Form.Label className="custom-text">Links to social media platform</Form.Label>
+              <Form.Group className="mb-3" controlId="links_to_social_media">
+                <Form.Label className="custom-text">Links to Social Media Platforms</Form.Label>
                 <Form.Control
                   type="input"
-                  placeholder="fb, insta, linkedin, xyz"
-                  name="reference"
-                  value={formData.reference}
+                  placeholder="Enter links separated by commas"
+                  name="links_to_social_media"
+                  value={formData.links_to_social_media}
                   onChange={handleChange}
                 />
               </Form.Group>
-              <Form.Group className="mb-3" controlId="targetaudience">
-                <Form.Label className="custom-text">Target audience</Form.Label>
+              <Form.Group className="mb-3" controlId="target_audience">
+                <Form.Label className="custom-text">Target Audience</Form.Label>
                 <Form.Control
                   type="input"
-                  placeholder="information about their main competitors"
-                  name="targetaudience"
-                  value={formData.targetaudience}
+                  placeholder="Describe your target audience"
+                  name="target_audience"
+                  value={formData.target_audience}
                   onChange={handleChange}
                 />
               </Form.Group>
-              <Form.Group className="mb-3" controlId="functionalities">
-                <Form.Label>Access and Permissions</Form.Label>
-                <p style={{color:'red'}}>Are you willing to provide access to your current social media accounts or permission to create new ones for digital marketing purposes?</p>
-              </Form.Group>
-              <Form.Group>
+              <Form.Group className="mb-3" controlId="access_and_permissions">
+                <Form.Label className="custom-text">Access and Permissions</Form.Label>
+                <p style={{ color: 'red' }}>Are you willing to provide access to your current social media accounts or permission to create new ones for digital marketing purposes?</p>
                 {options.map((option) => (
                   <Form.Check
                     key={option.id}
                     type="radio"
-                    name="check"
+                    name="access_and_permissions"
                     id={option.id.toString()}
                     label={option.label}
-                    checked={formData.functionalities.includes(option.label)}
+                    checked={formData.access_and_permissions === option.label}
                     onChange={handleCheckboxChange}
                   />
                 ))}
               </Form.Group>
-              <br/>
               <Form.Group className="mb-3" controlId="description">
                 <Form.Label className="custom-text">Description</Form.Label>
                 <Form.Control
@@ -261,7 +269,12 @@ const DigitalMarketing = () => {
               <Modal.Footer>
                 <Button
                   type="submit"
-                  style={{ backgroundColor: "#4599b4" }}
+                  style={{
+                    backgroundColor: "#4599b4",
+                    color: "white",
+                    border: "none",
+                    padding: "12px 18px",
+                  }}
                   onMouseEnter={(e) =>
                     (e.target.style.backgroundColor = "#f3972b")
                   }
@@ -279,7 +292,7 @@ const DigitalMarketing = () => {
           </Modal.Body>
         </Modal>
       </div>
-      <ScrollToTopButton/>
+      <ScrollToTopButton />
     </div>
   );
 };

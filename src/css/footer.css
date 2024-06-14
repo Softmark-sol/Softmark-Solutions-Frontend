@@ -111,9 +111,12 @@
       margin-left: 0;
       text-align: center;
     }
+     .footer-right p{
+      text-align: center;
+    }
   }
   
-  @media (max-width: 480px) {
+  @media (max-width: 600px) {
     .footer-bottom {
       padding: 20px 10px;
     }
@@ -125,6 +128,9 @@
     .footer-social p {
       text-align: center;
       margin-top: 10px;
+    }
+     .footer-right p{
+      text-align: center;
     }
   }
   
