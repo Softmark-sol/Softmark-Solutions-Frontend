@@ -5,6 +5,7 @@ import CardContent from '@mui/material/CardContent'
 import { CardActionArea } from '@mui/material'
 import '../css/Plans.css'
 import ModalformSeo from '../components/Modal/Seo/Modal-Seo'
+import Inquiry from '../components/Inquiry'
 
 export default function PlansSeo({ plans }) {
   const [showModal, setShowModal] = useState(false)
@@ -55,6 +56,7 @@ export default function PlansSeo({ plans }) {
         heading={selectedPlan}
         handleClose={handleCloseModal}
       />
+      <Inquiry />
     </>
   )
 }
