@@ -10,6 +10,7 @@ import ModalformStandardWeb from "../components/Modal/web-dev/Modal-Web-Standard
 import ModalformPremiumWeb from "../components/Modal/web-dev/Modal-Web-Premium";
 import { AppData } from "../components/Data";
 import Cards from "../components/Cards";
+import WebCards from "../components/Webcards";
 
 export default function PlansWeb({ plans }) {
   const [showBasic, setShowBasic] = useState(false);
@@ -50,7 +51,7 @@ export default function PlansWeb({ plans }) {
         <h2 className="heading-underline-service">Our Web Development Services</h2>
       </div>
 
-      <Cards data={AppData}/>
+      <WebCards/>
 
 
       <div className="container">

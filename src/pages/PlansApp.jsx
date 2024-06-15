@@ -9,6 +9,7 @@ import ModalformStandardApp from '../components/Modal/app-dev/Modal-App-Standard
 import ModalformPremiumApp from '../components/Modal/app-dev/Modal-App-Premium'
 import Cards from '../components/Cards'
 import { Webdata } from '../components/Data'
+import AppCards from '../components/AppCards'
 
 export default function PlansApp({ plans }) {
   const [showBasic, setShowBasic] = useState(false)
@@ -46,7 +47,7 @@ you ahead in the competitive mobile landscape.
       <div className="card-heading-service">
         <h2 className="heading-underline-service">Our Mobile App Development Services Include</h2>
       </div>
-      <Cards data={Webdata}/>
+      <AppCards/>
       
       <div className='plans-container container'>
         {plans.map((plan, index) => (

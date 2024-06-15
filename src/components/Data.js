@@ -9,7 +9,6 @@ import IOS from '../assets/images/app-settings.png'
 import AppSetting from '../assets/images/app-store.png'
 import UIUX from '../assets/images/programming.png'
 
-export default ServicesData;
 
 
 export const Webdata = [
