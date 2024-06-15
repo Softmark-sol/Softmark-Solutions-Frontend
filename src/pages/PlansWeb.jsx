@@ -8,8 +8,9 @@ import "../css/planweb.css";
 import ModalformBasicWeb from "../components/Modal/web-dev/Modal-Web-Basic";
 import ModalformStandardWeb from "../components/Modal/web-dev/Modal-Web-Standard";
 import ModalformPremiumWeb from "../components/Modal/web-dev/Modal-Web-Premium";
-import { AppData } from "../Data/Data";
+import { AppData } from "../components/Data";
 import Cards from "../components/Cards";
+import WebCards from "../components/Webcards";
 
 export default function PlansWeb({ plans }) {
   const [showBasic, setShowBasic] = useState(false);
@@ -53,6 +54,10 @@ export default function PlansWeb({ plans }) {
       <div className="upcards"><Cards data={AppData}/></div>
       
     
+
+      <WebCards/>
+
+
       <div className="container">
       <h6 className="last-paragraph">
           At SoftMark Solutions, we recognize the critical role a well-crafted

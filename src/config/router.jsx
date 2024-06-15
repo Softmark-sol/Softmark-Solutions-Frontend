@@ -16,7 +16,6 @@ import PlansApp from '../pages/PlansApp'
 import NotFound from '../components/NotFound'
 import Seo from '../pages/Seo'
 import Logo from '../pages/PlansLogo'
-import ServicesData from '../Data/Data'
 
 function Router() {
   return (
