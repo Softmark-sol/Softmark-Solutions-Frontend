@@ -8,7 +8,7 @@ import "../css/planweb.css";
 import ModalformBasicWeb from "../components/Modal/web-dev/Modal-Web-Basic";
 import ModalformStandardWeb from "../components/Modal/web-dev/Modal-Web-Standard";
 import ModalformPremiumWeb from "../components/Modal/web-dev/Modal-Web-Premium";
-import { AppData } from "../Data/Data";
+import { AppData } from "../components/Data";
 import Cards from "../components/Cards";
 
 export default function PlansWeb({ plans }) {

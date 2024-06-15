@@ -8,7 +8,7 @@ import ModalformBasicApp from '../components/Modal/app-dev/Modal-App-Basic'
 import ModalformStandardApp from '../components/Modal/app-dev/Modal-App-Standard'
 import ModalformPremiumApp from '../components/Modal/app-dev/Modal-App-Premium'
 import Cards from '../components/Cards'
-import { Webdata } from '../Data/Data'
+import { Webdata } from '../components/Data'
 
 export default function PlansApp({ plans }) {
   const [showBasic, setShowBasic] = useState(false)
