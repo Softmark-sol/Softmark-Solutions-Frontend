@@ -50,7 +50,7 @@ const Modalbasic = ({ isOpened, heading, handleClose }) => {
     }
     try {
       const response = await axios.post(
-        'http://localhost:4000/web-basic-plane',
+        'http://localhost:4000/logo-basic-plane',
         data,
         {
           headers: {

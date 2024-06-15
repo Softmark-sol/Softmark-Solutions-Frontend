@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react'
-import '../../../css/modal.css'
-import Button from 'react-bootstrap/Button'
-import Form from 'react-bootstrap/Form'
-import Modal from 'react-bootstrap/Modal'
-import axios from 'axios'
-import Swal from 'sweetalert2'
+import React, { useState, useEffect } from 'react';
+import '../../../css/modal.css';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import Modal from 'react-bootstrap/Modal';
+import axios from 'axios';
+import Swal from 'sweetalert2';
 
 const Modalbusiness = ({ isOpened, heading, handleClose }) => {
   const [formData, setFormData] = useState({
@@ -12,15 +12,15 @@ const Modalbusiness = ({ isOpened, heading, handleClose }) => {
     email: '',
     company: '',
     reference_logos: '',
-    reference_templete: '',
-    reference_website: '',
+    reference_template: '',
+    reference_websites: '',
     description: '',
-    drive_link: '',
+    drive_link_to_reference_images: '',
     Link_to_Graphics: [],
     product_design: '',
     custom_product_design: ''
-  })
-  const [showCustomDetails, setShowCustomDetails] = useState(false)
+  });
+  const [showCustomDetails, setShowCustomDetails] = useState(false);
 
   useEffect(() => {
     if (isOpened) {
@@ -29,86 +29,110 @@ const Modalbusiness = ({ isOpened, heading, handleClose }) => {
         email: '',
         company: '',
         reference_logos: '',
-        reference_templete: '',
-        reference_website: '',
+        reference_template: '',
+        reference_websites: '',
         description: '',
-        drive_link: '',
+        drive_link_to_reference_images: '',
         Link_to_Graphics: [],
         product_design: '',
         custom_product_design: ''
-      })
-      setShowCustomDetails(false)
+      });
+      setShowCustomDetails(false);
     }
-  }, [isOpened])
+  }, [isOpened]);
 
   const handleChange = (e) => {
-    const { name, value, files } = e.target
+    const { name, value, files } = e.target;
     if (name === 'Link_to_Graphics') {
-      setFormData((prev) => ({ ...prev, [name]: files }))
+      setFormData((prev) => ({ ...prev, [name]: files }));
     } else {
-      setFormData((prev) => ({ ...prev, [name]: value }))
+      setFormData((prev) => ({ ...prev, [name]: value }));
     }
-  }
+  };
 
   const handleDropdownChange = (e) => {
-    const value = e.target.value
+    const value = e.target.value;
     if (value === 'Other') {
-      setShowCustomDetails(true)
-      setFormData((prev) => ({
-        ...prev,
-        product_design: '',
-        custom_product_design: ''
-      }))
-    } else {
-      setShowCustomDetails(false)
+      setShowCustomDetails(true);
       setFormData((prev) => ({
         ...prev,
         product_design: value,
         custom_product_design: ''
-      }))
+      }));
+    } else {
+      setShowCustomDetails(false);
+      setFormData((prev) => ({
+        ...prev,
+        product_design: value,
+        custom_product_design: ''
+      }));
     }
-  }
+  };
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
-    const data = new FormData()
+    e.preventDefault();
+
+    if (!formData.product_design && !formData.custom_product_design) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'Please select a product design or provide custom details.',
+      });
+      return;
+    }
+
+    if (showCustomDetails && !formData.custom_product_design) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'Please provide custom product design details.',
+      });
+      return;
+    }
+
+    const data = new FormData();
     for (const key in formData) {
       if (key === 'Link_to_Graphics') {
         for (let i = 0; i < formData[key].length; i++) {
-          data.append(key, formData[key][i])
+          data.append(key, formData[key][i]);
         }
+      } else if (key === 'custom_product_design' && !formData[key]) {
+        continue; // Skip if custom_product_design is not required and empty
       } else {
-        data.append(key, formData[key])
+        data.append(key, formData[key]);
       }
     }
+
     try {
       const response = await axios.post(
-        'http://localhost:4000/web-basic-plane',
+        'http://localhost:4000/logo-business-plane',
         data,
         {
           headers: {
             'Content-Type': 'multipart/form-data'
           }
         }
-      )
+      );
       if (response.status === 201) {
-        console.log('Data:', formData)
+        console.log('Data:', formData);
         Swal.fire({
           position: 'top-end',
           icon: 'success',
           title: 'Message sent successfully',
           showConfirmButton: false,
           timer: 1500
-        })
-        handleClose()
+        });
+        handleClose();
       }
     } catch (error) {
-      console.error(
-        'Failed to send message. Please try again later.',
-        error.response.data
-      )
+      console.error('Failed to send message. Please try again later.', error.response.data);
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'Failed to send message. Please try again later.',
+      });
     }
-  }
+  };
 
   return (
     <div>
@@ -151,7 +175,6 @@ const Modalbusiness = ({ isOpened, heading, handleClose }) => {
                 name='company'
                 value={formData.company}
                 onChange={handleChange}
-                required
               />
             </Form.Group>
             <Form.Group className='mb-3' controlId='reference_logos'>
@@ -164,28 +187,24 @@ const Modalbusiness = ({ isOpened, heading, handleClose }) => {
                 onChange={handleChange}
               />
             </Form.Group>
-            <Form.Group className='mb-3' controlId='reference_templete'>
-              <Form.Label className='custom-text'>
-                Reference Template
-              </Form.Label>
+            <Form.Group className='mb-3' controlId='reference_template'>
+              <Form.Label className='custom-text'>Reference Template</Form.Label>
               <Form.Control
                 as='textarea'
                 rows={2}
                 placeholder='for brochures, flyers Stationary design reference images (require 3 references)'
-                name='reference_templete'
-                value={formData.reference_templete}
+                name='reference_template'
+                value={formData.reference_template}
                 onChange={handleChange}
               />
             </Form.Group>
-            <Form.Group className='mb-3' controlId='reference_website'>
-              <Form.Label className='custom-text'>
-                Reference websites for design concept
-              </Form.Label>
+            <Form.Group className='mb-3' controlId='reference_websites'>
+              <Form.Label className='custom-text'>Reference websites for design concept</Form.Label>
               <Form.Control
                 type='text'
                 placeholder='XYZ,ABC,XYZ'
-                name='reference_website'
-                value={formData.reference_website}
+                name='reference_websites'
+                value={formData.reference_websites}
                 onChange={handleChange}
               />
             </Form.Group>
@@ -204,12 +223,12 @@ const Modalbusiness = ({ isOpened, heading, handleClose }) => {
 
             <Form.Group className='mb-3' controlId='product_design'>
               <Form.Label className='custom-text'>Product Design</Form.Label>
-              <select
+              <Form.Control
+                as='select'
                 name='product_design'
                 className='form-control'
                 value={formData.product_design}
                 onChange={handleDropdownChange}
-                required
               >
                 <option value='' disabled>
                   Select a Product Design
@@ -217,14 +236,12 @@ const Modalbusiness = ({ isOpened, heading, handleClose }) => {
                 <option value='Clothing'>Clothing</option>
                 <option value='Gadgets'>Gadgets</option>
                 <option value='Other'>Other</option>
-              </select>
+              </Form.Control>
             </Form.Group>
 
             {showCustomDetails && (
               <Form.Group className='mb-3' controlId='custom_product_design'>
-                <Form.Label className='custom-text'>
-                  Provide custom details
-                </Form.Label>
+                <Form.Label className='custom-text'>Provide custom details</Form.Label>
                 <Form.Control
                   type='input'
                   placeholder='Provide custom details'
@@ -235,23 +252,19 @@ const Modalbusiness = ({ isOpened, heading, handleClose }) => {
               </Form.Group>
             )}
 
-            <Form.Group className='mb-3' controlId='drive_link'>
-              <Form.Label className='custom-text'>
-                Drive Link to reference images
-              </Form.Label>
+            <Form.Group className='mb-3' controlId='drive_link_to_reference_images'>
+              <Form.Label className='custom-text'>Drive Link to reference images</Form.Label>
               <Form.Control
                 type='input'
                 placeholder='Google drive link or any drive link for icons'
-                name='drive_link'
-                value={formData.drive_link}
+                name='drive_link_to_reference_images'
+                value={formData.drive_link_to_reference_images}
                 onChange={handleChange}
               />
             </Form.Group>
             <Form.Group className='mb-3' controlId='Link_to_Graphics'>
-              <Form.Label style={{ display: 'flex' }}>
-                Or Attach reference images
-              </Form.Label>
-              <input
+              <Form.Label style={{ display: 'flex' }}>Or Attach reference images</Form.Label>
+              <Form.Control
                 multiple
                 type='file'
                 name='Link_to_Graphics'
@@ -263,12 +276,8 @@ const Modalbusiness = ({ isOpened, heading, handleClose }) => {
               <Button
                 type='submit'
                 style={{ backgroundColor: '#4599b4' }}
-                onMouseEnter={(e) =>
-                  (e.target.style.backgroundColor = '#f3972b')
-                }
-                onMouseLeave={(e) =>
-                  (e.target.style.backgroundColor = '#4599b4')
-                }
+                onMouseEnter={(e) => (e.target.style.backgroundColor = '#f3972b')}
+                onMouseLeave={(e) => (e.target.style.backgroundColor = '#4599b4')}
               >
                 Send Message
               </Button>
@@ -280,7 +289,7 @@ const Modalbusiness = ({ isOpened, heading, handleClose }) => {
         </Modal.Body>
       </Modal>
     </div>
-  )
-}
+  );
+};
 
-export default Modalbusiness
+export default Modalbusiness;
