@@ -17,7 +17,9 @@
     position: relative;
     display: inline-block;
   }
-  
+  .upcards{
+    margin-top: -7rem !important;
+  }
   .card-heading-service .heading-underline-service::after {
     content: '';
     margin-top: 50px;

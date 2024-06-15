@@ -48,11 +48,11 @@ export default function PlansWeb({ plans }) {
 
       <div className="card-heading-service">
         <h2 className="heading-underline-service">Our Web Development Services</h2>
+        
       </div>
-
-      <Cards data={AppData}/>
-
-
+      <div className="upcards"><Cards data={AppData}/></div>
+      
+    
       <div className="container">
       <h6 className="last-paragraph">
           At SoftMark Solutions, we recognize the critical role a well-crafted
