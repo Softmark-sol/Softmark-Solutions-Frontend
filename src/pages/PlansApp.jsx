@@ -8,8 +8,8 @@ import ModalformBasicApp from '../components/Modal/app-dev/Modal-App-Basic'
 import ModalformStandardApp from '../components/Modal/app-dev/Modal-App-Standard'
 import ModalformPremiumApp from '../components/Modal/app-dev/Modal-App-Premium'
 import Cards from '../components/Cards'
-import { Webdata } from '../Data/Data'
 import Inquiry from '../components/Inquiry'
+import AppCards from '../components/AppCards'
 
 export default function PlansApp({ plans }) {
   const [showBasic, setShowBasic] = useState(false)
@@ -48,7 +48,6 @@ export default function PlansApp({ plans }) {
           Our Mobile App Development Services Include
         </h2>
       </div>
-      <Cards data={Webdata} />
 
       <div>
         <p>
@@ -59,6 +58,8 @@ export default function PlansApp({ plans }) {
           the perfect fit for your business.
         </p>
       </div>
+
+      <AppCards />
 
       <div className='plans-container container'>
         {plans.map((plan, index) => (

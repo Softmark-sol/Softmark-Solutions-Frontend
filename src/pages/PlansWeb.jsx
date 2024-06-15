@@ -8,9 +8,9 @@ import '../css/planweb.css'
 import ModalformBasicWeb from '../components/Modal/web-dev/Modal-Web-Basic'
 import ModalformStandardWeb from '../components/Modal/web-dev/Modal-Web-Standard'
 import ModalformPremiumWeb from '../components/Modal/web-dev/Modal-Web-Premium'
-import { AppData } from '../Data/Data'
+import { AppData } from '../components/Data'
 import Cards from '../components/Cards'
-import Inquiry from '../components/Inquiry'
+import WebCards from '../components/Webcards'
 
 export default function PlansWeb({ plans }) {
   const [showBasic, setShowBasic] = useState(false)
@@ -50,10 +50,12 @@ export default function PlansWeb({ plans }) {
           Our Web Development Services
         </h2>
       </div>
+      <div className='upcards'>
+        <WebCards />
+      </div>
 
-      <Cards data={AppData} />
-
-      <div className='container'>
+      <div className='main-container container'>
+        <h2>Expert Website Development for Business Success</h2>
         <h6 className='last-paragraph'>
           At SoftMark Solutions, we recognize the critical role a well-crafted
           website plays in your business success. Our expert team specializes in
