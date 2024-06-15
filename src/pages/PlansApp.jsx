@@ -49,17 +49,22 @@ export default function PlansApp({ plans }) {
         </h2>
       </div>
 
-      <div>
-        <p>
+      <div className='upcards'>
+        <AppCards />
+      </div>
+
+      <div className='main-container container'>
+        <h2>
+          Unlock Your Business Potential with Expert Mobile App Development
+        </h2>
+        <h6 className='last-paragraph'>
           Choose SoftMark Solutions for your mobile app development needs and
           unlock the potential of your business with a powerful mobile presence.
           Let us help you connect with your audience and achieve your goals
           through innovative mobile solutions. Explore our plans below to find
-          the perfect fit for your business.
-        </p>
+          the perfect fit for your business
+        </h6>
       </div>
-
-      <AppCards />
 
       <div className='plans-container container'>
         {plans.map((plan, index) => (
