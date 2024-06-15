@@ -1,6 +1,6 @@
 .whyHeroImg {
-  width: 55%;
-  height: 33vw;
+  width: 50%;
+  height: 30vw;
   margin-top: 2vw;
 }
 
@@ -12,9 +12,8 @@
 }
 .whyUsPara {
   color: #000000;
-  font-size: 3vw;
-  font-weight: bold;
   text-align: center;
+  padding-top: 5px;
 }
 
 .whyUs-span {

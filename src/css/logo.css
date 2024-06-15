@@ -1,0 +1,12 @@
+.main-paragrah{
+    padding-top: 20px;
+    padding-bottom: 50px;
+    text-align: center;
+    word-spacing: 1.2px;
+}
+
+@media screen and (max-width:600px) {
+    .main-paragrah{
+        text-align: justify;
+    }
+}
