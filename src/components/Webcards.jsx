@@ -12,29 +12,30 @@ const WebCards = ({ heading }) => {
         {
           path: WebDesign,
           title: 'Custom Website Design',
-          desc: 'Tailored designs that reflect your brand identity and engage your target audience'
+          desc: 'Tailored designs that reflect your brand identity and engage your target audience. We specialize in creating visually appealing websites that are user-friendly and responsive across all devices.'
         },
         {
           path: Mobile,
           title: 'Responsive Web Design',
-          desc: ' Ensuring your website looks great and functions flawlessly on all devices'
+          desc: 'Ensuring your website looks great and functions flawlessly on all devices. Our designs adapt seamlessly to different screen sizes, optimizing user experience and satisfaction.'
         },
         {
           path: Solutions,
           title: 'E-commerce Solutions',
-          desc: 'Building secure, scalable online stores to boost your sales and enhance customer experience'
+          desc: 'Building secure, scalable online stores to boost your sales and enhance customer experience. From seamless payment integration to analytics, we provide comprehensive solutions tailored to your business.'
         },
         {
           path: CMS,
           title: 'Content Management Systems (CMS)',
-          desc: 'Empowering you to manage and update your website content with ease'
+          desc: 'Empowering you to manage and update your website content with ease. Our CMS solutions streamline content creation and publishing, ensuring efficiency and productivity.'
         },
         {
           path: Maintenance,
           title: 'Website Maintenance & Support',
-          desc: 'Providing ongoing support to keep your website up-to-date and running smoothly'
+          desc: 'Providing ongoing support to keep your website up-to-date and running smoothly. We offer proactive maintenance services, including updates and security patches.'
         }
-      ]
+      ];
+      
 
   return (
     <div>
