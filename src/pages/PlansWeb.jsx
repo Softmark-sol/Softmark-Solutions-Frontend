@@ -53,12 +53,9 @@ export default function PlansWeb({ plans }) {
       </div>
       <div className="upcards"><WebCards/></div>
       
-    
-
       
-
-
-      <div className="container">
+      <div className="main-container container">
+      <h2>Expert Website Development for Business Success</h2>
       <h6 className="last-paragraph">
           At SoftMark Solutions, we recognize the critical role a well-crafted
           website plays in your business success. Our expert team specializes in
