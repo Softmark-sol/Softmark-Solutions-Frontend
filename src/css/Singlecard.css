@@ -3,7 +3,6 @@
   height: 300px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   padding: 14px;
-  /* added !important */
 }
 .maincard {
   transition: box-shadow 0.3s ease, transform 0.3s ease;
@@ -31,7 +30,8 @@
 
 .maincard:hover {
   box-shadow: 0 0 10px rgba(172, 172, 172, 0.865);
-  transform: translateY(-10px);
+  transform: scale(1.04) rotate(-1deg);
+  /* transform: translateY(-10px); */
 }
 h5 {
   text-align: center;
