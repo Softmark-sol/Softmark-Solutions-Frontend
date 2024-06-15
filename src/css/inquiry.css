@@ -1,0 +1,31 @@
+/* InquiryButton.css */
+.inquiry-button-container {
+  text-align: center;
+  margin: 20px 0;
+  padding: 20px;
+}
+
+.inquiry-button-container p {
+  font-size: 1.2em;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.inquiry-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  background: linear-gradient(90deg, #f3972b 0%, #4599b4 100%);
+  background-size: 200% 100%;
+  transition: background-position 0.5s ease, transform 0.3s ease;
+}
+
+.inquiry-button:hover {
+  background-position: 100% 0;
+  transform: scale(1.05);
+  text-decoration: none;
+  color: white;
+}
