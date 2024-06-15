@@ -6,10 +6,9 @@ const WhyUsHero = () => {
   return (
     <div className='WhyUsHero'>
       <span className='whyUs-span'>WHY US</span>
-      <p className='whyUsPara'>
-        Crafting digital success through Web &amp; Mobile apps, SEO,
-        <br /> and branding
-      </p>
+      <h2 className='whyUsPara'>
+        Crafting digital success through Web &amp; Mobile apps, SEO, and branding
+      </h2>
       <img className='whyHeroImg' src={Img} alt='why-us' />
     </div>
   )
