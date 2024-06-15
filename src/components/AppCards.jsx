@@ -10,7 +10,7 @@ import UIUX from '../assets/images/programming.png'
 const AppCards = ({ heading }) => {
     const AppData = [
         {
-          path: IOS,
+          path: AppSetting,
           title: 'iOS App Development',
           desc: "Crafting sleek and functional apps for Apple's ecosystem, ensuring optimal performance on all iOS devices. Our team leverages native iOS capabilities to deliver seamless user experiences, from elegant UI designs to robust backend functionalities."
         },
@@ -20,7 +20,7 @@ const AppCards = ({ heading }) => {
           desc: 'Building dynamic and user-friendly apps for Android devices, tailored to your business objectives. We specialize in optimizing performance across various Android versions and device types, ensuring compatibility and reliability.'
         },
         {
-          path: AppSetting,
+          path: IOS,
           title: 'Cross-Platform App Development',
           desc: 'Creating versatile apps that provide a consistent experience across both iOS and Android platforms. Utilizing frameworks like React Native and Flutter, we develop apps with shared codebase and native performance, maximizing efficiency and maintainability.'
         },
