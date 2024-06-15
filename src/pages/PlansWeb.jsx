@@ -8,8 +8,8 @@ import "../css/planweb.css";
 import ModalformBasicWeb from "../components/Modal/web-dev/Modal-Web-Basic";
 import ModalformStandardWeb from "../components/Modal/web-dev/Modal-Web-Standard";
 import ModalformPremiumWeb from "../components/Modal/web-dev/Modal-Web-Premium";
-import PlanCard from "../components/PlansCard";
-import data from "../components/PlanCardData"
+import { AppData } from "../Data/Data";
+import Cards from "../components/Cards";
 
 export default function PlansWeb({ plans }) {
   const [showBasic, setShowBasic] = useState(false);
@@ -50,9 +50,8 @@ export default function PlansWeb({ plans }) {
         <h2 className="heading-underline-service">Our Web Development Services</h2>
       </div>
 
-      <div className="webpan-cards container">{data.map((item)=>{
-        return <PlanCard title={item.title} desciptions={item.desc}/>
-      })}</div>
+      <Cards data={AppData}/>
+
 
       <div className="container">
       <h6 className="last-paragraph">
