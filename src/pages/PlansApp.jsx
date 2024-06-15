@@ -7,6 +7,8 @@ import '../css/Plans.css'
 import ModalformBasicApp from '../components/Modal/app-dev/Modal-App-Basic'
 import ModalformStandardApp from '../components/Modal/app-dev/Modal-App-Standard'
 import ModalformPremiumApp from '../components/Modal/app-dev/Modal-App-Premium'
+import Cards from '../components/Cards'
+import Inquiry from '../components/Inquiry'
 import AppCards from '../components/AppCards'
 
 export default function PlansApp({ plans }) {
@@ -26,27 +28,44 @@ export default function PlansApp({ plans }) {
     if (planName === 'Premium') setShowPremium(true)
   }
 
- 
-
   return (
     <>
-    <div className="main-container container">
+      <div className='main-container container'>
         <h2>SoftMark Solutions - Innovating the Mobile Experience</h2>
-        <h6 className="sub-paragraph">
-        In today's mobile-first world, having a robust and intuitive mobile application is 
-essential for reaching and engaging your audience. At SoftMark Solutions, we 
-specialize in developing high-quality mobile apps that deliver seamless user 
-experiences and drive business growth. From concept to launch, our team is 
-committed to providing innovative solutions that meet your specific needs and keep
-you ahead in the competitive mobile landscape.
+        <h6 className='sub-paragraph'>
+          In today's mobile-first world, having a robust and intuitive mobile
+          application is essential for reaching and engaging your audience. At
+          SoftMark Solutions, we specialize in developing high-quality mobile
+          apps that deliver seamless user experiences and drive business growth.
+          From concept to launch, our team is committed to providing innovative
+          solutions that meet your specific needs and keep you ahead in the
+          competitive mobile landscape.
         </h6>
       </div>
 
-      <div className="card-heading-service">
-        <h2 className="heading-underline-service">Our Mobile App Development Services Include</h2>
+      <div className='card-heading-service'>
+        <h2 className='heading-underline-service'>
+          Our Mobile App Development Services Include
+        </h2>
       </div>
-      <div className="upcards"><AppCards/></div>
-      
+
+      <div className='upcards'>
+        <AppCards />
+      </div>
+
+      <div className='main-container container'>
+        <h2>
+          Unlock Your Business Potential with Expert Mobile App Development
+        </h2>
+        <h6 className='last-paragraph'>
+          Choose SoftMark Solutions for your mobile app development needs and
+          unlock the potential of your business with a powerful mobile presence.
+          Let us help you connect with your audience and achieve your goals
+          through innovative mobile solutions. Explore our plans below to find
+          the perfect fit for your business
+        </h6>
+      </div>
+
       <div className='plans-container container'>
         {plans.map((plan, index) => (
           <Card className={`plan-card plan-card-${index}`} key={index}>
@@ -79,13 +98,6 @@ you ahead in the competitive mobile landscape.
         ))}
       </div>
 
-      <div>
-        <p>Choose SoftMark Solutions for your mobile app development needs and unlock the 
-potential of your business with a powerful mobile presence. Let us help you connect
-with your audience and achieve your goals through innovative mobile solutions. 
-Explore our plans below to find the perfect fit for your business.</p>
-      </div>
-
       <ModalformBasicApp
         isOpened={showBasic}
         heading={selectedPlan + ' Plan'}
@@ -103,6 +115,8 @@ Explore our plans below to find the perfect fit for your business.</p>
         heading={selectedPlan + ' Plan'}
         handleClose={handleClosePremium}
       />
+
+      <Inquiry />
     </>
   )
 }
