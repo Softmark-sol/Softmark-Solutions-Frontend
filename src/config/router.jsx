@@ -16,6 +16,7 @@ import PlansApp from "../pages/PlansApp";
 import NotFound from "../components/NotFound";
 import Seo from "../pages/Seo";
 import Logo from "../pages/PlansLogo";
+import  ServicesData  from "../Data/Data";
 
 function Router() {
   return (
@@ -56,7 +57,7 @@ function Router() {
           <Route path="/contactUs" element={<ContactForm />} />
 
           {/* Services Component */}
-          <Route path="/services" element={<Cards />} />
+          <Route path="/services" element={<Cards data={ServicesData} heading={`Our Services`}/>} />
 
           {/* 404*/}
           <Route path="*" element={<NotFound />} />

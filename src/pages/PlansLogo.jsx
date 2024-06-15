@@ -4,6 +4,7 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import { CardActionArea } from "@mui/material";
 import "../css/Plans.css";
+import '../css/logo.css'
 import ModalformBasicLogo from "../components/Modal/logo-design/Modalbasic";
 import ModalformStandardLogo from "../components/Modal/logo-design/Modalbasic";
 import ModalformBusiness from "../components/Modal/logo-design/Modalbusniess";
@@ -31,6 +32,18 @@ export default function Logo({ plans }) {
 
   return (
     <>
+      <div className="main-container container">
+        <h2>Transform Your Brand with SoftMark Solutions</h2>
+        <h6 className="main-paragrah" >
+          At SoftMark Solutions, we specialize in creating stunning logo designs
+          and comprehensive branding packages that set your business apart. Our
+          team of expert designers is dedicated to bringing your vision to life,
+          ensuring your brand resonates with your audience and leaves a lasting
+          impression.Explore our plans below to find the perfect fit for your
+          branding needs.
+        </h6>
+      </div>
+
       <div className="plans-container container">
         {plans.map((plan, index) => (
           <Card
