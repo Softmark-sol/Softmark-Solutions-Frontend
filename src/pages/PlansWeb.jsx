@@ -51,11 +51,11 @@ export default function PlansWeb({ plans }) {
         <h2 className="heading-underline-service">Our Web Development Services</h2>
         
       </div>
-      <div className="upcards"><Cards data={AppData}/></div>
+      <div className="upcards"><WebCards/></div>
       
     
 
-      <WebCards/>
+      
 
 
       <div className="container">
