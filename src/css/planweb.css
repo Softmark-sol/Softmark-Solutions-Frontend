@@ -5,6 +5,7 @@
     text-align: justify;
     word-spacing: 0.5px;
     padding-top: 15px;
+    color: gray;
 }
 .card-heading-service {
     text-align: center;
@@ -43,4 +44,5 @@
     padding-top: 1.5rem;
     padding-bottom: 30px;
     text-align: justify;
+    color: gray;
   }

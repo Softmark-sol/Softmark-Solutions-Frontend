@@ -130,6 +130,7 @@ const DigitalMarketing = () => {
   return (
     <div>
       <div className='container main-container'>
+      <h2 style={{paddingBottom:'10px'}}>SoftMark Solutions - Igniting Your Digital Presence</h2>
         <h6 className='main-heading'>
           At Softmark Solutions we specialize in delivering tailored digital
           marketing solutions that drive growth, engagement, and results for
@@ -164,8 +165,8 @@ const DigitalMarketing = () => {
         <h2 className='heading-underline-service'>Get Started Today</h2>
         <p className='paragraph'>
           Ready to take your digital marketing efforts to the next level?
-          Contact us today to schedule a consultation and learn how [Your
-          Company Name] can help you achieve your goals and grow your business
+          Contact us today to schedule a consultation and learn how SoftMark Solutions
+           can help you achieve your goals and grow your business
           online
         </p>
       </div>

@@ -55,7 +55,7 @@ export default function PlansApp({ plans }) {
 
       <div className='main-container container'>
         <h2>
-          Unlock Your Business Potential with Expert Mobile App Development
+          Unlock Your Business Potential with Expert <br/> Mobile App Development
         </h2>
         <h6 className='last-paragraph'>
           Choose SoftMark Solutions for your mobile app development needs and
