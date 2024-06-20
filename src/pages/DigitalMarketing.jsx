@@ -130,7 +130,7 @@ const DigitalMarketing = () => {
   return (
     <div>
       <div className='container main-container'>
-        <h6>
+        <h6 className='main-heading'>
           At Softmark Solutions we specialize in delivering tailored digital
           marketing solutions that drive growth, engagement, and results for
           businesses of all sizes. From strategic planning to flawless
@@ -149,7 +149,7 @@ const DigitalMarketing = () => {
           maximize ROI.
         </p>
       </div>
-      <div className='main-cards'>
+      <div className='main-cards container'>
         {services.map((item, index) => (
           <Singlecard
             key={index}

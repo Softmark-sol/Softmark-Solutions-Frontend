@@ -25,6 +25,13 @@
     margin-left: 10px;
 }
 
+@media screen and (max-width:600px) {
+    .seo-p{
+        text-align: justify;
+        word-spacing: 2px;
+    }
+}
+
 @media (max-width: 768px) {
     .seo-img{
         width: 90%;

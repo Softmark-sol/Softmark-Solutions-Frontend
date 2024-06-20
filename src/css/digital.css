@@ -1,6 +1,6 @@
 .main-container{
     padding-top: 50px;
-    text-align: center;
+    /* text-align: center; */
     word-spacing: 2px;
 }
 .card-heading-service {
@@ -16,6 +16,9 @@
   .card-heading-service .heading-underline-service {
     position: relative;
     display: inline-block;
+  }
+  .main-heading{
+    text-align: center;
   }
   
   .card-heading-service .heading-underline-service::after {
@@ -39,10 +42,19 @@
         justify-content: center;
         align-items: center;
         padding-top: 30px;
-        gap: 30px;
+        gap: 20px;
   }
   .modalbtn{
     text-align: center;
     padding-top: 30px;
     background-color: none;
+  }
+
+  @media screen and (max-width:600px) {
+    .main-heading{
+      text-align: justify;
+    }
+    .paragraph{
+      text-align: justify;
+    }
   }
