@@ -10,6 +10,10 @@ import img4 from "../assets/App1.jpg";
 import img5 from "../assets/App2.jpg";
 import img6 from "../assets/App3.jpg";
 
+import img7 from "../assets/logo1.png";
+import img8 from "../assets/logo2.png";
+import img9 from "../assets/logo3.png";
+
 import { useNavigate } from "react-router-dom";
 import ScrollToTopButton from "../components/ScrollUpButton";
 
@@ -37,6 +41,16 @@ const app=[{
 },
 {
   path:img6
+}
+]
+const logo=[{
+  path:img7
+},
+{
+  path:img8
+},
+{
+  path:img9
 }
 ]
 
@@ -92,7 +106,7 @@ const app=[{
     </div>
 
     <div className="container web-container">
-    {app.map((item,index)=>{
+    {logo.map((item,index)=>{
       return <PortfolioCard path={item.path}/>
     })}
     </div>
