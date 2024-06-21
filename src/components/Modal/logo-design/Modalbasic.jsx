@@ -5,7 +5,9 @@ import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
 import axios from 'axios';
 import Swal from 'sweetalert2';
+import API_CONFIG from '../../../config/api';
 
+const { apiKey } = API_CONFIG;
 const Modalbasic = ({ isOpened, heading, handleClose }) => {
   const [formData, setFormData] = useState({
     name: '',
@@ -67,7 +69,7 @@ const Modalbasic = ({ isOpened, heading, handleClose }) => {
 
     try {
       const response = await axios.post(
-        'http://localhost:4000/logo-basic-plane',
+        `${apiKey}/logo-basic-plane`,
         data,
         {
           headers: {

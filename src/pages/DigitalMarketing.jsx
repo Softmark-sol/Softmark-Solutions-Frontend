@@ -11,6 +11,9 @@ import img2 from '../assets/social.png'
 import img3 from '../assets/content-marketing.png'
 import img4 from '../assets/email-marketing.png'
 import ScrollToTopButton from '../components/ScrollUpButton'
+import API_CONFIG from '../config/api';
+
+const { apiKey } = API_CONFIG;
 
 const DigitalMarketing = () => {
   const [formData, setFormData] = useState({
@@ -78,7 +81,7 @@ const DigitalMarketing = () => {
     }
     try {
       const response = await axios.post(
-        'http://localhost:4000/digital-marketing',
+        `${apiKey}/digital-marketing`,
         formData
       )
       console.log(response)

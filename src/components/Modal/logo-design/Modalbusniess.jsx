@@ -5,7 +5,9 @@ import Modal from 'react-bootstrap/Modal';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import '../../../css/modal.css'; // Adjust path as per your project structure
+import API_CONFIG from '../../../config/api';
 
+const { apiKey } = API_CONFIG;
 const Modalbusiness = ({ isOpened, heading, handleClose }) => {
   const [formData, setFormData] = useState({
     name: '',
@@ -111,7 +113,7 @@ const Modalbusiness = ({ isOpened, heading, handleClose }) => {
 
     try {
       const response = await axios.post(
-        'http://localhost:4000/logo-business-plane',
+        `${apiKey}/logo-business-plane`,
         data,
         {
           headers: {

@@ -6,7 +6,9 @@ import Form from 'react-bootstrap/Form'
 import Modal from 'react-bootstrap/Modal'
 import axios from 'axios'
 import Swal from 'sweetalert2'
+import API_CONFIG from '../../../config/api';
 
+const { apiKey } = API_CONFIG;
 const Modalpremium = ({ isOpened, heading, handleClose }) => {
   const [formData, setFormData] = useState({
     name: '',
@@ -65,7 +67,7 @@ const Modalpremium = ({ isOpened, heading, handleClose }) => {
     }
     try {
       const response = await axios.post(
-        'http://localhost:4000/logo-premium-plane',
+        `${apiKey}/logo-premium-plane`,
         data,
         {
           headers: {

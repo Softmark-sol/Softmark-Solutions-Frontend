@@ -3,6 +3,9 @@ import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import Modal from 'react-bootstrap/Modal'
 import Swal from 'sweetalert2'
+import API_CONFIG from '../../../config/api';
+
+const { apiKey } = API_CONFIG;
 
 function ModalformPremiumApp({ isOpened, heading, handleClose }) {
   const [show, setShow] = useState(isOpened)
@@ -75,7 +78,7 @@ function ModalformPremiumApp({ isOpened, heading, handleClose }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    const apiEndpoint = 'http://localhost:4000/app-premium-plane' // Replace with your actual API endpoint
+    const apiEndpoint = `${apiKey}/app-premium-plane` // Replace with your actual API endpoint
     const requiredFields = ['name', 'email', 'description'];
     for (const field of requiredFields) {
       if (!formData[field]) {

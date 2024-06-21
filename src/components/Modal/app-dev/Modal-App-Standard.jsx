@@ -4,6 +4,9 @@ import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import Modal from 'react-bootstrap/Modal'
 import Swal from 'sweetalert2'
+import API_CONFIG from '../../../config/api';
+
+const { apiKey } = API_CONFIG;
 
 function ModalformStandardApp({ isOpened, heading, handleClose }) {
   const [show, setShow] = useState(isOpened)
@@ -70,7 +73,7 @@ function ModalformStandardApp({ isOpened, heading, handleClose }) {
       }
     }
 
-    const apiEndpoint = 'http://localhost:4000/app-standard-plane'
+    const apiEndpoint = `${apiKey}/app-standard-plane`
 
     try {
       const response = await fetch(apiEndpoint, {

@@ -5,7 +5,9 @@ import Modal from 'react-bootstrap/Modal'
 import axios from 'axios'
 import Swal from 'sweetalert2'
 import '../../../css/seo.css'
+import API_CONFIG from '../../../config/api';
 
+const { apiKey } = API_CONFIG;
 function ModalformSeo({ isOpened, heading, handleClose }) {
   const [formData, setFormData] = useState({
     name: '',
@@ -84,7 +86,7 @@ function ModalformSeo({ isOpened, heading, handleClose }) {
 
     if (endpoint) {
       try {
-        const response = await axios.post(`http://localhost:4000/${endpoint}`, formData)
+        const response = await axios.post(`${apiKey}/${endpoint}`, formData)
         console.log(response)
         if (response.status === 200) {
           Swal.fire({

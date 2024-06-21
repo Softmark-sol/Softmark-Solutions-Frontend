@@ -3,6 +3,10 @@ import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import Modal from 'react-bootstrap/Modal'
 import Swal from 'sweetalert2'
+import API_CONFIG from '../../../config/api';
+
+const { apiKey } = API_CONFIG;
+
 function ModalformStandardWeb({ isOpened, heading, handleClose }) {
   const [show, setShow] = useState(isOpened)
   const [formData, setFormData] = useState({
@@ -46,7 +50,7 @@ function ModalformStandardWeb({ isOpened, heading, handleClose }) {
   }
   const handleSubmit = async (e) => {
     e.preventDefault()
-    const apiEndpoint = 'http://localhost:4000/web-standard-plane' // API endpoint
+    const apiEndpoint = `${apiKey}/web-standard-plane` // API endpoint
     
     const requiredFields = ['name', 'email', 'description'];
     for (const field of requiredFields) {
