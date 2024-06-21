@@ -15,7 +15,7 @@ const Modalpremium = ({ isOpened, heading, handleClose }) => {
     email: '',
     company: '',
     reference_logos: '',
-    reference_templete: '',
+    reference_template: '',
     description: '',
     Link_to_Graphics: []
   })
@@ -26,7 +26,7 @@ const Modalpremium = ({ isOpened, heading, handleClose }) => {
         email: '',
         company: '',
         reference_logos: '',
-        reference_templete: '',
+        reference_template: '',
         description: '',
         Link_to_Graphics: []
       })
@@ -145,14 +145,14 @@ const Modalpremium = ({ isOpened, heading, handleClose }) => {
                 onChange={handleChange}
               />
             </Form.Group>
-            <Form.Group className='mb-3' controlId='reference_templete'>
+            <Form.Group className='mb-3' controlId='reference_template'>
               <Form.Label className='custom-text'>Reference Templete</Form.Label>
               <Form.Control
                 as='textarea'
                 rows={2}
                 placeholder='For brochures,flyers Stationary design reference images(require 3 references)'
-                name='reference_templete'
-                value={formData.reference_templete}
+                name='reference_template'
+                value={formData.reference_template}
                 onChange={handleChange}
               />
             </Form.Group>
