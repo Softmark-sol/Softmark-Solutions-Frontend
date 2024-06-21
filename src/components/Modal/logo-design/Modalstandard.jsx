@@ -38,6 +38,19 @@ const Modalbasic = ({ isOpened, heading, handleClose }) => {
   }
   const handleSubmit = async (e) => {
     e.preventDefault()
+
+    const requiredFields = ['name', 'email', 'description'];
+    for (const field of requiredFields) {
+      if (!formData[field]) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: `Please fill in the ${field} field.`,
+        });
+        return;
+      }
+    }
+
     const data = new FormData()
     for (const key in formData) {
       if (key === 'Link_to_Graphics') {
@@ -96,7 +109,6 @@ const Modalbasic = ({ isOpened, heading, handleClose }) => {
                 name='name'
                 value={formData.name}
                 onChange={handleChange}
-                required
               />
             </Form.Group>
             <Form.Group className='mb-3' controlId='email'>
@@ -107,7 +119,6 @@ const Modalbasic = ({ isOpened, heading, handleClose }) => {
                 name='email'
                 value={formData.email}
                 onChange={handleChange}
-                required
               />
             </Form.Group>
             <Form.Group className='mb-3' controlId='company'>
@@ -118,7 +129,6 @@ const Modalbasic = ({ isOpened, heading, handleClose }) => {
                 name='company'
                 value={formData.company}
                 onChange={handleChange}
-                required
               />
             </Form.Group>
             <Form.Group className='mb-3' controlId='reference_logos'>
@@ -140,7 +150,6 @@ const Modalbasic = ({ isOpened, heading, handleClose }) => {
                 name='description'
                 value={formData.description}
                 onChange={handleChange}
-                required
               />
             </Form.Group>
             <Form.Group className='mb-3' controlId='Link_to_Graphics'>

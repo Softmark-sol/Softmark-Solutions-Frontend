@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import '../../../css/modal.css';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
 import axios from 'axios';
 import Swal from 'sweetalert2';
+import '../../../css/modal.css'; // Adjust path as per your project structure
 
 const Modalbusiness = ({ isOpened, heading, handleClose }) => {
   const [formData, setFormData] = useState({
@@ -20,6 +20,7 @@ const Modalbusiness = ({ isOpened, heading, handleClose }) => {
     product_design: '',
     custom_product_design: ''
   });
+
   const [showCustomDetails, setShowCustomDetails] = useState(false);
 
   useEffect(() => {
@@ -72,15 +73,20 @@ const Modalbusiness = ({ isOpened, heading, handleClose }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!formData.product_design && !formData.custom_product_design) {
-      Swal.fire({
-        icon: 'error',
-        title: 'Error',
-        text: 'Please select a product design or provide custom details.',
-      });
-      return;
+    // Check for empty required fields
+    const requiredFields = ['name', 'email', 'description', 'product_design'];
+    for (const field of requiredFields) {
+      if (!formData[field]) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: `Please fill in the ${field} field.`,
+        });
+        return;
+      }
     }
 
+    // Custom product design details check
     if (showCustomDetails && !formData.custom_product_design) {
       Swal.fire({
         icon: 'error',
@@ -153,7 +159,6 @@ const Modalbusiness = ({ isOpened, heading, handleClose }) => {
                 name='name'
                 value={formData.name}
                 onChange={handleChange}
-                required
               />
             </Form.Group>
             <Form.Group className='mb-3' controlId='email'>
@@ -164,7 +169,6 @@ const Modalbusiness = ({ isOpened, heading, handleClose }) => {
                 name='email'
                 value={formData.email}
                 onChange={handleChange}
-                required
               />
             </Form.Group>
             <Form.Group className='mb-3' controlId='company'>
@@ -217,7 +221,6 @@ const Modalbusiness = ({ isOpened, heading, handleClose }) => {
                 name='description'
                 value={formData.description}
                 onChange={handleChange}
-                required
               />
             </Form.Group>
 

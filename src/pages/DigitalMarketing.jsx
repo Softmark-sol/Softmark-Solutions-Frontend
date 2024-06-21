@@ -65,6 +65,17 @@ const DigitalMarketing = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    const requiredFields = ['name', 'email', 'description'];
+    for (const field of requiredFields) {
+      if (!formData[field]) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: `Please fill in the ${field} field.`,
+        });
+        return;
+      }
+    }
     try {
       const response = await axios.post(
         'http://localhost:4000/digital-marketing',
@@ -203,7 +214,6 @@ const DigitalMarketing = () => {
                   name='name'
                   value={formData.name}
                   onChange={handleChange}
-                  required
                 />
               </Form.Group>
               <Form.Group className='mb-3' controlId='email'>
@@ -214,7 +224,6 @@ const DigitalMarketing = () => {
                   name='email'
                   value={formData.email}
                   onChange={handleChange}
-                  required
                 />
               </Form.Group>
               <Form.Group className='mb-3' controlId='company'>

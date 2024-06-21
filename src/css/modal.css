@@ -1,3 +1,37 @@
-.custom-text{
-    margin-left: 10px;
-}
+/* custom-swal.css */
+
+.custom-swal .swal2-popup {
+    width: 90%; /* Default width for small screens */
+    max-width: 500px; /* Maximum width for larger screens */
+    padding: 20px; /* Default padding */
+  }
+  
+  .custom-swal .swal2-title {
+    font-size: 1.2em; /* Default font size for title */
+  }
+  
+  .custom-swal .swal2-content {
+    font-size: 1em; /* Default font size for content */
+  }
+  
+  /* Media queries for larger screens */
+  @media (min-width: 768px) {
+    .custom-swal .swal2-popup {
+      width: 70%; /* Adjust width for tablets and up */
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .custom-swal .swal2-popup {
+      width: 50%; /* Adjust width for desktops and up */
+    }
+  
+    .custom-swal .swal2-title {
+      font-size: 1.5em; /* Adjust font size for title */
+    }
+  
+    .custom-swal .swal2-content {
+      font-size: 1.2em; /* Adjust font size for content */
+    }
+  }
+  

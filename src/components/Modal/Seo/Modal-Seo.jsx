@@ -39,6 +39,7 @@ function ModalformSeo({ isOpened, heading, handleClose }) {
     { id: 1, label: 'Yes' },
     { id: 2, label: 'No' }
   ]
+
   const handleCheckboxChange = (e) => {
     const { id, checked } = e.target
     const label = options.find((option) => option.id.toString() === id).label
@@ -47,6 +48,7 @@ function ModalformSeo({ isOpened, heading, handleClose }) {
       access_and_permissions: checked ? label : ''
     }))
   }
+
   const handleChange = (e) => {
     const { id, value } = e.target
     setFormData((prev) => ({
@@ -54,117 +56,35 @@ function ModalformSeo({ isOpened, heading, handleClose }) {
       [id]: value
     }))
   }
-  const handleSubmit = async (e, planName) => {
+
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    if (planName === '03-month Plan') {
-      try {
-        const response = await axios.post('http://localhost:4000/seo', formData)
-        console.log(response)
-        if (response.status === 200) {
-          Swal.fire({
-            position: 'top-end',
-            icon: 'success',
-            title: 'Message sent successfully',
-            showConfirmButton: false,
-            timer: 1500
-          })
-          setFormData({
-            name: '',
-            email: '',
-            company: '',
-            Website_of_the_client: '',
-            Platform_of_the_website: '',
-            competitor_website_reference: '',
-            access_and_permissions: '',
-            current_SEO_Efforts: '',
-            description: ''
-          })
-          handleClose()
-        }
-      } catch (error) {
+
+    const requiredFields = ['name', 'email', 'description'];
+    for (const field of requiredFields) {
+      if (!formData[field]) {
         Swal.fire({
           icon: 'error',
-          title: 'Oops...',
-          text:
-            error.response?.data?.message ||
-            'Failed to send message. Please try again later.'
-        })
-        console.error('Error:', error)
+          title: 'Error',
+          text: `Please fill in the ${field} field.`,
+        });
+        return;
       }
     }
+    const planName = heading
+    let endpoint = ''
+
     if (planName === '03-month Plan') {
-      try {
-        const response = await axios.post('http://localhost:4000/seo', formData)
-        console.log(response)
-        if (response.status === 200) {
-          Swal.fire({
-            position: 'top-end',
-            icon: 'success',
-            title: 'Message sent successfully',
-            showConfirmButton: false,
-            timer: 1500
-          })
-          setFormData({
-            name: '',
-            email: '',
-            company: '',
-            Website_of_the_client: '',
-            Platform_of_the_website: '',
-            competitor_website_reference: '',
-            access_and_permissions: '',
-            current_SEO_Efforts: '',
-            description: ''
-          })
-          handleClose()
-        }
-      } catch (error) {
-        Swal.fire({
-          icon: 'error',
-          title: 'Oops...',
-          text:
-            error.response?.data?.message ||
-            'Failed to send message. Please try again later.'
-        })
-        console.error('Error:', error)
-      }
+      endpoint = 'seo-basic-plane'
     } else if (planName === '06-month Plan') {
-      try {
-        const response = await axios.post('http://localhost:4000/seo', formData)
-        console.log(response)
-        if (response.status === 200) {
-          Swal.fire({
-            position: 'top-end',
-            icon: 'success',
-            title: 'Message sent successfully',
-            showConfirmButton: false,
-            timer: 1500
-          })
-          setFormData({
-            name: '',
-            email: '',
-            company: '',
-            Website_of_the_client: '',
-            Platform_of_the_website: '',
-            competitor_website_reference: '',
-            access_and_permissions: '',
-            current_SEO_Efforts: '',
-            description: ''
-          })
-          handleClose()
-        }
-      } catch (error) {
-        Swal.fire({
-          icon: 'error',
-          title: 'Oops...',
-          text:
-            error.response?.data?.message ||
-            'Failed to send message. Please try again later.'
-        })
-        console.error('Error:', error)
-      }
+      endpoint = 'seo-standard-plane'
     } else if (planName === '12-month Plan') {
+      endpoint = 'seo-premium-plane'
+    }
+
+    if (endpoint) {
       try {
-        const response = await axios.post('http://localhost:4000/seo', formData)
+        const response = await axios.post(`http://localhost:4000/${endpoint}`, formData)
         console.log(response)
         if (response.status === 200) {
           Swal.fire({
@@ -208,9 +128,7 @@ function ModalformSeo({ isOpened, heading, handleClose }) {
       <Modal.Body>
         <Form
           style={{ overflowY: 'scroll', paddingRight: '20px' }}
-          onSubmit={() => {
-            handleSubmit(heading)
-          }}
+          onSubmit={handleSubmit}
         >
           <Form.Group className='mb-3' controlId='name'>
             <Form.Label className='custom-text'>Name</Form.Label>
@@ -220,7 +138,6 @@ function ModalformSeo({ isOpened, heading, handleClose }) {
               name='name'
               value={formData.name}
               onChange={handleChange}
-              required
             />
           </Form.Group>
           <Form.Group className='mb-3' controlId='email'>
@@ -231,7 +148,6 @@ function ModalformSeo({ isOpened, heading, handleClose }) {
               name='email'
               value={formData.email}
               onChange={handleChange}
-              required
             />
           </Form.Group>
           <Form.Group className='mb-3' controlId='company'>

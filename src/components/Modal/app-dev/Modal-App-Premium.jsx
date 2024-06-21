@@ -76,6 +76,17 @@ function ModalformPremiumApp({ isOpened, heading, handleClose }) {
   const handleSubmit = async (e) => {
     e.preventDefault()
     const apiEndpoint = 'http://localhost:4000/app-premium-plane' // Replace with your actual API endpoint
+    const requiredFields = ['name', 'email', 'description'];
+    for (const field of requiredFields) {
+      if (!formData[field]) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: `Please fill in the ${field} field.`,
+        });
+        return;
+      }
+    }
 
     const data = new FormData()
     for (const key in formData) {
@@ -133,7 +144,6 @@ function ModalformPremiumApp({ isOpened, heading, handleClose }) {
                 placeholder='Josh Anton'
                 value={formData.name}
                 onChange={handleInputChange}
-                required
               />
             </Form.Group>
             <Form.Group className='mb-3' controlId='email'>
@@ -143,7 +153,6 @@ function ModalformPremiumApp({ isOpened, heading, handleClose }) {
                 placeholder='name@example.com'
                 value={formData.email}
                 onChange={handleInputChange}
-                required
               />
             </Form.Group>
             <Form.Group className='mb-3' controlId='company'>

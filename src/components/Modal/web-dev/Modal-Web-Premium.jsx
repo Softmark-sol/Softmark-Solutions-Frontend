@@ -79,6 +79,19 @@ function ModalformPremiumWeb({ isOpened, heading, handleClose }) {
     e.preventDefault()
     const apiEndpoint = 'http://localhost:4000/web-premium-plane' // Replace with your actual API endpoint
 
+
+    const requiredFields = ['name', 'email', 'description'];
+    for (const field of requiredFields) {
+      if (!formData[field]) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: `Please fill in the ${field} field.`,
+        });
+        return;
+      }
+    }
+
     const data = new FormData()
     for (const key in formData) {
       if (key === 'Link_to_Graphics') {
@@ -104,6 +117,7 @@ function ModalformPremiumWeb({ isOpened, heading, handleClose }) {
       }
 
       const result = await response.json()
+      console.log(result)
       Swal.fire({
         position: 'top-end',
         icon: 'success',
@@ -138,7 +152,6 @@ function ModalformPremiumWeb({ isOpened, heading, handleClose }) {
                 placeholder='Josh Anton'
                 value={formData.name}
                 onChange={handleInputChange}
-                required
               />
             </Form.Group>
             <Form.Group className='mb-3' controlId='email'>
@@ -148,7 +161,6 @@ function ModalformPremiumWeb({ isOpened, heading, handleClose }) {
                 placeholder='name@example.com'
                 value={formData.email}
                 onChange={handleInputChange}
-                required
               />
             </Form.Group>
             <Form.Group className='mb-3' controlId='company'>

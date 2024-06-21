@@ -47,6 +47,19 @@ function ModalformStandardWeb({ isOpened, heading, handleClose }) {
   const handleSubmit = async (e) => {
     e.preventDefault()
     const apiEndpoint = 'http://localhost:4000/web-standard-plane' // API endpoint
+    
+    const requiredFields = ['name', 'email', 'description'];
+    for (const field of requiredFields) {
+      if (!formData[field]) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: `Please fill in the ${field} field.`,
+        });
+        return;
+      }
+    }
+
     const data = new FormData()
     for (const key in formData) {
       if (key === 'Link_to_Graphics') {
