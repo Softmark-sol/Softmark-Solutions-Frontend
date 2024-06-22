@@ -12,6 +12,7 @@ import img3 from '../assets/content-marketing.png'
 import img4 from '../assets/email-marketing.png'
 import ScrollToTopButton from '../components/ScrollUpButton'
 import API_CONFIG from '../config/api';
+import Spinner from 'react-bootstrap/Spinner'
 
 const { apiKey } = API_CONFIG;
 
@@ -26,6 +27,7 @@ const DigitalMarketing = () => {
     description: ''
   })
   const [show, setShow] = useState(false)
+  const [loading, setLoading] = useState(false)
 
   const handleClose = () => setShow(false)
   const handleShow = () => setShow(true)
@@ -78,10 +80,12 @@ const DigitalMarketing = () => {
         });
         return;
       }
-    }
+    }    setLoading(true) // Show loading indicator
+
     try {
       const response = await axios.post(
         `${apiKey}/digital-marketing`,
+        // `http://localhost:4000/digital-marketing`,
         formData
       )
       console.log(response)
@@ -308,8 +312,20 @@ const DigitalMarketing = () => {
                     (e.target.style.backgroundColor = '#4599b4')
                   }
                 >
-                  Send Message
-                </Button>
+{loading ? (
+                <>
+                  <Spinner
+                    as='span'
+                    animation='border'
+                    size='sm'
+                    role='status'
+                    aria-hidden='true'
+                  />{' '}
+                  Sending...
+                </>
+              ) : (
+                'Send Message' 
+              )}                        </Button>
                 <Button variant='secondary' onClick={handleClose}>
                   Close
                 </Button>

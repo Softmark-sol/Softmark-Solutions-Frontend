@@ -6,6 +6,8 @@ import Modal from 'react-bootstrap/Modal';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import API_CONFIG from '../../../config/api';
+import Spinner from 'react-bootstrap/Spinner'
+
 
 const { apiKey } = API_CONFIG;
 const Modalbasic = ({ isOpened, heading, handleClose }) => {
@@ -17,6 +19,8 @@ const Modalbasic = ({ isOpened, heading, handleClose }) => {
     description: '',
     Link_to_Graphics: []
   });
+  const [loading, setLoading] = useState(false)
+
 
   useEffect(() => {
     if (isOpened) {
@@ -65,11 +69,14 @@ const Modalbasic = ({ isOpened, heading, handleClose }) => {
       } else {
         data.append(key, formData[key]);
       }
-    }
+    }    setLoading(true) // Show loading indicator
+
 
     try {
       const response = await axios.post(
         `${apiKey}/logo-basic-plane`,
+        // 'http://localhost:4000/logo-basic-plane',
+
         data,
         {
           headers: {
@@ -95,6 +102,8 @@ const Modalbasic = ({ isOpened, heading, handleClose }) => {
         title: 'Error',
         text: 'Failed to send message. Please try again later.',
       });
+    }finally {
+      setLoading(false) // Hide loading indicator
     }
   };
 
@@ -177,7 +186,20 @@ const Modalbasic = ({ isOpened, heading, handleClose }) => {
                 onMouseEnter={(e) => (e.target.style.backgroundColor = '#f3972b')}
                 onMouseLeave={(e) => (e.target.style.backgroundColor = '#4599b4')}
               >
-                Send Message
+                 {loading ? (
+                <>
+                  <Spinner
+                    as='span'
+                    animation='border'
+                    size='sm'
+                    role='status'
+                    aria-hidden='true'
+                  />{' '}
+                  Sending...
+                </>
+              ) : (
+                'Send Message' 
+              )}     
               </Button>
               <Button variant='secondary' onClick={handleClose}>
                 Close

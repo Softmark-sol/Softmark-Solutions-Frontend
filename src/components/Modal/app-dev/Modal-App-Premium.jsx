@@ -4,6 +4,8 @@ import Form from 'react-bootstrap/Form'
 import Modal from 'react-bootstrap/Modal'
 import Swal from 'sweetalert2'
 import API_CONFIG from '../../../config/api';
+import Spinner from 'react-bootstrap/Spinner'
+
 
 const { apiKey } = API_CONFIG;
 
@@ -31,6 +33,8 @@ function ModalformPremiumApp({ isOpened, heading, handleClose }) {
     functionalities: [],
     description: ''
   })
+
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
     setShow(isOpened)
@@ -78,7 +82,10 @@ function ModalformPremiumApp({ isOpened, heading, handleClose }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    const apiEndpoint = `${apiKey}/app-premium-plane` // Replace with your actual API endpoint
+    const apiEndpoint = 
+    `${apiKey}/app-premium-plane` // Replace with your actual API endpoint
+    // 'http://localhost:4000/app-premium-plane'
+
     const requiredFields = ['name', 'email', 'description'];
     for (const field of requiredFields) {
       if (!formData[field]) {
@@ -102,7 +109,9 @@ function ModalformPremiumApp({ isOpened, heading, handleClose }) {
       } else {
         data.append(key, formData[key])
       }
-    }
+    } setLoading(true) // Show loading indicator
+
+
 
     try {
       const response = await fetch(apiEndpoint, {
@@ -251,8 +260,20 @@ function ModalformPremiumApp({ isOpened, heading, handleClose }) {
                   (e.target.style.backgroundColor = '#4599b4')
                 }
               >
-                Send Message
-              </Button>
+{loading ? (
+                <>
+                  <Spinner
+                    as='span'
+                    animation='border'
+                    size='sm'
+                    role='status'
+                    aria-hidden='true'
+                  />{' '}
+                  Sending...
+                </>
+              ) : (
+                'Send Message' 
+              )}                       </Button>
               <Button variant='secondary' onClick={handleClose}>
                 Close
               </Button>

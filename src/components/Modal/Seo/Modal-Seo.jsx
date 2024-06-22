@@ -6,6 +6,8 @@ import axios from 'axios'
 import Swal from 'sweetalert2'
 import '../../../css/seo.css'
 import API_CONFIG from '../../../config/api';
+import Spinner from 'react-bootstrap/Spinner'
+
 
 const { apiKey } = API_CONFIG;
 function ModalformSeo({ isOpened, heading, handleClose }) {
@@ -20,6 +22,7 @@ function ModalformSeo({ isOpened, heading, handleClose }) {
     current_SEO_Efforts: '',
     description: ''
   })
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
     if (isOpened) {
@@ -83,9 +86,11 @@ function ModalformSeo({ isOpened, heading, handleClose }) {
     } else if (planName === '12-month Plan') {
       endpoint = 'seo-premium-plane'
     }
+    setLoading(true) // Show loading indicator
 
     if (endpoint) {
       try {
+        // const response = await axios.post(`${apiKey}/${endpoint}`, formData)
         const response = await axios.post(`${apiKey}/${endpoint}`, formData)
         console.log(response)
         if (response.status === 200) {
@@ -255,8 +260,20 @@ function ModalformSeo({ isOpened, heading, handleClose }) {
               onMouseEnter={(e) => (e.target.style.backgroundColor = '#f3972b')}
               onMouseLeave={(e) => (e.target.style.backgroundColor = '#4599b4')}
             >
-              Send Message
-            </Button>
+{loading ? (
+                <>
+                  <Spinner
+                    as='span'
+                    animation='border'
+                    size='sm'
+                    role='status'
+                    aria-hidden='true'
+                  />{' '}
+                  Sending...
+                </>
+              ) : (
+                'Send Message' 
+              )}                </Button>
             <Button variant='secondary' onClick={handleClose}>
               Close
             </Button>

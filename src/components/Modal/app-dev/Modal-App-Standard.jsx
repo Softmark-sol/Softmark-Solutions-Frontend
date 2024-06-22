@@ -5,6 +5,8 @@ import Form from 'react-bootstrap/Form'
 import Modal from 'react-bootstrap/Modal'
 import Swal from 'sweetalert2'
 import API_CONFIG from '../../../config/api';
+import Spinner from 'react-bootstrap/Spinner'
+
 
 const { apiKey } = API_CONFIG;
 
@@ -36,6 +38,7 @@ function ModalformStandardApp({ isOpened, heading, handleClose }) {
     animation_Reference: '',
     description: ''
   })
+  const [loading, setLoading] = useState(false)
 
   // Handle form input changes
   const handleInputChange = (e) => {
@@ -71,9 +74,13 @@ function ModalformStandardApp({ isOpened, heading, handleClose }) {
       } else {
         data.append(key, formData[key])
       }
-    }
+    }    setLoading(true) // Show loading indicator
 
-    const apiEndpoint = `${apiKey}/app-standard-plane`
+
+    const apiEndpoint =
+     `${apiKey}/app-standard-plane`
+    // 'http://localhost:4000/app-standard-plane'
+
 
     try {
       const response = await fetch(apiEndpoint, {
@@ -209,8 +216,20 @@ function ModalformStandardApp({ isOpened, heading, handleClose }) {
                   (e.target.style.backgroundColor = '#4599b4')
                 }
               >
-                Send Message
-              </Button>
+{loading ? (
+                <>
+                  <Spinner
+                    as='span'
+                    animation='border'
+                    size='sm'
+                    role='status'
+                    aria-hidden='true'
+                  />{' '}
+                  Sending...
+                </>
+              ) : (
+                'Send Message' 
+              )}                    </Button>
               <Button variant='secondary' onClick={handleClose}>
                 Close
               </Button>

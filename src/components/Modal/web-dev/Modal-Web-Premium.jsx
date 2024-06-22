@@ -4,6 +4,8 @@ import Form from 'react-bootstrap/Form'
 import Modal from 'react-bootstrap/Modal'
 import Swal from 'sweetalert2'
 import API_CONFIG from '../../../config/api';
+import Spinner from 'react-bootstrap/Spinner'
+
 
 const { apiKey } = API_CONFIG;
 function ModalformPremiumWeb({ isOpened, heading, handleClose }) {
@@ -18,6 +20,7 @@ function ModalformPremiumWeb({ isOpened, heading, handleClose }) {
     { id: 6, label: 'Code Correction' },
     { id: 7, label: 'Quality Assurance' }
   ]
+  const [loading, setLoading] = useState(false)
 
   const [formData, setFormData] = useState({
     name: '',
@@ -79,7 +82,10 @@ function ModalformPremiumWeb({ isOpened, heading, handleClose }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    const apiEndpoint = `${apiKey}/web-premium-plane` // Replace with your actual API endpoint
+    const apiEndpoint = 
+    `${apiKey}/web-premium-plane` // Replace with your actual API endpoint
+    // 'http://localhost:4000/web-premium-plane'
+
 
 
     const requiredFields = ['name', 'email', 'description'];
@@ -105,7 +111,8 @@ function ModalformPremiumWeb({ isOpened, heading, handleClose }) {
       } else {
         data.append(key, formData[key])
       }
-    }
+    }    setLoading(true) // Show loading indicator
+
 
     try {
       const response = await fetch(apiEndpoint, {
@@ -257,8 +264,20 @@ function ModalformPremiumWeb({ isOpened, heading, handleClose }) {
                   (e.target.style.backgroundColor = '#4599b4')
                 }
               >
-                Send Message
-              </Button>
+ {loading ? (
+                <>
+                  <Spinner
+                    as='span'
+                    animation='border'
+                    size='sm'
+                    role='status'
+                    aria-hidden='true'
+                  />{' '}
+                  Sending...
+                </>
+              ) : (
+                'Send Message' 
+              )}                  </Button>
               <Button variant='secondary' onClick={handleClose}>
                 Close
               </Button>

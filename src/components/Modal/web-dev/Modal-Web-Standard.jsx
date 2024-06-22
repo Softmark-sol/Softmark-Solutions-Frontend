@@ -4,6 +4,8 @@ import Form from 'react-bootstrap/Form'
 import Modal from 'react-bootstrap/Modal'
 import Swal from 'sweetalert2'
 import API_CONFIG from '../../../config/api';
+import Spinner from 'react-bootstrap/Spinner'
+
 
 const { apiKey } = API_CONFIG;
 
@@ -20,6 +22,8 @@ function ModalformStandardWeb({ isOpened, heading, handleClose }) {
     domain: '',
     drive_link: ''
   })
+  const [loading, setLoading] = useState(false)
+
   useEffect(() => {
     setFormData({
       name: '',
@@ -50,7 +54,10 @@ function ModalformStandardWeb({ isOpened, heading, handleClose }) {
   }
   const handleSubmit = async (e) => {
     e.preventDefault()
-    const apiEndpoint = `${apiKey}/web-standard-plane` // API endpoint
+    const apiEndpoint =
+    `${apiKey}/web-standard-plane` // API endpoint
+    // 'http://localhost:4000/web-standard-plane'
+
     
     const requiredFields = ['name', 'email', 'description'];
     for (const field of requiredFields) {
@@ -74,6 +81,7 @@ function ModalformStandardWeb({ isOpened, heading, handleClose }) {
         data.append(key, formData[key])
       }
     }
+    setLoading(true) // Show loading indicator
     try {
       const response = await fetch(apiEndpoint, {
         method: 'POST',
@@ -200,7 +208,20 @@ function ModalformStandardWeb({ isOpened, heading, handleClose }) {
               onMouseEnter={(e) => (e.target.style.backgroundColor = '#F3972B')}
               onMouseLeave={(e) => (e.target.style.backgroundColor = '#4599B4')}
             >
-              Send Message
+             {loading ? (
+                <>
+                  <Spinner
+                    as='span'
+                    animation='border'
+                    size='sm'
+                    role='status'
+                    aria-hidden='true'
+                  />{' '}
+                  Sending...
+                </>
+              ) : (
+                'Send Message' 
+              )}        
             </Button>
             <Button variant='secondary' onClick={handleClose}>
               Close
