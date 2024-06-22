@@ -68,7 +68,6 @@
   border: none;
   padding: 3px 21px;
   transition: background-color 0.3s, color 0.3s;
-
 }
 
 .hero-btn-div:hover {
@@ -121,7 +120,19 @@
     opacity: 1;
   }
 }
+.first-line {
+  font-family: "'Roboto', sans-serif";
+  font-weight: "300";
+  font-size: "3.5rem";
+  color: "black";
+}
 
+.second-line {
+  font-family: "'Roboto', sans-serif";
+  font-weight: "300";
+  font-size: "3.5rem";
+  color: "black";
+}
 .fade-in {
   animation: fadeIn 2s ease-in-out;
 }
@@ -138,5 +149,8 @@
   }
   .rightGlobe {
     display: none;
+  }
+  .first-line .fade-in {
+    font-size: 0.5rem;
   }
 }

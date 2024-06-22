@@ -84,6 +84,9 @@
 .navbar-menu {
   display: none;
 }
+.menuitem {
+  background-color: #4599b4;
+}
 
 .contact-us {
   display: flex;
