@@ -16,10 +16,28 @@ import img9 from "../assets/logo3.png";
 
 import { useNavigate } from "react-router-dom";
 import ScrollToTopButton from "../components/ScrollUpButton";
-
 import ScrollReveal from "scrollreveal";
 
 const Ourservices = () => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const sr = ScrollReveal({
+      origin: "bottom",
+      distance: "20px",
+      duration: 500,
+      delay: 200,
+      reset: true,
+    });
+
+    sr.reveal(
+      ".card-heading-service,.cards-container,.paragraph,.container,.pContainer,.paragraph2",
+      {
+        interval: 200,
+      }
+    );
+  }, []);
+
   const web = [
     {
       path: img1,
@@ -44,59 +62,18 @@ const Ourservices = () => {
     },
   ];
 
-  const navigate = useNavigate();
+  const logo = [
+    {
+      path: img7,
+    },
+    {
+      path: img8,
+    },
+    {
+      path: img9,
+    },
+  ];
 
-  useEffect(() => {
-    const sr = ScrollReveal({
-      origin: "bottom",
-      distance: "20px",
-      duration: 500,
-      delay: 200,
-      reset: true, // This will reset the animation every time you scroll
-    });
-
-    sr.reveal(
-      ".card-heading-service,.cards-container,.paragraph,.container,.pContainer,.paragraph2",
-      {
-        interval: 200,
-      }
-    );
-  }, []);
-
-  const web=[{
-    path:img1
-  },
-  {
-    path:img2
-  },
-  {
-    path:img3
-  }
-]
-
-const app=[{
-  path:img4
-},
-{
-  path:img5
-},
-{
-  path:img6
-}
-]
-const logo=[{
-  path:img7
-},
-{
-  path:img8
-},
-{
-  path:img9
-}
-]
-
-  const navigate=useNavigate()
- 
   return (
     <div id="services">
       <div className="card-heading-service container">
@@ -115,17 +92,17 @@ const logo=[{
           className="pContainer"
           style={{ fontSize: "1rem", paddingTop: "20px" }}
         >
-          "From sleek corporate websites to dynamic e-commerce platforms, our
-          web development portfolio is a journey through digital craftsmanship.
-          Step into a world where user experience reigns supreme and every pixel
-          tells a story of innovation and creativity
+          From sleek corporate websites to dynamic e-commerce platforms, our web
+          development portfolio is a journey through digital craftsmanship. Step
+          into a world where user experience reigns supreme and every pixel
+          tells a story of innovation and creativity.
         </p>
       </div>
 
       <div className="container web-container">
-        {web.map((item, index) => {
-          return <PortfolioCard path={item.path} />;
-        })}
+        {web.map((item, index) => (
+          <PortfolioCard key={index} path={item.path} />
+        ))}
       </div>
 
       <div className="card-heading-service container">
@@ -134,17 +111,17 @@ const logo=[{
           className="pContainer"
           style={{ fontSize: "1rem", paddingTop: "20px" }}
         >
-          "Dive into a realm of mobile marvels with our app development
-          showcase. Discover how we turn ideas into immersive experiences,
-          blending intuitive design with powerful functionality. Whether iOS or
-          Android, our apps set the standard for excellence.
+          Dive into a realm of mobile marvels with our app development showcase.
+          Discover how we turn ideas into immersive experiences, blending
+          intuitive design with powerful functionality. Whether iOS or Android,
+          our apps set the standard for excellence.
         </p>
       </div>
 
       <div className="container web-container">
-        {app.map((item, index) => {
-          return <PortfolioCard path={item.path} />;
-        })}
+        {app.map((item, index) => (
+          <PortfolioCard key={index} path={item.path} />
+        ))}
       </div>
 
       <div className="card-heading-service container">
@@ -153,23 +130,17 @@ const logo=[{
           className="pContainer"
           style={{ fontSize: "1rem", paddingTop: "20px" }}
         >
-          "Unlock the potential of your brand identity with our captivating
+          Unlock the potential of your brand identity with our captivating
           design assets. Our portfolio is a visual symphony of logos, branding
           materials, and captivating visuals that breathe life into every
           project. Elevate your brand with designs that leave a lasting
           impression.
         </p>
       </div>
-    <div className="container web-container">
-    {logo.map((item,index)=>{
-      return <PortfolioCard path={item.path}/>
-    })}
-    </div>
-
       <div className="container web-container">
-        {app.map((item, index) => {
-          return <PortfolioCard path={item.path} />;
-        })}
+        {logo.map((item, index) => (
+          <PortfolioCard key={index} path={item.path} />
+        ))}
       </div>
 
       <div style={{ paddingTop: "50px" }} className="container">
@@ -178,7 +149,7 @@ const logo=[{
           innovation, and results. Delve deeper into each project to uncover the
           secrets behind our success. From inception to execution, we share
           insights, challenges, and triumphs that define our approach to
-          excellence
+          excellence.
         </p>
       </div>
 

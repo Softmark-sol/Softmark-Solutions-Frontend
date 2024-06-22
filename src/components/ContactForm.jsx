@@ -4,8 +4,7 @@ import "../css/contactForm.css";
 import Swal from "sweetalert2";
 import ScrollReveal from "scrollreveal";
 
-
-const { apiKey } = API_CONFIG;
+// const { apiKey } = API_CONFIG;
 const ContactForm = () => {
   useEffect(() => {
     const sr = ScrollReveal({
@@ -43,7 +42,7 @@ const ContactForm = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        `${apiKey}/contact-us`,
+        `${"http://localhost:4000"}/contact-us`,
         formData
       ); // Ensure this matches your backend port
       if (response.status === 200) {

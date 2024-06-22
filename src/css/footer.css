@@ -150,26 +150,26 @@
 @media (max-width: 600px) {
   .footer-bottom {
     padding: 20px 10px;
- 
-  
-  .footer-social {
-    display: flex;
-    justify-content: center;
-    /* align-items: center; */
-    margin-top: 20px;
-    padding-top: 10px;
-    flex-wrap: wrap;
-  }
 
-  .footer-social a {
-    font-size: 20px;
-  }
+    .footer-social {
+      display: flex;
+      justify-content: center;
+      /* align-items: center; */
+      margin-top: 20px;
+      padding-top: 10px;
+      flex-wrap: wrap;
+    }
 
-  .footer-social p {
-    text-align: center;
-    margin-top: 10px;
-  }
-  .footer-right p {
-    text-align: center;
+    .footer-social a {
+      font-size: 20px;
+    }
+
+    .footer-social p {
+      text-align: center;
+      margin-top: 10px;
+    }
+    .footer-right p {
+      text-align: center;
+    }
   }
 }
