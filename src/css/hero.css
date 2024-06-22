@@ -120,19 +120,7 @@
     opacity: 1;
   }
 }
-.first-line {
-  font-family: "'Roboto', sans-serif";
-  font-weight: "300";
-  font-size: "3.5rem";
-  color: "black";
-}
 
-.second-line {
-  font-family: "'Roboto', sans-serif";
-  font-weight: "300";
-  font-size: "3.5rem";
-  color: "black";
-}
 .fade-in {
   animation: fadeIn 2s ease-in-out;
 }
@@ -143,14 +131,7 @@
 
 /* Responsive styles */
 @media (max-width: 768px) {
-  .hero span.first-line,
-  .hero span.second-line {
-    font-size: 0rem; /* Adjust font size for the first line on smaller screens */
-  }
   .rightGlobe {
     display: none;
-  }
-  .first-line .fade-in {
-    font-size: 0.5rem;
   }
 }
