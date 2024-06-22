@@ -12,7 +12,6 @@
   border: 3px solid transparent;
   background-size: 200%;
   animation: gradient 5s ease infinite !important;
-  
 }
 
 @keyframes gradient {
@@ -34,27 +33,17 @@
   transform: scale(1.04) rotate(-1deg);
   /* transform: translateY(-10px); */
 }
-h5 {
-  text-align: center;
-  /* font-size: 1.50rem; */
-  margin-top: 10px;
-}
 
 h5 {
   text-align: center;
-  /* font-size: 1.50rem; */
+  font-size: 1.6rem;
   margin-top: 10px;
-}
-p {
-  color: gray;
-  text-align: center;
-  font-size: 12px;
 }
 
 p {
   color: gray;
   text-align: center;
-  font-size: 12px;
+  font-size: 13px;
   margin-top: 0px;
 }
 .card img {
