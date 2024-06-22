@@ -133,7 +133,9 @@ const Navbar = () => {
             Careers
           </a>
           <span className="nav-btn contact-us" onClick={() => Contact()}>
-            <MyLottieAnimation />
+            <div className="myLottieAnimation">
+              <MyLottieAnimation />
+            </div>
             Contact Us
           </span>
         </div>

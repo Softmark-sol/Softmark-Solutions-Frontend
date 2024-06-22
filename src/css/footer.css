@@ -130,6 +130,8 @@
   .footer-bottom {
     flex-direction: column;
     align-items: center;
+    /* font-size: 12px; */
+    text-align: center;
   }
 
   .footer-bottom ul {

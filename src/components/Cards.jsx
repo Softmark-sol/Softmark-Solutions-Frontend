@@ -22,10 +22,6 @@ const Cards = ({ heading }) => {
     sr.reveal(".card-heading-service,.cards-container", {
       interval: 200, // This will reveal elements one by one
     });
-    sr.reveal(".heading-underline-service", {
-      interval: 300,
-      origin: "left", // This will reveal elements one by one
-    });
   }, []);
   const ServicesData = [
     {
