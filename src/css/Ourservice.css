@@ -25,7 +25,6 @@
     font-size: 1.2rem;
     padding-top: 20px;
     text-align: center;
-    text-transform: justify;
   }
   .service-card{
     display: flex;
@@ -56,6 +55,7 @@
     padding: 12px 20px;
     border-radius: 30px;
     color: white;
+    margin-top: 15px;
   }
   .contact-btn:hover{
     background-color: rgb(220, 166, 66);

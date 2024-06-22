@@ -16,7 +16,7 @@
 
 .about-header p {
   font-size: 1em;
-  color: #555;
+  color: gray;
 }
 
 .timeline {
@@ -109,9 +109,10 @@
 
 .why-us p {
   font-size: 1.2em;
-  color: #555;
+  color: gray;
   margin: 0 auto;
   width: 80%;
+  text-align: justify;
 }
 
 /* Responsive Design */

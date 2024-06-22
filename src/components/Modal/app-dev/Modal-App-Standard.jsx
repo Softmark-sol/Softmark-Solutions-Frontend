@@ -4,6 +4,11 @@ import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import Modal from 'react-bootstrap/Modal'
 import Swal from 'sweetalert2'
+import API_CONFIG from '../../../config/api';
+import Spinner from 'react-bootstrap/Spinner'
+
+
+const { apiKey } = API_CONFIG;
 
 function ModalformStandardApp({ isOpened, heading, handleClose }) {
   const [show, setShow] = useState(isOpened)
@@ -33,6 +38,7 @@ function ModalformStandardApp({ isOpened, heading, handleClose }) {
     animation_Reference: '',
     description: ''
   })
+  const [loading, setLoading] = useState(false)
 
   // Handle form input changes
   const handleInputChange = (e) => {
@@ -47,6 +53,18 @@ function ModalformStandardApp({ isOpened, heading, handleClose }) {
   // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault()
+    const requiredFields = ['name', 'email', 'description'];
+    for (const field of requiredFields) {
+      if (!formData[field]) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: `Please fill in the ${field} field.`,
+        });
+        return;
+      }
+    }
+
     const data = new FormData()
     for (const key in formData) {
       if (key === 'Link_to_Graphics') {
@@ -56,9 +74,13 @@ function ModalformStandardApp({ isOpened, heading, handleClose }) {
       } else {
         data.append(key, formData[key])
       }
-    }
+    }    setLoading(true) // Show loading indicator
 
-    const apiEndpoint = 'http://localhost:4000/app-standard-plane'
+
+    const apiEndpoint =
+     `${apiKey}/app-standard-plane`
+    // 'http://localhost:4000/app-standard-plane'
+
 
     try {
       const response = await fetch(apiEndpoint, {
@@ -106,7 +128,6 @@ function ModalformStandardApp({ isOpened, heading, handleClose }) {
                 autoFocus
                 value={formData.name}
                 onChange={handleInputChange}
-                required
               />
             </Form.Group>
             <Form.Group className='mb-3' controlId='email'>
@@ -116,7 +137,6 @@ function ModalformStandardApp({ isOpened, heading, handleClose }) {
                 placeholder='name@example.com'
                 value={formData.email}
                 onChange={handleInputChange}
-                required
               />
             </Form.Group>
             <Form.Group className='mb-3' controlId='company'>
@@ -196,8 +216,20 @@ function ModalformStandardApp({ isOpened, heading, handleClose }) {
                   (e.target.style.backgroundColor = '#4599b4')
                 }
               >
-                Send Message
-              </Button>
+{loading ? (
+                <>
+                  <Spinner
+                    as='span'
+                    animation='border'
+                    size='sm'
+                    role='status'
+                    aria-hidden='true'
+                  />{' '}
+                  Sending...
+                </>
+              ) : (
+                'Send Message' 
+              )}                    </Button>
               <Button variant='secondary' onClick={handleClose}>
                 Close
               </Button>

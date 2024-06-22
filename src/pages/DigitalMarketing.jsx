@@ -11,6 +11,10 @@ import img2 from '../assets/social.png'
 import img3 from '../assets/content-marketing.png'
 import img4 from '../assets/email-marketing.png'
 import ScrollToTopButton from '../components/ScrollUpButton'
+import API_CONFIG from '../config/api';
+import Spinner from 'react-bootstrap/Spinner'
+
+const { apiKey } = API_CONFIG;
 
 const DigitalMarketing = () => {
   const [formData, setFormData] = useState({
@@ -23,6 +27,7 @@ const DigitalMarketing = () => {
     description: ''
   })
   const [show, setShow] = useState(false)
+  const [loading, setLoading] = useState(false)
 
   const handleClose = () => setShow(false)
   const handleShow = () => setShow(true)
@@ -65,9 +70,22 @@ const DigitalMarketing = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    const requiredFields = ['name', 'email', 'description'];
+    for (const field of requiredFields) {
+      if (!formData[field]) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: `Please fill in the ${field} field.`,
+        });
+        return;
+      }
+    }    setLoading(true) // Show loading indicator
+
     try {
       const response = await axios.post(
-        'http://localhost:4000/digital-marketing',
+        `${apiKey}/digital-marketing`,
+        // `http://localhost:4000/digital-marketing`,
         formData
       )
       console.log(response)
@@ -203,7 +221,6 @@ const DigitalMarketing = () => {
                   name='name'
                   value={formData.name}
                   onChange={handleChange}
-                  required
                 />
               </Form.Group>
               <Form.Group className='mb-3' controlId='email'>
@@ -214,7 +231,6 @@ const DigitalMarketing = () => {
                   name='email'
                   value={formData.email}
                   onChange={handleChange}
-                  required
                 />
               </Form.Group>
               <Form.Group className='mb-3' controlId='company'>
@@ -296,8 +312,20 @@ const DigitalMarketing = () => {
                     (e.target.style.backgroundColor = '#4599b4')
                   }
                 >
-                  Send Message
-                </Button>
+{loading ? (
+                <>
+                  <Spinner
+                    as='span'
+                    animation='border'
+                    size='sm'
+                    role='status'
+                    aria-hidden='true'
+                  />{' '}
+                  Sending...
+                </>
+              ) : (
+                'Send Message' 
+              )}                        </Button>
                 <Button variant='secondary' onClick={handleClose}>
                   Close
                 </Button>

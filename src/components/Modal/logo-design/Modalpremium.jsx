@@ -4,19 +4,24 @@ import { useState, useEffect } from 'react'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import Modal from 'react-bootstrap/Modal'
+import Spinner from 'react-bootstrap/Spinner'
 import axios from 'axios'
 import Swal from 'sweetalert2'
+import API_CONFIG from '../../../config/api'
 
+const { apiKey } = API_CONFIG
 const Modalpremium = ({ isOpened, heading, handleClose }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     company: '',
     reference_logos: '',
-    reference_templete: '',
+    reference_template: '',
     description: '',
     Link_to_Graphics: []
   })
+  const [loading, setLoading] = useState(false)
+
   useEffect(() => {
     if (isOpened) {
       setFormData({
@@ -24,12 +29,13 @@ const Modalpremium = ({ isOpened, heading, handleClose }) => {
         email: '',
         company: '',
         reference_logos: '',
-        reference_templete: '',
+        reference_template: '',
         description: '',
         Link_to_Graphics: []
       })
     }
   }, [isOpened])
+
   const handleChange = (e) => {
     const { name, value, files } = e.target
     if (name === 'Link_to_Graphics') {
@@ -38,8 +44,22 @@ const Modalpremium = ({ isOpened, heading, handleClose }) => {
       setFormData((prev) => ({ ...prev, [name]: value }))
     }
   }
+
   const handleSubmit = async (e) => {
     e.preventDefault()
+
+    const requiredFields = ['name', 'email', 'description']
+    for (const field of requiredFields) {
+      if (!formData[field]) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: `Please fill in the ${field} field.`
+        })
+        return
+      }
+    }
+
     const data = new FormData()
     for (const key in formData) {
       if (key === 'Link_to_Graphics') {
@@ -50,9 +70,13 @@ const Modalpremium = ({ isOpened, heading, handleClose }) => {
         data.append(key, formData[key])
       }
     }
+
+    setLoading(true) // Show loading indicator
+
     try {
       const response = await axios.post(
-        'http://localhost:4000/logo-premium-plane',
+        `${apiKey}/logo-premium-plane`,
+        // 'http://localhost:4000/logo-premium-plane',
         data,
         {
           headers: {
@@ -76,6 +100,13 @@ const Modalpremium = ({ isOpened, heading, handleClose }) => {
         'Failed to send message. Please try again later.',
         error.response.data
       )
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'Failed to send message. Please try again later.'
+      })
+    } finally {
+      setLoading(false) // Hide loading indicator
     }
   }
 
@@ -87,7 +118,7 @@ const Modalpremium = ({ isOpened, heading, handleClose }) => {
         </Modal.Header>
         <Modal.Body>
           <Form
-            style={{ overflowY: 'scroll', paddingRight:'20px' }}
+            style={{ overflowY: 'scroll', paddingRight: '20px' }}
             onSubmit={handleSubmit}
           >
             <Form.Group className='mb-3' controlId='name'>
@@ -98,7 +129,6 @@ const Modalpremium = ({ isOpened, heading, handleClose }) => {
                 name='name'
                 value={formData.name}
                 onChange={handleChange}
-                required
               />
             </Form.Group>
             <Form.Group className='mb-3' controlId='email'>
@@ -109,7 +139,6 @@ const Modalpremium = ({ isOpened, heading, handleClose }) => {
                 name='email'
                 value={formData.email}
                 onChange={handleChange}
-                required
               />
             </Form.Group>
             <Form.Group className='mb-3' controlId='company'>
@@ -120,7 +149,6 @@ const Modalpremium = ({ isOpened, heading, handleClose }) => {
                 name='company'
                 value={formData.company}
                 onChange={handleChange}
-                required
               />
             </Form.Group>
             <Form.Group className='mb-3' controlId='reference_logos'>
@@ -133,14 +161,14 @@ const Modalpremium = ({ isOpened, heading, handleClose }) => {
                 onChange={handleChange}
               />
             </Form.Group>
-            <Form.Group className='mb-3' controlId='reference_templete'>
+            <Form.Group className='mb-3' controlId='reference_template'>
               <Form.Label className='custom-text'>Reference Templete</Form.Label>
               <Form.Control
                 as='textarea'
                 rows={2}
                 placeholder='For brochures,flyers Stationary design reference images(require 3 references)'
-                name='reference_templete'
-                value={formData.reference_templete}
+                name='reference_template'
+                value={formData.reference_template}
                 onChange={handleChange}
               />
             </Form.Group>
@@ -153,7 +181,6 @@ const Modalpremium = ({ isOpened, heading, handleClose }) => {
                 name='description'
                 value={formData.description}
                 onChange={handleChange}
-                required
               />
             </Form.Group>
             <Form.Group className='mb-3' controlId='Link_to_Graphics'>
@@ -175,9 +202,22 @@ const Modalpremium = ({ isOpened, heading, handleClose }) => {
                 }
                 onMouseLeave={(e) =>
                   (e.target.style.backgroundColor = '#4599b4')
-                }
-              >
-                Send Message
+                }>
+                  
+                {loading ? (
+                  <>
+                    <Spinner
+                      as='span'
+                      animation='border'
+                      size='sm'
+                      role='status'
+                      aria-hidden='true'
+                    />{' '}
+                    Sending...
+                  </>
+                ) : (
+                  'Send Message'
+                )}
               </Button>
               <Button variant='secondary' onClick={handleClose}>
                 Close

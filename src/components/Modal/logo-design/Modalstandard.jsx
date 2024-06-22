@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import '../../../css/modal.css';
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import Modal from 'react-bootstrap/Modal';
-import axios from 'axios';
-import Swal from 'sweetalert2';
+import React from 'react'
+import '../../../css/modal.css'
+import { useState, useEffect } from 'react'
+import Button from 'react-bootstrap/Button'
+import Form from 'react-bootstrap/Form'
+import Modal from 'react-bootstrap/Modal'
+import axios from 'axios'
+import Swal from 'sweetalert2'
 import API_CONFIG from '../../../config/api';
 import Spinner from 'react-bootstrap/Spinner'
 
@@ -18,10 +19,9 @@ const Modalbasic = ({ isOpened, heading, handleClose }) => {
     reference_logos: '',
     description: '',
     Link_to_Graphics: []
-  });
+  })
+
   const [loading, setLoading] = useState(false)
-
-
   useEffect(() => {
     if (isOpened) {
       setFormData({
@@ -31,23 +31,20 @@ const Modalbasic = ({ isOpened, heading, handleClose }) => {
         reference_logos: '',
         description: '',
         Link_to_Graphics: []
-      });
+      })
     }
-  }, [isOpened]);
-
+  }, [isOpened])
   const handleChange = (e) => {
-    const { name, value, files } = e.target;
+    const { name, value, files } = e.target
     if (name === 'Link_to_Graphics') {
-      setFormData((prev) => ({ ...prev, [name]: files }));
+      setFormData((prev) => ({ ...prev, [name]: files }))
     } else {
-      setFormData((prev) => ({ ...prev, [name]: value }));
+      setFormData((prev) => ({ ...prev, [name]: value }))
     }
-  };
-
+  }
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    e.preventDefault()
 
-    // Check for empty required fields
     const requiredFields = ['name', 'email', 'description'];
     for (const field of requiredFields) {
       if (!formData[field]) {
@@ -60,22 +57,22 @@ const Modalbasic = ({ isOpened, heading, handleClose }) => {
       }
     }
 
-    const data = new FormData();
+    const data = new FormData()
     for (const key in formData) {
       if (key === 'Link_to_Graphics') {
         for (let i = 0; i < formData[key].length; i++) {
-          data.append(key, formData[key][i]);
+          data.append(key, formData[key][i])
         }
       } else {
-        data.append(key, formData[key]);
+        data.append(key, formData[key])
       }
-    }    setLoading(true) // Show loading indicator
-
+    }
+    setLoading(true) // Show loading indicator
 
     try {
       const response = await axios.post(
-        `${apiKey}/logo-basic-plane`,
-        // 'http://localhost:4000/logo-basic-plane',
+        `${apiKey}/logo-standard-plane`,
+        // 'http://localhost:4000/logo-standard-plane',
 
         data,
         {
@@ -83,29 +80,27 @@ const Modalbasic = ({ isOpened, heading, handleClose }) => {
             'Content-Type': 'multipart/form-data'
           }
         }
-      );
+      )
       if (response.status === 201) {
-        console.log('Data:', formData);
+        console.log('Data:', formData)
         Swal.fire({
           position: 'top-end',
           icon: 'success',
           title: 'Message sent successfully',
           showConfirmButton: false,
           timer: 1500
-        });
-        handleClose();
+        })
+        handleClose()
       }
     } catch (error) {
-      console.error('Failed to send message. Please try again later.', error.response.data);
-      Swal.fire({
-        icon: 'error',
-        title: 'Error',
-        text: 'Failed to send message. Please try again later.',
-      });
-    }finally {
+      console.error(
+        'Failed to send message. Please try again later.',
+        error.response.data
+      )
+    } finally {
       setLoading(false) // Hide loading indicator
     }
-  };
+  }
 
   return (
     <div>
@@ -115,7 +110,7 @@ const Modalbasic = ({ isOpened, heading, handleClose }) => {
         </Modal.Header>
         <Modal.Body>
           <Form
-            style={{ overflowY: 'scroll', paddingRight: '20px' }}
+            style={{ overflowY: 'scroll', paddingRight:'20px' }}
             onSubmit={handleSubmit}
           >
             <Form.Group className='mb-3' controlId='name'>
@@ -183,10 +178,13 @@ const Modalbasic = ({ isOpened, heading, handleClose }) => {
               <Button
                 type='submit'
                 style={{ backgroundColor: '#4599b4' }}
-                onMouseEnter={(e) => (e.target.style.backgroundColor = '#f3972b')}
-                onMouseLeave={(e) => (e.target.style.backgroundColor = '#4599b4')}
-              >
-                 {loading ? (
+                onMouseEnter={(e) =>
+                  (e.target.style.backgroundColor = '#f3972b')
+                }
+                onMouseLeave={(e) =>
+                  (e.target.style.backgroundColor = '#4599b4')
+                }
+              > {loading ? (
                 <>
                   <Spinner
                     as='span'
@@ -199,7 +197,7 @@ const Modalbasic = ({ isOpened, heading, handleClose }) => {
                 </>
               ) : (
                 'Send Message' 
-              )}     
+              )}
               </Button>
               <Button variant='secondary' onClick={handleClose}>
                 Close
@@ -209,7 +207,7 @@ const Modalbasic = ({ isOpened, heading, handleClose }) => {
         </Modal.Body>
       </Modal>
     </div>
-  );
-};
+  )
+}
 
-export default Modalbasic;
+export default Modalbasic

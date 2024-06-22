@@ -3,7 +3,11 @@ import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import Modal from 'react-bootstrap/Modal'
 import Swal from 'sweetalert2'
+import API_CONFIG from '../../../config/api';
+import Spinner from 'react-bootstrap/Spinner'
 
+
+const { apiKey } = API_CONFIG;
 function ModalformPremiumWeb({ isOpened, heading, handleClose }) {
   const [show, setShow] = useState(isOpened)
 
@@ -16,6 +20,7 @@ function ModalformPremiumWeb({ isOpened, heading, handleClose }) {
     { id: 6, label: 'Code Correction' },
     { id: 7, label: 'Quality Assurance' }
   ]
+  const [loading, setLoading] = useState(false)
 
   const [formData, setFormData] = useState({
     name: '',
@@ -77,7 +82,23 @@ function ModalformPremiumWeb({ isOpened, heading, handleClose }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    const apiEndpoint = 'http://localhost:4000/web-premium-plane' // Replace with your actual API endpoint
+    const apiEndpoint = 
+    `${apiKey}/web-premium-plane` // Replace with your actual API endpoint
+    // 'http://localhost:4000/web-premium-plane'
+
+
+
+    const requiredFields = ['name', 'email', 'description'];
+    for (const field of requiredFields) {
+      if (!formData[field]) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: `Please fill in the ${field} field.`,
+        });
+        return;
+      }
+    }
 
     const data = new FormData()
     for (const key in formData) {
@@ -90,7 +111,8 @@ function ModalformPremiumWeb({ isOpened, heading, handleClose }) {
       } else {
         data.append(key, formData[key])
       }
-    }
+    }    setLoading(true) // Show loading indicator
+
 
     try {
       const response = await fetch(apiEndpoint, {
@@ -104,6 +126,7 @@ function ModalformPremiumWeb({ isOpened, heading, handleClose }) {
       }
 
       const result = await response.json()
+      console.log(result)
       Swal.fire({
         position: 'top-end',
         icon: 'success',
@@ -138,7 +161,6 @@ function ModalformPremiumWeb({ isOpened, heading, handleClose }) {
                 placeholder='Josh Anton'
                 value={formData.name}
                 onChange={handleInputChange}
-                required
               />
             </Form.Group>
             <Form.Group className='mb-3' controlId='email'>
@@ -148,7 +170,6 @@ function ModalformPremiumWeb({ isOpened, heading, handleClose }) {
                 placeholder='name@example.com'
                 value={formData.email}
                 onChange={handleInputChange}
-                required
               />
             </Form.Group>
             <Form.Group className='mb-3' controlId='company'>
@@ -243,8 +264,20 @@ function ModalformPremiumWeb({ isOpened, heading, handleClose }) {
                   (e.target.style.backgroundColor = '#4599b4')
                 }
               >
-                Send Message
-              </Button>
+ {loading ? (
+                <>
+                  <Spinner
+                    as='span'
+                    animation='border'
+                    size='sm'
+                    role='status'
+                    aria-hidden='true'
+                  />{' '}
+                  Sending...
+                </>
+              ) : (
+                'Send Message' 
+              )}                  </Button>
               <Button variant='secondary' onClick={handleClose}>
                 Close
               </Button>

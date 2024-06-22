@@ -5,6 +5,12 @@ import Form from 'react-bootstrap/Form'
 import Modal from 'react-bootstrap/Modal'
 import axios from 'axios'
 import Swal from 'sweetalert2'
+import API_CONFIG from '../../../config/api';
+import Spinner from 'react-bootstrap/Spinner'
+
+
+const { apiKey } = API_CONFIG;
+
 function ModalformBasicWeb({ isOpened, heading, handleClose }) {
   const [formData, setFormData] = useState({
     name: '',
@@ -14,6 +20,8 @@ function ModalformBasicWeb({ isOpened, heading, handleClose }) {
     description: '',
     Link_to_Graphics: []
   })
+  const [loading, setLoading] = useState(false)
+
   useEffect(() => {
     if (isOpened) {
       setFormData({
@@ -36,6 +44,18 @@ function ModalformBasicWeb({ isOpened, heading, handleClose }) {
   }
   const handleSubmit = async (e) => {
     e.preventDefault()
+
+    const requiredFields = ['name', 'email', 'description'];
+    for (const field of requiredFields) {
+      if (!formData[field]) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: `Please fill in the ${field} field.`,
+        });
+        return;
+      }
+    }
     const data = new FormData()
     for (const key in formData) {
       if (key === 'Link_to_Graphics') {
@@ -45,10 +65,12 @@ function ModalformBasicWeb({ isOpened, heading, handleClose }) {
       } else {
         data.append(key, formData[key])
       }
-    }
+    }setLoading(true) // Show loading indicator
     try {
       const response = await axios.post(
-        'http://localhost:4000/web-basic-plane',
+        `${apiKey}/web-basic-plane`,
+        // 'http://localhost:4000/web-basic-plane',
+
         data,
         {
           headers: {
@@ -89,7 +111,6 @@ function ModalformBasicWeb({ isOpened, heading, handleClose }) {
               name='name'
               value={formData.name}
               onChange={handleChange}
-              required
             />
           </Form.Group>
           <Form.Group className='mb-3' controlId='email'>
@@ -100,7 +121,6 @@ function ModalformBasicWeb({ isOpened, heading, handleClose }) {
               name='email'
               value={formData.email}
               onChange={handleChange}
-              required
             />
           </Form.Group>
           <Form.Group className='mb-3' controlId='company'>
@@ -111,7 +131,6 @@ function ModalformBasicWeb({ isOpened, heading, handleClose }) {
               name='company'
               value={formData.company}
               onChange={handleChange}
-              required
             />
           </Form.Group>
           <Form.Group className='mb-3' controlId='reference_sites'>
@@ -133,7 +152,6 @@ function ModalformBasicWeb({ isOpened, heading, handleClose }) {
               name='description'
               value={formData.description}
               onChange={handleChange}
-              required
             />
           </Form.Group>
           <Form.Group className='mb-3' controlId='Link_to_Graphics'>
@@ -153,8 +171,21 @@ function ModalformBasicWeb({ isOpened, heading, handleClose }) {
               onMouseEnter={(e) => (e.target.style.backgroundColor = '#f3972b')}
               onMouseLeave={(e) => (e.target.style.backgroundColor = '#4599b4')}
             >
-              Send Message
-            </Button>
+            {loading ? (
+                <>
+                  <Spinner
+                    as='span'
+                    animation='border'
+                    size='sm'
+                    role='status'
+                    aria-hidden='true'
+                  />{' '}
+                  Sending...
+                </>
+              ) : (
+                'Send Message' 
+              )}  
+                             </Button>
             <Button variant='secondary' onClick={handleClose}>
               Close
             </Button>

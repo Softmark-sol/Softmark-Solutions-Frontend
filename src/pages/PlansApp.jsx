@@ -45,7 +45,7 @@ export default function PlansApp({ plans }) {
 
       <div className='card-heading-service'>
         <h2 className='heading-underline-service'>
-          Our Mobile App Development Services Include
+          Our Mobile App Development Services
         </h2>
       </div>
 

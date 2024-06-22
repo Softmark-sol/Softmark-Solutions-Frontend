@@ -150,6 +150,15 @@
 @media (max-width: 600px) {
   .footer-bottom {
     padding: 20px 10px;
+ 
+  
+  .footer-social {
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    margin-top: 20px;
+    padding-top: 10px;
+    flex-wrap: wrap;
   }
 
   .footer-social a {

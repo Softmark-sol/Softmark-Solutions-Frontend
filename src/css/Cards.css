@@ -41,3 +41,24 @@
   padding-top: 30px;
   gap: 30px;
 }
+
+.card {
+  position: relative;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.card-title,
+.card-desc {
+  transition: filter 0.4s ease-in-out;
+}
+
+.card:hover .card-title,
+.card:hover .card-desc {
+  filter: blur(10px);
+}
