@@ -94,6 +94,8 @@ function ModalformBasicWeb({ isOpened, heading, handleClose }) {
         'Failed to send message. Please try again later.',
         error.response.data
       )
+    } finally {
+      setLoading(false) // Hide loading indicator
     }
   }
   return (

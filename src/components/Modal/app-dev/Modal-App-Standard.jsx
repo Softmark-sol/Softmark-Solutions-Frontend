@@ -104,6 +104,8 @@ function ModalformStandardApp({ isOpened, heading, handleClose }) {
         text: 'Failed to send message. Please try again later.'
       })
       console.error('Error:', error)
+    } finally {
+      setLoading(false) // Hide loading indicator
     }
 
     handleClose() // Close the modal after submission

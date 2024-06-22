@@ -103,6 +103,8 @@ function ModalformBasicApp({ isOpened, heading, handleClose }) {
         text: 'Failed to send message. Please try again later.'
       })
       console.error('Error:', error.response.data)
+    } finally {
+      setLoading(false) // Hide loading indicator
     }
   }
 

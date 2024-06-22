@@ -108,6 +108,8 @@ function ModalformStandardWeb({ isOpened, heading, handleClose }) {
         text: 'Something went wrong!'
       })
       console.error('Error:', error.message)
+    } finally {
+      setLoading(false) // Hide loading indicator
     }
   }
   return (

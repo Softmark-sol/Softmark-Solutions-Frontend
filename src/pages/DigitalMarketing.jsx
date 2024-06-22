@@ -119,6 +119,8 @@ const DigitalMarketing = () => {
         text: errorMessage
       })
       console.error('Error:', error)
+    } finally {
+      setLoading(false) // Hide loading indicator
     }
   }
 

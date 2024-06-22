@@ -123,6 +123,8 @@ function ModalformSeo({ isOpened, heading, handleClose }) {
             'Failed to send message. Please try again later.'
         })
         console.error('Error:', error)
+      } finally {
+        setLoading(false) // Hide loading indicator
       }
     }
   }

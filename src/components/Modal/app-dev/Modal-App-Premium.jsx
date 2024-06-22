@@ -135,6 +135,8 @@ function ModalformPremiumApp({ isOpened, heading, handleClose }) {
       }
     } catch (error) {
       console.error('Error:', error)
+    } finally {
+      setLoading(false) // Hide loading indicator
     }
   }
 
