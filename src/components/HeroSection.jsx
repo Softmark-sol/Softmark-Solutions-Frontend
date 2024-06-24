@@ -38,43 +38,17 @@ const HeroSection = () => {
         <MyLottieAnimation2 />
       </div>
       <div className="hero" style={{ textAlign: "center", padding: "2rem 0" }}>
-        <div
-          className="first-line fade-in"
-          style={{
-            fontFamily: "'Roboto', sans-serif",
-            fontWeight: "300",
-            fontSize: "3.5rem",
-            color: "black",
-          }}
-        >
-          <style>
-            {`
-          @media (max-width: 768px) {
-            .fade-in {
-              font-size: 0.5rem; /* Adjust font size for smaller screens */
-            }
-          }
-        `}
-          </style>
+        <div className="first-line fade-in">
           WHERE{" "}
-          <span style={{ color: "#f3972b", fontWeight: "700" }}>
-            {" "}
+          <span className="technology">
             <i className="fas fa-cogs" style={{ marginRight: "0.5rem" }}></i>
             TECHNOLOGY
           </span>
         </div>
         <br />
-        <div
-          className="second-line fade-in"
-          style={{
-            fontFamily: "'Roboto', sans-serif",
-            fontWeight: "300",
-            fontSize: "3rem",
-            color: "black",
-          }}
-        >
+        <div className="second-line fade-in">
           MEETS{" "}
-          <span style={{ color: "#4599b4", fontWeight: "700" }}>
+          <span className="marketing">
             MARKETING
             <i className="fas fa-bullhorn" style={{ marginLeft: "0.5rem" }}></i>
           </span>
