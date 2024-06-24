@@ -153,4 +153,33 @@
   .second-line {
     font-size: 2.5rem;
   }
+  .hero-btn-div {
+    padding: 0;
+  }
+}
+@media (max-width: 395px) {
+  .rightGlobe {
+    display: none;
+  }
+  .leftGlobe {
+    display: none;
+  }
+}
+
+@media (max-width: 275px) {
+  .rightGlobe {
+    display: none;
+  }
+  .leftGlobe {
+    display: none;
+  }
+  .first-line {
+    font-size: 2rem;
+  }
+  .second-line {
+    font-size: 2rem;
+  }
+  .hero-btn-div {
+    padding: 0;
+  }
 }

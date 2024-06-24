@@ -58,7 +58,7 @@
 .card-heading-service {
   text-align: center;
   font-size: 1.7rem;
-  font-family: 'Lucida Sans', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
+  font-family: "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif;
   padding-top: 50px;
   margin-bottom: 30px;
 }
@@ -69,7 +69,7 @@
 }
 
 .card-heading-service .heading-underline-service::after {
-  content: '';
+  content: "";
   margin-top: 50px;
   position: absolute;
   left: 50%;
@@ -183,6 +183,9 @@ textarea.form-control.full-width {
 }
 
 @media (max-width: 768px) {
+  .form-control {
+    margin-left: 0;
+  }
   .form-group {
     flex-direction: column;
   }
@@ -224,4 +227,25 @@ select.form-control:invalid option {
 
 select.form-control {
   color: #333;
+}
+
+@media (max-width: 290px) {
+  .btn-container button {
+    padding: 10px;
+  }
+  .form-control {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 270px) {
+  .btn-container button {
+    padding: 6px;
+  }
+}
+
+@media (max-width: 255px) {
+  .btn-container button {
+    padding: 2px;
+  }
 }

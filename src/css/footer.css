@@ -173,3 +173,18 @@
     }
   }
 }
+
+@media (max-width: 330px) {
+  .footer-social p {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 15px;
+  }
+}
+@media (max-width: 275px) {
+  .footer-social p {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 12px;
+  }
+}

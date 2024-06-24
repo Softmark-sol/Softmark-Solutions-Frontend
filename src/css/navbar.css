@@ -172,3 +172,9 @@
     padding: 7px 15px;
   }
 }
+
+@media (max-width: 335px) {
+  .navbar.custom-navbar {
+    padding: 5px;
+  }
+}
