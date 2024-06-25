@@ -84,6 +84,9 @@
 .navbar-menu {
   display: none;
 }
+.menuitem {
+  background-color: #4599b4;
+}
 
 .contact-us {
   display: flex;
@@ -167,5 +170,11 @@
   .contact-us {
     font-size: 10px;
     padding: 7px 15px;
+  }
+}
+
+@media (max-width: 335px) {
+  .navbar.custom-navbar {
+    padding: 5px;
   }
 }

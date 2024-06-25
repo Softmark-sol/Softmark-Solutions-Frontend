@@ -1,0 +1,5 @@
+.typed-cursor {
+  display: inline-block;
+  font-size: 1em;
+  color: orange; /* Change this color to your desired caret color */
+}

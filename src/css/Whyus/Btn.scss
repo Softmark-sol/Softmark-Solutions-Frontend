@@ -13,18 +13,19 @@ $border-radius: 6px;
   text-transform: capitalize;
   background-color: $button-bg-1;
   font: {
-    family: 'Roboto', sans-serif;
+    family: "Roboto", sans-serif;
     size: 18px;
   }
   padding: 20px 0px;
   width: 220px;
-  border-radius: $border-radius;
+  border-radius: 30px;
   overflow: hidden;
   transition: all 0.2s linear 0s;
   margin-top: 30px;
+  border: none;
 
   &:before {
-    content: '\f178';
+    content: "\f178";
     font-family: FontAwesome;
     font-size: 15px;
     position: absolute;

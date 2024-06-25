@@ -4,6 +4,8 @@ import Logo from "../assets/images/Logo-no-bg.png";
 import LeftDrawer from "./LeftDrawer";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
+import ButtonBase from "@mui/material/ButtonBase";
+import styled from "@emotion/styled";
 import Fade from "@mui/material/Fade";
 import { useLocation, useNavigate } from "react-router-dom";
 import MyLottieAnimation from "./CallAnimation";
@@ -26,8 +28,6 @@ const Navbar = () => {
     const isHomePage = location.pathname === "/";
     if (isHomePage) {
       const contactForm = document.getElementById("form");
-      console.log(contactForm);
-
       if (contactForm) {
         contactForm.scrollIntoView({ behavior: "smooth" });
       }
@@ -40,12 +40,8 @@ const Navbar = () => {
     const isHomePage = location.pathname === "/";
     if (isHomePage) {
       const servicesSection = document.getElementById("services");
-      console.log(servicesSection);
-
       if (servicesSection) {
         servicesSection.scrollIntoView({ behavior: "smooth" });
-      } else {
-        console.error("Services section not found");
       }
     } else {
       navigate("/services");
@@ -66,6 +62,51 @@ const Navbar = () => {
   const handleMouseLeave = () => {
     setHoveredItem(null);
   };
+
+  const CustomMenu = styled(Menu)`
+    .MuiList-root {
+      display: flex;
+      flex-direction: column;
+    }
+    .MuiPaper-root {
+      background-color: #ffffff;
+      border: 1px solid #e0e0e0;
+      box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+      padding: 8px;
+      border-radius: 8px;
+      min-width: 120px;
+    }
+  `;
+
+  const CustomMenuItem = styled(MenuItem)`
+    color: #333;
+    padding: 12px 20px;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    transition: background-color 0.3s, color 0.3s;
+    border-left: 2px solid #f3972bc7;
+
+    width: 100px;
+
+    &:hover {
+      background-color: #f3972bc7;
+      color: #fff;
+    }
+  `;
+
+  const CustomButtonBase = styled(ButtonBase)`
+    .MuiTouchRipple-root {
+      color: rgba(0, 0, 0, 0.3);
+    }
+
+    .MuiTouchRipple-rippleVisible {
+      opacity: 0.7;
+    }
+
+    .MuiTouchRipple-child {
+      background-color: #4599b4; /* Custom ripple color */
+    }
+  `;
 
   return (
     <div className="navbar custom-navbar">
@@ -89,7 +130,7 @@ const Navbar = () => {
           </span>
           <span
             className={`nav-btn ${hoveredItem === 1 ? "active" : ""}`}
-            onClick={() => Services()}
+            onClick={Services}
             onMouseEnter={() => handleMouseEnter(1)}
             onMouseLeave={handleMouseLeave}
           >
@@ -109,13 +150,7 @@ const Navbar = () => {
           </span>
           <span
             className={`nav-btn ${hoveredItem === 3 ? "active" : ""}`}
-            id="fade-button"
-            aria-controls={open ? "fade-menu" : undefined}
-            aria-haspopup="true"
-            aria-expanded={open ? "true" : undefined}
-            onClick={() => {
-              navigate("/Ourservices");
-            }}
+            onClick={() => navigate("/Ourservices")}
             onMouseEnter={() => handleMouseEnter(3)}
             onMouseLeave={handleMouseLeave}
           >
@@ -132,7 +167,7 @@ const Navbar = () => {
           >
             Careers
           </a>
-          <span className="nav-btn contact-us" onClick={() => Contact()}>
+          <span className="nav-btn contact-us" onClick={Contact}>
             <div className="myLottieAnimation">
               <MyLottieAnimation />
             </div>
@@ -143,31 +178,35 @@ const Navbar = () => {
           <LeftDrawer />
         </div>
       </div>
-      <Menu
+      <CustomMenu
         id="fade-menu"
-        MenuListProps={{
-          "aria-labelledby": "fade-button",
-        }}
         anchorEl={anchorEl}
         open={open}
         onClose={handleClose}
         TransitionComponent={Fade}
+        MenuListProps={{
+          "aria-labelledby": "fade-button",
+        }}
+        anchorOrigin={{
+          vertical: "bottom",
+          horizontal: "left",
+        }}
+        transformOrigin={{
+          vertical: "top",
+          horizontal: "left",
+        }}
       >
-        <MenuItem
-          onClick={() => {
-            handleMenuItemClick("/aboutUs");
-          }}
-        >
-          About Us
-        </MenuItem>
-        <MenuItem
-          onClick={() => {
-            handleMenuItemClick("/whyUs");
-          }}
-        >
-          Why Us
-        </MenuItem>
-      </Menu>
+        <CustomButtonBase>
+          <CustomMenuItem onClick={() => handleMenuItemClick("/aboutUs")}>
+            About Us
+          </CustomMenuItem>
+        </CustomButtonBase>
+        <CustomButtonBase>
+          <CustomMenuItem onClick={() => handleMenuItemClick("/whyUs")}>
+            Why Us
+          </CustomMenuItem>
+        </CustomButtonBase>
+      </CustomMenu>
       <div className={`navbar-line ${hoveredItem !== null ? "active" : ""}`} />
     </div>
   );
