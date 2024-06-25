@@ -46,9 +46,6 @@ p {
   font-size: 13px;
   margin-top: 0px;
 }
-.card img {
-  display: block;
-}
 
 .card img {
   display: block;
@@ -76,6 +73,16 @@ p {
 @media (max-width: 255px) {
   .card {
     width: 220px;
+    padding: 10px;
+  }
+  .card img {
+    width: 55px;
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: 300px;
     padding: 10px;
   }
   .card img {

@@ -1,8 +1,8 @@
 import React from "react";
 import Lottie from "react-lottie";
-import animationData from "../lottieAnimations/webdevelopment.json";
+import animationData from "../lottieAnimations/ourworkanimation.json";
 
-const WebLottieAnimation = () => {
+const OurWorkLottieAnimation = () => {
   const defaultOptions = {
     loop: true,
     autoplay: true,
@@ -14,9 +14,9 @@ const WebLottieAnimation = () => {
 
   return (
     <div>
-      <Lottie options={defaultOptions} height={450} width={450} />
+      <Lottie options={defaultOptions} height={500} width={500} />
     </div>
   );
 };
 
-export default WebLottieAnimation;
+export default OurWorkLottieAnimation;

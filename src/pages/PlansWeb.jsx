@@ -11,6 +11,7 @@ import ModalformPremiumWeb from "../components/Modal/web-dev/Modal-Web-Premium";
 import WebCards from "../components/Webcards";
 import Inquiry from "../components/Inquiry";
 import WebLottieAnimation from "../components/WebAnimation";
+import Typewriter from "../components/TypeWriter.jsx";
 
 export default function PlansWeb({ plans }) {
   const [showBasic, setShowBasic] = useState(false);
@@ -32,7 +33,10 @@ export default function PlansWeb({ plans }) {
   return (
     <>
       <div className="main-container container">
-        <h2>SoftMark Solutions - Building Your Digital Future</h2>
+        <h2>
+          SoftMark Solutions -{" "}
+          <Typewriter strings={["Building Your Digital Future"]} />
+        </h2>
         <h6 className="sub-paragraph">
           At SoftMark Solutions, we recognize the critical role a well-crafted
           website plays in your business success. Our expert team specializes in

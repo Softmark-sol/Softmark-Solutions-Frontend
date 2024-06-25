@@ -17,6 +17,7 @@ import img9 from "../assets/logo3.png";
 import { useNavigate } from "react-router-dom";
 import ScrollToTopButton from "../components/ScrollUpButton";
 import ScrollReveal from "scrollreveal";
+import OurWorkLottieAnimation from "../components/OurWorkAnimation";
 
 const Ourservices = () => {
   const navigate = useNavigate();
@@ -78,20 +79,20 @@ const Ourservices = () => {
     <div id="services">
       <div className="card-heading-service container">
         <h1 className="heading-underline-service">Our Work</h1>
-        <p className="paragraph">
+        <p className="pContainer">
           Explore our portfolio to witness the transformative power of our
           services in web development, app creation, and captivating design
           assets. Each project is a testament to our commitment to delivering
           cutting-edge solutions tailored to our clients&#39; needs.
         </p>
       </div>
+      <div className="ourwork-animation">
+        <OurWorkLottieAnimation />
+      </div>
 
       <div className="card-heading-service container">
         <h2 className="heading-underline-service">Web Development</h2>
-        <p
-          className="pContainer"
-          style={{ fontSize: "1rem", paddingTop: "20px" }}
-        >
+        <p className="pContainer">
           From sleek corporate websites to dynamic e-commerce platforms, our web
           development portfolio is a journey through digital craftsmanship. Step
           into a world where user experience reigns supreme and every pixel
@@ -107,10 +108,7 @@ const Ourservices = () => {
 
       <div className="card-heading-service container">
         <h2 className="heading-underline-service">App Development</h2>
-        <p
-          className="pContainer"
-          style={{ fontSize: "1rem", paddingTop: "20px" }}
-        >
+        <p className="pContainer">
           Dive into a realm of mobile marvels with our app development showcase.
           Discover how we turn ideas into immersive experiences, blending
           intuitive design with powerful functionality. Whether iOS or Android,
@@ -126,10 +124,7 @@ const Ourservices = () => {
 
       <div className="card-heading-service container">
         <h2 className="heading-underline-service">Logos and Design Assets</h2>
-        <p
-          className="pContainer"
-          style={{ fontSize: "1rem", paddingTop: "20px" }}
-        >
+        <p className="pContainer">
           Unlock the potential of your brand identity with our captivating
           design assets. Our portfolio is a visual symphony of logos, branding
           materials, and captivating visuals that breathe life into every
@@ -144,7 +139,7 @@ const Ourservices = () => {
       </div>
 
       <div style={{ paddingTop: "50px" }} className="container">
-        <p className="paragraph2">
+        <p className="pContainer">
           Our work isn't just about aesthetics – it's about strategy,
           innovation, and results. Delve deeper into each project to uncover the
           secrets behind our success. From inception to execution, we share
@@ -155,7 +150,7 @@ const Ourservices = () => {
 
       <div className="card-heading-service container">
         <h2 className="heading-underline-service">Call-to-Action</h2>
-        <p className="paragraph">
+        <p className="pContainer">
           Ready to bring your vision to life? Let's collaborate! Whether you're
           looking to revamp your website, launch a groundbreaking app, or
           redefine your brand identity, we're here to make it happen. Contact us

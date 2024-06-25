@@ -11,6 +11,7 @@ import Cards from "../components/Cards";
 import Inquiry from "../components/Inquiry";
 import AppCards from "../components/AppCards";
 import MobileLottieAnimation from "../components/MobileAnimation";
+import Typewriter from "../components/TypeWriter.jsx";
 
 export default function PlansApp({ plans }) {
   const [showBasic, setShowBasic] = useState(false);
@@ -32,7 +33,10 @@ export default function PlansApp({ plans }) {
   return (
     <>
       <div className="main-container container">
-        <h2>SoftMark Solutions - Innovating the Mobile Experience</h2>
+        <h2>
+          SoftMark Solutions -{" "}
+          <Typewriter strings={["Innovating the Mobile Experience"]} />
+        </h2>
         <h6 className="sub-paragraph">
           In today's mobile-first world, having a robust and intuitive mobile
           application is essential for reaching and engaging your audience. At

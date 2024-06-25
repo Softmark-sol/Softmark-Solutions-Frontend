@@ -1,0 +1,33 @@
+.lottie-container {
+  position: relative; /* Allows positioning of the animation */
+  width: 600px;
+  height: 600px;
+  /* overflow: hidden; Hides any overflow */
+}
+
+.lottie-container > div {
+  position: absolute; /* Positions the animation absolutely */
+  top: -100px;
+  left: 30%;
+  width: 100%;
+  height: 100%;
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+}
+
+@media (max-width: 1024px) {
+  .lottie-container > div {
+    left: 20%;
+  }
+}
+@media (max-width: 986px) {
+  .lottie-container > div {
+    left: 5%;
+  }
+}
+@media (max-width: 767px) {
+  .lottie-container {
+    display: none;
+  }
+}

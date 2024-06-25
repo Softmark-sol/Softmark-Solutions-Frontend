@@ -1,8 +1,8 @@
 import React from "react";
 import Lottie from "react-lottie";
-import animationData from "../lottieAnimations/webdevelopment.json";
+import animationData from "../lottieAnimations/digitalmarketingAnimation.json";
 
-const WebLottieAnimation = () => {
+const DMLottieAnimation = () => {
   const defaultOptions = {
     loop: true,
     autoplay: true,
@@ -19,4 +19,4 @@ const WebLottieAnimation = () => {
   );
 };
 
-export default WebLottieAnimation;
+export default DMLottieAnimation;

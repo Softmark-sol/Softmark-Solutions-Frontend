@@ -1,6 +1,7 @@
 import React from "react";
 import Lottie from "react-lottie";
 import animationData from "../lottieAnimations/appdev.json";
+import "./MobileLottieAnimation.css"; // Import the CSS file
 
 const MobileLottieAnimation = () => {
   const defaultOptions = {
@@ -13,8 +14,8 @@ const MobileLottieAnimation = () => {
   };
 
   return (
-    <div>
-      <Lottie options={defaultOptions} height={350} width={350} />
+    <div className="lottie-container">
+      <Lottie options={defaultOptions} height={700} width={700} />
     </div>
   );
 };

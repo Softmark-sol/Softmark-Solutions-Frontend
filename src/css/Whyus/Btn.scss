@@ -22,6 +22,7 @@ $border-radius: 6px;
   overflow: hidden;
   transition: all 0.2s linear 0s;
   margin-top: 30px;
+  border: none;
 
   &:before {
     content: "\f178";
