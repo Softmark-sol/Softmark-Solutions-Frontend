@@ -59,6 +59,15 @@
   animation: typing 4s steps(40, end), blink-caret 0.75s step-end infinite;
 }
 
+.DM-animation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
 @keyframes typing {
   from {
     width: 0;
@@ -84,8 +93,5 @@
   }
   .paragraph {
     text-align: justify;
-  }
-  .DM-animation {
-    display: none;
   }
 }

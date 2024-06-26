@@ -1,0 +1,21 @@
+.market-lottie {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 80px;
+  height: auto;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .market-lottie {
+    max-width: 70px;
+  }
+}
+
+@media (max-width: 400px) {
+  .market-lottie {
+    max-width: 70px;
+  }
+}

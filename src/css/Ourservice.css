@@ -69,8 +69,11 @@
   transition: 1s ease;
 }
 
-@media (max-width: 550px) {
-  .ourwork-animation {
-    display: none;
-  }
+.ourwork-animation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }

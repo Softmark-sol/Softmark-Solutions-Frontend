@@ -1,6 +1,7 @@
 import React from "react";
 import Lottie from "react-lottie";
 import animationData from "../lottieAnimations/digitalmarketingAnimation.json";
+import "../css/animation-css/dmlottie-container.css";
 
 const DMLottieAnimation = () => {
   const defaultOptions = {
@@ -13,8 +14,8 @@ const DMLottieAnimation = () => {
   };
 
   return (
-    <div>
-      <Lottie options={defaultOptions} height={450} width={450} />
+    <div className="dmlottie-container">
+      <Lottie options={defaultOptions} height={"100%"} width={"100%"} />
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import React from "react";
 import Lottie from "react-lottie";
 import animationData from "../lottieAnimations/logodesignanimation.json";
+import "../css/animation-css/logolottie-container.css";
 
 const LDLottieAnimation = () => {
   const defaultOptions = {
@@ -13,8 +14,8 @@ const LDLottieAnimation = () => {
   };
 
   return (
-    <div>
-      <Lottie options={defaultOptions} height={400} width={400} />
+    <div className="logolottie-container">
+      <Lottie options={defaultOptions} height={"100%"} width={"100%"} />
     </div>
   );
 };

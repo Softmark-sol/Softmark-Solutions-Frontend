@@ -1,34 +1,40 @@
-import React, { useRef } from 'react'
-import '../css/aboutUs.css'
-import '../css/Whyus/Btn.scss'
-import { useNavigate } from 'react-router-dom'
-import { motion, useInView } from 'framer-motion'
-import ScrollToTopButton from '../components/ScrollUpButton'
+import React, { useRef } from "react";
+import "../css/aboutUs.css";
+import "../css/Whyus/Btn.scss";
+import { useNavigate } from "react-router-dom";
+import { motion, useInView } from "framer-motion";
+import ScrollToTopButton from "../components/ScrollUpButton";
+import Typewriter from "../components/TypeWriter.jsx";
+import ABMLottieAnimation from "../components/Aboutus-mission-animation.jsx";
+import ABPLottieAnimation from "../components/Aboutus-passion-animation.jsx";
+import ABJLottieAnimation from "../components/Aboutus-joinus-animation.jsx";
 
 const AboutUs = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const springAnimation = {
-    type: 'spring',
+    type: "spring",
     stiffness: 95,
     damping: 10,
-    delay: 0.05
-  }
+    delay: 0.05,
+  };
 
-  const refMission = useRef(null)
-  const inViewMission = useInView(refMission, { once: true })
+  const refMission = useRef(null);
+  const inViewMission = useInView(refMission, { once: true });
 
-  const refInnovation = useRef(null)
-  const inViewInnovation = useInView(refInnovation, { once: true })
+  const refInnovation = useRef(null);
+  const inViewInnovation = useInView(refInnovation, { once: true });
 
-  const refJourney = useRef(null)
-  const inViewJourney = useInView(refJourney, { once: true })
+  const refJourney = useRef(null);
+  const inViewJourney = useInView(refJourney, { once: true });
 
   return (
-    <div className='about-us container'>
-      <section className='about'>
-        <div className='about-header'>
-          <h2>Where technology Meets Marketing</h2>
+    <div className="about-us container">
+      <section className="about">
+        <div className="about-header">
+          <h2>
+            <Typewriter strings={["Where technology Meets Marketing"]} />
+          </h2>
           <p>
             At Softmark Solutions, we don&#39;t just build websites and
             applications; we craft digital experiences that leave a lasting
@@ -37,22 +43,21 @@ const AboutUs = () => {
             ever-changing world.
           </p>
         </div>
-        <div className='timeline'>
-          <div className='timeline-item'>
+        <div className="timeline">
+          <div className="timeline-item">
             <motion.div
-              className='timeline-img'
+              className="timeline-img"
               ref={refMission}
               initial={{ x: -100, opacity: 0 }}
               animate={inViewMission ? { x: 0, opacity: 1 } : {}}
               transition={springAnimation}
             >
-              <img
-                src='https://img.freepik.com/free-vector/staff-management-perspective-definition-target-orientation-teamwork-organization-business-coach-company-executive-personnel-cartoon-characters_335657-2967.jpg?t=st=1717779992~exp=1717783592~hmac=08671b6d109d778978a8c5644362de53af8f54c279fbda16199d39902ce50c1c&w=740'
-                alt='Mission'
-              />
+              <div className="ABM-animation">
+                <ABMLottieAnimation />
+              </div>
             </motion.div>
             <motion.div
-              className='timeline-content'
+              className="timeline-content"
               ref={refMission}
               initial={{ x: 100, opacity: 0 }}
               animate={inViewMission ? { x: 0, opacity: 1 } : {}}
@@ -71,21 +76,20 @@ const AboutUs = () => {
               </p>
             </motion.div>
           </div>
-          <div className='timeline-item ideas'>
+          <div className="timeline-item ideas">
             <motion.div
-              className='timeline-img'
+              className="timeline-img"
               ref={refInnovation}
               initial={{ x: -100, opacity: 0 }}
               animate={inViewInnovation ? { x: 0, opacity: 1 } : {}}
               transition={springAnimation}
             >
-              <img
-                src='https://img.freepik.com/free-vector/think-outside-box-concept-illustration_114360-18016.jpg?t=st=1717780408~exp=1717784008~hmac=431e4e4a459bb3dc01084ed7c1db2f7e967c8e0d35e20a40261cecb4d291b1b7&w=740'
-                alt='Our Passion for Innovation'
-              />
+              <div className="ABP-animation">
+                <ABPLottieAnimation />
+              </div>
             </motion.div>
             <motion.div
-              className='timeline-content'
+              className="timeline-content"
               ref={refInnovation}
               initial={{ x: 100, opacity: 0 }}
               animate={inViewInnovation ? { x: 0, opacity: 1 } : {}}
@@ -101,21 +105,20 @@ const AboutUs = () => {
               </p>
             </motion.div>
           </div>
-          <div className='timeline-item journey'>
+          <div className="timeline-item journey">
             <motion.div
-              className='timeline-img'
+              className="timeline-img"
               ref={refJourney}
               initial={{ x: -100, opacity: 0 }}
               animate={inViewJourney ? { x: 0, opacity: 1 } : {}}
               transition={springAnimation}
             >
-              <img
-                src='https://img.freepik.com/free-vector/milestones-business-projects-concept-illustration_114360-8653.jpg?t=st=1717780556~exp=1717784156~hmac=839702380a0412267af3ab8aafbea7cef9b8ab9478638e5702aae86b3108c875&w=740'
-                alt='Join Us on the Journey'
-              />
+              <div className="ABJ-animation">
+                <ABJLottieAnimation />
+              </div>
             </motion.div>
             <motion.div
-              className='timeline-content'
+              className="timeline-content"
               ref={refJourney}
               initial={{ x: 100, opacity: 0 }}
               animate={inViewJourney ? { x: 0, opacity: 1 } : {}}
@@ -134,7 +137,7 @@ const AboutUs = () => {
         </div>
       </section>
 
-      <section className='why-us'>
+      <section className="why-us">
         <h2>Why Us</h2>
         <p>
           At Softmark Solutions, we pride ourselves on being more than just a
@@ -147,18 +150,18 @@ const AboutUs = () => {
           choosing a trusted ally on your journey to digital success.
         </p>
         <div
-          className='button-effect'
-          style={{ paddingTop: '20px' }}
-          onClick={() => navigate('/whyUs')}
+          className="button-effect"
+          style={{ paddingTop: "20px" }}
+          onClick={() => navigate("/whyUs")}
         >
-          <a className='effect effect-1' href='#' title='Learn More'>
+          <a className="effect effect-1" href="#" title="Learn More">
             Why Us
           </a>
         </div>
       </section>
       <ScrollToTopButton />
     </div>
-  )
-}
+  );
+};
 
-export default AboutUs
+export default AboutUs;

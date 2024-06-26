@@ -1,0 +1,21 @@
+.joinus-lottie {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .joinus-lottie {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 400px) {
+  .joinus-lottie {
+    max-width: 250px;
+  }
+}

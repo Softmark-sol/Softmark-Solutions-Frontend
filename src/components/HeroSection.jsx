@@ -2,7 +2,9 @@ import React, { useRef, useEffect } from "react";
 import "../css/hero.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import MyLottieAnimation2 from "./NetworkGlobe";
+import GearLottieAnimation from "./Gear-animation";
 import ScrollReveal from "scrollreveal";
+import MarketLottieAnimation from "./Market-animation";
 
 const HeroSection = () => {
   const formRef = useRef(null);
@@ -41,16 +43,20 @@ const HeroSection = () => {
         <div className="first-line fade-in">
           WHERE{" "}
           <span className="technology">
-            <i className="fas fa-cogs" style={{ marginRight: "0.5rem" }}></i>
-            TECHNOLOGY
+            <div className="gear">
+              <GearLottieAnimation />
+            </div>
+            <div>TECHNOLOGY</div>
           </span>
         </div>
         <br />
         <div className="second-line fade-in">
           MEETS{" "}
           <span className="marketing">
-            MARKETING
-            <i className="fas fa-bullhorn" style={{ marginLeft: "0.5rem" }}></i>
+            <div>MARKETING</div>
+            <div className="market">
+              <MarketLottieAnimation />
+            </div>
           </span>
         </div>
         <div className="hero-btn-div" style={{ marginTop: "1.5rem" }}>

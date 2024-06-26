@@ -29,7 +29,22 @@
   animation: moveUpDown 3s ease-in-out infinite alternate;
   z-index: 1000;
 }
-
+.gear {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.market {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
 @keyframes moveUpDown {
   0% {
     transform: translate(-50%, -50%);
@@ -62,21 +77,15 @@
   font-family: PoppinsBold;
 }
 
-.hero-btn-div {
-  background-color: #f3972b;
-  border-radius: 50px;
-  border: none;
-  padding: 3px 21px;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.hero-btn-div:hover {
+.hero-btn:hover {
   background-color: #4599b4;
 }
 
 .hero-btn {
+  border-radius: 50px;
   color: #ffffff;
-  background-color: transparent;
+  background-color: #f3972b;
+
   border: none;
   font-weight: bold;
   /* background-color: "#FF6F00"; */
@@ -87,6 +96,7 @@
   font-size: 1.2rem;
   cursor: pointer;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, color 0.3s;
 }
 
 /* Style for the first span */
@@ -95,11 +105,15 @@
   font-weight: 300;
   font-size: 3.5rem;
   color: black;
+  display: flex;
 }
 .technology {
   color: #f3972b;
   font-weight: 700;
+  display: flex;
+  align-items: center;
 }
+
 /* Style for the second span */
 .second-line {
   color: #4599b4;
@@ -108,10 +122,15 @@
   font-weight: 300;
   font-size: 3.5rem;
   color: black;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 .marketing {
   color: #4599b4;
   font-weight: 700;
+  display: flex;
+  align-items: center;
 }
 
 @keyframes fadeIn {
@@ -149,9 +168,11 @@
   }
   .first-line {
     font-size: 2.5rem;
+    flex-direction: column;
   }
   .second-line {
     font-size: 2.5rem;
+    flex-direction: column;
   }
   .hero-btn-div {
     padding: 0;

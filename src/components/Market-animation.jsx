@@ -1,9 +1,9 @@
 import React from "react";
 import Lottie from "react-lottie";
-import animationData from "../lottieAnimations/seoAnimation.json";
-import "../css/animation-css/seolottie-container.css";
+import animationData from "../lottieAnimations/market.json";
+import "../css/animation-css/market.css";
 
-const SeoLottieAnimation = () => {
+const MarketLottieAnimation = () => {
   const defaultOptions = {
     loop: true,
     autoplay: true,
@@ -14,10 +14,10 @@ const SeoLottieAnimation = () => {
   };
 
   return (
-    <div className="seo-animation">
+    <div className="market-lottie">
       <Lottie options={defaultOptions} height={"100%"} width={"100%"} />
     </div>
   );
 };
 
-export default SeoLottieAnimation;
+export default MarketLottieAnimation;

@@ -1,0 +1,21 @@
+.seo-animation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+  overflow: hidden;
+}
+
+@media (max-width: 600px) {
+  .seo-animation {
+    max-width: 350px;
+  }
+}
+
+@media (max-width: 400px) {
+  .seo-animation {
+    max-width: 300px;
+  }
+}

@@ -17,7 +17,9 @@ const Footer = () => {
                 <button onClick={() => navigate("/")}>Home</button>
               </li>
               <li>
-                <button onClick={() => navigate("/Ourservices")}>Work</button>
+                <button onClick={() => navigate("/Ourservices")}>
+                  Our Work
+                </button>
               </li>
               <li>
                 <button onClick={() => navigate("/aboutUs")}>About Us</button>

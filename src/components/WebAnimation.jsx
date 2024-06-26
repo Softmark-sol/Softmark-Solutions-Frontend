@@ -1,6 +1,7 @@
 import React from "react";
 import Lottie from "react-lottie";
 import animationData from "../lottieAnimations/webdevelopment.json";
+import "../css/animation-css/weblottie-container.css";
 
 const WebLottieAnimation = () => {
   const defaultOptions = {
@@ -13,8 +14,8 @@ const WebLottieAnimation = () => {
   };
 
   return (
-    <div>
-      <Lottie options={defaultOptions} height={450} width={450} />
+    <div className="weblottie-container">
+      <Lottie options={defaultOptions} height={"100%"} width={"100%"} />
     </div>
   );
 };

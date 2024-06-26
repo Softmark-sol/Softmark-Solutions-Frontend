@@ -20,7 +20,6 @@ const Seo = () => {
         online.
       </p>
       <div className="seo-animation">
-        {" "}
         <SeoLottieAnimation />
       </div>
       <PlansSeo plans={SeoPlans} />

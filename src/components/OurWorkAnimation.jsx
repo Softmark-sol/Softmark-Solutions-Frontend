@@ -1,6 +1,7 @@
 import React from "react";
 import Lottie from "react-lottie";
 import animationData from "../lottieAnimations/ourworkanimation.json";
+import "../css/animation-css/worklottie-container.css";
 
 const OurWorkLottieAnimation = () => {
   const defaultOptions = {
@@ -13,8 +14,8 @@ const OurWorkLottieAnimation = () => {
   };
 
   return (
-    <div>
-      <Lottie options={defaultOptions} height={500} width={500} />
+    <div className="worklottie-container">
+      <Lottie options={defaultOptions} height={"100%"} width={"100%"} />
     </div>
   );
 };
