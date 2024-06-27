@@ -1,11 +1,12 @@
 .main-container h2 {
   text-align: center;
+  padding-top: 40px;
 }
 .sub-paragraph {
   text-align: justify;
-  word-spacing: 0.5px;
-  padding-top: 15px;
+  padding-top: 20px;
   color: gray;
+  width: 50%;
   line-height: 30px;
 }
 .card-heading-service {
@@ -52,16 +53,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 100%;
+  width: 50%;
   overflow: hidden;
 }
-
 .horizontal-fram-web{
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  gap: 20px;
+  width: 100%;
+  
 }
 @media screen and (max-width:600px) {
   .horizontal-fram-web{

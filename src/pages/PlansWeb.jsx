@@ -38,7 +38,6 @@ export default function PlansWeb({ plans }) {
           <Typewriter strings={["Building Your Digital Future"]} />
         </h2>
         <div className="horizontal-fram-web">
-        <div style={{width:'100%'}}>
         <h5 className="sub-paragraph">
           At SoftMark Solutions, we recognize the critical role a well-crafted
           website plays in your business success. Our expert team specializes in
@@ -49,7 +48,6 @@ export default function PlansWeb({ plans }) {
           ensuring your online presence stands out in a crowded digital
           landscape
         </h5>
-        </div>
         <div className="webanimation">
           {" "}
           <WebLottieAnimation />
