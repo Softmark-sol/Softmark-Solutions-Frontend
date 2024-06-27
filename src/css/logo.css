@@ -1,9 +1,10 @@
 .main-paragrah {
   padding-top: 20px;
-  padding-bottom: 50px;
+  padding-bottom: 30px;
   text-align: justify;
   word-spacing: 1.2px;
   color: gray;
+  line-height: 30px;
 }
 
 .logo-animation {
@@ -14,9 +15,21 @@
   height: 100%;
   overflow: hidden;
 }
+.horizontal-fram-logo{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
 
 @media screen and (max-width: 600px) {
   .main-paragrah {
     text-align: justify;
+  }
+  .horizontal-fram-logo{
+    flex-direction: column;
   }
 }

@@ -10,7 +10,8 @@
 
 .seo-p {
   text-align: justify;
-  font-size: 1rem;
+  font-size: 1.4rem;
+  line-height: 35px;
 }
 
 .seo-h {
@@ -29,9 +30,21 @@
   height: 100%;
   overflow: hidden;
 }
+
+.horizontal-fram-seo{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
 @media screen and (max-width: 600px) {
   .seo-p {
     text-align: justify;
-    word-spacing: 2px;
+  }
+  .horizontal-fram-seo{
+    flex-direction: column;
+    
   }
 }

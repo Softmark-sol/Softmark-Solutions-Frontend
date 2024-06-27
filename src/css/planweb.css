@@ -6,6 +6,7 @@
   word-spacing: 0.5px;
   padding-top: 15px;
   color: gray;
+  line-height: 30px;
 }
 .card-heading-service {
   text-align: center;
@@ -54,4 +55,16 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
+}
+
+.horizontal-fram-web{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+@media screen and (max-width:600px) {
+  .horizontal-fram-web{
+    flex-direction: column;
+  }
 }

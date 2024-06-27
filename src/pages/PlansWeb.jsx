@@ -37,20 +37,25 @@ export default function PlansWeb({ plans }) {
           SoftMark Solutions -{" "}
           <Typewriter strings={["Building Your Digital Future"]} />
         </h2>
-        <h6 className="sub-paragraph">
+        <div className="horizontal-fram-web">
+        <div style={{width:'100%'}}>
+        <h5 className="sub-paragraph">
           At SoftMark Solutions, we recognize the critical role a well-crafted
           website plays in your business success. Our expert team specializes in
           creating responsive, user- friendly, and visually stunning websites
-          that not only captivate your audience but also drive business growth.
+          that not only  captivate your audience but also drive business growth.
           Whether you need a simple informational site or a complex e-commerce
           platform, we are dedicated to bringing your vision to life and
           ensuring your online presence stands out in a crowded digital
           landscape
-        </h6>
+        </h5>
+        </div>
         <div className="webanimation">
           {" "}
           <WebLottieAnimation />
         </div>
+        </div>
+        
       </div>
 
       <div className="card-heading-service">

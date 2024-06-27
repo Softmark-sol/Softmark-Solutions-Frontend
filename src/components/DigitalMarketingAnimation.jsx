@@ -15,7 +15,7 @@ const DMLottieAnimation = () => {
 
   return (
     <div className="dmlottie-container">
-      <Lottie options={defaultOptions} height={"100%"} width={"100%"} />
+      <Lottie options={defaultOptions} height={"80%"} width={"80%"} />
     </div>
   );
 };

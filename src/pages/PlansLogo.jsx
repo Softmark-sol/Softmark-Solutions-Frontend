@@ -42,18 +42,24 @@ export default function Logo({ plans }) {
             strings={["Transform Your Brand with SoftMark Solutions"]}
           />
         </h2>
-        <h6 className="main-paragrah">
+        <div className="horizontal-fram-logo">
+        <div style={{width:'100%'}}>
+        <h5 className="main-paragrah">
           At SoftMark Solutions, we specialize in creating stunning logo designs
           and comprehensive branding packages that set your business apart. Our
           team of expert designers is dedicated to bringing your vision to life,
           ensuring your brand resonates with your audience and leaves a lasting
           impression.Explore our plans below to find the perfect fit for your
           branding needs.
-        </h6>
+        </h5>
+        </div>
+        
         <div className="logo-animation">
           <LDLottieAnimation />
         </div>
       </div>
+        </div>
+        
 
       <div className="plans-container container">
         {plans.map((plan, index) => (

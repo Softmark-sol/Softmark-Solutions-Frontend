@@ -163,17 +163,22 @@ const DigitalMarketing = () => {
           SoftMark Solutions -{" "}
           <Typewriter strings={["Igniting Your Digital Presence"]} />
         </h2>
-
-        <h6 className="main-heading">
+        <div className="horizontal-fram-digital">
+        <div style={{width:'100%'}}>
+          <h5 className="main-para">
           At Softmark Solutions we specialize in delivering tailored digital
           marketing solutions that drive growth, engagement, and results for
           businesses of all sizes. From strategic planning to flawless
           execution, we're here to elevate your online presence and help you
           achieve your business goals.
-        </h6>
+        </h5>
+          </div>
+        
         <div className="DM-animation">
           <DMLottieAnimation />
         </div>
+        </div>
+          
       </div>
       <div className="card-heading-service container">
         <h2 className="heading-underline-service">Our Approach</h2>

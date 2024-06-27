@@ -17,9 +17,10 @@
   position: relative;
   display: inline-block;
 }
-.main-heading {
+.main-para{
   text-align: justify;
   color: gray;
+  line-height: 30px;
 }
 
 .card-heading-service .heading-underline-service::after {
@@ -68,6 +69,16 @@
   overflow: hidden;
 }
 
+.horizontal-fram-digital{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  padding-top: 40px;
+}
+
+
 @keyframes typing {
   from {
     width: 0;
@@ -93,5 +104,8 @@
   }
   .paragraph {
     text-align: justify;
+  }
+  .horizontal-fram-digital{
+    flex-direction: column;
   }
 }

@@ -12,6 +12,8 @@ const Seo = () => {
         SoftMark Solutions -{" "}
         <Typewriter strings={["Your Partner in SEO Success"]} />
       </h1>
+      <div className="horizontal-fram-seo">
+      <div style={{width:'100%'}}>
       <p className="seo-p">
         At Softmark Solutions, we understand the importance of maximizing your
         online visibility and driving organic traffic to your website. With our
@@ -19,9 +21,12 @@ const Seo = () => {
         engine rankings, attract more qualified leads, and grow your business
         online.
       </p>
+      </div>
       <div className="seo-animation">
         <SeoLottieAnimation />
       </div>
+      </div>
+      
       <PlansSeo plans={SeoPlans} />
     </div>
   );
