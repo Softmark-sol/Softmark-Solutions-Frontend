@@ -38,7 +38,7 @@ export default function PlansApp({ plans }) {
           <Typewriter strings={["Innovating the Mobile Experience"]} />
         </h2>
         <div className="text-img-cont" >
-        <h5 className="sub-paragraph">
+        <h5 className="sub-paragraph app-para">
           In today's mobile-first world, having a robust and intuitive mobile
           application is essential for reaching and engaging your audience. At
           SoftMark Solutions, we specialize in developing high-quality mobile

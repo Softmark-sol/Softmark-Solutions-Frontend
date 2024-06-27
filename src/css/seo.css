@@ -43,6 +43,11 @@
   .seo-p {
     text-align: justify;
   }
+
+}
+
+
+@media (max-width: 992px) {
   .horizontal-fram-seo{
     flex-direction: column;
     

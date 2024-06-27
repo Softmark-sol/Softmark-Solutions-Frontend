@@ -3,7 +3,7 @@ import { useState } from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import { CardActionArea } from "@mui/material";
-import "../css/Plans.css";
+// import "../css/Plans.css";
 import "../css/planweb.css";
 import ModalformBasicWeb from "../components/Modal/web-dev/Modal-Web-Basic";
 import ModalformStandardWeb from "../components/Modal/web-dev/Modal-Web-Standard";

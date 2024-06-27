@@ -105,6 +105,11 @@
   .paragraph {
     text-align: justify;
   }
+  
+}
+
+
+@media (max-width: 992px) {
   .horizontal-fram-digital{
     flex-direction: column;
   }

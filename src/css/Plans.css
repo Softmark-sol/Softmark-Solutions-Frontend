@@ -107,19 +107,18 @@
  align-items: center;
  width: 100%; 
  flex-direction: row;
- margin-top: -50px !important;
+ margin-top: -50px ;
  margin-bottom: -50px;
  flex-wrap: wrap;
 }
 
 .sub-paragraph{
-  width: 50%;
+  width: 50% !important;
 }
 
 
 @media (max-width: 992px) {
 .text-img-cont{
-  margin-top: 100px;
   flex-direction: column;
 }
 .sub-paragraph{
