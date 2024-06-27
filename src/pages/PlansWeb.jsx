@@ -67,7 +67,7 @@ export default function PlansWeb({ plans }) {
 
       <div className="main-container container">
         <h2>Expert Website Development for Business Success</h2>
-        <h6 className="last-paragraph">
+        <h5 className="last-paragraph">
           At SoftMark Solutions, we recognize the critical role a well-crafted
           website plays in your business success. Our expert team specializes in
           creating responsive, user- friendly, and visually stunning websites
@@ -76,7 +76,7 @@ export default function PlansWeb({ plans }) {
           platform, we are dedicated to bringing your vision to life and
           ensuring your online presence stands out in a crowded digital
           landscape
-        </h6>
+        </h5>
       </div>
 
       <div className="plans-container container">

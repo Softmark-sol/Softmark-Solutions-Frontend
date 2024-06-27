@@ -27,11 +27,16 @@
   text-align: center;
 }
 .pContainer {
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   /* text-align: center; */
   padding-top: 15px;
   text-align: justify;
-  width: 98%;
+  width: 100%;
+}
+
+.pContainer2 {
+  font-size: 1.3rem;
+  width: 50%;
 }
 .service-card {
   display: flex;
@@ -73,7 +78,23 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 100%;
+  width: 50%;
   overflow: hidden;
 }
+
+.text-img-cont{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100% !important; 
+  flex-direction: row;
+}
+
+@media (max-width: 992px) {
+  .pContainer2, .ourwork-animation{ 
+    width: 100%;
+  }
+  .text-img-cont{
+    padding-top: 50px ;
+  }
+  }

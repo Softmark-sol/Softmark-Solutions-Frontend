@@ -18,6 +18,8 @@ import { useNavigate } from "react-router-dom";
 import ScrollToTopButton from "../components/ScrollUpButton";
 import ScrollReveal from "scrollreveal";
 import OurWorkLottieAnimation from "../components/OurWorkAnimation";
+import IconCloud from "../components/IconCloud";
+import { IconCloudSlug } from "../components/IconCloudWithSlug";
 
 const Ourservices = () => {
   const navigate = useNavigate();
@@ -79,15 +81,18 @@ const Ourservices = () => {
     <div id="services">
       <div className="card-heading-service container">
         <h1 className="heading-underline-service">Our Work</h1>
-        <p className="pContainer">
-          Explore our portfolio to witness the transformative power of our
-          services in web development, app creation, and captivating design
-          assets. Each project is a testament to our commitment to delivering
-          cutting-edge solutions tailored to our clients&#39; needs.
-        </p>
-      </div>
-      <div className="ourwork-animation">
-        <OurWorkLottieAnimation />
+        <div className="text-img-cont">
+          <p className="pContainer pContainer2">
+            Explore our portfolio to witness the transformative power of our
+            services in web development, app creation, and captivating design
+            assets. Each project is a testament to our commitment to delivering
+            cutting-edge solutions tailored to our clients&#39; needs.
+          </p>
+          <div className="ourwork-animation">
+            {/* <OurWorkLottieAnimation /> */}
+            <IconCloudSlug />
+          </div>
+        </div>
       </div>
 
       <div className="card-heading-service container">
