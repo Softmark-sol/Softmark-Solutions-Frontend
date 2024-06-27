@@ -5,8 +5,10 @@ import MyLottieAnimation2 from "./NetworkGlobe";
 import GearLottieAnimation from "./Gear-animation";
 import ScrollReveal from "scrollreveal";
 import MarketLottieAnimation from "./Market-animation";
+import { useNavigate } from "react-router-dom";
 
 const HeroSection = () => {
+  const navigate = useNavigate()
   const formRef = useRef(null);
   const scrollToForm = () => {
     const formElement = document.getElementById("form");
@@ -60,8 +62,8 @@ const HeroSection = () => {
           </span>
         </div>
         <div className="hero-btn-div" style={{ marginTop: "1.5rem" }}>
-          <button className="hero-btn" onClick={scrollToForm}>
-            Let's Talk
+          <button className="hero-btn" onClick={()=> navigate("/Ourservices")}>
+            Our Portfolio
           </button>
         </div>
       </div>

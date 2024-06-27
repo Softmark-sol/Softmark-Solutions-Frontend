@@ -37,7 +37,8 @@ export default function PlansApp({ plans }) {
           SoftMark Solutions -{" "}
           <Typewriter strings={["Innovating the Mobile Experience"]} />
         </h2>
-        <h6 className="sub-paragraph">
+        <div className="text-img-cont" >
+        <h5 className="sub-paragraph">
           In today's mobile-first world, having a robust and intuitive mobile
           application is essential for reaching and engaging your audience. At
           SoftMark Solutions, we specialize in developing high-quality mobile
@@ -45,10 +46,11 @@ export default function PlansApp({ plans }) {
           From concept to launch, our team is committed to providing innovative
           solutions that meet your specific needs and keep you ahead in the
           competitive mobile landscape.
-        </h6>
+        </h5>
         <div className="mobile">
           <MobileLottieAnimation />
         </div>
+      </div>
       </div>
 
       <div className="card-heading-service">
