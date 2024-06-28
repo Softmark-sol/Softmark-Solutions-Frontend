@@ -8,6 +8,9 @@ const Footer = () => {
 
   return (
     <footer className="footer">
+      <div className="softmark">
+        SoftMark <span>Solutions</span>
+      </div>
       <div className="footer-bottom">
         <div>
           <h4>Quick Links</h4>

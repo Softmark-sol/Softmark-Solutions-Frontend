@@ -1,8 +1,12 @@
 @font-face {
-    font-family: Poppins;
-    src: url("./assets/fonts/Poppins-Medium.ttf");
-  }
+  font-family: Poppins;
+  src: url("./assets/fonts/Poppins-Medium.ttf");
+}
 
-  *{
-    font-family: Poppins;
-  }
+* {
+  font-family: Poppins;
+}
+
+body {
+  background-color: #ffffff;
+}

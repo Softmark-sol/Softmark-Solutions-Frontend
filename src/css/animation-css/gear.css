@@ -14,8 +14,13 @@
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 485px) {
   .gear-lottie {
-    max-width: 70px;
+    width: 50px;
+  }
+}
+@media (max-width: 320px) {
+  .gear-lottie {
+    display: none;
   }
 }

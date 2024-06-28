@@ -3,7 +3,7 @@ import axios from "axios";
 import "../css/contactForm.css";
 import Swal from "sweetalert2";
 import ScrollReveal from "scrollreveal";
-import API_CONFIG from '../config/api';
+import API_CONFIG from "../config/api";
 
 const { apiKey } = API_CONFIG;
 const ContactForm = () => {
@@ -25,6 +25,8 @@ const ContactForm = () => {
     });
   }, []);
 
+  const [loading, setLoading] = useState(false);
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -41,11 +43,9 @@ const ContactForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
     try {
-      const response = await axios.post(
-        `${apiKey}/contact-us`,
-        formData
-      ); // Ensure this matches your backend port
+      const response = await axios.post(`${apiKey}/contact-us`, formData); // Ensure this matches your backend port
       if (response.status === 200) {
         setFormData({
           name: "",
@@ -65,11 +65,13 @@ const ContactForm = () => {
       }
     } catch (error) {
       console.log("Failed to send message. Please try again later.");
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
-    <>
+    <div className="contactForm-container">
       <div className="card-heading-service" id="form">
         <h2 className="heading-underline-service">Get in Touch</h2>
       </div>
@@ -145,29 +147,37 @@ const ContactForm = () => {
             ></textarea>
           </div>
           <div className="btn-container">
-            <button>
-              <div class="svg-wrapper-1">
-                <div class="svg-wrapper">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    width="24"
-                    height="24"
-                  >
-                    <path fill="none" d="M0 0h24v24H0z"></path>
-                    <path
-                      fill="currentColor"
-                      d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
-                    ></path>
-                  </svg>
+            <button type="submit" disabled={loading}>
+              {loading ? (
+                <div>
+                  <div className="spinner"> </div> Sending...
                 </div>
-              </div>
-              <span>Send Message</span>
+              ) : (
+                <>
+                  <div className="svg-wrapper-1">
+                    <div className="svg-wrapper">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        width="24"
+                        height="24"
+                      >
+                        <path fill="none" d="M0 0h24v24H0z"></path>
+                        <path
+                          fill="currentColor"
+                          d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
+                        ></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <span>Send Message</span>
+                </>
+              )}
             </button>
           </div>
         </form>
       </div>
-    </>
+    </div>
   );
 };
 
