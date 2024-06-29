@@ -1,5 +1,5 @@
 /* .contactForm-container {
-  background-color: #58626d;
+  background-color: transparent;
 } */
 
 .btn-container button {
@@ -92,6 +92,7 @@
   align-items: center;
   padding: 40px;
   border-radius: 15px;
+  /* background-color: transparent; */
 }
 
 .card-heading {
@@ -136,6 +137,7 @@
   justify-content: space-between;
   margin-bottom: 15px;
   padding: 1px;
+  /* background-color: transparent; */
 }
 
 .form-control {

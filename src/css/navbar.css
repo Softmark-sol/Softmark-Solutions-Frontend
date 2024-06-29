@@ -141,7 +141,7 @@
     display: block;
   }
   .logo {
-    width: 20vw;
+    width: 18vw;
     height: auto;
   }
   .nav-btn {
@@ -151,6 +151,9 @@
 
   .myLottieAnimation {
     display: none;
+  }
+  .navbar.custom-navbar {
+    height: 50px;
   }
 }
 
@@ -173,8 +176,9 @@
   }
 }
 
-@media (max-width: 335px) {
-  .navbar.custom-navbar {
-    padding: 5px;
+@media (max-width: 426px) {
+  .logo {
+    width: 25vw;
+    height: auto;
   }
 }
