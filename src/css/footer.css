@@ -169,11 +169,6 @@
 }
 
 @media (max-width: 600px) {
-  .softmark {
-    font-size: 2rem;
-    margin-top: -5.3rem;
-  }
-
   .footer-bottom {
     padding: 20px 10px;
 
@@ -200,15 +195,11 @@
   }
 }
 
-@media (max-width: 330px) {
+@media (max-width: 377px) {
   .footer-social p {
     text-align: center;
     margin-top: 10px;
     font-size: 15px;
-  }
-  .softmark {
-    font-size: 1.5rem;
-    margin-top: -4.75rem;
   }
 }
 @media (max-width: 275px) {
@@ -216,5 +207,39 @@
     text-align: center;
     margin-top: 10px;
     font-size: 12px;
+  }
+}
+
+@media (max-width: 526px) {
+  .softmark {
+    font-size: 2.5rem;
+    margin-top: -5.8rem;
+  }
+}
+
+@media (max-width: 452px) {
+  .softmark {
+    font-size: 2rem;
+    margin-top: -5.3rem;
+  }
+}
+
+@media (max-width: 378px) {
+  .softmark {
+    font-size: 1.6rem;
+    margin-top: -4.8rem;
+  }
+}
+
+@media (max-width: 376px) {
+  .softmark {
+    font-size: 1.9rem;
+    margin-top: -5.2rem;
+  }
+}
+@media (max-width: 325px) {
+  .softmark {
+    font-size: 1.5rem;
+    margin-top: -4.7rem;
   }
 }
