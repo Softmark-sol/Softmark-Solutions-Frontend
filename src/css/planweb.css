@@ -56,17 +56,19 @@
   width: 50%;
   overflow: hidden;
 }
-.horizontal-fram-web{
+.horizontal-fram-web {
   display: flex;
   justify-content: center;
   align-items: center;
   /* gap: 20px; */
   width: 100%;
-  
 }
 
 @media (max-width: 992px) {
-  .horizontal-fram-web{
+  .horizontal-fram-web {
     flex-direction: column;
   }
+  /* .sub-paragraph {
+    font-size: 12px;
+  } */
 }

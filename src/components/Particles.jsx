@@ -1,8 +1,9 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState, forwardRef } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 import "../css/particle.css";
-const ParticleEffect = () => {
+
+const ParticleEffect = forwardRef((props, ref) => {
   const [init, setInit] = useState(false);
 
   useEffect(() => {
@@ -75,10 +76,10 @@ const ParticleEffect = () => {
           value: 80, // Number of particles
         },
         opacity: {
-          value: 0.5, // Opacity of particles
+          value: 0.9, // Opacity of particles
         },
         shape: {
-          type: "circle", // Shape of particles ("circle", "edge", "triangle", etc.)
+          type: "triangle", // Shape of particles ("circle", "edge", "triangle", etc.)
         },
         size: {
           value: { min: 1, max: 5 }, // Size range of particles
@@ -91,8 +92,7 @@ const ParticleEffect = () => {
 
   if (init) {
     return (
-      <div className="particle-container">
-        {" "}
+      <div className="particle-container" ref={ref}>
         <Particles
           id="tsparticles"
           particlesLoaded={particlesLoaded}
@@ -103,6 +103,6 @@ const ParticleEffect = () => {
   }
 
   return null; // Render nothing until particles are initialized
-};
+});
 
 export default ParticleEffect;

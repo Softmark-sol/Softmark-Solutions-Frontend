@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import "../css/hero.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import MyLottieAnimation2 from "./NetworkGlobe";
@@ -10,6 +10,7 @@ import ParticleEffect from "./Particles"; // Import ParticleEffect component
 
 const HeroSection = () => {
   const navigate = useNavigate();
+  const particleRef = useRef(null);
 
   useEffect(() => {
     const sr = ScrollReveal({
@@ -34,9 +35,9 @@ const HeroSection = () => {
     <div>
       {" "}
       <div className="hero-image">
-        {/* Render ParticleEffect component here */}
-        {/* <ParticleEffect /> */}
-        <div className="heroContainer">
+        <div className="heroContainer" ref={particleRef}>
+          <ParticleEffect ref={particleRef} />
+
           <div className="leftGlobe">
             <MyLottieAnimation2 />
           </div>

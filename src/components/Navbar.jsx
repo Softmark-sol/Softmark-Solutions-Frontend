@@ -69,7 +69,7 @@ const Navbar = () => {
       flex-direction: column;
     }
     .MuiPaper-root {
-      background-color: #ffffff;
+      background-color: #ffffffbd;
       border: 1px solid #e0e0e0;
       box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
       padding: 8px;
