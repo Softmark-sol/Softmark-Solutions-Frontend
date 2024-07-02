@@ -8,6 +8,7 @@ import img3 from "../assets/images/searchengine.png";
 import img4 from "../assets/images/video.png";
 import img5 from "../assets/images/logo-design.png";
 import ScrollReveal from "scrollreveal";
+import NeuronAnimation from "../components/Neuron-animation";
 
 const Cards = ({ heading }) => {
   useEffect(() => {
@@ -74,6 +75,10 @@ const Cards = ({ heading }) => {
           />
         ))}
       </div>
+      {/* <div className="animation">
+        {" "}
+        <NeuronAnimation />
+      </div> */}
     </div>
   );
 };

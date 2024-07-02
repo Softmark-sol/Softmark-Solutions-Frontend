@@ -36,7 +36,7 @@ const HeroSection = () => {
       {" "}
       <div className="hero-image">
         <div className="heroContainer" ref={particleRef}>
-          <ParticleEffect ref={particleRef} />
+          {/* <ParticleEffect ref={particleRef} /> */}
 
           <div className="leftGlobe">
             <MyLottieAnimation2 />

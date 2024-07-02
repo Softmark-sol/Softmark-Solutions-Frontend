@@ -7,7 +7,12 @@ import MouseParticles from "react-mouse-particles";
 const App = () => {
   return (
     <>
-      <MouseParticles g={1.5} num={6} color="random" cull="col,image-wrapper" />
+      <MouseParticles
+        g={1.5}
+        num={3}
+        color={["#4599b4", "#f3972b", "#4599b4", "#f3972b"]}
+        cull="col,image-wrapper"
+      />
       <Router />
     </>
   );
