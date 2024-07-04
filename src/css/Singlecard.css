@@ -13,6 +13,7 @@
   border: 3px solid transparent;
   background-size: 200%;
   animation: gradient 5s ease infinite !important;
+  border-radius: 17px;
 }
 
 @keyframes gradient {

@@ -1,89 +1,58 @@
-import React, { useEffect, useRef, useState } from "react";
-import Lottie from "react-lottie";
-import animationData from "../lottieAnimations/neural-animation.json";
+// MyComponent.js
+import React, { useEffect, useRef } from "react";
+import lottie from "lottie-web";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "../css/animation-css/NeuronLottieAnimation.css";
 
-const NeuronLottieAnimation = () => {
-  const [isStopped, setIsStopped] = useState(true);
-  const [direction, setDirection] = useState(1); // 1 for forward, -1 for reverse
-  const [animationProgress, setAnimationProgress] = useState(0);
-  const [scrollPosition, setScrollPosition] = useState(0);
+gsap.registerPlugin(ScrollTrigger);
+
+const MyComponent = () => {
   const animationContainer = useRef(null);
-  const animRef = useRef(null);
+  const lottieInstance = useRef(null);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY || window.pageYOffset;
-      const { top, height } =
-        animationContainer.current.getBoundingClientRect();
-      const viewportHeight =
-        window.innerHeight || document.documentElement.clientHeight;
+    const loadAnimation = async () => {
+      try {
+        const animationData = await import(
+          "../lottieAnimations/neural-animation.json"
+        );
+        lottieInstance.current = lottie.loadAnimation({
+          container: animationContainer.current,
+          renderer: "svg",
+          loop: false,
+          autoplay: false,
+          animationData: animationData.default, // Use animationData.default when importing JSON files with ES modules
+        });
 
-      // Calculate animation progress based on scroll position
-      const distance = top - viewportHeight + height * 0.5;
-      const progress = 1 - Math.max(0, distance - scrollY) / viewportHeight;
-
-      // Update animation progress
-      setAnimationProgress(Math.max(0, Math.min(1, progress))); // Ensure progress is between 0 and 1
-
-      // Adjust animation playback based on scroll position
-      if (scrollY > scrollPosition && direction !== 1) {
-        setIsStopped(false);
-        setDirection(1); // Forward animation
-      } else if (scrollY < scrollPosition && direction !== -1) {
-        setIsStopped(false);
-        setDirection(-1); // Reverse animation
+        ScrollTrigger.create({
+          trigger: animationContainer.current,
+          start: "top 80%", // Adjust based on when you want the animation to start
+          end: "bottom 20%", // Adjust based on when you want the animation to end
+          scrub: true,
+          onUpdate: (self) => {
+            const frame =
+              self.progress * (lottieInstance.current.totalFrames - 1);
+            lottieInstance.current.goToAndStop(frame, true);
+          },
+        });
+      } catch (error) {
+        console.error("Error loading Lottie animation:", error);
       }
-
-      // Save current scroll position
-      setScrollPosition(scrollY);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    loadAnimation();
 
-    // Clean up the scroll listener
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      if (lottieInstance.current) {
+        lottieInstance.current.destroy();
+      }
     };
-  }, [direction, scrollPosition]);
-
-  const defaultOptions = {
-    loop: false,
-    autoplay: false,
-    animationData: animationData,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
-
-  useEffect(() => {
-    if (animRef.current) {
-      animRef.current.goToAndStop(animationProgress * 1000, true);
-    }
-  }, [animationProgress]);
+  }, []);
 
   return (
-    <div ref={animationContainer} className="lottie-animation-container">
-      <Lottie
-        options={defaultOptions}
-        height={"100%"}
-        width={"100%"}
-        isStopped={isStopped}
-        isPaused={false}
-        speed={0.5} // Adjust animation speed as needed
-        direction={direction}
-        eventListeners={[
-          {
-            eventName: "complete",
-            callback: () => {
-              // Optional callback when animation completes
-            },
-          },
-        ]}
-        lottieRef={(ref) => (animRef.current = ref)}
-      />
-    </div>
+    <div ref={animationContainer} className="lottie-animation-container"></div>
   );
 };
 
-export default NeuronLottieAnimation;
+export default MyComponent;

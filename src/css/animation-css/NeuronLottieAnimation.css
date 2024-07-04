@@ -1,11 +1,12 @@
 .lottie-animation-container {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   width: 100%;
-  max-width: 200px;
+  max-width: 400px;
   height: auto;
   overflow: hidden;
+  position: absolute;
 }
 
 /* .lottie-animation-container {
@@ -25,8 +26,9 @@
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 500px) {
   .lottie-animation-container {
-    max-width: 400px;
+    max-width: 300px;
+    margin-top: -70px;
   }
 }

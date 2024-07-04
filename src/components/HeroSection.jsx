@@ -7,6 +7,8 @@ import ScrollReveal from "scrollreveal";
 import MarketLottieAnimation from "./Market-animation";
 import { useNavigate } from "react-router-dom";
 import ParticleEffect from "./Particles"; // Import ParticleEffect component
+import MyComponent from "./Neuron-animation";
+import LogoParticles from "./ParticleLogo";
 
 const HeroSection = () => {
   const navigate = useNavigate();
@@ -35,12 +37,12 @@ const HeroSection = () => {
     <div>
       {" "}
       <div className="hero-image">
-        <div className="heroContainer" ref={particleRef}>
+        <div
+          className="heroContainer"
+          style={{ position: "relative", width: "100%", height: "100vh" }}
+        >
           {/* <ParticleEffect ref={particleRef} /> */}
 
-          <div className="leftGlobe">
-            <MyLottieAnimation2 />
-          </div>
           <div
             className="hero"
             style={{ textAlign: "center", padding: "2rem 0" }}
@@ -73,8 +75,8 @@ const HeroSection = () => {
               </button>
             </div>
           </div>
-          <div className="rightGlobe">
-            <MyLottieAnimation2 />
+          <div className="rightanimation">
+            <LogoParticles />
           </div>
         </div>
       </div>

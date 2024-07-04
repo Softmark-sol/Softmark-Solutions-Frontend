@@ -2,8 +2,45 @@
   font-family: PoppinsBold;
   src: url("../assets/fonts/Poppins-Bold.ttf");
 }
+/* .lottie {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+} */
+.rightanimation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 450px;
+  height: 450px;
+  overflow: hidden;
+  position: relative;
+  z-index: 1000;
+  margin-left: -235px;
+  animation: rotate360 50s linear infinite;
+}
 
+@keyframes rotate360 {
+  0%,
+  100% {
+    transform: perspective(1000px) rotateY(0deg);
+  }
+  50% {
+    transform: perspective(1000px) rotateY(360deg);
+  }
+}
+.leftglobe-container {
+  display: flex;
+  width: 392px;
+}
 .hero-image {
+  background-image: url("../assets/images/bg2.jpg"); /* Path to your background image */
+  background-size: cover; /* Ensures the image covers the entire div */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,12 +50,14 @@
   position: relative;
   overflow: hidden;
   user-select: none;
+  position: relative;
+  /* z-index: -1; */
 }
 .heroContainer {
   /* z-index: 1; Ensure content is above the gradient */
 
   display: flex;
-  justify-content: center;
+  justify-content: space-around; /* Ensure space between leftGlobe and hero content */
   align-items: center;
   width: 100%;
   height: 500px;
@@ -29,10 +68,10 @@
 
 .leftGlobe {
   position: absolute;
-  top: 35%;
-  left: 20%;
-  transform: translate(-30%, -30%);
-  animation: moveDownUp 3s ease-in-out infinite alternate;
+  top: 5%;
+  left: 7%;
+  /* transform: translate(-30%, -30%); */
+  /* animation: moveDownUp 3s ease-in-out infinite alternate; */
   z-index: 1000;
 }
 .rightGlobe {
@@ -43,6 +82,7 @@
   animation: moveUpDown 3s ease-in-out infinite alternate;
   z-index: 1000;
 }
+
 .gear {
   display: flex;
   justify-content: center;
@@ -80,10 +120,10 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   color: white;
   text-align: center;
-  margin: 0 70px;
+  margin: 0 0px;
 }
 
 .hero span {
@@ -190,6 +230,19 @@
   }
   .hero-btn-div {
     padding: 0;
+  }
+  .heroContainer {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .hero {
+    align-items: center;
+  }
+  .rightanimation {
+    margin: 0;
+    /* width: 350px;
+    height: 350px; */
+    margin-top: -82px;
   }
 }
 @media (max-width: 395px) {
