@@ -30,7 +30,7 @@ const ParticleEffect = forwardRef((props, ref) => {
       interactivity: {
         events: {
           onClick: {
-            enable: true,
+            enable: false,
             mode: "push", // Interaction mode on click
           },
           onHover: {
@@ -50,7 +50,7 @@ const ParticleEffect = forwardRef((props, ref) => {
       },
       particles: {
         color: {
-          value: "#f3972b", // Color of particles
+          value: "#f3972b99", // Color of particles
         },
         links: {
           color: "#f3972b", // Color of particle links

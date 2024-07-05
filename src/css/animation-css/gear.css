@@ -21,6 +21,6 @@
 }
 @media (max-width: 320px) {
   .gear-lottie {
-    display: none;
+    display: 40px;
   }
 }

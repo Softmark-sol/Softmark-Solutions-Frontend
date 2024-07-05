@@ -1,38 +1,51 @@
 import React, { useEffect, useRef } from "react";
 import logo from "../assets/images/softmarklogo.svg.png";
+import "../css/animation-css/particleLogo.css";
 
 const LogoParticles = () => {
   const logoRef = useRef(null);
   const containerRef = useRef(null);
+  const nextParticleRef = useRef(null);
 
   useEffect(() => {
     const script = document.createElement("script");
     script.src = "https://nextparticle.nextco.de/nextparticle.min.js";
     script.onload = () => {
       const container = containerRef.current;
-      const nextParticle = new window.NextParticle({
+      nextParticleRef.current = new window.NextParticle({
         image: logoRef.current,
-        width: 500, // Set explicit width
-        height: 400, // Set explicit height
-        maxWidth: "500px",
+        width: container.clientWidth,
+        height: container.clientHeight,
         particleGap: 2,
       });
 
-      window.onresize = function () {
-        nextParticle.width = 200;
-        nextParticle.height = 200;
-        nextParticle.start();
-      };
+      window.addEventListener("resize", handleResize);
     };
     document.body.appendChild(script);
 
     return () => {
       document.body.removeChild(script);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
+  const handleResize = () => {
+    if (nextParticleRef.current) {
+      const container = containerRef.current;
+      const width = container.clientWidth;
+      const height = container.clientHeight;
+      nextParticleRef.current.width = width;
+      nextParticleRef.current.height = height;
+      nextParticleRef.current.start();
+    }
+  };
+
   return (
-    <div ref={containerRef} style={styles.container}>
+    <div
+      className="particle-container"
+      ref={containerRef}
+      style={styles.container}
+    >
       <img
         src={logo}
         ref={logoRef}

@@ -43,10 +43,7 @@ const HeroSection = () => {
         >
           {/* <ParticleEffect ref={particleRef} /> */}
 
-          <div
-            className="hero"
-            style={{ textAlign: "center", padding: "2rem 0" }}
-          >
+          <div className="hero" style={{ textAlign: "center" }}>
             <div className="first-line fade-in">
               WHERE{" "}
               <span className="technology">
@@ -56,7 +53,7 @@ const HeroSection = () => {
                 <div>TECHNOLOGY</div>
               </span>
             </div>
-            <br />
+
             <div className="second-line fade-in">
               MEETS{" "}
               <span className="marketing">
