@@ -1,0 +1,34 @@
+.lottie-animation-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  overflow: hidden;
+  position: absolute;
+}
+
+/* .lottie-animation-container {
+  opacity: 0;
+  transition: opacity 1.5s ease, transform 5s ease; 
+}
+
+
+.lottie-animation-container.visible {
+  opacity: 1;
+  transform: translateY(0);
+} */
+
+@media (max-width: 600px) {
+  .lottie-animation-container {
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 500px) {
+  .lottie-animation-container {
+    max-width: 300px;
+    margin-top: -70px;
+  }
+}

@@ -1,0 +1,22 @@
+/* Add this CSS in your project's CSS file or within a <style> tag */
+
+@media (max-width: 600px) {
+  .particle-container {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  .particle-container {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .particle-container {
+    width: 500px;
+    height: 500px;
+  }
+}

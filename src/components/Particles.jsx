@@ -1,8 +1,9 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState, forwardRef } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 import "../css/particle.css";
-const ParticleEffect = () => {
+
+const ParticleEffect = forwardRef((props, ref) => {
   const [init, setInit] = useState(false);
 
   useEffect(() => {
@@ -25,11 +26,11 @@ const ParticleEffect = () => {
           value: "transparent", // Set background color to transparent for overlay effect
         },
       },
-      fpsLimit: 120, // Frames per second limit
+      fpsLimit: 60, // Frames per second limit
       interactivity: {
         events: {
           onClick: {
-            enable: true,
+            enable: false,
             mode: "push", // Interaction mode on click
           },
           onHover: {
@@ -39,43 +40,51 @@ const ParticleEffect = () => {
         },
         modes: {
           push: {
-            quantity: 1, // Number of particles pushed on click
+            quantity: 4, // Number of particles pushed on click
           },
           repulse: {
-            distance: 200, // Distance of repulsion on hover
+            distance: 100, // Distance of repulsion on hover
             duration: 0.4, // Duration of repulsion animation
           },
         },
       },
       particles: {
         color: {
-          value: "#ffffff", // Color of particles
+          value: "#f3972b99", // Color of particles
         },
         links: {
-          color: "#ffffff", // Color of particle links
+          color: "#f3972b", // Color of particle links
           distance: 150, // Distance of particle links
           enable: true,
-          opacity: 0.5, // Opacity of particle links
+          opacity: 0, // Opacity of particle links
           width: 1, // Width of particle links
         },
         move: {
-          direction: "none", // Movement direction ("none", "top", "top-right", etc.)
+          direction: "none", // Movement direction
           enable: true,
           outModes: {
             default: "bounce", // Movement behavior when particles move outside the canvas
           },
           random: false,
-          speed: 6, // Speed of particle movement
+          speed: 2, // Speed of particle movement
           straight: false,
+          path: {
+            enable: true,
+            options: {
+              type: "sinusoidal", // Wave-like movement
+              frequency: 1,
+            },
+          },
         },
         number: {
           density: {
             enable: true, // Enable density-based number of particles
+            area: 800, // Density area
           },
           value: 80, // Number of particles
         },
         opacity: {
-          value: 0.5, // Opacity of particles
+          value: 0.7, // Opacity of particles
         },
         shape: {
           type: "circle", // Shape of particles ("circle", "edge", "triangle", etc.)
@@ -91,8 +100,11 @@ const ParticleEffect = () => {
 
   if (init) {
     return (
-      <div className="particle-container">
-        {" "}
+      <div
+        className="particle-container"
+        ref={ref}
+        style={{ width: "100%", height: "100vh" }}
+      >
         <Particles
           id="tsparticles"
           particlesLoaded={particlesLoaded}
@@ -103,6 +115,6 @@ const ParticleEffect = () => {
   }
 
   return null; // Render nothing until particles are initialized
-};
+});
 
 export default ParticleEffect;

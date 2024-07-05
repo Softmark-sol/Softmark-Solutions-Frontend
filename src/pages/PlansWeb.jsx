@@ -12,6 +12,7 @@ import WebCards from "../components/Webcards";
 import Inquiry from "../components/Inquiry";
 import WebLottieAnimation from "../components/WebAnimation";
 import Typewriter from "../components/TypeWriter.jsx";
+import ParticleEffect from "../components/Particles.jsx";
 
 export default function PlansWeb({ plans }) {
   const [showBasic, setShowBasic] = useState(false);
@@ -38,22 +39,21 @@ export default function PlansWeb({ plans }) {
           <Typewriter strings={["Building Your Digital Future"]} />
         </h2>
         <div className="horizontal-fram-web">
-        <h5 className="sub-paragraph">
-          At SoftMark Solutions, we recognize the critical role a well-crafted
-          website plays in your business success. Our expert team specializes in
-          creating responsive, user- friendly, and visually stunning websites
-          that not only  captivate your audience but also drive business growth.
-          Whether you need a simple informational site or a complex e-commerce
-          platform, we are dedicated to bringing your vision to life and
-          ensuring your online presence stands out in a crowded digital
-          landscape
-        </h5>
-        <div className="webanimation">
-          {" "}
-          <WebLottieAnimation />
+          <h5 className="sub-paragraph">
+            At SoftMark Solutions, we recognize the critical role a well-crafted
+            website plays in your business success. Our expert team specializes
+            in creating responsive, user- friendly, and visually stunning
+            websites that not only captivate your audience but also drive
+            business growth. Whether you need a simple informational site or a
+            complex e-commerce platform, we are dedicated to bringing your
+            vision to life and ensuring your online presence stands out in a
+            crowded digital landscape
+          </h5>
+          <div className="webanimation">
+            {" "}
+            <WebLottieAnimation />
+          </div>
         </div>
-        </div>
-        
       </div>
 
       <div className="card-heading-service">
@@ -66,6 +66,7 @@ export default function PlansWeb({ plans }) {
       </div>
 
       <div className="main-container container">
+        {/* <ParticleEffect /> */}
         <h2>Expert Website Development for Business Success</h2>
         <h5 className="last-paragraph">
           At SoftMark Solutions, we recognize the critical role a well-crafted
@@ -81,7 +82,11 @@ export default function PlansWeb({ plans }) {
 
       <div className="plans-container container">
         {plans.map((plan, index) => (
-          <Card className={`plan-card plan-card-${index}`} key={index}>
+          <Card
+            className={`plan-card plan-card-${index}`}
+            key={index}
+            style={{ backgroundColor: "transparent" }}
+          >
             <CardActionArea>
               <CardContent>
                 <div className="plans-cont">

@@ -118,7 +118,7 @@ const AboutUs = () => {
               </div>
             </motion.div>
             <motion.div
-              className="timeline-content"
+              className="timeline-content joinus"
               ref={refJourney}
               initial={{ x: 100, opacity: 0 }}
               animate={inViewJourney ? { x: 0, opacity: 1 } : {}}

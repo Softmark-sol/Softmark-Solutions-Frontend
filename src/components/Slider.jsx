@@ -7,6 +7,8 @@ import "slick-carousel/slick/slick-theme.css";
 import DigitalMarketing from "../assets/images/digitalmarketing.png";
 import Seo from "../assets/images/seo.png";
 import Vue from "../assets/images/vue.png";
+import DockerLogo from "../assets/images/docker.png";
+import MernLogo from "../assets/images/mern.png";
 
 const firstMap = [
   {
@@ -20,8 +22,7 @@ const firstMap = [
     alt: "angular",
   },
   {
-    imageUrl:
-      "https://miro.medium.com/v2/resize:fit:678/0*kxPYwfJmkXZ3iCWy.png",
+    imageUrl: MernLogo,
     alt: "mern",
   },
   {
@@ -50,7 +51,7 @@ const secondMap = [
   { imageUrl: Seo, alt: "seo" },
   { imageUrl: DigitalMarketing, alt: "digital marketing" },
   {
-    imageUrl: "https://logowik.com/content/uploads/images/301_docker.jpg",
+    imageUrl: DockerLogo,
     alt: "docker",
   },
   {
@@ -69,10 +70,10 @@ export default function OurClients() {
     dots: false,
     infinite: true,
     speed: 15000,
-    slidesToShow: 2,
+    slidesToShow: 3,
     slidesToScroll: 5,
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 1000,
     rtl: true,
     arrows: false,
     responsive: [

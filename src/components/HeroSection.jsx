@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import "../css/hero.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import MyLottieAnimation2 from "./NetworkGlobe";
@@ -7,9 +7,12 @@ import ScrollReveal from "scrollreveal";
 import MarketLottieAnimation from "./Market-animation";
 import { useNavigate } from "react-router-dom";
 import ParticleEffect from "./Particles"; // Import ParticleEffect component
+import MyComponent from "./Neuron-animation";
+import LogoParticles from "./ParticleLogo";
 
 const HeroSection = () => {
   const navigate = useNavigate();
+  const particleRef = useRef(null);
 
   useEffect(() => {
     const sr = ScrollReveal({
@@ -34,16 +37,13 @@ const HeroSection = () => {
     <div>
       {" "}
       <div className="hero-image">
-        {/* Render ParticleEffect component here */}
-        {/* <ParticleEffect /> */}
-        <div className="heroContainer">
-          <div className="leftGlobe">
-            <MyLottieAnimation2 />
-          </div>
-          <div
-            className="hero"
-            style={{ textAlign: "center", padding: "2rem 0" }}
-          >
+        <div
+          className="heroContainer"
+          style={{ position: "relative", width: "100%", height: "100vh" }}
+        >
+          {/* <ParticleEffect ref={particleRef} /> */}
+
+          <div className="hero" style={{ textAlign: "center" }}>
             <div className="first-line fade-in">
               WHERE{" "}
               <span className="technology">
@@ -53,7 +53,7 @@ const HeroSection = () => {
                 <div>TECHNOLOGY</div>
               </span>
             </div>
-            <br />
+
             <div className="second-line fade-in">
               MEETS{" "}
               <span className="marketing">
@@ -72,8 +72,8 @@ const HeroSection = () => {
               </button>
             </div>
           </div>
-          <div className="rightGlobe">
-            <MyLottieAnimation2 />
+          <div className="rightanimation">
+            <LogoParticles />
           </div>
         </div>
       </div>

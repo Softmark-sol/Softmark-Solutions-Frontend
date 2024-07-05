@@ -4,8 +4,11 @@ import "../css/contactForm.css";
 import Swal from "sweetalert2";
 import ScrollReveal from "scrollreveal";
 import API_CONFIG from "../config/api";
+import PhoneInput from 'react-phone-input-2';
+import 'react-phone-input-2/lib/style.css';
 
 const { apiKey } = API_CONFIG;
+
 const ContactForm = () => {
   useEffect(() => {
     const sr = ScrollReveal({
@@ -13,15 +16,15 @@ const ContactForm = () => {
       distance: "20px",
       duration: 500,
       delay: 200,
-      reset: true, // This will reset the animation every time you scroll
+      reset: true,
     });
 
     sr.reveal(".form-control", {
-      interval: 200, // This will reveal elements one by one
+      interval: 200,
     });
     sr.reveal(".form-container", {
       interval: 300,
-      origin: "left", // This will reveal elements one by one
+      origin: "left",
     });
   }, []);
 
@@ -36,16 +39,53 @@ const ContactForm = () => {
     serviceType: "",
   });
 
+  const [phoneError, setPhoneError] = useState("");
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
+  };
+
+  const handlePhoneChange = (phone, country) => {
+    setFormData({ ...formData, phone });
+    if (!phone || phone.length < country.format.length) {
+      setPhoneError("Please enter a valid phone number");
+    } else {
+      setPhoneError("");
+    }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     try {
-      const response = await axios.post(`${apiKey}/contact-us`, formData); // Ensure this matches your backend port
+      const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(com|pk|net|org|edu|gov|int|mil|biz|info|io|co|ac|ae|af|ag|ai|al|am|an|ao|aq|ar|as|at|au|aw|ax|az|ba|bb|bd|be|bf|bg|bh|bi|bj|bm|bn|bo|br|bs|bt|bv|bw|by|bz|ca|cc|cd|cf|cg|ch|ci|ck|cl|cm|cn|co|cr|cu|cv|cx|cy|cz|de|dj|dk|dm|do|dz|ec|ee|eg|eh|er|es|et|eu|fi|fj|fk|fm|fo|fr|ga|gb|gd|ge|gf|gg|gh|gi|gl|gm|gn|gp|gq|gr|gs|gt|gu|gw|gy|hk|hm|hn|hr|ht|hu|id|ie|il|im|in|io|iq|ir|is|it|je|jm|jo|jp|ke|kg|kh|ki|km|kn|kp|kr|kw|ky|kz|la|lb|lc|li|lk|lr|ls|lt|lu|lv|ly|ma|mc|md|me|mg|mh|mk|ml|mm|mn|mo|mp|mq|mr|ms|mt|mu|mv|mw|mx|my|mz|na|nc|ne|nf|ng|ni|nl|no|np|nr|nu|nz|om|pa|pe|pf|pg|ph|pk|pl|pm|pn|pr|ps|pt|pw|py|qa|re|ro|rs|ru|rw|sa|sb|sc|sd|se|sg|sh|si|sj|sk)$/;
+
+      if (!emailRegex.test(formData.email)) {
+        Swal.fire({
+          position: "top-end",
+          icon: "error",
+          title: "Please enter a valid email address",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+        setLoading(false);
+        return;
+      }
+
+      if (phoneError) {
+        Swal.fire({
+          position: "top-end",
+          icon: "error",
+          title: "Please enter a valid phone number",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+        setLoading(false);
+        return;
+      }
+
+      const response = await axios.post(`${apiKey}/contact-us`, formData);
       if (response.status === 200) {
         setFormData({
           name: "",
@@ -63,8 +103,9 @@ const ContactForm = () => {
           timer: 1500,
         });
       }
+
     } catch (error) {
-      console.log("Failed to send message. Please try again later.");
+      console.log("Failed to send message. Please try again later.", error.message);
     } finally {
       setLoading(false);
     }
@@ -98,18 +139,22 @@ const ContactForm = () => {
             />
           </div>
           <div className="form-group">
-            <input
-              type="text"
-              name="phone"
-              className="form-control "
-              placeholder="Phone"
+            <PhoneInput
+              country={'us'}
               value={formData.phone}
-              onChange={handleChange}
+              onChange={(phone, country) => handlePhoneChange(phone, country)}
+              inputStyle={{ width: '100%' }}
+              inputProps={{
+                name: 'phone',
+                placeholder: 'Phone',
+                className: 'form-control',
+              }}
             />
+            {/* {phoneError && <div className="error-label">{phoneError}</div>} */}
             <input
               type="text"
               name="company"
-              className="form-control "
+              className="form-control"
               placeholder="Company"
               value={formData.company}
               onChange={handleChange}
@@ -127,12 +172,8 @@ const ContactForm = () => {
                 Select a service
               </option>
               <option value="Web Development">Web Development</option>
-              <option value="Mobile App Development">
-                Mobile App Development
-              </option>
-              <option value="Search Engine Optimization">
-                Search Engine Optimization
-              </option>
+              <option value="Mobile App Development">Mobile App Development</option>
+              <option value="Search Engine Optimization">Search Engine Optimization</option>
               <option value="Digital Marketing">Digital Marketing</option>
             </select>
           </div>

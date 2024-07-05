@@ -4,6 +4,9 @@
   font-family: "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif;
   padding-top: 30px;
 }
+.animation {
+  transform: scaleX(-1);
+}
 
 .card-heading-service .heading-underline-service {
   position: relative;
@@ -40,6 +43,7 @@
   align-items: center;
   padding-top: 30px;
   gap: 30px;
+  margin-bottom: 20px;
 }
 
 .card {
