@@ -12,6 +12,7 @@ import WebCards from "../components/Webcards";
 import Inquiry from "../components/Inquiry";
 import WebLottieAnimation from "../components/WebAnimation";
 import Typewriter from "../components/TypeWriter.jsx";
+import ParticleEffect from "../components/Particles.jsx";
 
 export default function PlansWeb({ plans }) {
   const [showBasic, setShowBasic] = useState(false);
@@ -65,6 +66,7 @@ export default function PlansWeb({ plans }) {
       </div>
 
       <div className="main-container container">
+        {/* <ParticleEffect /> */}
         <h2>Expert Website Development for Business Success</h2>
         <h5 className="last-paragraph">
           At SoftMark Solutions, we recognize the critical role a well-crafted
