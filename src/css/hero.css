@@ -224,19 +224,21 @@
   .first-line {
     font-size: 1.8rem;
     flex-direction: column;
+    font-weight: 700;
   }
   .second-line {
     font-size: 1.8rem;
     flex-direction: column;
     align-items: center;
     gap: 0;
+    font-weight: 700;
   }
   .hero-btn-div {
     padding: 0;
   }
   .hero {
     align-items: center;
-    margin-top: 70px;
+    margin-top: 80px;
   }
   .technology {
     flex-direction: column;
