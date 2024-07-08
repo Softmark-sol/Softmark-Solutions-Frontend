@@ -207,9 +207,15 @@ textarea.form-control.full-width {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 778px) {
   .form-control {
     margin-left: 0;
+  }
+  .phone{
+    margin-left: 0px !important;
+  }
+  .additional{
+    margin-top: 15px !important;
   }
   .form-group {
     flex-direction: column;
@@ -228,6 +234,12 @@ textarea.form-control.full-width {
 @media (max-width: 600px) {
   .textarea.form-control.full-width {
     height: 100px;
+  }
+  .phone{
+    margin-left: 0px !important;
+  }
+  .additional{
+    margin-top: 15px !important;
   }
   .form-container {
     padding: 10px;
