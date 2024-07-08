@@ -73,7 +73,7 @@ const DigitalMarketing = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const requiredFields = ["name", "email", "description"];
+    const requiredFields = ["name", "email", "description","access_and_permissions"];
     for (const field of requiredFields) {
       if (!formData[field]) {
         Swal.fire({
@@ -343,7 +343,7 @@ const DigitalMarketing = () => {
                     backgroundColor: "#4599b4",
                     color: "white",
                     border: "none",
-                    padding: "12px 18px",
+                    padding: "8px 10px",
                   }}
                   onMouseEnter={(e) =>
                     (e.target.style.backgroundColor = "#f3972b")

@@ -65,7 +65,7 @@ function ModalformSeo({ isOpened, heading, handleClose }) {
   const handleSubmit = async (e) => {
     e.preventDefault()
 
-    const requiredFields = ['name', 'email', 'description'];
+    const requiredFields = ['name', 'email', 'description','access_and_permissions'];
     for (const field of requiredFields) {
       if (!formData[field]) {
         Swal.fire({
