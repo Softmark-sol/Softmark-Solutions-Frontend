@@ -48,7 +48,7 @@ const ContactForm = () => {
 
   const handlePhoneChange = (phone, country) => {
     setFormData({ ...formData, phone });
-    if (!phone || phone.length < 15) {
+    if (!phone || phone.length < 12) {
       setPhoneError("Please enter a valid phone number");
     } else {
       setPhoneError("");
