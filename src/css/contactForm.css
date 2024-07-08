@@ -141,14 +141,16 @@
 }
 
 .form-control {
-  width: 48%;
+  width: 50%;
   margin-left: 10px;
-  padding: 10px;
+  padding: 12px;
   border-radius: 10px;
   border: 1px solid #ccc;
   font-size: 14px;
 }
-
+.additional{
+  margin-left: 30px;
+}
 .form-control.full-width {
   width: 100%;
 }

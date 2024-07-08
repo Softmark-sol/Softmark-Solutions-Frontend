@@ -48,7 +48,7 @@ const ContactForm = () => {
 
   const handlePhoneChange = (phone, country) => {
     setFormData({ ...formData, phone });
-    if (!phone || phone.length < 12) {
+    if (!phone || phone.length < 15) {
       setPhoneError("Please enter a valid phone number");
     } else {
       setPhoneError("");
@@ -146,7 +146,7 @@ const ContactForm = () => {
               country={'us'}
               value={formData.phone}
               onChange={handlePhoneChange}
-              inputStyle={{ width: '100%'}}
+              inputStyle={{ width: '100%',marginLeft:'22px',height:'38px'}}
               inputProps={{
                 name: 'phone',
                 placeholder: 'Phone',
@@ -156,7 +156,7 @@ const ContactForm = () => {
             <input
               type="text"
               name="company"
-              className="form-control"
+              className="form-control additional"
               placeholder="Company"
               value={formData.company}
               onChange={handleChange}
