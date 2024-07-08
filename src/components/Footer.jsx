@@ -1,10 +1,35 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import "../css/footer.css";
 import { useNavigate } from "react-router-dom";
+// import { gsap } from "gsap";
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
 import locationImage from "../assets/map.png";
+
+// gsap.registerPlugin(ScrollTrigger);
 
 const Footer = () => {
   const navigate = useNavigate();
+  // const softmarkRef = useRef(null);
+
+  // useEffect(() => {
+  //   gsap.fromTo(
+  //     softmarkRef.current,
+  //     { y: -200, opacity: 1 },
+  //     {
+  //       y: 0,
+  //       opacity: 1,
+  //       duration: 2,
+  //       ease: "power3.out",
+  //       scrollTrigger: {
+  //         trigger: softmarkRef.current,
+  //         start: "top bottom",
+  //         end: "top end",
+  //         scrub: 1,
+  //         markers: true,
+  //       },
+  //     }
+  //   );
+  // }, []);
 
   return (
     <footer className="footer">

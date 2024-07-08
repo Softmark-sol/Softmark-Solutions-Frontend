@@ -50,13 +50,13 @@ const ParticleEffect = forwardRef((props, ref) => {
       },
       particles: {
         color: {
-          value: "#f3972b99", // Color of particles
+          value: "#4599b4", // Color of particles
         },
         links: {
-          color: "#f3972b", // Color of particle links
+          color: "#4599b4", // Color of particle links
           distance: 150, // Distance of particle links
           enable: true,
-          opacity: 0, // Opacity of particle links
+          opacity: 0.5, // Opacity of particle links
           width: 1, // Width of particle links
         },
         move: {
@@ -87,7 +87,7 @@ const ParticleEffect = forwardRef((props, ref) => {
           value: 0.7, // Opacity of particles
         },
         shape: {
-          type: "circle", // Shape of particles ("circle", "edge", "triangle", etc.)
+          type: "triangle", // Shape of particles ("circle", "edge", "triangle", etc.)
         },
         size: {
           value: { min: 1, max: 5 }, // Size range of particles

@@ -143,6 +143,7 @@ export default function OurClients() {
                   justifyContent: "center",
                   alignItems: "center",
                   height: "90px",
+                  backgroundColor: "#f6f7f7",
                 }}
               >
                 <img
@@ -169,6 +170,7 @@ export default function OurClients() {
                   justifyContent: "center",
                   alignItems: "center",
                   height: "90px",
+                  backgroundColor: "#f6f7f7",
                 }}
               >
                 <img
