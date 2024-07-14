@@ -7,7 +7,6 @@ import "../css/Plans.css";
 import ModalformBasicApp from "../components/Modal/app-dev/Modal-App-Basic";
 import ModalformStandardApp from "../components/Modal/app-dev/Modal-App-Standard";
 import ModalformPremiumApp from "../components/Modal/app-dev/Modal-App-Premium";
-import Cards from "../components/Cards";
 import Inquiry from "../components/Inquiry";
 import AppCards from "../components/AppCards";
 import MobileLottieAnimation from "../components/MobileAnimation";

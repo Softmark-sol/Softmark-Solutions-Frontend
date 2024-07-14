@@ -1,18 +1,15 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import "../css/hero.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import MyLottieAnimation2 from "./NetworkGlobe";
 import GearLottieAnimation from "./Gear-animation";
 import ScrollReveal from "scrollreveal";
 import MarketLottieAnimation from "./Market-animation";
 import { useNavigate } from "react-router-dom";
-import ParticleEffect from "./Particles"; // Import ParticleEffect component
-import MyComponent from "./Neuron-animation";
+
 import LogoParticles from "./ParticleLogo";
 
 const HeroSection = () => {
   const navigate = useNavigate();
-  const particleRef = useRef(null);
 
   useEffect(() => {
     const sr = ScrollReveal({

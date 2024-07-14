@@ -17,8 +17,6 @@ import img9 from "../assets/logo3.png";
 import { useNavigate } from "react-router-dom";
 import ScrollToTopButton from "../components/ScrollUpButton";
 import ScrollReveal from "scrollreveal";
-import OurWorkLottieAnimation from "../components/OurWorkAnimation";
-import IconCloud from "../components/IconCloud";
 import { IconCloudSlug } from "../components/IconCloudWithSlug";
 
 const Ourservices = () => {

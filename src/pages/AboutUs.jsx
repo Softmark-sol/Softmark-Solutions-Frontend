@@ -154,7 +154,7 @@ const AboutUs = () => {
           style={{ paddingTop: "20px" }}
           onClick={() => navigate("/whyUs")}
         >
-          <a className="effect effect-1" href="#" title="Learn More">
+          <a className="effect effect-1" href="#whyus" title="Learn More">
             Why Us
           </a>
         </div>

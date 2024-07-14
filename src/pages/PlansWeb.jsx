@@ -12,7 +12,6 @@ import WebCards from "../components/Webcards";
 import Inquiry from "../components/Inquiry";
 import WebLottieAnimation from "../components/WebAnimation";
 import Typewriter from "../components/TypeWriter.jsx";
-import ParticleEffect from "../components/Particles.jsx";
 
 export default function PlansWeb({ plans }) {
   const [showBasic, setShowBasic] = useState(false);

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import "../css/footer.css";
 import { useNavigate } from "react-router-dom";
 // import { gsap } from "gsap";
@@ -58,6 +58,7 @@ const Footer = () => {
               <a
                 href="https://www.linkedin.com/company/softmark-solutions-llc"
                 target="_blank"
+                rel="noopener noreferrer"
                 style={{ textDecoration: "none" }}
               >
                 <li>
