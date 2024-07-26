@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-
 import "../css/Cards.css";
 import Singlecard from "./Singlecard";
 import img1 from "../assets/images/web-dev.png";
@@ -36,6 +35,12 @@ const Cards = ({ heading }) => {
       title: "Mobile App Development",
       desc: "Crafting seamless and intuitive mobile experiences tailored to your unique vision. From concept to launch, trust our team to bring your app idea to life with precision and innovation.",
       route: "/appPlans",
+    },
+    {
+      path: img3,
+      title: "Custom Software Development",
+      desc: "Softmark Solutions offers customized, tailored solutions that perfectly align with your business needs.",
+      route: "/customSoftware",
     },
     {
       path: img3,

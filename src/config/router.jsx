@@ -13,6 +13,7 @@ import { AppPlans } from '../components/PlansData'
 import DigitalMarketing from '../pages/DigitalMarketing'
 import PlansWeb from '../pages/PlansWeb'
 import PlansApp from '../pages/PlansApp'
+import CustomSoftware from '../pages/customSoftware.jsx'
 import NotFound from '../components/NotFound'
 import Seo from '../pages/Seo'
 import Logo from '../pages/PlansLogo'
@@ -36,6 +37,9 @@ function Router() {
 
           {/* Logo Page */}
           <Route path='/logoPlans' element={<Logo plans={LogoPlans} />} />
+
+          {/* Custom Software Development Page */}
+          <Route path='/customSoftware' element={<CustomSoftware  />} />
 
           {/* About Us Page */}
           <Route path='/aboutUs' element={<AboutUs />} />
