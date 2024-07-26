@@ -4,7 +4,6 @@ import Expertise from "../../assets/images/expertise.jpg"
 import Inovation from "../../assets/images/inovation.jpg"
 import Collabration from "../../assets/images/collabration.jpg"
 import Results from "../../assets/images/results.png"
-import img4 from "../../assets/marketing.png";
 
 
 const WhyusCards = () => {

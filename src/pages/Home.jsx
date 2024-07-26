@@ -4,7 +4,6 @@ import Cards from "../components/Cards";
 import OurClients from "../components/Slider";
 import ContactForm from "../components/ContactForm";
 import ScrollUpButton from "../components/ScrollUpButton";
-import { IconCloudSlug } from "../components/IconCloudWithSlug";
 
 const Home = () => {
   return (
