@@ -4,11 +4,15 @@ import CSD from "../assets/images/csd.png";
 import "../css/CSD.css";
 import CSDCards from "../components/CSDCards.jsx";
 import { useNavigate } from "react-router-dom";
+import Csd_Steps from "./CSD_steps.jsx";
+import SoftwareCapabilitiesCards from "../components/SoftwareCapabilitiesCards.jsx";
+import SoftwareCards from "../components/SoftwareCards.jsx";
 
 const CustomSoftware = () => {
     const navigate = useNavigate()
   return (
     <>
+    {/* Section 1 */}
       <div className="main-container container">
         <h2>
           <Typewriter
@@ -45,9 +49,15 @@ const CustomSoftware = () => {
           </div>
         </div>
       </div>
+      <Csd_Steps />     
       <CSDCards />
+
+      {/* Section 2 */}
+      <SoftwareCapabilitiesCards />
+      <SoftwareCards />
     </>
   );
 };
+
 
 export default CustomSoftware;
