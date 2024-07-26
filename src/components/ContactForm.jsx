@@ -61,7 +61,6 @@ const ContactForm = () => {
     try {
 
 
-      console.log(formData.phone)
       const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(com|pk|net|org|edu|gov|int|mil|biz|info|io|co|ac|ae|af|ag|ai|al|am|an|ao|aq|ar|as|at|au|aw|ax|az|ba|bb|bd|be|bf|bg|bh|bi|bj|bm|bn|bo|br|bs|bt|bv|bw|by|bz|ca|cc|cd|cf|cg|ch|ci|ck|cl|cm|cn|co|cr|cu|cv|cx|cy|cz|de|dj|dk|dm|do|dz|ec|ee|eg|eh|er|es|et|eu|fi|fj|fk|fm|fo|fr|ga|gb|gd|ge|gf|gg|gh|gi|gl|gm|gn|gp|gq|gr|gs|gt|gu|gw|gy|hk|hm|hn|hr|ht|hu|id|ie|il|im|in|io|iq|ir|is|it|je|jm|jo|jp|ke|kg|kh|ki|km|kn|kp|kr|kw|ky|kz|la|lb|lc|li|lk|lr|ls|lt|lu|lv|ly|ma|mc|md|me|mg|mh|mk|ml|mm|mn|mo|mp|mq|mr|ms|mt|mu|mv|mw|mx|my|mz|na|nc|ne|nf|ng|ni|nl|no|np|nr|nu|nz|om|pa|pe|pf|pg|ph|pk|pl|pm|pn|pr|ps|pt|pw|py|qa|re|ro|rs|ru|rw|sa|sb|sc|sd|se|sg|sh|si|sj|sk)$/;
 
       if (!emailRegex.test(formData.email)) {
@@ -105,6 +104,7 @@ const ContactForm = () => {
           showConfirmButton: false,
           timer: 1500,
         });
+        console.log(response)
       }
 
     } catch (error) {
@@ -142,9 +142,9 @@ const ContactForm = () => {
             />
           </div>
           <div className="form-group">
-           <div style={{width: "100%"}}>
            <PhoneInput
               country={'us'}
+              className="additional"
               value={formData.phone}
               onChange={handlePhoneChange}
               inputStyle={{ width: '100%',height:'38px',marginLeft:'22px'}}
@@ -154,11 +154,10 @@ const ContactForm = () => {
                 className: 'form-control phone',
               }}
             />
-           </div>
             <input
               type="text"
               name="company"
-              className="form-control additional"
+              className="form-control"
               placeholder="Company"
               value={formData.company}
               onChange={handleChange}
