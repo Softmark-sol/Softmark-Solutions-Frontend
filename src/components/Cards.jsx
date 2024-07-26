@@ -6,6 +6,7 @@ import img2 from "../assets/images/mobile-app.png";
 import img3 from "../assets/images/searchengine.png";
 import img4 from "../assets/images/video.png";
 import img5 from "../assets/images/logo-design.png";
+import img6 from "../assets/images/custom.png";
 import ScrollReveal from "scrollreveal";
 import ParticleEffect from "./Particles";
 
@@ -37,7 +38,7 @@ const Cards = ({ heading }) => {
       route: "/appPlans",
     },
     {
-      path: img3,
+      path: img6,
       title: "Custom Software Development",
       desc: "Softmark Solutions offers customized, tailored solutions that perfectly align with your business needs.",
       route: "/customSoftware",
