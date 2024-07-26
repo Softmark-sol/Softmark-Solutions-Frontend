@@ -1,0 +1,48 @@
+.step {
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .intro-text {
+    font-size: 1.1rem;
+    margin: 1rem auto;
+    max-width: 90%;
+  }
+  
+  .steps-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+  
+  .step-item {
+    flex: 1;
+    min-width: 200px;
+    max-width: 250px;
+    margin: 1rem;
+    text-align: center;
+  }
+  
+  .step-icon {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .step-heading {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+  }
+  
+  .step-description {
+    font-size: 1rem;
+    color: #555;
+  }
+  @media screen and (max-width: 650px) {
+    .step {
+        justify-content: center;
+        align-items: center;
+    }
+   
+    
+  }

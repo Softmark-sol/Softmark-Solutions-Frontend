@@ -1,9 +1,10 @@
 import React from 'react'
+import Csd_Steps from '../pages/CSD_steps'
 
 const CustomSoftware = () => {
   return (
     <div>
-     CustomSoftware 
+<Csd_Steps/>     
     </div>
   )
 }
