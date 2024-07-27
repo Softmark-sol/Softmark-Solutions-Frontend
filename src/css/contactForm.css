@@ -156,9 +156,11 @@
   margin-right: 25px;
   width: 98% !important;
 }
-/* .form-control.full-width {
-  width: 100%;
-} */
+
+.additional input:focus{
+  outline: none;
+  box-shadow: none;
+}
 
 .drop-down {
   width: 100%;
