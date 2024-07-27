@@ -1,6 +1,5 @@
 import React from "react";
 import Typewriter from "../components/TypeWriter.jsx";
-import CSD from "../assets/images/csd.png";
 import "../css/CSD.css";
 import CSDCards from "../components/CSDCards.jsx";
 import { useNavigate } from "react-router-dom";
@@ -41,7 +40,7 @@ const CustomSoftware = () => {
             </h5>
             <div className="csd-hero-img">
               <img
-                src={CSD}
+                src="https://i0.wp.com/sharpeyeinfotech.com/wp-content/uploads/2023/03/unnamed.gif?fit=500%2C500&ssl=1"
                 alt="csd"
                 style={{ width: "100%", height: "100%" }}
               />

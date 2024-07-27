@@ -3,14 +3,17 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    flex-direction: row-reverse;
 }
 
 .csd-hero-img{
-    width: 40%;
+    width: 35%;
 }
 
 .main-paragrah-csd{
-    width: 40%;   
+    width: 50%;   
+    line-height: 1.8 !important;
+    margin-top: 20px;
 }
 
 .cards-container-csd{
@@ -79,7 +82,7 @@ margin-top: 10px;
     width: 150px;
     height: 50px;
     background-color: white;
-    margin: 20px;
+    margin-top: 20px;
     color: #f3972b;
     position: relative;
     overflow: hidden;
