@@ -7,6 +7,7 @@ import img3 from "../assets/images/searchengine.png";
 import img4 from "../assets/images/video.png";
 import img5 from "../assets/images/logo-design.png";
 import img6 from "../assets/images/custom.png";
+import img7 from "../assets/images/anime.png";
 import ScrollReveal from "scrollreveal";
 import ParticleEffect from "./Particles";
 
@@ -54,6 +55,12 @@ const Cards = ({ heading }) => {
       title: "Digital Marketing",
       desc: "Amplify your brand's reach and engagement through strategic digital marketing campaigns. From social media management to content creation, let us elevate your online presence and drive measurable results",
       route: "/digitalMarketing",
+    },
+    {
+      path: img7,
+      title: "Anime Art",
+      desc: "Transforming your digital vision into reality with expert web development services. Empower your online presence with cutting-edge design and functionality.",
+      route: "/animeArt",
     },
     {
       path: img5,

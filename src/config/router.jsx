@@ -17,6 +17,7 @@ import CustomSoftware from '../pages/customSoftware.jsx'
 import NotFound from '../components/NotFound'
 import Seo from '../pages/Seo'
 import Logo from '../pages/PlansLogo'
+import AnimeArt from '../pages/AnimeArt.jsx'
 
 function Router() {
   return (
@@ -40,6 +41,9 @@ function Router() {
 
           {/* Custom Software Development Page */}
           <Route path='/customSoftware' element={<CustomSoftware  />} />
+
+          {/* Anime Art Page */}
+          <Route path='/animeArt' element={<AnimeArt  />} />
 
           {/* About Us Page */}
           <Route path='/aboutUs' element={<AboutUs />} />
