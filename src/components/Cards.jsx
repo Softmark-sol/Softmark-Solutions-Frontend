@@ -59,7 +59,7 @@ const Cards = ({ heading }) => {
     {
       path: img7,
       title: "Anime Art",
-      desc: "Transforming your digital vision into reality with expert web development services. Empower your online presence with cutting-edge design and functionality.",
+      desc: "Create anime characters and scenes with Japanese animation styles using sketching, inking, and coloring. Utilize digital tools for expressive, dynamic visuals ideal for comics and animations.",
       route: "/animeArt",
     },
     {
