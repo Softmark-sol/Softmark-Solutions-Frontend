@@ -6,19 +6,19 @@ import "../css/gallery.css";
 const itemData = [
   {
     img: 'https://fsartmania.com/wp-content/uploads/2024/04/RS-1-768x529.jpg',
-    title: 'barber',
+    title: 'portrait',
     rows: 5,
     cols: 3,
   },
   {
     img: 'https://fsartmania.com/wp-content/uploads/2024/04/RS-2-768x529.jpg',
-    title: 'barber',
+    title: 'portrait',
     rows: 5,
     cols: 2,
   },
   {
     img: 'https://fsartmania.com/wp-content/uploads/2024/04/RS-3-768x529.jpg',
-    title: 'barber',
+    title: 'portrait',
     rows: 5,
     cols: 3
   },

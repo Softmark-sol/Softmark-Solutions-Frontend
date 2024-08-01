@@ -36,14 +36,14 @@ export default function AnimePortfolio() {
   };
 
   return (
-    <div className="portfolio-container">
+    <div className="portfolio-container" style={{ marginTop: "80px" }}>
       <Box
         sx={{
           display: 'flex',
           flexDirection: 'column',
           marginTop: '20px',
           width: "100%",
-          alignItems: 'center', // Center the Tabs container horizontally
+          alignItems: 'center',
         }}
       >
         <Box
@@ -51,11 +51,21 @@ export default function AnimePortfolio() {
             overflowX: 'auto',
             whiteSpace: 'nowrap',
             borderBottom: 1,
-            borderColor: 'divider',
             display: "flex",
-            justifyContent: "center", 
-            alignItems: "center",
-            width: '100%', // Ensure the Tabs container takes full width
+            justifyContent: "center",
+            borderColor: 'divider',
+            width: '100%',
+            scrollbarWidth: 'thin', // Optional: Show thin scrollbar for Firefox
+            '&::-webkit-scrollbar': {
+              height: '8px',
+            },
+            '&::-webkit-scrollbar-thumb': {
+              backgroundColor: '#ccc',
+              borderRadius: '4px',
+            },
+            '&::-webkit-scrollbar-track': {
+              backgroundColor: '#f1f1f1',
+            },
           }}
         >
           <Tabs
@@ -63,10 +73,9 @@ export default function AnimePortfolio() {
             onChange={handleChange}
             aria-label="Tabs example"
             sx={{
-              display: 'flex',
-              justifyContent: 'center', // Center tabs within the container
               minWidth: 'fit-content',
-              width: 'auto', // Make Tabs container only as wide as needed
+              width: 'max-content',
+              display: 'inline-flex',
             }}
           >
             <Tab label="PORTRAITS" />

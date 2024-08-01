@@ -6,46 +6,48 @@ import "../css/gallery.css"
 const itemData = [
   {
     img: 'https://fsartmania.com/wp-content/uploads/2023/12/Anime-fit-girl-colored-2-576x1024.jpg',
-    title: 'barber',
-    rows: 5,
-    cols: 2,
-  },
-  {
-    img: 'https://fsartmania.com/wp-content/uploads/2023/12/Anime-Green-Hair-girl-FB-1-501x1024.jpg',
-    title: 'barber',
-    rows: 5,
-    cols: 2,
-  },
-  {
-    img: 'https://fsartmania.com/wp-content/uploads/2024/04/Demon-girl-chbi-2-678x1024.jpg',
-    title: 'barber',
-    rows: 5,
-    cols: 3
-  },
-  {
-    img: 'https://fsartmania.com/wp-content/uploads/2024/04/Spider-girl-RS-768x796.jpg',
-    title: 'barber',
+    title: 'portrait',
     rows: 4,
     cols: 3,
   },
   {
-    img: 'https://fsartmania.com/wp-content/uploads/2024/04/Bike-Furry-768x838.jpg',
-    title: 'barber',
-    rows: 5,
-    cols: 4,
-  },
-  {
-    img: 'https://fsartmania.com/wp-content/uploads/2024/04/Mafia-Wolf-485x1024.jpg',
-    title: 'barber',
-    rows: 7,
+    img: 'https://fsartmania.com/wp-content/uploads/2023/12/Anime-Green-Hair-girl-FB-1-501x1024.jpg',
+    title: 'portrait',
+    rows: 4,
     cols: 3,
   },
   {
     img: 'https://fsartmania.com/wp-content/uploads/2024/04/Delphinnea-539x1024.jpg',
-    title: 'barber',
-    rows: 7,
+    title: 'portrait',
+    rows: 4,
     cols: 3,
   },
+  {
+    img: 'https://fsartmania.com/wp-content/uploads/2024/04/Mafia-Wolf-485x1024.jpg',
+    title: 'portrait',
+    rows: 4,
+    cols: 3,
+  },
+  {
+    img: 'https://fsartmania.com/wp-content/uploads/2024/04/Demon-girl-chbi-2-678x1024.jpg',
+    title: 'portrait',
+    rows: 3,
+    cols: 2
+  },
+  
+  {
+    img: 'https://fsartmania.com/wp-content/uploads/2024/04/Spider-girl-RS-768x796.jpg',
+    title: 'portrait',
+    rows: 3,
+    cols: 2,
+  },
+  {
+    img: 'https://fsartmania.com/wp-content/uploads/2024/04/Bike-Furry-768x838.jpg',
+    title: 'portrait',
+    rows: 3,
+    cols: 2,
+  },
+ 
 ];
 
 function Conceptual() {

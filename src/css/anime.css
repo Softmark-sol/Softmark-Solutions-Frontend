@@ -54,3 +54,17 @@
         height: 30rem !important;
     }
 }
+
+
+.gallery {
+    padding: 16px;
+    box-sizing: border-box;
+  }
+  
+  .gallery img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+  

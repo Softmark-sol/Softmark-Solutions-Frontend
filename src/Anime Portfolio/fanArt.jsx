@@ -6,39 +6,39 @@ import "../css/gallery.css"
 const itemData = [
   {
     img: 'https://fsartmania.com/wp-content/uploads/2024/04/3-768x904.jpg',
-    title: 'barber',
-    rows: 5,
+    title: 'portrait',
+    rows: 3,
     cols: 2,
   },
   {
     img: 'https://fsartmania.com/wp-content/uploads/2024/04/4-1-768x904.jpg',
-    title: 'barber',
-    rows: 5,
+    title: 'portrait',
+    rows: 3,
+    cols: 2,
+  },
+  {
+    img: 'https://fsartmania.com/wp-content/uploads/2024/04/5-1-768x904.jpg',
+    title: 'portrait',
+    rows: 3,
     cols: 2,
   },
   {
     img: 'https://fsartmania.com/wp-content/uploads/2024/04/Por1-689x1024.jpg',
-    title: 'barber',
-    rows: 5,
+    title: 'portrait',
+    rows: 3,
     cols: 2
   },
   {
     img: 'https://fsartmania.com/wp-content/uploads/2024/04/1-768x904.jpg',
-    title: 'barber',
-    rows: 5,
-    cols: 3,
-  },
-  {
-    img: 'https://fsartmania.com/wp-content/uploads/2024/04/5-1-768x904.jpg',
-    title: 'barber',
-    rows: 6,
-    cols: 3,
+    title: 'portrait',
+    rows: 3,
+    cols: 2,
   },
   {
     img: 'https://fsartmania.com/wp-content/uploads/2024/04/2-768x904.jpg',
-    title: 'barber',
-    rows: 5,
-    cols: 3,
+    title: 'portrait',
+    rows: 3,
+    cols: 2,
   },
 ];
 
@@ -50,6 +50,8 @@ function Conceptual() {
             width: '100%', 
             height: 'auto',
             display: 'flex',
+            alignItems: "center",
+            justiy: "center",
             flexWrap: 'wrap',
             gap: '8px', 
         }} 
