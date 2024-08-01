@@ -69,7 +69,7 @@ const AnimeArt = () => {
               <br />
               Whether you’re in search of captivating concept characters,
               personalized Anime Original Characters (OCs), endearing Chibi
-              creations, or striking Anime Profile Pictures (PfPs), FSARTMANIA
+              creations, or striking Anime Profile Pictures (PfPs), Softmark Solutions
               is your destination for the highest caliber artworks. Our
               commitment to excellence ensures that each creation is a
               masterpiece in its own

@@ -18,6 +18,7 @@ import NotFound from '../components/NotFound'
 import Seo from '../pages/Seo'
 import Logo from '../pages/PlansLogo'
 import AnimeArt from '../pages/AnimeArt.jsx'
+import Calendly from '../components/Calendly/Calendly.jsx'
 
 function Router() {
   return (
@@ -67,6 +68,13 @@ function Router() {
           <Route
             path='/services'
             element={<Cards heading={`Our Services`} />}
+          />
+
+
+          {/* Calendly Component */}
+          <Route
+            path='/calendly'
+            element={<Calendly />}
           />
 
           {/* 404*/}
