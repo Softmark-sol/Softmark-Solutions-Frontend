@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../css/contactForm.css";
+import mapImage from '../assets/images/google-maps.png'
 import Swal from "sweetalert2";
 import ScrollReveal from "scrollreveal";
 import API_CONFIG from "../config/api";
@@ -115,10 +116,35 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="contactForm-container">
-      <div className="card-heading-service" id="form">
+    <>
+    <div className="card-heading-service" id="form">
         <h2 className="heading-underline-service">Get in Touch</h2>
       </div>
+
+
+
+    <div className="container main-form">
+      <div className="text-area">
+      <h1>We’re here to help <br/> you grow</h1>
+      <p>Feel free to reach out to us through your preferred method of contact. We are eager to connect with you and explore how our team can contribute to your success.</p>
+
+      <div className="more-detail">
+        <div>Phone number : <br/>+1 (304) 155 2456</div>
+        <div>Email address : <br/><a href="mailto:admin@softmarksolutions.com" style={{textDecoration:'none',color:'black'}}>
+          admin@softmarksolutions.com
+        </a></div>
+      </div>
+
+    <div className="location-detail">
+      <div className="location-subContainer">
+        <div><img src={mapImage} width={30}/></div>
+        <div>30 N Gould St R Sheridan WY 82801</div>
+      </div>
+      <div>View in map</div>
+    </div>
+
+      </div>
+      <div className="contactForm-container">
       <div className="form-container container">
         <form className="contact-form" onSubmit={handleSubmit}>
           <div className="form-group">
@@ -178,6 +204,8 @@ const ContactForm = () => {
               <option value="Mobile App Development">Mobile App Development</option>
               <option value="Search Engine Optimization">Search Engine Optimization</option>
               <option value="Digital Marketing">Digital Marketing</option>
+              <option value="Custom Software Development">Custom Software Development</option>
+              <option value="Anime Art">Anime Art</option>
             </select>
           </div>
           <div className="form-group">
@@ -222,6 +250,10 @@ const ContactForm = () => {
         </form>
       </div>
     </div>
+    </div>
+
+
+    </>
   );
 };
 

@@ -25,15 +25,15 @@ const Navbar = () => {
   };
 
   const Contact = () => {
-    const isHomePage = location.pathname === "/";
-    if (isHomePage) {
-      const contactForm = document.getElementById("form");
-      if (contactForm) {
-        contactForm.scrollIntoView({ behavior: "smooth" });
-      }
-    } else {
-      navigate("/contactUs");
-    }
+    // const isHomePage = location.pathname === "/";
+    // if (isHomePage) {
+    //   const contactForm = document.getElementById("form");
+    //   if (contactForm) {
+    //     contactForm.scrollIntoView({ behavior: "smooth" });
+    //   }
+    // } else {
+      navigate("/calendly");
+    // }
   };
 
   const Services = () => {
@@ -171,7 +171,7 @@ const Navbar = () => {
             <div className="myLottieAnimation">
               <MyLottieAnimation />
             </div>
-            Contact Us
+            Schedule a <strong>&nbsp; Free &nbsp;</strong> Call
           </span>
         </div>
         <div className="navbar-menu">

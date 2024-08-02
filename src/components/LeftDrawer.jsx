@@ -46,7 +46,7 @@ const LeftDrawer = () => {
         contactForm.scrollIntoView({ behavior: "smooth" });
       }
     } else {
-      navigate("/contactUs");
+      navigate("/calendly");
     }
   };
 
@@ -70,7 +70,7 @@ const LeftDrawer = () => {
       case 'Careers':
         window.location.href = 'https://www.linkedin.com/company/softmark-solutions-llc';
         break;
-      case 'Contact Us':
+      case 'Schedule a Free Call':
         Contact();
         break;
       default:
@@ -93,7 +93,7 @@ const LeftDrawer = () => {
           { text: 'Why Us', icon: <IoIosPeople color="#4599B4" /> },
           { text: 'Our Work', icon: <MdWork color="#4599B4" /> },
           { text: 'Careers', icon: <MdContactMail color="#4599B4" /> },
-          { text: 'Contact Us', icon: <AiFillPhone color="#4599B4" /> },
+          { text: 'Schedule a Free Call', icon: <AiFillPhone color="#4599B4" /> },
         ].map(({ text, icon }) => (
           <ListItem key={text} disablePadding>
             <ListItemButton

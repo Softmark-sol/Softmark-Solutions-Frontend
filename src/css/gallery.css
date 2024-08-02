@@ -1,0 +1,29 @@
+.gallery {
+    padding: 10px; /* Padding around the gallery */
+  }
+  
+  /* Ensure ImageList uses grid layout properly */
+  .MuiImageList-root {
+    display: grid;
+    gap: 8px; /* Space between images */
+    width: 100%;
+  }
+  
+  /* Adjust ImageListItem styling if needed */
+  .MuiImageListItem-root {
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+  }
+  
+  /* Adjustments for smaller screens */
+  @media (max-width: 768px) {
+    .MuiImageList-root {
+      gridTemplateColumns: 'repeat(auto-fill, minmax(100px, 1fr))'; /* Adjust for smaller screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .MuiImageList-root {
+      gridTemplateColumns: 'repeat(auto-fill, minmax(80px, 1fr))'; /* Further adjust for very small screens */
+    }
+  }
+  
