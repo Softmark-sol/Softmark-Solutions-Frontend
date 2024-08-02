@@ -129,7 +129,7 @@ const ContactForm = () => {
       <p>Feel free to reach out to us through your preferred method of contact. We are eager to connect with you and explore how our team can contribute to your success.</p>
 
       <div className="more-detail">
-        <div>Phone number : <br/>+1 (304) 155 2456</div>
+        <div>Phone number : <br/>+1 (646) 535-6323</div>
         <div>Email address : <br/><a href="mailto:admin@softmarksolutions.com" style={{textDecoration:'none',color:'black'}}>
           admin@softmarksolutions.com
         </a></div>
