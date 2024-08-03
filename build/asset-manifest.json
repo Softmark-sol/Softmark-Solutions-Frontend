@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.93846d46.css",
-    "main.js": "/static/js/main.7091a051.js",
+    "main.css": "/static/css/main.25cd1c56.css",
+    "main.js": "/static/js/main.b32fb36f.js",
     "static/media/logo2.png": "/static/media/logo2.42dc8dcb39832530e23e.png",
     "static/media/Logo-no-bg.png": "/static/media/Logo-no-bg.d08ad5a8c1f2f90c2429.png",
     "static/media/fa-solid-900.ttf": "/static/media/fa-solid-900.bacd5de623fb563b961a.ttf",
@@ -37,6 +37,7 @@
     "static/media/solutions.png": "/static/media/solutions.dc1c7ad4476e6bd80115.png",
     "static/media/searchengine.png": "/static/media/searchengine.055427adb24936dcd2ca.png",
     "static/media/cms.png": "/static/media/cms.8a93ffd1a88a7fbda017.png",
+    "static/media/google-maps.png": "/static/media/google-maps.dc3b637d7368ffd8c203.png",
     "static/media/app-settings.png": "/static/media/app-settings.e1b93bef34265da6fa77.png",
     "static/media/android.png": "/static/media/android.980f2db01583602d386d.png",
     "static/media/collabration.jpg": "/static/media/collabration.bc7d775646159ffb0cb1.jpg",
@@ -53,13 +54,13 @@
     "static/media/slick.svg": "/static/media/slick.2630a3e3eab21c607e21.svg",
     "static/media/slick.eot": "/static/media/slick.a4e97f5a2a64f0ab1323.eot",
     "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
-    "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/index.html",
-    "main.93846d46.css.map": "/static/css/main.93846d46.css.map",
-    "main.7091a051.js.map": "/static/js/main.7091a051.js.map"
+    "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
+    "main.25cd1c56.css.map": "/static/css/main.25cd1c56.css.map",
+    "main.b32fb36f.js.map": "/static/js/main.b32fb36f.js.map"
   },
   "entrypoints": [
-    "static/css/main.93846d46.css",
-    "static/js/main.7091a051.js"
+    "static/css/main.25cd1c56.css",
+    "static/js/main.b32fb36f.js"
   ]
 }

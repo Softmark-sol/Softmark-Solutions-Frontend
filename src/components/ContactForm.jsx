@@ -167,20 +167,50 @@ const ContactForm = () => {
             can contribute to your success.
           </p>
 
-          <div className="more-detail">
-            <div>
-              Phone number : <br />
-              +1 (304) 155 2456
-            </div>
-            <div>
-              Email address : <br />
-              <a
-                href="mailto:admin@softmarksolutions.com"
-                style={{ textDecoration: "none", color: "black" }}
-              >
-                admin@softmarksolutions.com
-              </a>
-            </div>
+
+    <div className="container main-form">
+      <div className="text-area">
+      <h1>We’re here to help <br/> you grow</h1>
+      <p>Feel free to reach out to us through your preferred method of contact. We are eager to connect with you and explore how our team can contribute to your success.</p>
+
+      <div className="more-detail">
+        <div>Phone number : <br/>+1 (646) 535-6323</div>
+        <div>Email address : <br/><a href="mailto:admin@softmarksolutions.com" style={{textDecoration:'none',color:'black'}}>
+          admin@softmarksolutions.com
+        </a></div>
+      </div>
+
+    <div className="location-detail">
+      <div className="location-subContainer">
+        <div><img src={mapImage} width={30}/></div>
+        <div>30 N Gould St R Sheridan WY 82801</div>
+      </div>
+      <div>View in map</div>
+    </div>
+
+      </div>
+      <div className="contactForm-container">
+      <div className="form-container container">
+        <form className="contact-form" onSubmit={handleSubmit}>
+          <div className="form-group">
+            <input
+              type="text"
+              name="name"
+              className="form-control"
+              placeholder="Name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+            />
+            <input
+              type="email"
+              name="email"
+              className="form-control"
+              placeholder="Email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
           </div>
 
           <div className="location-detail">
