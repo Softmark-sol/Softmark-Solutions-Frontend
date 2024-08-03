@@ -36,7 +36,6 @@ const ContactForm = () => {
   }, []);
 
   const [loading, setLoading] = useState(false);
-
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -45,7 +44,6 @@ const ContactForm = () => {
     message: "",
     serviceType: "",
   });
-
   const [phoneError, setPhoneError] = useState("");
 
   const handleChange = (e) => {
@@ -123,33 +121,20 @@ const ContactForm = () => {
   };
 
   const breadcrumbs = [
-    <div underline="hover" key="1" color="inherit">
-   <div style={{display:'flex',justifyContent:'center',alignItems:'center',gap:'12px'} }>
-   <div style={{fontSize:'3rem',fontWeight:'600'}}>1</div>
-   <div> We Schedule<br/>a call at your<br/> convenience. </div>
-   </div>
+    <div key="1" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '12px' }}>
+      <div style={{ fontSize: '3rem', fontWeight: '600' }}>1</div>
+      <div> We Schedule<br />a call at your<br /> convenience. </div>
     </div>,
-    <div
-      underline="hover"
-      key="2"
-      color="inherit"
-    >
-      <div style={{display:'flex',justifyContent:'center',alignItems:'center',gap:'12px'} }>
-   <div style={{fontSize:'3rem',fontWeight:'600'}}>2</div>
-   <div> We do a<br/> consulting <br/> meeting. </div>
-   </div>
+    <div key="2" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '12px' }}>
+      <div style={{ fontSize: '3rem', fontWeight: '600' }}>2</div>
+      <div> We do a<br /> consulting <br /> meeting. </div>
     </div>,
-     <div
-     underline="hover"
-     key="2"
-     color="inherit"
-   >
-    <div style={{display:'flex',justifyContent:'center',alignItems:'center',gap:'12px'} }>
-   <div style={{fontSize:'3rem',fontWeight:'600'}}>3</div>
-   <div>We prepare a<br/> proposal. </div>
-   </div> 
-   </div>,
+    <div key="3" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '12px' }}>
+      <div style={{ fontSize: '3rem', fontWeight: '600' }}>3</div>
+      <div>We prepare a<br /> proposal. </div>
+    </div>,
   ];
+
   return (
     <>
       <div className="card-heading-service" id="form">
@@ -158,83 +143,38 @@ const ContactForm = () => {
 
       <div className="container main-form">
         <div className="text-area">
-          <h1>
-            We’re here to help you  <br />  grow
-          </h1>
+          <h1>We’re here to help you <br /> grow</h1>
           <p>
-            Feel free to reach out to us through your preferred method of
-            contact. We are eager to connect with you and explore how our team
-            can contribute to your success.
+            Feel free to reach out to us through your preferred method of contact.
+            We are eager to connect with you and explore how our team can contribute to your success.
           </p>
-
-
-    <div className="container main-form">
-      <div className="text-area">
-      <h1>We’re here to help <br/> you grow</h1>
-      <p>Feel free to reach out to us through your preferred method of contact. We are eager to connect with you and explore how our team can contribute to your success.</p>
-
-      <div className="more-detail">
-        <div>Phone number : <br/>+1 (646) 535-6323</div>
-        <div>Email address : <br/><a href="mailto:admin@softmarksolutions.com" style={{textDecoration:'none',color:'black'}}>
-          admin@softmarksolutions.com
-        </a></div>
-      </div>
-
-    <div className="location-detail">
-      <div className="location-subContainer">
-        <div><img src={mapImage} width={30}/></div>
-        <div>30 N Gould St R Sheridan WY 82801</div>
-      </div>
-      <div>View in map</div>
-    </div>
-
-      </div>
-      <div className="contactForm-container">
-      <div className="form-container container">
-        <form className="contact-form" onSubmit={handleSubmit}>
-          <div className="form-group">
-            <input
-              type="text"
-              name="name"
-              className="form-control"
-              placeholder="Name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-            />
-            <input
-              type="email"
-              name="email"
-              className="form-control"
-              placeholder="Email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
+          <div className="more-detail">
+            <div>Phone number : <br />+1 (646) 535-6323</div>
+            <div>Email address : <br />
+              <a href="mailto:admin@softmarksolutions.com" style={{ textDecoration: 'none', color: 'black' }}>
+                admin@softmarksolutions.com
+              </a>
+            </div>
           </div>
 
           <div className="location-detail">
             <div className="location-subContainer">
-              <div>
-                <img src={mapImage} width={30} />
-              </div>
+              <div><img src={mapImage} width={30} alt="Map location" /></div>
               <div>30 N Gould St R Sheridan WY 82801</div>
             </div>
             <div>
               <a className="location-btn" target="new" href="https://www.google.com/maps/place/30+N+Gould+St,+Sheridan,+WY+82801,+USA/@44.7977678,-106.9575236,17z/data=!3m1!4b1!4m6!3m5!1s0x5335fabc2a66677f:0x8f85bd068d1afb8a!8m2!3d44.7977678!4d-106.9549487!16s%2Fg%2F11c43v9yzm?entry=ttu">View in map</a>
             </div>
           </div>
-          <div  style={{paddingTop:'14px'}}><h2>What happens next?</h2>
-          <Stack spacing={2} style={{paddingTop:'10px'}}>
-      <Breadcrumbs
-        separator={<NavigateNextIcon fontSize="small" />}
-        aria-label="breadcrumb"
-      >
-        {breadcrumbs}
-      </Breadcrumbs>
-    </Stack>
-          </div>
+
+          <h2 style={{ paddingTop: '14px' }}>What happens next?</h2>
+          <Stack spacing={2} style={{ paddingTop: '10px' }}>
+            <Breadcrumbs separator={<NavigateNextIcon fontSize="small" />} aria-label="breadcrumb">
+              {breadcrumbs}
+            </Breadcrumbs>
+          </Stack>
         </div>
+
         <div className="contactForm-container">
           <div className="form-container container">
             <form className="contact-form" onSubmit={handleSubmit}>
@@ -296,16 +236,10 @@ const ContactForm = () => {
                     Select a service
                   </option>
                   <option value="Web Development">Web Development</option>
-                  <option value="Mobile App Development">
-                    Mobile App Development
-                  </option>
-                  <option value="Search Engine Optimization">
-                    Search Engine Optimization
-                  </option>
+                  <option value="Mobile App Development">Mobile App Development</option>
+                  <option value="Search Engine Optimization">Search Engine Optimization</option>
                   <option value="Digital Marketing">Digital Marketing</option>
-                  <option value="Custom Software Development">
-                    Custom Software Development
-                  </option>
+                  <option value="Custom Software Development">Custom Software Development</option>
                   <option value="Anime Art">Anime Art</option>
                 </select>
               </div>
