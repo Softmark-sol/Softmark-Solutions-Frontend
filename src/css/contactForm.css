@@ -113,21 +113,21 @@
 }
 .text-area{
   width: 60%;
-  padding-top: 4rem;
+  padding-top: 2rem;
 }
 
 .text-area p{
   text-align: justify;
-  font-size: 1.2rem;
-  padding-top: 1.5rem;
+  font-size: 1rem;
+  padding-top: 1rem;
 }
 .text-area h1{
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 600;
 }
 .more-detail{
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   background-color: white;
   border-radius: 20px;
@@ -138,18 +138,27 @@
 }
 .location-detail{
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  padding-top: 2rem;
+  /* padding-top: 1rem; */
+  background-color: white;
+  border-radius: 15px;
+  padding: 1rem;
+  margin-top: 10px;
 }
 .location-subContainer{
   display: flex;
   justify-content: center;
-  align-items: center;
-  background-color: white;
-  padding: 1rem;
-  border-radius: 15px;
+  align-items: center;  
   gap: 5px;
+}
+.location-btn{
+  text-decoration: none;
+  color: black;
+}
+.location-btn :hover{
+  color: #eca553 !important;
+  text-decoration: none;
 }
 .contact-form {
   background: linear-gradient(white, white) padding-box,
@@ -310,6 +319,7 @@ textarea.form-control.full-width {
   }
   .text-area h1{
     margin-left:15px ;
+    font-size: 1.5rem;
   }
   .more-detail{
     display: flex;

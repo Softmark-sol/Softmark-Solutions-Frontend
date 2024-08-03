@@ -71,7 +71,7 @@ const LeftDrawer = () => {
         window.location.href = 'https://www.linkedin.com/company/softmark-solutions-llc';
         break;
       case 'Schedule a Free Call':
-        Contact();
+        navigate('/calendly');
         break;
       default:
         break;
