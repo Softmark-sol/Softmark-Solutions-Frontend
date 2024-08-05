@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import "../css/Singlecard.css";
 
-const Singlecard = ({ path, title, description, route }) => {
+const Singlecard = ({ path, title, description, route, isIcon = false }) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
@@ -16,7 +16,11 @@ const Singlecard = ({ path, title, description, route }) => {
       style={{ cursor: "pointer" }}
     >
       <div className="card">
-        <img src={path} alt={title} />
+        {isIcon ? (
+          <div className="icon">{path}</div>
+        ) : (
+          <img src={path} alt={title} />
+        )}
         <h5>{title}</h5>
         <p>{description}</p>
       </div>

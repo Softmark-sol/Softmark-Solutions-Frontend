@@ -1,17 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Typewriter from "../components/TypeWriter.jsx";
 import "../css/CSD.css";
-import CSDCards from "../components/CSDCards.jsx";
+import CSD_Cards from "../components/CustomSoftwareDev.jsx";
 import { useNavigate } from "react-router-dom";
 import Csd_Steps from "./CSD_steps.jsx";
 import SoftwareCapabilitiesCards from "../components/SoftwareCapabilitiesCards.jsx";
 import SoftwareCards from "../components/SoftwareCards.jsx";
+import CSDLottieAnimation from "../components/CSD-Animation.jsx";
 
 const CustomSoftware = () => {
-    const navigate = useNavigate()
+  const navigate = useNavigate();
+
   return (
     <>
-    {/* Section 1 */}
+      {/* Section 1 */}
       <div className="main-container container">
         <h2>
           <Typewriter
@@ -28,28 +30,21 @@ const CustomSoftware = () => {
               developers will work closely with you to create software solutions
               that drive efficiency, innovation, and growth.
               <br />
-              <div class="buttons" onClick={()=>navigate("/contactUs")}>
+              <div class="buttons" onClick={() => navigate("/contactUs")}>
                 <button class="btn">
                   <span></span>
-                  <p
-                    data-text="Get Proposal"
-                    data-title="Contact Now"
-                  ></p>
+                  <p data-text="Get Proposal" data-title="Contact Now"></p>
                 </button>
               </div>
             </h5>
-            <div className="csd-hero-img">
-              <img
-                src="https://i0.wp.com/sharpeyeinfotech.com/wp-content/uploads/2023/03/unnamed.gif?fit=500%2C500&ssl=1"
-                alt="csd"
-                style={{ width: "100%", height: "100%" }}
-              />
+            <div className="CSD-animation">
+              <CSDLottieAnimation />
             </div>
           </div>
         </div>
       </div>
-      <Csd_Steps />     
-      <CSDCards />
+      <Csd_Steps />
+      <CSD_Cards />
 
       {/* Section 2 */}
       <SoftwareCapabilitiesCards />
@@ -57,6 +52,5 @@ const CustomSoftware = () => {
     </>
   );
 };
-
 
 export default CustomSoftware;
