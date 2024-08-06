@@ -61,7 +61,7 @@ const AnimeArt = () => {
         </div>
       </div>
 
-      <div className="main-container container">
+      <div className="main-container anime-container">
         <h2>
           <Typewriter
             strings={["From Concept to Creation: Anime Art Perfected"]}
@@ -75,7 +75,7 @@ const AnimeArt = () => {
             >
               <h3
                 style={{
-                  color: "#4599B4",
+                  color: "#256072",
                   fontWeight: "bold",
                   fontSize: "3rem",
                   paddingBottom: "10px",
