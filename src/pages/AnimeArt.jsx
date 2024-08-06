@@ -1,11 +1,38 @@
-import React from "react";
+import { React, useEffect } from "react";
 import Typewriter from "../components/TypeWriter";
 import { useNavigate } from "react-router-dom";
 import "../css/anime.css";
 import AnimePortfolio from "../components/AnimePortfolio";
+import ScrollReveal from "scrollreveal";
 
 const AnimeArt = () => {
   const navigate = useNavigate();
+  useEffect(() => {
+    const sr = ScrollReveal({
+      origin: "right",
+      distance: "100px",
+      duration: 500,
+      delay: 200,
+      reset: true,
+    });
+
+    sr.reveal(".csd-hero-img", {
+      interval: 200,
+    });
+
+    sr.reveal(".main-paragrah-csd", {
+      interval: 200,
+      origin: "left",
+    });
+    sr.reveal(".csd-single-card h5, .main-paragrah-csd h3", {
+      interval: 200,
+      origin: "top",
+    });
+    sr.reveal(".csd-single-card p", {
+      interval: 200,
+      origin: "left",
+    });
+  }, []);
   return (
     <>
       <div className="main-container container anime">
@@ -69,9 +96,9 @@ const AnimeArt = () => {
               <br />
               Whether you’re in search of captivating concept characters,
               personalized Anime Original Characters (OCs), endearing Chibi
-              creations, or striking Anime Profile Pictures (PfPs), Softmark Solutions
-              is your destination for the highest caliber artworks. Our
-              commitment to excellence ensures that each creation is a
+              creations, or striking Anime Profile Pictures (PfPs), Softmark
+              Solutions is your destination for the highest caliber artworks.
+              Our commitment to excellence ensures that each creation is a
               masterpiece in its own
             </h5>
             <div className="csd-hero-img anime-img">
@@ -229,17 +256,16 @@ const AnimeArt = () => {
           creative vision to the next level. Let's make your anime art shine and
           stand out online!
         </p>
-        <button onClick={()=>navigate("/contactUs")}
-        className="effect effect-1"
-        onMouseEnter={(e) => (e.target.style.backgroundColor = "#f3972b")}
-        onMouseLeave={(e) => (e.target.style.backgroundColor = "#4599b4")}
-      >
-        Get a free Quotation
-      </button>
-      <div />
+        <button
+          onClick={() => navigate("/contactUs")}
+          className="effect effect-1"
+          onMouseEnter={(e) => (e.target.style.backgroundColor = "#f3972b")}
+          onMouseLeave={(e) => (e.target.style.backgroundColor = "#4599b4")}
+        >
+          Get a free Quotation
+        </button>
+        <div />
       </div>
-
-      
     </>
   );
 };
