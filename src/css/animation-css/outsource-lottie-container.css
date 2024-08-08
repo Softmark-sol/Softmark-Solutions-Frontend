@@ -1,0 +1,21 @@
+.outsource-lottie-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  overflow: hidden;
+}
+
+@media (max-width: 600px) {
+  .outsource-lottie-container {
+    max-width: 350px;
+  }
+}
+
+@media (max-width: 400px) {
+  .outsource-lottie-container {
+    max-width: 250px;
+  }
+}
