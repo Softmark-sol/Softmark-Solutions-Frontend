@@ -1,0 +1,50 @@
+/* BarChart.css */
+.chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px; /* Reduce gap for smaller screens */
+  height: 50vh; /* Make the height responsive */
+  max-width: 100%; /* Keep the chart within the viewport width */
+  margin: 0 auto; /* Center the chart horizontally */
+}
+
+.bar {
+  flex: 1; /* Make each bar take up equal space */
+  /* max-width: 100px; Set a maximum width for larger screens */
+  background-color: #4caf50;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  padding-top: 5px;
+  box-sizing: border-box;
+  border-radius: 5px 5px 0 0;
+  position: relative;
+  transition: height 1s ease-out;
+  height: 0; /* Initial height set to 0 for animation */
+}
+
+.bar::after {
+  content: attr(data-percentage);
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 14px;
+  color: black;
+}
+
+@media (max-width: 600px) {
+  .chart {
+    gap: 5px; /* Further reduce the gap on smaller screens */
+    height: 40vh; /* Adjust height for smaller screens */
+  }
+
+  .bar {
+    max-width: 100px; /* Narrower bars on smaller screens */
+    font-size: 12px; /* Smaller text size */
+  }
+
+  .bar::after {
+    font-size: 10px; /* Adjust the label size */
+  }
+}
