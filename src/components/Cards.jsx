@@ -8,7 +8,6 @@ import img4 from "../assets/images/video.png";
 import img5 from "../assets/images/logo-design.png";
 import img6 from "../assets/images/custom.png";
 import img7 from "../assets/images/anime.png";
-import img8 from "../assets/images/outsourcing.png";
 import ScrollReveal from "scrollreveal";
 import ParticleEffect from "./Particles";
 
@@ -70,7 +69,7 @@ const Cards = ({ heading }) => {
       route: "/logoPlans",
     },
     {
-      path: img8,
+      path: img5,
       title: "IT Outsourcing",
       desc: "Unlock the power of visual identity with our bespoke logo designs. Let us bring your brand's story to life through creativity and precision. Elevate your online presence with our professional logo design services.",
       route: "/Itoutsourcing",
