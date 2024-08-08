@@ -1,0 +1,78 @@
+import React from 'react'
+import Singlecard from "./Singlecard";
+
+import {
+  IoPeopleSharp,
+  IoCodeSlash,
+  IoRocketSharp,
+} from "react-icons/io5";
+
+
+const ItOutMidcards = () => {
+        const ItOUTdata = [
+          {
+            path: <IoPeopleSharp size={90} color="#4599b4" />,
+            title: "Access to Top IT Talent",
+            desc: "Transforming your digital vision into reality with expert web development services. Empower your online presence with cutting-edge design and functionality.",
+            isIcon: true,
+          },
+          {
+            path: <IoCodeSlash size={90} color="#4599b4" />,
+            title: "Optimized Workloads",
+            desc: "Offering end-to-end custom software development solutions that drive growth and elevate your business.",
+            isIcon: true,
+          },
+          {
+            path: <IoRocketSharp size={90} color="#4599b4" />,
+            title: "Industry Expertise",
+            desc: "To create market-winning digital solutions, we combine product-centered approaches, tested frameworks, and modern engineering principles.",
+            isIcon: true,
+          },
+          {
+            path: <IoPeopleSharp size={90} color="#4599b4" />,
+            title: "Minimal Risksn",
+            desc: "Transforming your digital vision into reality with expert web development services. Empower your online presence with cutting-edge design and functionality.",
+            isIcon: true,
+          },
+          {
+            path: <IoCodeSlash size={90} color="#4599b4" />,
+            title: "Faster Launch Times",
+            desc: "Offering end-to-end custom software development solutions that drive growth and elevate your business.",
+            isIcon: true,
+          },
+          {
+            path: <IoRocketSharp size={90} color="#4599b4" />,
+            title: "High Quality Products",
+            desc: "To create market-winning digital solutions, we combine product-centered approaches, tested frameworks, and modern engineering principles.",
+            isIcon: true,
+          },
+      
+        ];
+  return (
+    <>
+    <div className="sub-heading container">
+      <h1 style={{fontSize:'2rem',paddingTop:'3rem'}}>How Does Softmark Solutions enable your business’ success <br/> through IT Outsourcing and Address the Need for Outsourced IT Services?​</h1>
+      <p className="intro-text sub-text">
+      At Softmark Solutions, we recognize that every client has unique needs and preferences when it comes to IT outsourcing. To meet these diverse requirements, we offer a range of flexible engagement models. Whether you need a dedicated team to focus solely on your project, prefer a time-and-materials approach, opt for a fixed-price project, or require a hybrid model, we can tailor our services to align with your specific goals. Our priority is to ensure that our dedicated professionals create websites and applications that are not only visually appealing but also intuitive and user-friendly.
+      </p>
+    </div>
+    <div className="cards-container container">
+        {ItOUTdata.map((item, index) => (
+          <div className="single-card">
+            {" "}
+            <Singlecard
+              key={index}
+              path={item.path}
+              title={item.title}
+              description={item.desc}
+              route={item.route}
+              isIcon={item.isIcon}
+            />
+          </div>
+        ))}
+      </div>
+    </>
+  )
+}
+
+export default ItOutMidcards
