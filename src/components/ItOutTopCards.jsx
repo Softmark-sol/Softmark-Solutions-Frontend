@@ -1,30 +1,35 @@
-import React from "react";
+
+import React from 'react'
 import Singlecard from "./Singlecard";
 
-import { IoMdRocket } from "react-icons/io";
-import { BiSolidSearchAlt2 } from "react-icons/bi";
-import { GoGoal } from "react-icons/go";
+import {
+  IoPeopleSharp,
+  IoCodeSlash,
+  IoRocketSharp,
+} from "react-icons/io5";
+
 
 const ItOutTopCards = () => {
   const ItOUTdata = [
     {
-      path: <BiSolidSearchAlt2 size={90} color="#4599b4" />,
+      path: <IoPeopleSharp size={90} color="#4599b4" />,
       title: "Staff Augmentation",
-      desc: "Enhance your team with our expert professionals who seamlessly integrate into your workforce, providing the skills you need to meet project demands efficiently and flexibly.",
+      desc: "Transforming your digital vision into reality with expert web development services. Empower your online presence with cutting-edge design and functionality.",
       isIcon: true,
     },
     {
-      path: <GoGoal size={90} color="#4599b4" />,
+      path: <IoCodeSlash size={90} color="#4599b4" />,
       title: "Dedicated Team",
-      desc: "Build a customized, dedicated team of top-tier professionals focused exclusively on your projects, ensuring consistency, reliability, and alignment with your business goals.",
+      desc: "Offering end-to-end custom software development solutions that drive growth and elevate your business.",
       isIcon: true,
     },
     {
-      path: <IoMdRocket size={90} color="#4599b4" />,
+      path: <IoRocketSharp size={90} color="#4599b4" />,
       title: "Full Process Outsourcing",
-      desc: "Delegate entire projects to our experienced teams, from conception to completion, allowing you to focus on core business activities while we handle everything else with precision and excellence.",
+      desc: "To create market-winning digital solutions, we combine product-centered approaches, tested frameworks, and modern engineering principles.",
       isIcon: true,
     },
+
   ];
   return (
     <div>
@@ -44,7 +49,7 @@ const ItOutTopCards = () => {
         ))}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ItOutTopCards;
+export default ItOutTopCards
