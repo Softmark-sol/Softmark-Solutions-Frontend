@@ -19,6 +19,7 @@ import Seo from '../pages/Seo'
 import Logo from '../pages/PlansLogo'
 import AnimeArt from '../pages/AnimeArt.jsx'
 import Calendly from '../components/Calendly/Calendly.jsx'
+import ItOutsourcing from '../pages/ItOutsourcing.jsx'
 
 function Router() {
   return (
@@ -75,6 +76,12 @@ function Router() {
           <Route
             path='/calendly'
             element={<Calendly />}
+          />
+
+          {/* ItOutsourcing Component */}
+          <Route
+            path='/Itoutsourcing'
+            element={<ItOutsourcing/>}
           />
 
           {/* 404*/}

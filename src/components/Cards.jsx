@@ -68,6 +68,12 @@ const Cards = ({ heading }) => {
       desc: "Unlock the power of visual identity with our bespoke logo designs. Let us bring your brand's story to life through creativity and precision. Elevate your online presence with our professional logo design services.",
       route: "/logoPlans",
     },
+    {
+      path: img5,
+      title: "IT Outsourcing",
+      desc: "Unlock the power of visual identity with our bespoke logo designs. Let us bring your brand's story to life through creativity and precision. Elevate your online presence with our professional logo design services.",
+      route: "/Itoutsourcing",
+    },
   ];
 
   return (
