@@ -9,6 +9,7 @@ import ItOutTopCards from '../components/ItOutTopCards.jsx';
 import ItOut_Steps from '../components/ItoutSteps.jsx';
 import ItOutNotch from '../ItOutNotch.jsx';
 import ItOutMidcards from '../components/ItOutMidcards.jsx';
+import ItOutBottomCards from '../components/ItOutBottomCards.jsx';
 
 const ItOutsourcing = () => {
     const navigate = useNavigate();
@@ -54,6 +55,7 @@ const ItOutsourcing = () => {
     <ItOut_Steps/>
     <ItOutNotch/>
     <ItOutMidcards/>
+    <ItOutBottomCards/>
     </>
   )
 }
