@@ -7,6 +7,8 @@ import { useNavigate } from "react-router-dom";
 import CSDLottieAnimation from "../components/CSD-Animation.jsx";
 import ItOutTopCards from '../components/ItOutTopCards.jsx';
 import ItOut_Steps from '../components/ItoutSteps.jsx';
+import ItOutNotch from '../ItOutNotch.jsx';
+import ItOutMidcards from '../components/ItOutMidcards.jsx';
 
 const ItOutsourcing = () => {
     const navigate = useNavigate();
@@ -50,6 +52,8 @@ const ItOutsourcing = () => {
       </p>
     </div>
     <ItOut_Steps/>
+    <ItOutNotch/>
+    <ItOutMidcards/>
     </>
   )
 }

@@ -52,10 +52,31 @@
     text-align: center;
     font-weight: lighter;
   }
+
+  .notch-section{
+    width: 100% !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+  .notch-right div{
+    margin: 1.5rem;
+  }
+  .notch-right span{
+    margin-left: 10px;
+  }
   @media screen and (max-width: 650px) {
     .sub-heading {
         justify-content: center;
         align-items: center;
+    }
+    .notch-section{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
     }
    
     
