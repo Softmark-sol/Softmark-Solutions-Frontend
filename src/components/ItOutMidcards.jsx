@@ -1,5 +1,7 @@
 import React from 'react'
 import Singlecard from "./Singlecard";
+import { SiGooglecontaineroptimizedos } from "react-icons/si";
+import { MdOutlineHighQuality,MdFreeCancellation } from "react-icons/md";
 
 import {
   IoPeopleSharp,
@@ -17,7 +19,7 @@ const ItOutMidcards = () => {
             isIcon: true,
           },
           {
-            path: <IoCodeSlash size={90} color="#4599b4" />,
+            path: <SiGooglecontaineroptimizedos  size={80} color="#4599b4" />,
             title: "Optimized Workloads",
             desc: "You can focus on your core business functions while we take care of your workloads.",
             isIcon: true,
@@ -29,7 +31,7 @@ const ItOutMidcards = () => {
             isIcon: true,
           },
           {
-            path: <IoPeopleSharp size={90} color="#4599b4" />,
+            path: <MdFreeCancellation size={90} color="#4599b4" />,
             title: "Minimal Risksn",
             desc: "We provide a safety net to ensure your project remains free of risks and potential disruptions.",
             isIcon: true,
@@ -41,7 +43,7 @@ const ItOutMidcards = () => {
             isIcon: true,
           },
           {
-            path: <IoRocketSharp size={90} color="#4599b4" />,
+            path: <MdOutlineHighQuality size={90} color="#4599b4" />,
             title: "High Quality Products",
             desc: "We deliver high-quality products that surpass your expectations and drive your business forward.",
             isIcon: true,
