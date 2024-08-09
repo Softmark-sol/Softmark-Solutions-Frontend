@@ -13,37 +13,37 @@ const ItOutMidcards = () => {
           {
             path: <IoPeopleSharp size={90} color="#4599b4" />,
             title: "Access to Top IT Talent",
-            desc: "Transforming your digital vision into reality with expert web development services. Empower your online presence with cutting-edge design and functionality.",
+            desc: "With Softmark Solutions, you can leverage the expertise of the industry's finest minds.",
             isIcon: true,
           },
           {
             path: <IoCodeSlash size={90} color="#4599b4" />,
             title: "Optimized Workloads",
-            desc: "Offering end-to-end custom software development solutions that drive growth and elevate your business.",
+            desc: "You can focus on your core business functions while we take care of your workloads.",
             isIcon: true,
           },
           {
             path: <IoRocketSharp size={90} color="#4599b4" />,
             title: "Industry Expertise",
-            desc: "To create market-winning digital solutions, we combine product-centered approaches, tested frameworks, and modern engineering principles.",
+            desc: "With years of industry experience, we bring specialized insights to your business.",
             isIcon: true,
           },
           {
             path: <IoPeopleSharp size={90} color="#4599b4" />,
             title: "Minimal Risksn",
-            desc: "Transforming your digital vision into reality with expert web development services. Empower your online presence with cutting-edge design and functionality.",
+            desc: "We provide a safety net to ensure your project remains free of risks and potential disruptions.",
             isIcon: true,
           },
           {
             path: <IoCodeSlash size={90} color="#4599b4" />,
             title: "Faster Launch Times",
-            desc: "Offering end-to-end custom software development solutions that drive growth and elevate your business.",
+            desc: "Our team facilitates faster development and deployment of your business processes.",
             isIcon: true,
           },
           {
             path: <IoRocketSharp size={90} color="#4599b4" />,
             title: "High Quality Products",
-            desc: "To create market-winning digital solutions, we combine product-centered approaches, tested frameworks, and modern engineering principles.",
+            desc: "We deliver high-quality products that surpass your expectations and drive your business forward.",
             isIcon: true,
           },
       

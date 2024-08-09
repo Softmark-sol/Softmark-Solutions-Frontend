@@ -14,19 +14,19 @@ const ItOutTopCards = () => {
     {
       path: <IoPeopleSharp size={90} color="#4599b4" />,
       title: "Staff Augmentation",
-      desc: "Transforming your digital vision into reality with expert web development services. Empower your online presence with cutting-edge design and functionality.",
+      desc: "Through our staff augmentation model, we aim to enhance your project capabilities and boost overall business efficiency by seamlessly integrating our experts into your team.",
       isIcon: true,
     },
     {
       path: <IoCodeSlash size={90} color="#4599b4" />,
       title: "Dedicated Team",
-      desc: "Offering end-to-end custom software development solutions that drive growth and elevate your business.",
+      desc: "At Softmark Solutions, we have meticulously assembled a team of experts across various domains, including software development, web design, data analytics, cybersecurity, and more.",
       isIcon: true,
     },
     {
       path: <IoRocketSharp size={90} color="#4599b4" />,
       title: "Full Process Outsourcing",
-      desc: "To create market-winning digital solutions, we combine product-centered approaches, tested frameworks, and modern engineering principles.",
+      desc: "We meticulously focus on every aspect of the development process, from flawless execution to delivering timely results and optimizing resource allocation.",
       isIcon: true,
     },
 

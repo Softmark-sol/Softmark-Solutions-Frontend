@@ -8,6 +8,7 @@ import img4 from "../assets/images/video.png";
 import img5 from "../assets/images/logo-design.png";
 import img6 from "../assets/images/custom.png";
 import img7 from "../assets/images/anime.png";
+import img8 from "../assets/images/outsourcing.png";
 import ScrollReveal from "scrollreveal";
 import ParticleEffect from "./Particles";
 
@@ -69,9 +70,9 @@ const Cards = ({ heading }) => {
       route: "/logoPlans",
     },
     {
-      path: img5,
+      path: img8,
       title: "IT Outsourcing",
-      desc: "Unlock the power of visual identity with our bespoke logo designs. Let us bring your brand's story to life through creativity and precision. Elevate your online presence with our professional logo design services.",
+      desc: "Cut your business costs and focus on your core competencies with our tailored IT outsourcing services, so you can concentrate on what you do best, while we deliver efficient, high-quality solutions that drive your business forward.",
       route: "/Itoutsourcing",
     },
   ];

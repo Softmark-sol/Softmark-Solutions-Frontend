@@ -11,22 +11,26 @@ const ItOutBottomCards = () => {
         {
           icon: <IoPeopleSharp size={30} color="black" />,
           heading: "Costs",
-          text: "Transforming your digital vision into reality with expert web development services. Empower your online presence with cutting-edge design and functionality.",
+          text: "1 .Quality First: We are committed to excellence, ensuring the highest quality in everything we deliver.",
+          text2:'  2 .Smart Savings: We provide efficient solutions that maintain quality while optimizing costs.'
         },
         {
           icon: <IoCodeSlash size={30} color="black" />,
           heading: "Team Productivity",
-          text: "Offering end-to-end custom software development solutions that drive growth and elevate your business.",
+          text: "1 .Timely Delivery: Our team is committed to delivering results on schedule.",
+          text2: "2 .Efficiency at Core: Efficiency is central to all our outcomes.",
         },
         {
           icon: <IoRocketSharp size={30} color="black" />,
           heading: "Customer Involvement",
-          text: "To create market-winning digital solutions, we combine product-centered approaches, tested frameworks, and modern engineering principles.",
+          text: "1 .Client-Centric Approach: We actively involve our clients throughout the development journey.",
+          text2: "2 .Inclusive Collaboration: We encourage direct client participation in the development process.",
         },
         {
           icon: <IoServerSharp size={30} color="black" />,
           heading: "User Satisfaction",
-          text: "Our mission is to streamline business processes and improve customer experiences by delivering next-generation applications.",
+          text: "1 .Client-Centric Success: Our success is measured by client satisfaction.",
+          text2: "2 .Results-Driven Satisfaction: Client contentment is the true measure of our success.",
         },]
   return (
     <div className="sub-heading container">
@@ -41,6 +45,7 @@ const ItOutBottomCards = () => {
             icon={item.icon}
             heading={item.heading}
             text={item.text}
+            text2={item.text2}
           />
         ))}
       </div>

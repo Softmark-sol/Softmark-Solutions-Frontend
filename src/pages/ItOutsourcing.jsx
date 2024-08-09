@@ -56,6 +56,21 @@ const ItOutsourcing = () => {
     <ItOutNotch/>
     <ItOutMidcards/>
     <ItOutBottomCards/>
+    <div className="sub-heading container">
+      <h1>Why Choose Softmark Solutions Over Other <br/> IT Outsourcing Companies Across The Globe</h1>
+      <p className="intro-text sub-text">
+      Choose Softmark Solutions as your preferred IT outsourcing partner for a competitive edge in the global market. Our deep industry knowledge and customized solutions make us stand out. By collaborating with our team, you can expect top-tier results that consistently surpass your expectations. With Softmark Solutions, you're not just outsourcing; you're forming a partnership grounded in innovation, reliability, and a mutual commitment to achieving outstanding outcomes.
+      </p>
+    </div>
+    <div
+          className="button-effect"
+          style={{ paddingTop: "20px",display:'flex',justifyContent:'center',alignItems:'center' }}
+          onClick={() => navigate("/whyUs")}
+        >
+          <a className="effect effect-1" href="#whyus" title="Learn More">
+            Why Us
+          </a>
+        </div>
     </>
   )
 }
