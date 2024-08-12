@@ -53,6 +53,9 @@ const BarChart = () => {
       <div className="bar" data-percentage="89%">
         May
       </div>
+      <div className="bar" data-percentage="95%">
+        June
+      </div>
     </div>
   );
 };

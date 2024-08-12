@@ -78,6 +78,8 @@
         align-items: center;
         gap: 1rem;
     }
-   
+   .custom-mob{
+    font-size: 1.8rem;
+   }
     
   }

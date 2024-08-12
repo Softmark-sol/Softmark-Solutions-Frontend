@@ -4,7 +4,7 @@ import React from 'react'
 import '../css/ItOutsourcing.css'
 import Typewriter from "../components/TypeWriter.jsx";
 import { useNavigate } from "react-router-dom";
-import CSDLottieAnimation from "../components/CSD-Animation.jsx";
+import DMLottieAnimation from "../components/DigitalMarketingAnimation";
 import ItOutTopCards from '../components/ItOutTopCards.jsx';
 import ItOut_Steps from '../components/ItoutSteps.jsx';
 import ItOutNotch from '../ItOutNotch.jsx';
@@ -27,15 +27,15 @@ const ItOutsourcing = () => {
             <h5 className="main-paragrah-csd main-paragrah">
             Softmark solutions gives your business access to a global talent pool. Our highly skilled IT professionals can address the needs and challenges of your business. Whether you are looking for Web development, Mobile app development, Digital Marketing , SEO services, Anime Art, Logo design look no further than Softmark Solutions.
               <br />
-              <div class="buttons" onClick={() => navigate("/contactUs")}>
-                <button class="btn">
+              <div class="buttons">
+                <button class="btn"  onClick={() => navigate("/contactUs")}>
                   <span></span>
                   <p data-text="Get Proposal" data-title="Contact Now"></p>
                 </button>
               </div>
             </h5>
             <div className="CSD-animation">
-              <CSDLottieAnimation />
+              <DMLottieAnimation />
             </div>
           </div>
         </div>
@@ -61,7 +61,7 @@ const ItOutsourcing = () => {
     <ItOutMidcards/>
     <ItOutBottomCards/>
     <div className="sub-heading container">
-      <h1>Why Choose Softmark Solutions Over Other <br/> IT Outsourcing Companies Across The Globe</h1>
+      <h1 className='custom-mob'>Why Choose Softmark Solutions Over Other <br/> IT Outsourcing Companies Across The Globe</h1>
       <p className="intro-text sub-text">
       Choose Softmark Solutions as your preferred IT outsourcing partner for a competitive edge in the global market. Our deep industry knowledge and customized solutions make us stand out. By collaborating with our team, you can expect top-tier results that consistently surpass your expectations. With Softmark Solutions, you're not just outsourcing; you're forming a partnership grounded in innovation, reliability, and a mutual commitment to achieving outstanding outcomes.
       </p>
