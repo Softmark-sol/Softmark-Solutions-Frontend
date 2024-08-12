@@ -14,7 +14,7 @@ const ItOutNotch = () => {
       </p>
     </div>
     <div className='notch-section'>
-        <div><img src="https://spadasoft.com/wp-content/uploads/2023/10/Frame-2.png" style={{width:'100%'}} /></div>
+        <div><img src="https://img.freepik.com/premium-vector/outsourcing-business-vector-illustration-with-idea-teamwork-company-development-investment_2175-23505.jpg?size=626&ext=jpg&ga=GA1.1.1184896876.1721995536&semt=ais_hybrid" style={{width:'100%',mixBlendMode:'multiply'}} /></div>
         <div className='notch-right'>
             <div><FaCircleChevronRight color='#4599b4' size={22}/><span>Frontend Developers</span> </div>
             <div><FaCircleChevronRight color='#4599b4' size={22}/><span> Backend Developers</span></div>
