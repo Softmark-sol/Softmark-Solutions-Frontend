@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import "../css/BarChart.css";
+import "../css/barchart.css";
 
 const BarChart = () => {
   const chartRef = useRef(null);

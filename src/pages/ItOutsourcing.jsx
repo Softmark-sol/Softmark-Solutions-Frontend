@@ -10,6 +10,7 @@ import ItOut_Steps from '../components/ItoutSteps.jsx';
 import ItOutNotch from '../ItOutNotch.jsx';
 import ItOutMidcards from '../components/ItOutMidcards.jsx';
 import ItOutBottomCards from '../components/ItOutBottomCards.jsx';
+import BarChart from '../components/BarChart.jsx';
 
 const ItOutsourcing = () => {
     const navigate = useNavigate();
@@ -51,6 +52,9 @@ const ItOutsourcing = () => {
       <p className="intro-text sub-text">
       Our goal at Softmark Solutions is to ensure transparency, cost-effectiveness, and seamless collaboration throughout the outsourcing process. We are committed to delivering high-quality results that not only meet your expectations but also propel your business forward.
       </p>
+      <div >
+        <BarChart/>
+      </div>
     </div>
     <ItOut_Steps/>
     <ItOutNotch/>
