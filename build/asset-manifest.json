@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.28f1450e.css",
-    "main.js": "/static/js/main.17fd5db7.js",
+    "main.css": "/static/css/main.6747e427.css",
+    "main.js": "/static/js/main.c67be02f.js",
     "static/media/logo2.png": "/static/media/logo2.42dc8dcb39832530e23e.png",
     "static/media/Logo-no-bg.png": "/static/media/Logo-no-bg.d08ad5a8c1f2f90c2429.png",
     "static/media/fa-solid-900.ttf": "/static/media/fa-solid-900.bacd5de623fb563b961a.ttf",
@@ -29,6 +29,7 @@
     "static/media/softmarklogo.svg.png": "/static/media/softmarklogo.svg.3e03a8d275c8eab9c34e.png",
     "static/media/video.png": "/static/media/video.b3bfce0026b6fdbf089e.png",
     "static/media/custom.png": "/static/media/custom.31e9554c6dd407970a52.png",
+    "static/media/outsourcing.png": "/static/media/outsourcing.76434416744e95004056.png",
     "static/media/email-marketing.png": "/static/media/email-marketing.c5c059a9432779d08d30.png",
     "static/media/fa-regular-400.woff2": "/static/media/fa-regular-400.21cb8f55d8e0c5b89751.woff2",
     "static/media/maintainance.png": "/static/media/maintainance.a26b0006d2a85237d4f8.png",
@@ -56,11 +57,11 @@
     "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "index.html": "/index.html",
     "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
-    "main.28f1450e.css.map": "/static/css/main.28f1450e.css.map",
-    "main.17fd5db7.js.map": "/static/js/main.17fd5db7.js.map"
+    "main.6747e427.css.map": "/static/css/main.6747e427.css.map",
+    "main.c67be02f.js.map": "/static/js/main.c67be02f.js.map"
   },
   "entrypoints": [
-    "static/css/main.28f1450e.css",
-    "static/js/main.17fd5db7.js"
+    "static/css/main.6747e427.css",
+    "static/js/main.c67be02f.js"
   ]
 }
