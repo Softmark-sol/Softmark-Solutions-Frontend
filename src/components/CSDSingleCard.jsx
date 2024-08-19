@@ -1,7 +1,7 @@
 import React from "react";
 import "../css/CSD.css";
 
-const CSDSingleCard = ({icon, heading, text}) => {
+const CSDSingleCard = ({icon, heading, text,text2}) => {
   return (
     <div
       className="container csd-single-card"
@@ -20,6 +20,9 @@ const CSDSingleCard = ({icon, heading, text}) => {
       </h5>
       <p style={{ textAlign: "left", paddingTop: "20px", fontSize: ".8rem" }}>
         {text}
+      </p>
+      <p style={{ textAlign: "left", paddingTop: "20px", fontSize: ".8rem" }}>
+        {text2}
       </p>
     </div>
   );

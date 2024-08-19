@@ -28,7 +28,7 @@ const steps = [
   {
     icon: <FaBug color="#4599b4" size={50} />,
     heading: "Testing & QA",
-    des: "Spadasoft ensures quality excellence by conducting meticulous testing.",
+    des: "Softmark Solutions ensures quality excellence by conducting meticulous testing.",
   },
   {
     icon: <FaHeadphonesAlt color="#4599b4" size={50} />,

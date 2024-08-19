@@ -30,8 +30,8 @@ const CustomSoftware = () => {
               developers will work closely with you to create software solutions
               that drive efficiency, innovation, and growth.
               <br />
-              <div class="buttons" onClick={() => navigate("/contactUs")}>
-                <button class="btn">
+              <div class="buttons">
+                <button class="btn" onClick={() => navigate("/contactUs")}>
                   <span></span>
                   <p data-text="Get Proposal" data-title="Contact Now"></p>
                 </button>

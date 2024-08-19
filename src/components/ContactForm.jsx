@@ -241,6 +241,7 @@ const ContactForm = () => {
                   <option value="Digital Marketing">Digital Marketing</option>
                   <option value="Custom Software Development">Custom Software Development</option>
                   <option value="Anime Art">Anime Art</option>
+                  <option value="IT Outsourcing">IT Outsourcing</option>
                 </select>
               </div>
               <div className="form-group">

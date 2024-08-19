@@ -8,6 +8,7 @@ import img4 from "../assets/images/video.png";
 import img5 from "../assets/images/logo-design.png";
 import img6 from "../assets/images/custom.png";
 import img7 from "../assets/images/anime.png";
+import img8 from "../assets/images/outsourcing.png";
 import ScrollReveal from "scrollreveal";
 import ParticleEffect from "./Particles";
 
@@ -27,6 +28,18 @@ const Cards = ({ heading }) => {
   }, []);
   const ServicesData = [
     {
+      path: img6,
+      title: "Custom Software Development",
+      desc: "Softmark Solutions offers customized, tailored solutions that perfectly align with your business needs.",
+      route: "/customSoftware",
+    },
+    {
+      path: img8,
+      title: "IT Outsourcing",
+      desc: "Cut your business costs and focus on your core competencies with our tailored IT outsourcing services, so you can concentrate on what you do best, while we deliver efficient, high-quality solutions that drive your business forward.",
+      route: "/Itoutsourcing",
+    },
+    {
       path: img1,
       title: "Web Development",
       desc: "Transforming your digital vision into reality with expert web development services. Empower your online presence with cutting-edge design and functionality.",
@@ -37,12 +50,6 @@ const Cards = ({ heading }) => {
       title: "Mobile App Development",
       desc: "Crafting seamless and intuitive mobile experiences tailored to your unique vision. From concept to launch, trust our team to bring your app idea to life with precision and innovation.",
       route: "/appPlans",
-    },
-    {
-      path: img6,
-      title: "Custom Software Development",
-      desc: "Softmark Solutions offers customized, tailored solutions that perfectly align with your business needs.",
-      route: "/customSoftware",
     },
     {
       path: img3,
