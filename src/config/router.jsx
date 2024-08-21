@@ -79,10 +79,10 @@ function Router() {
           />
 
           {/* ItOutsourcing Component */}
-          <Route
+          {/* <Route
             path='/Itoutsourcing'
             element={<ItOutsourcing/>}
-          />
+          /> */}
 
           {/* 404*/}
           <Route path='*' element={<NotFound />} />

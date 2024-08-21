@@ -33,12 +33,12 @@ const Cards = ({ heading }) => {
       desc: "Softmark Solutions offers customized, tailored solutions that perfectly align with your business needs.",
       route: "/customSoftware",
     },
-    {
-      path: img8,
-      title: "IT Outsourcing",
-      desc: "Cut your business costs and focus on your core competencies with our tailored IT outsourcing services, so you can concentrate on what you do best, while we deliver efficient, high-quality solutions that drive your business forward.",
-      route: "/Itoutsourcing",
-    },
+    // {
+    //   path: img8,
+    //   title: "IT Outsourcing",
+    //   desc: "Cut your business costs and focus on your core competencies with our tailored IT outsourcing services, so you can concentrate on what you do best, while we deliver efficient, high-quality solutions that drive your business forward.",
+    //   route: "/Itoutsourcing",
+    // },
     {
       path: img1,
       title: "Web Development",
