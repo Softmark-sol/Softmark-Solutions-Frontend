@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-import BackDrop from './components/Backdrop';
+import BackDrop from './components/Backdrop'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
