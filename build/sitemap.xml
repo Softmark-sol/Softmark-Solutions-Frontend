@@ -2,7 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.softmarksolutions.com/</loc>
-<<<<<<< HEAD
     <lastmod>2024-08-03</lastmod>
     <priority>1.0</priority> <!-- Homepage highest priority -->
   </url>
@@ -74,14 +73,6 @@
   <url>
     <loc>https://www.softmarksolutions.com/Itoutsourcing</loc>
     <lastmod>2024-08-03</lastmod>
-=======
-    <lastmod>2024-07-03</lastmod>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://www.softmarksolutions.com/ourservices</loc>
-    <lastmod>2024-07-03</lastmod>
->>>>>>> 99eccbf2f68fba20ad4d4dfe0d5493bc50f14bbd
     <priority>0.8</priority>
   </url>
 </urlset>
