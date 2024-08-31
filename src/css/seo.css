@@ -80,10 +80,11 @@
   overflow: hidden;
 }
 
+
 /* Horizontal Frame for SEO Sections */
 .horizontal-fram-seo {
   display: flex;
-  flex-direction: row;
+  flex-direction: row; /* Ensure image first, then text */
   justify-content: space-between;
   align-items: center;
   gap: 40px;
@@ -103,6 +104,10 @@
 .custom-image {
   width: 500px;
   height: 20rem;
+}
+.seo-consultancy-image {
+  width: 500px;
+  height: 21rem;
 }
 
 /* Mobile Responsiveness */
@@ -129,6 +134,7 @@
   .horizontal-fram-seo {
     gap: 30px;
     margin-bottom: 60px;
+    flex-direction: row; /* Image first, then text */
   }
 
   .custom-image {
@@ -152,9 +158,10 @@
   }
 
   .horizontal-fram-seo {
-    flex-direction: column-reverse;
     gap: 20px;
     margin-bottom: 40px;
+    display: flex;
+    flex-direction: column; /* Stack vertically, image first */
   }
 
   .custom-image {
@@ -191,6 +198,7 @@
   .horizontal-fram-seo {
     gap: 20px;
     margin-bottom: 30px;
+    flex-direction: column; /* Stack vertically, image first */
   }
 
   .custom-image {
