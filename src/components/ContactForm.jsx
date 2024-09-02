@@ -42,6 +42,7 @@ const ContactForm = () => {
     phone: "",
     company: "",
     message: "",
+    website:"",
     serviceType: "",
   });
   const [phoneError, setPhoneError] = useState("");
@@ -100,6 +101,7 @@ const ContactForm = () => {
           company: "",
           message: "",
           serviceType: "",
+          website:"",
         });
         Swal.fire({
           position: "top-end",
@@ -223,7 +225,21 @@ const ContactForm = () => {
                   value={formData.company}
                   onChange={handleChange}
                 />
+                
+              
               </div>
+              <div className="form-group">
+              <input
+                  type="text"
+                  name="website"
+                  className="form-control"
+                  placeholder="Enter Website Link"
+                  value={formData.website}
+                  onChange={handleChange}
+                />
+              </div>
+                  
+
               <div className="form-group">
                 <select
                   name="serviceType"
@@ -254,6 +270,7 @@ const ContactForm = () => {
                   required
                 ></textarea>
               </div>
+              
               <div className="btn-container">
                 <button type="submit" disabled={loading}>
                   {loading ? (

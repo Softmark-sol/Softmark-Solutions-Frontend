@@ -158,16 +158,27 @@
   }
 
   .horizontal-fram-seo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 20px;
     margin-bottom: 40px;
-    display: flex;
-    flex-direction: column; /* Stack vertically, image first */
   }
 
-  .custom-image {
-    width: 100%;
-    height: 16rem;
+  .seo-animation {
+    order: 1; /* Ensure image is displayed first */
   }
+
+  .horizontal-fram-seo div:first-child {
+    order: 2; /* Ensure text follows the image */
+  }
+
+  .custom-image,
+  .responsive-image {
+    width: 100%;
+    height: auto;
+  }
+
 }
 
 @media screen and (max-width: 600px) {
@@ -198,10 +209,11 @@
   .horizontal-fram-seo {
     gap: 20px;
     margin-bottom: 30px;
-    flex-direction: column; /* Stack vertically, image first */
+    flex-direction: column; /* Ensure image and text stack vertically */
   }
 
-  .custom-image {
+  .custom-image,
+  .responsive-image {
     width: 100%;
     height: 14rem;
   }
