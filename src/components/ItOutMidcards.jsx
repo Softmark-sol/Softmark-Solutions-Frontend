@@ -53,7 +53,7 @@ const ItOutMidcards = () => {
   return (
     <>
     <div className="sub-heading container">
-      <h1 style={{fontSize:'2rem',paddingTop:'3rem'}}>How Does Softmark Solutions enable your business’ success <br/> through IT Outsourcing and Address the Need for Outsourced IT Services?​</h1>
+      <h1 style={{fontSize:'2rem',paddingTop:'3rem'}}>How Does Softmark Solutions enable your business <br/> success through IT Outsourcing​</h1>
       <p className="intro-text sub-text">
       At Softmark Solutions, we recognize that every client has unique needs and preferences when it comes to IT outsourcing. To meet these diverse requirements, we offer a range of flexible engagement models. Whether you need a dedicated team to focus solely on your project, prefer a time-and-materials approach, opt for a fixed-price project, or require a hybrid model, we can tailor our services to align with your specific goals. Our priority is to ensure that our dedicated professionals create websites and applications that are not only visually appealing but also intuitive and user-friendly.
       </p>

@@ -52,9 +52,9 @@ const ItOutsourcing = () => {
       <p className="intro-text sub-text">
       Our goal at Softmark Solutions is to ensure transparency, cost-effectiveness, and seamless collaboration throughout the outsourcing process. We are committed to delivering high-quality results that not only meet your expectations but also propel your business forward.
       </p>
-      <div >
+      {/* <div >
         <BarChart/>
-      </div>
+      </div> */}
     </div>
     <ItOut_Steps/>
     <ItOutNotch/>
