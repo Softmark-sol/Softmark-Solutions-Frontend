@@ -1,0 +1,185 @@
+.navbar {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  background-color: #ffff;
+  /* border-bottom: 0.5px solid black; */
+  width: 100%;
+  box-shadow: 0px 6px 8px 3px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+.navbar:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.navbar.custom-navbar {
+  padding: 0;
+}
+
+.logo {
+  width: 15vw;
+  height: 6vw;
+}
+
+.navbar-logo {
+  cursor: pointer;
+}
+
+.navbar-btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.nav-btn {
+  position: relative;
+  margin-right: 25px;
+  font-weight: 400;
+  font-size: 1.1vw;
+  color: black;
+  cursor: pointer;
+  transition: color 0.3s;
+  line-height: 2;
+}
+
+.nav-btn::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2.5px;
+  /* background-color: #f3972b; */
+  background-image: linear-gradient(to right, #f3972b, #4599b4);
+
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-btn.active::after {
+  width: 100%;
+}
+
+.nav-btn:hover {
+  color: #f3972b;
+  animation-name: colorChange;
+  animation-duration: 0.5s;
+}
+
+.navbar-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2.5px;
+  background-image: linear-gradient(to right, #f3972b, #4599b4);
+  transition: width 0.3s ease-in-out;
+}
+
+.navbar-line.active {
+  width: 100%;
+}
+
+.navbar-menu {
+  display: none;
+}
+.menuitem {
+  background-color: #4599b4;
+}
+
+.contact-us {
+  display: flex;
+  position: relative;
+  font-size: 15px;
+  background-color: #4599b4;
+  color: white;
+  padding: 0.3vw;
+  border-radius: 50px;
+  padding-left: 1vw;
+  padding-right: 1.2vw;
+  border: none;
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s;
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 1;
+  align-items: baseline;
+}
+
+.contact-us::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f3972b;
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(-100%);
+  z-index: -1;
+}
+
+.contact-us:hover::before {
+  transform: translateX(0);
+}
+
+.contact-us:hover {
+  color: white;
+}
+
+.nav-logo-txt {
+  font-size: 1.2rem;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .navbar-btns {
+    display: none;
+  }
+  .navbar-menu {
+    display: block;
+  }
+  .logo {
+    width: 20vw;
+    height: auto;
+  }
+  .nav-btn {
+    font-size: 3vw;
+    margin-right: 15px;
+  }
+
+  .myLottieAnimation {
+    display: none;
+  }
+  .navbar.custom-navbar {
+    height: 50px;
+  }
+}
+
+@media (max-width: 1221px) {
+  .myLottieAnimation {
+    display: none;
+  }
+  .contact-us {
+    padding: 7px 15px;
+  }
+}
+
+@media (max-width: 875px) {
+  .myLottieAnimation {
+    display: none;
+  }
+  .contact-us {
+    font-size: 10px;
+    padding: 7px 15px;
+  }
+}
+
+@media (max-width: 426px) {
+  .logo {
+    width: 35vw;
+    height: auto;
+  }
+}

@@ -1,0 +1,21 @@
+.au-mission-lottie {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .au-mission-lottie {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 400px) {
+  .au-mission-lottie {
+    max-width: 250px;
+  }
+}

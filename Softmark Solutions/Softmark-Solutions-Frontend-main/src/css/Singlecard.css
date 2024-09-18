@@ -1,0 +1,96 @@
+.card {
+  width: 320px;
+  height: 315px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 14px;
+  background-color: transparent !important;
+}
+.maincard {
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  transform: translateY(10px);
+  background: linear-gradient(white, white) padding-box,
+    linear-gradient(145deg, transparent 0%, #4599b4, #eca553) border-box;
+  border: 3px solid transparent;
+  background-size: 200%;
+  animation: gradient 5s ease infinite !important;
+  border-radius: 17px;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.maincard:hover {
+  box-shadow: 0 0 10px rgba(172, 172, 172, 0.865);
+  transform: scale(1.04) rotate(-1deg);
+  /* transform: translateY(-10px); */
+  h5 {
+    color: #eca553;
+  }
+}
+
+h5 {
+  text-align: center;
+  font-size: 1.6rem;
+  margin-top: 10px;
+}
+
+p {
+  color: gray;
+  text-align: center;
+  font-size: 13px;
+  margin-top: 0px;
+}
+
+.card img {
+  display: block;
+  margin: 0 auto;
+  padding: 10px;
+  width: 100px;
+}
+
+@media (max-width: 320px) {
+  .card {
+    width: 300px;
+  }
+}
+
+@media (max-width: 300px) {
+  .card {
+    width: 250px;
+    padding: 10px;
+  }
+  .card img {
+    width: 100px;
+  }
+}
+
+@media (max-width: 255px) {
+  .card {
+    width: 220px;
+    padding: 10px;
+  }
+  .card img {
+    width: 75px;
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: 300px;
+    padding: 10px;
+  }
+  .card img {
+    width: 75px;
+  }
+}
