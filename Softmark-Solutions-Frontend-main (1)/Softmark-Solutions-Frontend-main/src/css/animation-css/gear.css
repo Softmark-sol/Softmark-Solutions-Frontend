@@ -1,0 +1,26 @@
+.gear-lottie {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 80px;
+  height: auto;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .gear-lottie {
+    max-width: 70px;
+  }
+}
+
+@media (max-width: 485px) {
+  .gear-lottie {
+    width: 50px;
+  }
+}
+@media (max-width: 320px) {
+  .gear-lottie {
+    display: 40px;
+  }
+}

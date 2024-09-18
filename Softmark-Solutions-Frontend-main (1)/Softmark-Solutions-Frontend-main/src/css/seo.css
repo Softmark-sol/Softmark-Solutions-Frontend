@@ -1,0 +1,237 @@
+/* SEO Container */
+.seo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 50px 20px;
+  text-align: center;
+  word-spacing: 2px;
+}
+
+/* SEO Paragraphs */
+.seo-p {
+  text-align: justify;
+  font-size: 1.4rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* SEO Header */
+.seo-h {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 50px;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+/* Subheaders */
+.seo-subheader {
+  font-size: 2rem;
+  font-weight: 600;
+  color: black;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+
+/* Custom Text */
+.custom-text {
+  margin-left: 10px;
+}
+
+/* Button Styles */
+.button-primary,
+.button-secondary {
+  background-color: #0066cc;
+  color: #fff;
+  padding: 12px 25px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.button-primary {
+  margin-bottom: 30px;
+}
+
+.button-secondary {
+  margin-top: 10px;
+}
+
+.button-primary:hover,
+.button-secondary:hover {
+  background-color: #004999;
+  transform: translateY(-3px);
+}
+
+/* Animation Container */
+.seo-animation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+
+/* Horizontal Frame for SEO Sections */
+.horizontal-fram-seo {
+  display: flex;
+  flex-direction: row; /* Ensure image first, then text */
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 80px;
+}
+
+/* Responsive Image */
+.responsive-image,
+.custom-image {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.custom-image {
+  width: 500px;
+  height: 20rem;
+}
+.seo-consultancy-image {
+  width: 500px;
+  height: 21rem;
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 1024px) {
+  .seo-p {
+    font-size: 1.2rem;
+  }
+
+  .seo-h {
+    font-size: 1.8rem;
+    margin-bottom: 40px;
+  }
+
+  .seo-subheader {
+    font-size: 1.8rem;
+  }
+
+  .button-primary,
+  .button-secondary {
+    font-size: 1.1rem;
+    padding: 10px 22px;
+  }
+
+  .horizontal-fram-seo {
+    gap: 30px;
+    margin-bottom: 60px;
+    flex-direction: row; /* Image first, then text */
+  }
+
+  .custom-image {
+    width: 400px;
+    height: 18rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .seo-p {
+    font-size: 1.1rem;
+  }
+
+  .seo-h {
+    font-size: 1.6rem;
+  }
+
+  .seo-subheader {
+    font-size: 1.6rem;
+    margin-bottom: 25px;
+  }
+
+  .horizontal-fram-seo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+
+  .seo-animation {
+    order: 1; /* Ensure image is displayed first */
+  }
+
+  .horizontal-fram-seo div:first-child {
+    order: 2; /* Ensure text follows the image */
+  }
+
+  .custom-image,
+  .responsive-image {
+    width: 100%;
+    height: auto;
+  }
+
+}
+
+@media screen and (max-width: 600px) {
+  .seo {
+    padding: 40px 15px;
+  }
+
+  .seo-p {
+    font-size: 1rem;
+  }
+
+  .seo-h {
+    font-size: 1.4rem;
+    margin-bottom: 30px;
+  }
+
+  .seo-subheader {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+  }
+
+  .button-primary,
+  .button-secondary {
+    font-size: 1rem;
+    padding: 8px 18px;
+  }
+
+  .horizontal-fram-seo {
+    gap: 20px;
+    margin-bottom: 30px;
+    flex-direction: column; /* Ensure image and text stack vertically */
+  }
+
+  .custom-image,
+  .responsive-image {
+    width: 100%;
+    height: 14rem;
+  }
+}
+
+/* Fade-In Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  opacity: 0; /* Hide the element initially */
+  animation: fadeInUp 1s forwards; /* Apply the animation */
+}

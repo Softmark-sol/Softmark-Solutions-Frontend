@@ -1,0 +1,262 @@
+.footer {
+  background-color: #4599b4;
+  color: rgb(238, 238, 238);
+  padding: 40px 20px;
+  text-align: left;
+  margin-top: 11rem;
+}
+.softmark {
+  position: relative;
+  display: block;
+  text-align: center;
+  font-size: 6rem;
+  font-weight: bold;
+  color: #4599b4;
+  background-color: transparent;
+  padding: 10px 20px;
+  border-radius: 8px;
+  z-index: 1;
+  margin-top: -9.65rem; /* Adjust margin to position half inside and half above */
+  user-select: none;
+}
+/* footer.css */
+
+@keyframes smoke {
+  0% {
+    opacity: 0;
+    transform: translateY(0) scale(0.5);
+  }
+  50% {
+    opacity: 0.7;
+    transform: translateY(-50px) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100px) scale(1.5);
+  }
+}
+
+.footer-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 20px;
+}
+
+.footer-left {
+  position: relative;
+  padding-left: 15px; /* Adjust padding as needed */
+}
+
+.footer-left::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  height: 97%; /* Adjust height as needed */
+  width: 1px; /* Adjust thickness of the border */
+  background-color: #ffffff; /* Adjust border color */
+}
+
+.footer-center {
+  position: relative;
+  padding-left: 15px;
+  line-height: 2rem;
+  /* border-left: 2px solid #ffffff;
+  border-radius: 10px; */
+}
+.footer-center::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  height: 97%; /* Adjust height as needed */
+  width: 1px; /* Adjust thickness of the border */
+  background-color: #ffffff; /* Adjust border color */
+}
+
+.footer-bottom ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-bottom ul li {
+  margin: 10px 0;
+}
+.footer-right p {
+  color: #ffff;
+  text-align: left;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.footer-bottom ul li button {
+  background: none;
+  color: rgb(253, 248, 248);
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.footer-bottom ul li button:hover {
+  text-decoration-thickness: 1.2px;
+  color: rgb(250, 224, 140);
+}
+
+.footer-contact {
+  margin-bottom: 20px;
+}
+.footer-contact img {
+  margin-bottom: 20px;
+  width: 50px;
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  margin-top: 20px;
+  padding-top: 30px;
+  flex-wrap: wrap;
+}
+
+.footer-social a {
+  color: rgb(255, 253, 253);
+  margin: 0 10px;
+  font-size: 24px;
+  opacity: 1;
+  text-decoration: none;
+}
+
+.footer-social a:hover {
+  color: rgb(71, 241, 227);
+}
+
+.footer-social p {
+  margin-left: 10px;
+  font-size: 1.2rem;
+  color: #f3f2ef;
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+  .footer {
+    padding: 40px 20px;
+  }
+  .softmark {
+    font-size: 4rem;
+    margin-top: -7.58rem;
+  }
+}
+
+@media (max-width: 787px) {
+  .footer-bottom {
+    flex-direction: column;
+    align-items: center;
+    /* font-size: 12px; */
+    text-align: center;
+  }
+
+  .footer-bottom ul {
+    text-align: center;
+  }
+
+  .footer-right {
+    margin-left: 0;
+    text-align: center;
+  }
+  .footer-right p {
+    text-align: center;
+  }
+  .softmark {
+    font-size: 3rem;
+    margin-top: -6.45rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-bottom {
+    padding: 20px 10px;
+
+    .footer-social {
+      display: flex;
+      justify-content: center;
+      /* align-items: center; */
+      margin-top: 20px;
+      padding-top: 10px;
+      flex-wrap: wrap;
+    }
+
+    .footer-social a {
+      font-size: 20px;
+    }
+
+    .footer-social p {
+      text-align: center;
+      margin-top: 10px;
+    }
+    .footer-right p {
+      text-align: center;
+    }
+  }
+}
+
+@media (max-width: 377px) {
+  .footer-social p {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 15px;
+  }
+}
+@media (max-width: 275px) {
+  .footer-social p {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 526px) {
+  .softmark {
+    font-size: 2.5rem;
+    margin-top: -5.8rem;
+  }
+}
+
+@media (max-width: 452px) {
+  .softmark {
+    font-size: 2rem;
+    margin-top: -5.3rem;
+  }
+}
+
+@media (max-width: 378px) {
+  .softmark {
+    font-size: 1.6rem;
+    margin-top: -4.8rem;
+  }
+}
+
+@media (max-width: 376px) {
+  .softmark {
+    font-size: 1.9rem;
+    margin-top: -5.2rem;
+  }
+}
+@media (max-width: 325px) {
+  .softmark {
+    font-size: 1.5rem;
+    margin-top: -4.7rem;
+  }
+}
