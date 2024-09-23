@@ -128,7 +128,10 @@ const Footer = () => {
           <i className="fab fa-facebook"></i>
         </a>
         <a href="https://x.com/SoftMark_sol">
-          <i className="fab fa-twitter"></i>
+          <i className="fab fa-x"></i>  
+        </a>
+        <a href="https://www.instagram.com/softmark_sol/">
+          <i className="fab fa-instagram"></i>
         </a>
         <a href="mailto:admin@softmarksolutions.com">
           <p>admin@softmarksolutions.com</p>
