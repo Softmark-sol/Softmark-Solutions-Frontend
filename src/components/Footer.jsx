@@ -1,6 +1,14 @@
 import React from "react";
 import "../css/footer.css";
 import { useNavigate } from "react-router-dom";
+import { BsTwitterX } from "react-icons/bs";
+import { FaFacebookF } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
+import { FaLinkedinIn } from "react-icons/fa";
+
+
+
+
 // import { gsap } from "gsap";
 // import { ScrollTrigger } from "gsap/ScrollTrigger";
 import locationImage from "../assets/map.png";
@@ -122,18 +130,18 @@ const Footer = () => {
       </div>
       <div className="footer-social">
         <a href="https://www.linkedin.com/company/softmark-solutions-llc/">
-          <i className="fab fa-linkedin"></i>
+          <FaLinkedinIn />
         </a>
         <a href="https://www.facebook.com/SoftMarkSolutionsLLC">
-          <i className="fab fa-facebook"></i>
+          <FaFacebookF />
         </a>
         <a href="https://x.com/SoftMark_sol">
-          <i className="fab fa-x"></i>  
+        <BsTwitterX />
         </a>
         <a href="https://www.instagram.com/softmark_sol/">
-          <i className="fab fa-instagram"></i>
+          <FaInstagram />
         </a>
-        <a href="mailto:admin@softmarksolutions.com">
+        <a href="mailto:admin@softmarksolutions.com" style={{marginTop:"7px"}}>
           <p>admin@softmarksolutions.com</p>
         </a>
       </div>
