@@ -121,11 +121,11 @@ const Footer = () => {
             <p>United States Office</p>
             <p>30 N Gould St R Sheridan WY 82801</p>
           </div>
-          <div className="footer-contact">
+          {/* <div className="footer-contact">
             <p>Pakistan Office</p>
             <p>705, Noor Trade Tower, Gulshan e Iqbal 13 A</p>
             <p>Karachi</p>
-          </div>
+          </div> */}
         </div>
       </div>
       <div className="footer-social">
