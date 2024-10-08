@@ -13,7 +13,6 @@ const Singlecard = ({ path, title, description, route, isIcon = false }) => {
     <div
       className="maincard"
       onClick={handleClick}
-      style={{ cursor: "pointer" }}
     >
       <div className="card">
         {isIcon ? (
