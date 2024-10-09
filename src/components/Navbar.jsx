@@ -30,7 +30,7 @@ const Navbar = () => {
     //   const contactForm = document.getElementById("form");
     //   if (contactForm) {
     //     contactForm.scrollIntoView({ behavior: "smooth" });
-    //   }
+    //   }.
     // } else {
       navigate("/calendly");
     // }
@@ -117,6 +117,7 @@ const Navbar = () => {
             alt="Softmark Solutions Logo"
             className="logo"
             onClick={() => navigate("/")}
+            loading="lazy"
           />
         </div>
         <div className="navbar-btns">
@@ -125,9 +126,9 @@ const Navbar = () => {
             onClick={() => navigate("/")}
             onMouseEnter={() => handleMouseEnter(0)}
             onMouseLeave={handleMouseLeave}
-          >
+          > 
             Home
-          </span>
+          </span> 
           <span
             className={`nav-btn ${hoveredItem === 1 ? "active" : ""}`}
             onClick={Services}

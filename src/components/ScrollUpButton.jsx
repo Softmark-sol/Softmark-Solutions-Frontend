@@ -21,9 +21,15 @@ const ScrollToTopButton = () => {
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', toggleVisibility);
+    const handleScroll = () => {
+      clearTimeout(window.scrollTimeout);
+      window.scrollTimeout = setTimeout(toggleVisibility, 100);
+    };
+
+    window.addEventListener('scroll', handleScroll);
     return () => {
-      window.removeEventListener('scroll', toggleVisibility);
+      window.removeEventListener('scroll', handleScroll);
+      clearTimeout(window.scrollTimeout); 
     };
   }, []);
 
@@ -32,6 +38,7 @@ const ScrollToTopButton = () => {
       className="scroll-to-top-button"
       onClick={scrollToTop}
       style={{ display: isVisible ? 'block' : 'none' }}
+      aria-label="Scroll to top" 
     >
       <FaArrowUp />
     </button>

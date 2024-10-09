@@ -1,7 +1,5 @@
 import React, { useEffect } from "react";
 import "../css/seo.css";
-import PlansSeo from "./PlansSeo";
-import { SeoPlans } from "../components/PlansData";
 import SeoLottieAnimation from "../components/SeoAnimation";
 import Typewriter from "../components/TypeWriter.jsx";
 import { useNavigate } from "react-router-dom";
