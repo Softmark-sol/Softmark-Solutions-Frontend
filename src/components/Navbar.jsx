@@ -128,7 +128,7 @@ const Navbar = () => {
             onMouseLeave={handleMouseLeave}
           > 
             Home
-          </span>
+          </span> 
           <span
             className={`nav-btn ${hoveredItem === 1 ? "active" : ""}`}
             onClick={Services}
