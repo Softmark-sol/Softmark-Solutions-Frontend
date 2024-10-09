@@ -6,6 +6,9 @@ import { motion, useInView } from "framer-motion";
 import ScrollToTopButton from "../components/ScrollUpButton";
 import Typewriter from "../components/TypeWriter.jsx";
 import ABMLottieAnimation from "../components/Aboutus-mission-animation.jsx";
+// const ABMLottieAnimation = React.lazy(() => import("../components/Aboutus-mission-animation.jsx"));
+// const ABPLottieAnimation = React.lazy(() => import("../components/Aboutus-passion-animation.jsx"));
+// const ABJLottieAnimation = React.lazy(() => import("../components/Aboutus-joinus-animation.jsx"));
 import ABPLottieAnimation from "../components/Aboutus-passion-animation.jsx";
 import ABJLottieAnimation from "../components/Aboutus-joinus-animation.jsx";
 

@@ -12,6 +12,7 @@ import WebCards from "../components/Webcards";
 import Inquiry from "../components/Inquiry";
 import WebLottieAnimation from "../components/WebAnimation";
 import Typewriter from "../components/TypeWriter.jsx";
+import PropTypes from "prop-types";
 
 export default function PlansWeb({ plans }) {
   const [showBasic, setShowBasic] = useState(false);
@@ -95,6 +96,7 @@ export default function PlansWeb({ plans }) {
                     <button
                       className="select-button"
                       onClick={() => handleShow(plan.name)}
+                      aria-label={`Select ${plan.name} plan`}
                     >
                       START YOUR PLAN
                     </button>
@@ -137,3 +139,12 @@ export default function PlansWeb({ plans }) {
     </>
   );
 }
+
+PlansWeb.propTypes = {
+  plans: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      features: PropTypes.arrayOf(PropTypes.string).isRequired,
+    })
+  ).isRequired,
+};

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { useNavigate } from "react-router-dom";
 import "../css/Singlecard.css";
 
@@ -13,12 +13,13 @@ const Singlecard = ({ path, title, description, route, isIcon = false }) => {
     <div
       className="maincard"
       onClick={handleClick}
+      style={{cursor: "pointer"}}
     >
       <div className="card">
         {isIcon ? (
           <div className="icon">{path}</div>
         ) : (
-          <img src={path} alt={title} />
+          <img src={path} alt={title} loading="lazy"/>
         )}
         <h5>{title}</h5>
         <p>{description}</p>
@@ -27,4 +28,4 @@ const Singlecard = ({ path, title, description, route, isIcon = false }) => {
   );
 };
 
-export default Singlecard;
+export default memo(Singlecard);

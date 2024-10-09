@@ -117,6 +117,7 @@ const Navbar = () => {
             alt="Softmark Solutions Logo"
             className="logo"
             onClick={() => navigate("/")}
+            loading="lazy"
           />
         </div>
         <div className="navbar-btns">
