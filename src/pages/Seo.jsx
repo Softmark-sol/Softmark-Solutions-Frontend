@@ -80,7 +80,7 @@ const Seo = () => {
           A well-functioning website is essential for SEO success. Our technical SEO audit will identify issues that may be holding back your site. We analyze everything, such as site speed, mobile optimization, and crawlability.
           </p>
           <p className="seo-p">
-          After the audit, we’ll provide actionable recommendations that can help improve your site’s performance. Our goal is to make sure that your website is both user-friendly and search engine-friendly.
+          After the audit, we’ll provide crawlability and actionable recommendations that can help improve your site’s performance. Our goal is to make sure that your website is both user-friendly and SEO.
           </p>
         </div>
         <div className="seo-animation">
