@@ -30,7 +30,7 @@ const Navbar = () => {
     //   const contactForm = document.getElementById("form");
     //   if (contactForm) {
     //     contactForm.scrollIntoView({ behavior: "smooth" });
-    //   }
+    //   }.
     // } else {
       navigate("/calendly");
     // }
