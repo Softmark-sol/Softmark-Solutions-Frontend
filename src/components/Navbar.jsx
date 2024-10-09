@@ -126,7 +126,7 @@ const Navbar = () => {
             onClick={() => navigate("/")}
             onMouseEnter={() => handleMouseEnter(0)}
             onMouseLeave={handleMouseLeave}
-          >
+          > 
             Home
           </span>
           <span
