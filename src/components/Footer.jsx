@@ -115,7 +115,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="footer-right">
+        <div className="footer-right"  style={{  cursor:"default"}}>
           <div className="footer-contact">
             <img src={locationImage} alt="" />
             <p>United States Office</p>
@@ -129,7 +129,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="footer-social">
-        <a href="https://www.linkedin.com/company/softmark-solutions-llc/">
+        <a href="https://www.linkedin.com/company/softmark-solutions-llc/" >
           <FaLinkedinIn />
         </a>
         <a href="https://www.facebook.com/SoftMarkSolutionsLLC">
@@ -141,7 +141,7 @@ const Footer = () => {
         <a href="https://www.instagram.com/softmark_sol/">
           <FaInstagram />
         </a>
-        <a href="mailto:admin@softmarksolutions.com" style={{marginTop:"7px"}}>
+        <a href="mailto:admin@softmarksolutions.com" style={{marginTop:"7px",}}>
           <p>admin@softmarksolutions.com</p>
         </a>
       </div>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../css/digital.css";
-// import Singlecard from "../components/Singlecard";
+import Singlecard from "../components/Singlecard";
 import Button from 'react-bootstrap/Button'; 
 import { Modal, Form } from 'react-bootstrap'; 
 import axios from "axios";
@@ -16,8 +16,10 @@ import DMLottieAnimation from "../components/DigitalMarketingAnimation";
 import "../css/Whyus/Btn.scss";
 import Typewriter from "../components/TypeWriter.jsx";
 import { debounce } from "@mui/material";
+import { FaTimes } from 'react-icons/fa'; 
 
-const Singlecard = React.lazy(() => import('../components/Singlecard'));
+
+// const Singlecard = React.lazy(() => import('../components/Singlecard'));
 
 
 const { apiKey } = API_CONFIG;
@@ -254,8 +256,15 @@ const DigitalMarketing = () => {
         </button>
 
         <Modal show={show} onHide={handleClose} backdrop="static">
-          <Modal.Header closeButton>
+          <Modal.Header >
             <Modal.Title>Digital Marketing Plan</Modal.Title>
+            <Button
+          variant="light"
+          onClick={handleClose}
+          style={{ border: 'none', background: 'none', padding: '0' }}
+        >
+          <FaTimes size={24} color="#000" />
+        </Button>
           </Modal.Header>
           <Modal.Body>
             <Form

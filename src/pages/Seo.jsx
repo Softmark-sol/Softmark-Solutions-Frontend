@@ -53,7 +53,7 @@ const Seo = () => {
         </div>
       </div>
 
-      <button className="button-primary" onClick={() => navigate('/contactUs')}>Request a Proposal Today!</button>
+      {/* <button className="button-primary" onClick={() => navigate('/contactUs')}>Request a Proposal Today!</button> */}
 
       <h1 className="seo-subheader fade-in-right">Our SEO Services</h1>
 
