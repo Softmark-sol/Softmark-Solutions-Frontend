@@ -5,6 +5,10 @@ import "../css/anime.css";
 import AnimePortfolio from "../components/AnimePortfolio";
 import ScrollReveal from "scrollreveal";
 
+import animeHero from '../assets/images/animeHero.jpeg'
+import animeSub from '../assets/images/animeSub.jpeg'
+
+
 const AnimeArt = () => {
   const navigate = useNavigate();
   useEffect(() => {
@@ -52,7 +56,7 @@ const AnimeArt = () => {
             </h5>
             <div className="csd-hero-img anime-img">
               <img
-                src="https://img.freepik.com/free-photo/digital-art-style-illustration-graphic-designer_23-2151536949.jpg?t=st=1722263517~exp=1722267117~hmac=ec8ee85ebe3b0ef33d21f097df1bfab69d90e9be571bb7deaa32a52d201531dc&w=740"
+                src={animeHero}
                 alt="animeArt"
                 style={{ width: "100%" }}
               />
@@ -103,7 +107,7 @@ const AnimeArt = () => {
             </h5>
             <div className="csd-hero-img anime-img">
               <img
-                src="https://fsartmania.com/wp-content/uploads/2023/12/WhatsApp-Image-2023-12-07-at-12.13.15-AM-1-1536x1536.jpeg"
+                src={animeSub}
                 alt="animeArt"
                 style={{ width: "100%", height: "100%" }}
               />

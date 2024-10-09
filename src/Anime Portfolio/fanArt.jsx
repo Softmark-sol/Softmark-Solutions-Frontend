@@ -3,39 +3,46 @@ import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import "../css/gallery.css"
 
+import anime18 from '../assets/images/fanArt/anime18.jpg'
+import anime19 from '../assets/images/fanArt/anime19.jpg'
+import anime20 from '../assets/images/fanArt/anime20.jpg'
+import anime21 from '../assets/images/fanArt/anime21.jpg'
+import anime22 from '../assets/images/fanArt/anime22.jpg'
+import anime23 from '../assets/images/fanArt/anime23.jpg'
+
 const itemData = [
   {
-    img: 'https://fsartmania.com/wp-content/uploads/2024/04/3-768x904.jpg',
+    img: anime18,
     title: 'portrait',
     rows: 3,
     cols: 2,
   },
   {
-    img: 'https://fsartmania.com/wp-content/uploads/2024/04/4-1-768x904.jpg',
+    img: anime19,
     title: 'portrait',
     rows: 3,
     cols: 2,
   },
   {
-    img: 'https://fsartmania.com/wp-content/uploads/2024/04/5-1-768x904.jpg',
+    img: anime20,
     title: 'portrait',
     rows: 3,
     cols: 2,
   },
   {
-    img: 'https://fsartmania.com/wp-content/uploads/2024/04/Por1-689x1024.jpg',
+    img: anime21,
     title: 'portrait',
     rows: 3,
     cols: 2
   },
   {
-    img: 'https://fsartmania.com/wp-content/uploads/2024/04/1-768x904.jpg',
+    img: anime22,
     title: 'portrait',
     rows: 3,
     cols: 2,
   },
   {
-    img: 'https://fsartmania.com/wp-content/uploads/2024/04/2-768x904.jpg',
+    img: anime23,
     title: 'portrait',
     rows: 3,
     cols: 2,
