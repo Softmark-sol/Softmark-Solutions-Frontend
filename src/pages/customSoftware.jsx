@@ -37,7 +37,7 @@ const CustomSoftware = () => {
                 </button>
               </div>
             </h5>
-            <div className="CSD-animation">
+            <div className="CSD-animation" >
               <CSDLottieAnimation />
             </div>
           </div>

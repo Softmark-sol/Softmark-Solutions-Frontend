@@ -19,11 +19,11 @@ const Cards = ({ heading }) => {
       distance: "20px",
       duration: 500,
       delay: 200,
-      reset: true, // This will reset the animation every time you scroll
+      reset: true, 
     });
 
     sr.reveal(".card-heading-service,.cards-container", {
-      interval: 200, // This will reveal elements one by one
+      interval: 200, 
     });
   }, []);
   const ServicesData = [

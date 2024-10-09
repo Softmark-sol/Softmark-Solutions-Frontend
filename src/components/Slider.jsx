@@ -4,19 +4,19 @@ import Container from "@mui/material/Container";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import DigitalMarketing from "../assets/images/digitalmarketing.png";
-import Seo from "../assets/images/seo.png";
-import Vue from "../assets/images/vue.png";
-import DockerLogo from "../assets/images/docker.png";
-import MernLogo from "../assets/images/mern.png";
-import react from "../assets/images/React.png";
-import reactNative from "../assets/images/reactNative.png";
-import angular from "../assets/images/angular.svg";
-import node from "../assets/images/Node.png";
-import firebase from "../assets/images/Firebase.png";
-import amazon from "../assets/images/Amazon.png";
-import azure from "../assets/images/Azure.png";
-import next from "../assets/images/next.png";
+import DigitalMarketing from "../assets/icons/digital-marketing.png";
+import Seo from "../assets/icons/seo.png";
+import Vue from "../assets/icons/vue.png";
+import DockerLogo from "../assets/icons/docker.png";
+import MernLogo from "../assets/icons/docker.png";
+import react from "../assets/icons/react.png";
+import reactNative from "../assets/icons/sql.png";
+import angular from "../assets/icons/angular.png";
+import node from "../assets/icons/node.png";
+import firebase from "../assets/icons/firebase.png";
+import amazon from "../assets/icons/aws.png";
+import azure from "../assets/icons/azure.png";
+import next from "../assets/icons/next.png";
 
 const firstMap = [
   {
@@ -152,8 +152,8 @@ export default function OurClients() {
                   src={client.imageUrl}
                   alt={client.alt}
                   style={{
-                    maxWidth: "80%",
-                    maxHeight: "80%",
+                    maxWidth: "100%",
+                    maxHeight: "100%",
                     objectFit: "cover",
                   }}
                 />

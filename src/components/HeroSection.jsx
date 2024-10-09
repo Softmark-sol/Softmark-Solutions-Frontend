@@ -58,8 +58,7 @@ const HeroSection = () => {
         </div>
 
         <div className="rightanimation">
-          {/* Suspense wrapper to handle lazy-loaded component */}
-          <Suspense fallback={<div>Loading particles...</div>}>
+          <Suspense>
             <LogoParticles />
           </Suspense>
         </div>

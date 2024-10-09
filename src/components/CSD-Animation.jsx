@@ -15,7 +15,7 @@ const CSDLottieAnimation = () => {
 
   return (
     <div className="csd-lottie-container">
-      <Lottie options={defaultOptions} height={"80%"} width={"80%"} />
+      <Lottie options={defaultOptions} height={"80%"} width={"80%"} style={{cursor: "default"}}/>
     </div>
   );
 };

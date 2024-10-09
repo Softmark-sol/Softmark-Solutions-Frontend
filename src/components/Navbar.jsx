@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../css/navbar.css";
-import Logo from "../assets/images/Logo-no-bg.png";
+import Logo from "../assets/images/Logo-no-bg.webp";
 import LeftDrawer from "./LeftDrawer";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
