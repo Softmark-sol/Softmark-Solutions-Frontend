@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "../css/digital.css";
-import Singlecard from "../components/Singlecard";
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
-import Modal from "react-bootstrap/Modal";
+// import Singlecard from "../components/Singlecard";
+import Button from 'react-bootstrap/Button'; 
+import { Modal, Form } from 'react-bootstrap'; 
 import axios from "axios";
 import Swal from "sweetalert2";
 import img1 from "../assets/ppc.png";
@@ -16,6 +15,10 @@ import Spinner from "react-bootstrap/Spinner";
 import DMLottieAnimation from "../components/DigitalMarketingAnimation";
 import "../css/Whyus/Btn.scss";
 import Typewriter from "../components/TypeWriter.jsx";
+import { debounce } from "@mui/material";
+
+const Singlecard = React.lazy(() => import('../components/Singlecard'));
+
 
 const { apiKey } = API_CONFIG;
 
@@ -63,13 +66,19 @@ const DigitalMarketing = () => {
     }));
   };
 
-  const handleChange = (e) => {
+  // const handleChange = (e) => {
+  //   const { id, value } = e.target;
+  //   setFormData((prev) => ({
+  //     ...prev,
+  //     [id]: value,
+  //   }));
+  // };
+
+  const handleChange = debounce((e) => {
     const { id, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [id]: value,
-    }));
-  };
+    setFormData((prev) => ({ ...prev, [id]: value }));
+}, 300);
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -139,7 +148,7 @@ const DigitalMarketing = () => {
       });
       console.error("Error:", error);
     } finally {
-      setLoading(false); // Hide loading indicator
+      setLoading(false); 
     }
   };
 
