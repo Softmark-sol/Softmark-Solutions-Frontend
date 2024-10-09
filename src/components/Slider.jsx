@@ -9,16 +9,23 @@ import Seo from "../assets/images/seo.png";
 import Vue from "../assets/images/vue.png";
 import DockerLogo from "../assets/images/docker.png";
 import MernLogo from "../assets/images/mern.png";
+import react from "../assets/images/React.png";
+import reactNative from "../assets/images/reactNative.png";
+import angular from "../assets/images/angular.svg";
+import node from "../assets/images/Node.png";
+import firebase from "../assets/images/Firebase.png";
+import amazon from "../assets/images/Amazon.png";
+import azure from "../assets/images/Azure.png";
+import next from "../assets/images/next.png";
 
 const firstMap = [
   {
-    imageUrl:
-      "https://logos-world.net/wp-content/uploads/2023/08/React-Symbol.png",
+    imageUrl:react,
     alt: "react",
   },
   { imageUrl: Vue, alt: "vue" },
   {
-    imageUrl: "https://cdn.worldvectorlogo.com/logos/angular-3.svg",
+    imageUrl: angular,
     alt: "angular",
   },
   {
@@ -26,26 +33,22 @@ const firstMap = [
     alt: "mern",
   },
   {
-    imageUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Node.js_logo_2015.svg/2560px-Node.js_logo_2015.svg.png",
+    imageUrl:node,
     alt: "node",
   },
   {
-    imageUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/b/bd/Firebase_Logo.png",
+    imageUrl:firebase,
     alt: "firebase",
   },
 ];
 
 const secondMap = [
   {
-    imageUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/2560px-Amazon_Web_Services_Logo.svg.png",
+    imageUrl:amazon,
     alt: "aws",
   },
   {
-    imageUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Microsoft_Azure_Logo.svg/2560px-Microsoft_Azure_Logo.svg.png",
+    imageUrl:azure,
     alt: "azure",
   },
   { imageUrl: Seo, alt: "seo" },
@@ -55,12 +58,11 @@ const secondMap = [
     alt: "docker",
   },
   {
-    imageUrl:
-      "https://cdn.freelogovectors.net/wp-content/uploads/2023/09/next-js-logo-freelogovectors.net_.png",
+    imageUrl:next,
     alt: "next",
   },
   {
-    imageUrl: "https://devtop.io/wp-content/uploads/2022/10/react-native-1.png",
+    imageUrl: reactNative,
     alt: "react-native",
   },
 ];
