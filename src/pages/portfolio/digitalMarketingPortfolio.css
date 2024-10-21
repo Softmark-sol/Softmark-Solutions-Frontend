@@ -9,7 +9,13 @@
     font-weight: 700;
     color: #333;
   }
-  
+  .portfolio-discription{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
   .portfolio-section {
     display: flex;
     align-items: center;

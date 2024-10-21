@@ -53,7 +53,7 @@ const Ourservices = () => {
         </div>
       </div>
       <div className="cards-container">
-        <h2 className="heading-underline-service" style={{marginTop:'20px'}}>Our Portfolio</h2>
+        <h2 className="heading-underline-service " style={{marginTop:'20px'}}>Our Portfolio</h2>
         <div className="service-cards-grid">
           {services.map((item, index) => (
             <PortfolioCard key={index} {...item} />

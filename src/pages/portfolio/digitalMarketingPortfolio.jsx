@@ -30,6 +30,8 @@ const DigitalMarketingPortfolio = () => {
   return (
     <div className="portfolio-container">
       <h1 className="portfolio-header">Our Digital Marketing Portfolio</h1>
+      <p className="portfolio-discription">  Showcasing innovative strategies and successful campaigns that drive engagement, boost brand visibility, and deliver measurable results.
+      </p>
 
       <div className="portfolio-section fade-in-left">
         <div className="portfolio-text">

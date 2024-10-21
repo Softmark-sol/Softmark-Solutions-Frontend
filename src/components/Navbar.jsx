@@ -208,7 +208,7 @@ const Navbar = () => {
               </CustomMenuItem>
 
               <CustomMenuItem
-                onClick={() => handleMenuItemClick("/seo", handleCloseServices)}
+                onClick={() => handleMenuItemClick("/ItOutsourcing", handleCloseServices)}
               >
                 IT Outsourcing
               </CustomMenuItem>

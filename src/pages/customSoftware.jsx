@@ -50,7 +50,7 @@ const CustomSoftware = () => {
       <SoftwareCapabilitiesCards />
       <SoftwareCards />
       <div style={{display:'flex',justifyContent:'center', alignItems:'center' , marginTop:'20px'}}>
-      <button className="contact-btn" style={{padding:'20px'}} onClick={() => navigate("/portfolio-detail/app/App%20Development")}>
+      <button className="contact-btn" style={{padding:'20px'}} onClick={() => navigate("/portfolio-detail/custom/Custom%20Development")}>
       Explore Our Custom Software Development Portfolio          </button>
           </div>
     </>
