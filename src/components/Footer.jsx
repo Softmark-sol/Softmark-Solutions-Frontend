@@ -118,7 +118,6 @@ const Footer = () => {
         <div className="footer-right"  style={{  cursor:"default"}}>
           <div className="footer-contact">
             <img src={locationImage} alt="" />
-            <p>United States Office</p>
             <p>30 N Gould St R Sheridan WY 82801</p>
           </div>
           {/* <div className="footer-contact">

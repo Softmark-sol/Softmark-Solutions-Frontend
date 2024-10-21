@@ -62,8 +62,7 @@ const Ourservices = () => {
       </div>
 
       <div className="card-heading-service container">
-        <h2 className="heading-underline-service">Call-to-Action</h2>
-        <p className="pContainer">
+        <p className="pContainer" style={{display:'flex', justifyContent:'center', alignItems:'center'}}>
           Ready to bring your vision to life? Contact us today to explore the possibilities.
         </p>
         <button className="contact-btn" onClick={() => navigate("/contactUs")}>
