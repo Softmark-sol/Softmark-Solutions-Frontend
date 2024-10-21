@@ -52,6 +52,9 @@ const Seo = () => {
           <SeoLottieAnimation />
         </div>
       </div>
+      <button className="contact-btn" style={{marginBottom:'20px', padding:'20px'}} onClick={() => navigate("/portfolio-detail/seo/Seo%20Development")}>
+      Discover Our SEO Portfolio 
+      </button>
 
       {/* <button className="button-primary" onClick={() => navigate('/contactUs')}>Request a Proposal Today!</button> */}
 
@@ -158,6 +161,8 @@ const Seo = () => {
           />
         </div>
       </div>
+
+ 
 
       <h1>Are you ready to take your SEO to the next level?</h1>
       <p className="seo-p custom-text">

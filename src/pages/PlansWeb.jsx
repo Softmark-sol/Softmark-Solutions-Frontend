@@ -13,8 +13,13 @@ import Inquiry from "../components/Inquiry";
 import WebLottieAnimation from "../components/WebAnimation";
 import Typewriter from "../components/TypeWriter.jsx";
 import PropTypes from "prop-types";
+import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 
 export default function PlansWeb({ plans }) {
+  const navigate = useNavigate();
+
   const [showBasic, setShowBasic] = useState(false);
   const [showStandard, setShowStandard] = useState(false);
   const [showPremium, setShowPremium] = useState(false);
@@ -110,11 +115,18 @@ export default function PlansWeb({ plans }) {
                       ))}
                     </ul>
                   </div>
+                  
+              
+
                 </div>
               </CardContent>
             </CardActionArea>
+            
           </Card>
         ))}
+            <button className="contact-btn" onClick={() => navigate("/portfolio-detail/web/Web%20Development")}>
+            Explore Our Portfolio of Web Applications 
+            </button>
       </div>
 
       <ModalformBasicWeb

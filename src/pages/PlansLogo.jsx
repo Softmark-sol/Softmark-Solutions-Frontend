@@ -12,8 +12,10 @@ import Inquiry from "../components/Inquiry";
 import LDLottieAnimation from "../components/LogoDesignAnimation";
 import Typewriter from "../components/TypeWriter.jsx";
 import PropTypes from "prop-types"; 
+import { useNavigate } from "react-router-dom";
 
 export default function Logo({ plans }) {
+  const navigate = useNavigate()
   const [showModal, setShowModal] = useState({ open: false, type: "" });
   const [selectedPlan, setSelectedPlan] = useState("");
 
@@ -77,7 +79,10 @@ export default function Logo({ plans }) {
               </CardContent>
             </CardActionArea>
           </Card>
+
         ))}
+            <button className="contact-btn" onClick={() => navigate("/portfolio-detail/logo/Logo%20Development")}>
+            Discover Our Logo Design Portfolio          </button>
       </div>
 
       {showModal.open && (

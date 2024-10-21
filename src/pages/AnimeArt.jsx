@@ -146,7 +146,10 @@ const AnimeArt = () => {
         {renderServiceCards()}
       </div>
       <AnimePortfolio />
-
+      <div style={{display:'flex', justifyContent:'center', alignItems:'center' }}>
+         <button  style={{padding:'20px'}} className="contact-btn" onClick={() => navigate("/portfolio-detail/anime/Anime%20Development")}>
+            Discover Our Logo Design Portfolio          </button>
+      </div> 
       <div className="card-heading-service container">
         <h2 className="heading-underline-service">Get Started Today</h2>
         <p className="paragraph" style={{ alignItems: "center" }}>

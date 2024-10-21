@@ -6,8 +6,11 @@ import { CardActionArea } from '@mui/material'
 import '../css/Plans.css'
 import ModalformSeo from '../components/Modal/Seo/Modal-Seo'
 import Inquiry from '../components/Inquiry'
+import { useNavigate } from 'react-router-dom'
+
 
 export default function PlansSeo({ plans }) {
+  const navigate =useNavigate()
   const [showModal, setShowModal] = useState(false)
   const [selectedPlan, setSelectedPlan] = useState('')
 
@@ -49,6 +52,9 @@ export default function PlansSeo({ plans }) {
             </CardActionArea>
           </Card>
         ))}
+
+         
+
       </div>
 
       <ModalformSeo

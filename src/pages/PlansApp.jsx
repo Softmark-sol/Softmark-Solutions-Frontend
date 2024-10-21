@@ -12,8 +12,9 @@ import AppCards from "../components/AppCards";
 import MobileLottieAnimation from "../components/MobileAnimation";
 import Typewriter from "../components/TypeWriter.jsx";
 import PropTypes from "prop-types"; 
-
+import { useNavigate } from "react-router-dom";
 export default function PlansApp({ plans }) {
+  const navigate =useNavigate()
   const [showModal, setShowModal] = useState({ open: false, type: "" });
   const [selectedPlan, setSelectedPlan] = useState("");
 
@@ -101,6 +102,9 @@ export default function PlansApp({ plans }) {
             </CardActionArea>
           </Card>
         ))}
+          <button className="contact-btn" style={{padding:'20px'}} onClick={() => navigate("/portfolio-detail/app/App%20Development")}>
+          Explore Our Portfolio of Mobile Applications 
+          </button>
       </div>
 
       {/* Conditionally render modal based on selected plan type */}

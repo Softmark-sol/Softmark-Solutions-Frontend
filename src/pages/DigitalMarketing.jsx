@@ -18,6 +18,7 @@ import Typewriter from "../components/TypeWriter.jsx";
 import { debounce } from "@mui/material";
 import { FaTimes } from 'react-icons/fa'; 
 
+import { useNavigate } from "react-router-dom";
 
 // const Singlecard = React.lazy(() => import('../components/Singlecard'));
 
@@ -25,6 +26,7 @@ import { FaTimes } from 'react-icons/fa';
 const { apiKey } = API_CONFIG;
 
 const DigitalMarketing = () => {
+  const navigate = useNavigate()
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -226,9 +228,17 @@ const DigitalMarketing = () => {
             description={item.desc}
           />
         ))}
+
       </div>
 
+        <div style={{display:'flex',justifyContent:'center', alignItems:'center', marginTop:'15px'}}>
+        <button className="contact-btn" style={{padding:'20px' }} onClick={() => navigate("/portfolio-detail/digital-marketing")}>
+      Discover Our Digital Marketing Portfolio 
+      </button>
+        </div>
+
       <div className="card-heading-service container">
+    
         <h2 className="heading-underline-service">Get Started Today</h2>
         <p className="paragraph">
           Ready to take your digital marketing efforts to the next level?

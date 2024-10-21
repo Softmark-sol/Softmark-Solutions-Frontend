@@ -21,6 +21,7 @@ const App = () => {
           cull="col,image-wrapper"
         />
       )} */}
+
       <Router />
     </>
   );

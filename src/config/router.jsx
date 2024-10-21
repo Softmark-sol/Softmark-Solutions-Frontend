@@ -20,6 +20,10 @@ import Logo from '../pages/PlansLogo'
 import AnimeArt from '../pages/AnimeArt.jsx'
 import Calendly from '../components/Calendly/Calendly.jsx'
 import ItOutsourcing from '../pages/ItOutsourcing.jsx'
+import PortfolioDetail from "../pages/portfolio/portfolioDetail.jsx";
+import DigitalMarketingPortfolio from '../pages/portfolio/digitalMarketingPortfolio.jsx'
+
+
 
 function Router() {
   return (
@@ -64,6 +68,11 @@ function Router() {
 
           {/* Contact Us Component */}
           <Route path='/contactUs' element={<ContactForm />} />
+          
+          <Route path="/portfolio-detail/:type/:title" element={<PortfolioDetail />} />
+          <Route path="/portfolio-detail/digital-marketing" element={<DigitalMarketingPortfolio />} />
+
+
 
           {/* Services Component */}
           <Route
