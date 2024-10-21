@@ -69,7 +69,7 @@ const DigitalMarketingPortfolio = () => {
         </div>
       </div>
 
-      <button className="portfolio-button" onClick={() => navigate('/contactUs')}>Get A Free Inquery
+      <button className="portfolio-button" onClick={() => navigate('/contactUs')}>Get A Free inquiry
       </button>
     </div>
   );

@@ -139,7 +139,7 @@ const PortfolioDetail = () => {
         ))}
       </div>
       <button className="contact-btn" style={{marginTop:'25px', padding:'25px'}} onClick={() => navigate("/contactUs")}>
-          Get A Free Inquery
+          Get A Free inquiry
         </button>
     </div>
   );
