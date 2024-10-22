@@ -64,7 +64,7 @@ const LeftDrawer = () => {
       case 'Why Us':
         navigate('/whyUs');
         break;
-      case 'Our Work':
+      case 'Our Portfolio':
         navigate('/Ourservices');
         break;
       case 'Careers':
@@ -91,7 +91,7 @@ const LeftDrawer = () => {
           { text: 'Services', icon: <FaServicestack color="#4599B4" /> },
           { text: 'About Us', icon: <AiFillInfoCircle color="#4599B4" /> },
           { text: 'Why Us', icon: <IoIosPeople color="#4599B4" /> },
-          { text: 'Our Work', icon: <MdWork color="#4599B4" /> },
+          { text: 'Our Portfolio', icon: <MdWork color="#4599B4" /> },
           { text: 'Careers', icon: <MdContactMail color="#4599B4" /> },
           { text: 'Schedule a Free Call', icon: <AiFillPhone color="#4599B4" /> },
         ].map(({ text, icon }) => (
