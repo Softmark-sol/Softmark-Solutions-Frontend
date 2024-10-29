@@ -31,6 +31,7 @@ import anime1 from '../../assets/images/portraites/anime1.jpg'
 import anime2 from '../../assets/images/portraites/anime2.jpg'
 import anime3 from '../../assets/images/portraites/anime3.jpg'
 import anime4 from '../../assets/images/portraites/anime4.jpg'
+import ConsultationBanner from "../../components/consultationBanner/consultationBanner";
 
 
 
@@ -138,9 +139,11 @@ const PortfolioDetail = () => {
           </div>
         ))}
       </div>
-      <button className="contact-btn" style={{marginTop:'25px', padding:'25px'}} onClick={() => navigate("/contactUs")}>
+      {/* <button className="contact-btn" style={{marginTop:'25px', padding:'25px'}} onClick={() => navigate("/contactUs")}>
           Get A Free inquiry
-        </button>
+        </button> */}
+
+<ConsultationBanner />
     </div>
   );
 };

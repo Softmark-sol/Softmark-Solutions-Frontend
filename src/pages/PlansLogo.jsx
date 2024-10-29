@@ -8,11 +8,11 @@ import ModalformBasicLogo from "../components/Modal/logo-design/Modalbasic";
 import ModalformStandardLogo from "../components/Modal/logo-design/Modalstandard";
 import ModalformBusiness from "../components/Modal/logo-design/Modalbusniess";
 import ModalformPremium from "../components/Modal/logo-design/Modalpremium";
-import Inquiry from "../components/Inquiry";
 import LDLottieAnimation from "../components/LogoDesignAnimation";
 import Typewriter from "../components/TypeWriter.jsx";
 import PropTypes from "prop-types"; 
 import { useNavigate } from "react-router-dom";
+import ConsultationBanner from "../components/consultationBanner/consultationBanner.jsx";
 
 export default function Logo({ plans }) {
   const navigate = useNavigate()
@@ -118,7 +118,7 @@ export default function Logo({ plans }) {
         </>
       )}
 
-      <Inquiry />
+<ConsultationBanner />
     </>
   );
 }

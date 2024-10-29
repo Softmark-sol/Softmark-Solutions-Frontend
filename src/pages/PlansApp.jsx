@@ -7,12 +7,12 @@ import "../css/Plans.css";
 import ModalformBasicApp from "../components/Modal/app-dev/Modal-App-Basic";
 import ModalformStandardApp from "../components/Modal/app-dev/Modal-App-Standard";
 import ModalformPremiumApp from "../components/Modal/app-dev/Modal-App-Premium";
-import Inquiry from "../components/Inquiry";
 import AppCards from "../components/AppCards";
 import MobileLottieAnimation from "../components/MobileAnimation";
 import Typewriter from "../components/TypeWriter.jsx";
 import PropTypes from "prop-types"; 
 import { useNavigate } from "react-router-dom";
+import ConsultationBanner from "../components/consultationBanner/consultationBanner.jsx";
 export default function PlansApp({ plans }) {
   const navigate =useNavigate()
   const [showModal, setShowModal] = useState({ open: false, type: "" });
@@ -134,7 +134,7 @@ export default function PlansApp({ plans }) {
         </>
       )}
 
-      <Inquiry />
+      <ConsultationBanner />
     </>
   );
 }

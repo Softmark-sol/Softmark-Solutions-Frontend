@@ -9,12 +9,12 @@ import ModalformBasicWeb from "../components/Modal/web-dev/Modal-Web-Basic";
 import ModalformStandardWeb from "../components/Modal/web-dev/Modal-Web-Standard";
 import ModalformPremiumWeb from "../components/Modal/web-dev/Modal-Web-Premium";
 import WebCards from "../components/Webcards";
-import Inquiry from "../components/Inquiry";
 import WebLottieAnimation from "../components/WebAnimation";
 import Typewriter from "../components/TypeWriter.jsx";
 import PropTypes from "prop-types";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import ConsultationBanner from "../components/consultationBanner/consultationBanner.jsx";
 
 
 export default function PlansWeb({ plans }) {
@@ -147,7 +147,7 @@ export default function PlansWeb({ plans }) {
         handleClose={handleClosePremium}
       />
 
-      <Inquiry />
+<ConsultationBanner />
     </>
   );
 }

@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import digitalExpertise from '../../assets/portfolio/digitalExpertise.png';
 import whatDoweDo from '../../assets/portfolio/whatDoweDO.png';
 import caseStudies from '../../assets/portfolio/caseStudies.png';
+import ConsultationBanner from "../../components/consultationBanner/consultationBanner";
 
 const DigitalMarketingPortfolio = () => {
   const navigate = useNavigate();
@@ -69,8 +70,10 @@ const DigitalMarketingPortfolio = () => {
         </div>
       </div>
 
-      <button className="portfolio-button" onClick={() => navigate('/contactUs')}>Get A Free inquiry
-      </button>
+      {/* <button className="portfolio-button" onClick={() => navigate('/contactUs')}>Get A Free inquiry
+      </button> */}
+
+<ConsultationBanner />
     </div>
   );
 };
