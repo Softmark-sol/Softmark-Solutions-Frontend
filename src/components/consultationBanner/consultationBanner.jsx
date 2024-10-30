@@ -1,18 +1,21 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import ConsultationBtn from "../Buttons/ConsultationBtn";
+import ConsultationBg from '../../assets/consultationBg.jpg';
 
 function ConsultationBanner() {
-  const navigate = useNavigate();
 
   const styles = {
     container: {
-      background: "linear-gradient(135deg, #f0f4ff, #d9e4ff)",
+      backgroundImage: `url(${ConsultationBg})`, 
+      backgroundSize: 'cover',
+      backgroundRepeat: 'no-repeat',
+      backgroundPosition: 'center',
       padding: "50px 30px",
       textAlign: "center",
       borderRadius: "12px",
       color: "#333333",
-      boxShadow: "0 8px 16px rgba(0, 0, 0, 0.1)",
-      transition: "transform 0.3s ease, box-shadow 0.3s ease",
+      // boxShadow: "0 8px 16px rgba(0, 0, 0, 0.1)",
+      // transition: "transform 0.3s ease, box-shadow 0.3s ease",
     },
     title: {
       fontSize: "2.2rem",
@@ -48,14 +51,14 @@ function ConsultationBanner() {
     <div
       style={styles.container}
       className="consultation-banner container"
-      onMouseEnter={(e) => {
-        e.currentTarget.style.transform = "scale(1.03)";
-        e.currentTarget.style.boxShadow = "0 12px 24px rgba(0, 0, 0, 0.2)";
-      }}
-      onMouseLeave={(e) => {
-        e.currentTarget.style.transform = "scale(1)";
-        e.currentTarget.style.boxShadow = "0 8px 16px rgba(0, 0, 0, 0.1)";
-      }}
+      // onMouseEnter={(e) => {
+      //   e.currentTarget.style.transform = "scale(1.03)";
+      //   e.currentTarget.style.boxShadow = "0 12px 24px rgba(0, 0, 0, 0.2)";
+      // }}
+      // onMouseLeave={(e) => {
+      //   e.currentTarget.style.transform = "scale(1)";
+      //   e.currentTarget.style.boxShadow = "0 8px 16px rgba(0, 0, 0, 0.1)";
+      // }}
     >
       <h2 style={styles.title}>Start Your Free Consultation</h2>
       <p style={styles.subtitle}>
@@ -63,7 +66,7 @@ function ConsultationBanner() {
         <br />
         Professional assistance is just a click away!
       </p>
-      <button
+      {/* <button
         style={styles.button}
         onClick={() => navigate("/contactUs")}
         onMouseEnter={(e) => {
@@ -76,7 +79,8 @@ function ConsultationBanner() {
         }}
       >
         GET FREE INQUIRY
-      </button>
+      </button> */}
+      <ConsultationBtn />
     </div>
   );
 }

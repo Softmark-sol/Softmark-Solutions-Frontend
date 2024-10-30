@@ -10,7 +10,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #ffffff;
+  background-image: url("../assets/whoWeAreBg.jpg");
+  background-size: cover; 
+  background-repeat: no-repeat;
+  background-position: center;
   padding: 40px;
   border-radius: 12px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
@@ -53,10 +56,11 @@
   max-width: 600px;
   height: auto;
   border-radius: 12px;
-  /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); */
-  /* transition: transform 0.3s ease; */
 }
 
+.text-container h2{
+  margin-left: 18px !important;
+}
 
 @media (min-width: 768px) {
   .about-us-container {
@@ -69,6 +73,10 @@
     text-align: left;
     max-width: 50%;
     margin-bottom: 0;
+  }
+
+  .text-container h2{
+    margin-left: 0px !important;
   }
 
   .image-container {
