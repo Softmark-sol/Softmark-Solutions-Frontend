@@ -14,81 +14,25 @@ const Navbar = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  // Separate states for Services and About Us menus
   const [servicesAnchorEl, setServicesAnchorEl] = useState(null);
   const [aboutAnchorEl, setAboutAnchorEl] = useState(null);
-
   const servicesOpen = Boolean(servicesAnchorEl);
   const aboutOpen = Boolean(aboutAnchorEl);
 
-  const handleServicesClick = (event) => {
-    setServicesAnchorEl(event.currentTarget);
+  const handleMouseEnter = (event, setAnchor) => {
+    setAnchor(event.currentTarget);
   };
 
-  const handleAboutClick = (event) => {
-    setAboutAnchorEl(event.currentTarget);
+  const handleMouseLeave = (setAnchor) => {
+    setAnchor(null);
   };
 
-  const handleCloseServices = () => {
-    setServicesAnchorEl(null);
-  };
-
-  const handleCloseAbout = () => {
-    setAboutAnchorEl(null);
-  };
-
-  const Contact = () => {
-    navigate("/calendly");
-  };
-
-  const Services = () => {
-    const isHomePage = location.pathname === "/";
-    if (isHomePage) {
-      const servicesSection = document.getElementById("services");
-      if (servicesSection) {
-        servicesSection.scrollIntoView({ behavior: "smooth" });
-      }
-    } else {
-      navigate("/services");
-    }
-  };
-
-  const handleMenuItemClick = (destination, closeMenu) => {
+  const navigateAndClose = (destination, closeMenu) => {
     closeMenu();
     navigate(destination);
   };
 
-  const [hoveredItem, setHoveredItem] = useState(null);
-
-  const handleMouseEnter = (index) => {
-    setHoveredItem(index);
-  };
-
-  const handleMouseLeave = () => {
-    setHoveredItem(null);
-  };
-
-
-  const CustomServiceMenu = styled(Menu)`
-    .MuiList-root {
-      display: flex;
-      flex-direction: column;
-    }
-    .MuiPaper-root {
-      background-color: white;
-      border: 1px solid #e0e0e0;
-      box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
-      padding: 10px;
-      border-radius: 8px;
-      min-width: 180px;
-    }
-  `;
-
   const CustomMenu = styled(Menu)`
-    .MuiList-root {
-      display: flex;
-      flex-direction: column;
-    }
     .MuiPaper-root {
       background-color: white;
       border: 1px solid #e0e0e0;
@@ -114,18 +58,6 @@ const Navbar = () => {
     }
   `;
 
-  const CustomButtonBase = styled(ButtonBase)`
-    .MuiTouchRipple-root {
-      color: rgba(0, 0, 0, 0.3);
-    }
-    .MuiTouchRipple-rippleVisible {
-      opacity: 0.7;
-    }
-    .MuiTouchRipple-child {
-      background-color: #4599b4; /* Custom ripple color */
-    }
-  `;
-
   return (
     <div className="navbar custom-navbar">
       <div className="container">
@@ -140,23 +72,17 @@ const Navbar = () => {
         </div>
         <div className="navbar-btns">
           <span
-            className={`nav-btn ${hoveredItem === 0 ? "active" : ""}`}
+            className="nav-btn"
             onClick={() => navigate("/")}
-            onMouseEnter={() => handleMouseEnter(0)}
-            onMouseLeave={handleMouseLeave}
           >
             Home
           </span>
 
-          {/* Services Dropdown */}
           <span
-            className={`nav-btn ${hoveredItem === 1 ? "active" : ""}`}
+            className="nav-btn"
             aria-controls={servicesOpen ? "services-menu" : undefined}
             aria-haspopup="true"
-            aria-expanded={servicesOpen ? "true" : undefined}
-            onClick={handleServicesClick}
-            onMouseEnter={() => handleMouseEnter(1)}
-            onMouseLeave={handleMouseLeave}
+            onMouseEnter={(e) => handleMouseEnter(e, setServicesAnchorEl)}
           >
             Services
           </span>
@@ -164,7 +90,7 @@ const Navbar = () => {
             id="services-menu"
             anchorEl={servicesAnchorEl}
             open={servicesOpen}
-            onClose={handleCloseServices}
+            onClose={() => handleMouseLeave(setServicesAnchorEl)}
             TransitionComponent={Fade}
             anchorOrigin={{
               vertical: "bottom",
@@ -174,67 +100,44 @@ const Navbar = () => {
               vertical: "top",
               horizontal: "left",
             }}
+            MenuListProps={{
+              onMouseEnter: () => handleMouseEnter,
+              onMouseLeave: () => handleMouseLeave(setServicesAnchorEl),
+            }}
+            onMouseLeave={() => handleMouseLeave(setServicesAnchorEl)}
           >
-              <CustomMenuItem
-                onClick={() =>
-                  handleMenuItemClick("/webPlans", handleCloseServices)
-                }
-              >
-                Web Development
-              </CustomMenuItem>
-              <CustomMenuItem
-                onClick={() => handleMenuItemClick("/appPlans", handleCloseServices)}
-              >
-                App Development
-              </CustomMenuItem>
-
-              <CustomMenuItem
-                onClick={() => handleMenuItemClick("/logoPlans", handleCloseServices)}
-              >
-                Logo
-              </CustomMenuItem>
-
-              <CustomMenuItem
-                onClick={() => handleMenuItemClick("/digitalMarketing", handleCloseServices)}
-              >
-                Digital Marketing
-              </CustomMenuItem>
-
-            
-              <CustomMenuItem
-                onClick={() => handleMenuItemClick("/seo", handleCloseServices)}
-              >
-                SEO
-              </CustomMenuItem>
-
-              <CustomMenuItem
-                onClick={() => handleMenuItemClick("/ItOutsourcing", handleCloseServices)}
-              >
-                IT Outsourcing
-              </CustomMenuItem>
-
-              <CustomMenuItem
-                onClick={() => handleMenuItemClick("/customSoftware", handleCloseServices)}
-              >
-                Custom Software
-              </CustomMenuItem>
-
-              <CustomMenuItem
-                onClick={() => handleMenuItemClick("/animeArt", handleCloseServices)}
-              >
-                Anime Art
-              </CustomMenuItem>
+            <CustomMenuItem onClick={() => navigateAndClose("/webPlans", () => setServicesAnchorEl(null))}>
+              Web Development
+            </CustomMenuItem>
+            <CustomMenuItem onClick={() => navigateAndClose("/appPlans", () => setServicesAnchorEl(null))}>
+              App Development
+            </CustomMenuItem>
+            <CustomMenuItem onClick={() => navigateAndClose("/logoPlans", () => setServicesAnchorEl(null))}>
+              Logo
+            </CustomMenuItem>
+            <CustomMenuItem onClick={() => navigateAndClose("/digitalMarketing", () => setServicesAnchorEl(null))}>
+              Digital Marketing
+            </CustomMenuItem>
+            <CustomMenuItem onClick={() => navigateAndClose("/seo", () => setServicesAnchorEl(null))}>
+              SEO
+            </CustomMenuItem>
+            <CustomMenuItem onClick={() => navigateAndClose("/ItOutsourcing", () => setServicesAnchorEl(null))}>
+              IT Outsourcing
+            </CustomMenuItem>
+            <CustomMenuItem onClick={() => navigateAndClose("/customSoftware", () => setServicesAnchorEl(null))}>
+              Custom Software
+            </CustomMenuItem>
+            <CustomMenuItem onClick={() => navigateAndClose("/animeArt", () => setServicesAnchorEl(null))}>
+              Anime Art
+            </CustomMenuItem>
           </CustomMenu>
 
           {/* About Us Dropdown */}
           <span
-            className={`nav-btn ${hoveredItem === 2 ? "active" : ""}`}
+            className="nav-btn"
             aria-controls={aboutOpen ? "about-menu" : undefined}
             aria-haspopup="true"
-            aria-expanded={aboutOpen ? "true" : undefined}
-            onClick={handleAboutClick}
-            onMouseEnter={() => handleMouseEnter(2)}
-            onMouseLeave={handleMouseLeave}
+            onMouseEnter={(e) => handleMouseEnter(e, setAboutAnchorEl)}
           >
             About Us
           </span>
@@ -242,7 +145,7 @@ const Navbar = () => {
             id="about-menu"
             anchorEl={aboutAnchorEl}
             open={aboutOpen}
-            onClose={handleCloseAbout}
+            onClose={() => handleMouseLeave(setAboutAnchorEl)}
             TransitionComponent={Fade}
             anchorOrigin={{
               vertical: "bottom",
@@ -252,31 +155,21 @@ const Navbar = () => {
               vertical: "top",
               horizontal: "left",
             }}
+            MenuListProps={{
+              onMouseEnter: () => handleMouseEnter,
+              onMouseLeave: () => handleMouseLeave(setAboutAnchorEl),
+            }}
+            onMouseLeave={() => handleMouseLeave(setAboutAnchorEl)}
           >
-            <CustomButtonBase>
-              <CustomMenuItem
-                onClick={() =>
-                  handleMenuItemClick("/aboutUs", handleCloseAbout)
-                }
-              >
-                About Us
-              </CustomMenuItem>
-            </CustomButtonBase>
-            <CustomButtonBase>
-              <CustomMenuItem
-                onClick={() => handleMenuItemClick("/whyUs", handleCloseAbout)}
-              >
-                Why Us
-              </CustomMenuItem>
-            </CustomButtonBase>
+            <CustomMenuItem onClick={() => navigateAndClose("/aboutUs", () => setAboutAnchorEl(null))}>
+              About Us
+            </CustomMenuItem>
+            <CustomMenuItem onClick={() => navigateAndClose("/whyUs", () => setAboutAnchorEl(null))}>
+              Why Us
+            </CustomMenuItem>
           </CustomMenu>
 
-          <span
-            className={`nav-btn ${hoveredItem === 3 ? "active" : ""}`}
-            onClick={() => navigate("/Ourservices")}
-            onMouseEnter={() => handleMouseEnter(3)}
-            onMouseLeave={handleMouseLeave}
-          >
+          <span className="nav-btn" onClick={() => navigate("/Ourservices")}>
             Our Portfolio
           </span>
 
@@ -284,14 +177,12 @@ const Navbar = () => {
             href="https://www.linkedin.com/company/softmark-solutions-llc"
             target="_blank"
             rel="noreferrer"
-            className={`nav-btn ${hoveredItem === 4 ? "active" : ""}`}
-            onMouseEnter={() => handleMouseEnter(4)}
-            onMouseLeave={handleMouseLeave}
+            className="nav-btn"
           >
             Careers
           </a>
 
-          <span className="nav-btn contact-us" onClick={Contact}>
+          <span className="nav-btn contact-us" onClick={() => navigate("/calendly")}>
             <div className="myLottieAnimation">
               <MyLottieAnimation />
             </div>
@@ -302,7 +193,6 @@ const Navbar = () => {
           <LeftDrawer />
         </div>
       </div>
-      <div className={`navbar-line ${hoveredItem !== null ? "active" : ""}`} />
     </div>
   );
 };

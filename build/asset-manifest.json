@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.a7eaa303.css",
-    "main.js": "/static/js/main.def6caaf.js",
+    "main.css": "/static/css/main.2dd2be72.css",
+    "main.js": "/static/js/main.c47623c7.js",
     "static/css/117.dd4a2363.chunk.css": "/static/css/117.dd4a2363.chunk.css",
     "static/js/117.b530e035.chunk.js": "/static/js/117.b530e035.chunk.js",
     "static/css/166.dc2d101d.chunk.css": "/static/css/166.dc2d101d.chunk.css",
@@ -9,6 +9,7 @@
     "static/js/904.bec5a2fa.chunk.js": "/static/js/904.bec5a2fa.chunk.js",
     "static/media/animeHero.jpg": "/static/media/animeHero.6aa647fa34191e912249.jpg",
     "static/media/logo2.png": "/static/media/logo2.c36a42fb793b7bc7d3e7.png",
+    "static/media/whoWeAre.jpg": "/static/media/whoWeAre.14a3713a3c973dcd1f2f.jpg",
     "static/media/screencapture-needsandluxuries-pk-2024-10-18-22_58_09.png": "/static/media/screencapture-needsandluxuries-pk-2024-10-18-22_58_09.58cda40bff73b5701fa8.png",
     "static/media/Logo-no-bg.webp": "/static/media/Logo-no-bg.72c88417493402536ae2.webp",
     "static/media/fa-solid-900.ttf": "/static/media/fa-solid-900.bacd5de623fb563b961a.ttf",
@@ -119,8 +120,8 @@
     "static/media/slick.eot": "/static/media/slick.a4e97f5a2a64f0ab1323.eot",
     "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
-    "main.a7eaa303.css.map": "/static/css/main.a7eaa303.css.map",
-    "main.def6caaf.js.map": "/static/js/main.def6caaf.js.map",
+    "main.2dd2be72.css.map": "/static/css/main.2dd2be72.css.map",
+    "main.c47623c7.js.map": "/static/js/main.c47623c7.js.map",
     "117.dd4a2363.chunk.css.map": "/static/css/117.dd4a2363.chunk.css.map",
     "117.b530e035.chunk.js.map": "/static/js/117.b530e035.chunk.js.map",
     "166.dc2d101d.chunk.css.map": "/static/css/166.dc2d101d.chunk.css.map",
@@ -128,7 +129,7 @@
     "904.bec5a2fa.chunk.js.map": "/static/js/904.bec5a2fa.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a7eaa303.css",
-    "static/js/main.def6caaf.js"
+    "static/css/main.2dd2be72.css",
+    "static/js/main.c47623c7.js"
   ]
 }

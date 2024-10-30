@@ -54,7 +54,7 @@ const Footer = () => {
               </li>
               <li>
                 <button onClick={() => navigate("/Ourservices")}>
-                  Our Work
+                  Our Portfolio
                 </button>
               </li>
               <li>
@@ -83,67 +83,86 @@ const Footer = () => {
         </div>
 
         <div className="footer-center-container">
-          <h4 className="">Services</h4>
+          <h4>Services</h4>
           <div className="footer-center">
-            <ul>
+            <ul className="service-list">
               <li>
-                <button onClick={() => navigate("/webPlans")}>
-                  Web App Development
-                </button>
+                <button onClick={() => navigate("/webPlans")}>Web App Development</button>
               </li>
               <li>
-                <button onClick={() => navigate("/appPlans")}>
-                  Mobile App Development
-                </button>
+                <button onClick={() => navigate("/appPlans")}>Mobile App Development</button>
               </li>
               <li>
-                <button onClick={() => navigate("/seo")}>
-                  Search Engine Optimization
-                </button>
+                <button onClick={() => navigate("/seo")}>Search Engine Optimization</button>
               </li>
               <li>
-                <button onClick={() => navigate("/digitalMarketing")}>
-                  Digital Marketing
-                </button>
-              </li>
-              <li>
-                <button onClick={() => navigate("/logoPlans")}>
-                  Logo Designing
-                </button>
+                <button onClick={() => navigate("/digitalMarketing")}>Digital Marketing</button>
               </li>
             </ul>
+           
           </div>
+
+        </div>
+        <div className="footer-center-container">
+          <div className="footer-center">
+          <ul className="service-list">
+              <li>
+                <button onClick={() => navigate("/logoPlans")}>Logo Designing</button>
+              </li>
+              <li>
+                <button onClick={() => navigate("/ItOutsourcing")}>IT Outsourcing</button>
+              </li>
+              <li>
+                <button onClick={() => navigate("/customSoftware")}>Custom Software</button>
+              </li>
+              <li>
+                <button onClick={() => navigate("/animeArt")}>Anime Art</button>
+              </li>
+            </ul>
+           
+          </div>
+
         </div>
 
-        <div className="footer-right"  style={{  cursor:"default"}}>
-          <div className="footer-contact">
-            <img src={locationImage} alt="" />
-            <p>30 N Gould St R Sheridan WY 82801</p>
-          </div>
-          {/* <div className="footer-contact">
-            <p>Pakistan Office</p>
-            <p>705, Noor Trade Tower, Gulshan e Iqbal 13 A</p>
-            <p>Karachi</p>
-          </div> */}
-        </div>
+
+
+        <div className="footer-right" style={{ cursor: "default", textAlign: 'left', }}>
+  <div className="footer-contact">
+    <img src={locationImage} alt="Location" />
+    <p>30 N Gould St R, Sheridan, WY 82801</p>
+  </div>
+
+  <div className="footer-social" style={{ display: 'flex', justifyContent: 'flex-start', marginTop:'-40px'}}>
+    <a href="https://www.linkedin.com/company/softmark-solutions-llc/" aria-label="LinkedIn">
+      <FaLinkedinIn />
+    </a>
+    <a href="https://www.facebook.com/SoftMarkSolutionsLLC" aria-label="Facebook">
+      <FaFacebookF />
+    </a>
+    <a href="https://x.com/SoftMark_sol" aria-label="Twitter">
+      <BsTwitterX />
+    </a>
+    <a href="https://www.instagram.com/softmark_sol/" aria-label="Instagram">
+      <FaInstagram />
+    </a>
+  </div>
+
+  <div style={{ marginTop: "7px" }}>
+    <a href="mailto:admin@softmarksolutions.com" style={{ textDecoration: 'none', color: 'inherit' }}>
+      <p>admin@softmarksolutions.com</p>
+    </a>
+  </div>
+
+  {/* Uncomment if additional contact information is needed
+  <div className="footer-contact">
+    <p>Pakistan Office</p>
+    <p>705, Noor Trade Tower, Gulshan e Iqbal 13 A</p>
+    <p>Karachi</p>
+  </div> */}
+</div>
+
       </div>
-      <div className="footer-social">
-        <a href="https://www.linkedin.com/company/softmark-solutions-llc/" >
-          <FaLinkedinIn />
-        </a>
-        <a href="https://www.facebook.com/SoftMarkSolutionsLLC">
-          <FaFacebookF />
-        </a>
-        <a href="https://x.com/SoftMark_sol">
-        <BsTwitterX />
-        </a>
-        <a href="https://www.instagram.com/softmark_sol/">
-          <FaInstagram />
-        </a>
-        <a href="mailto:admin@softmarksolutions.com" style={{marginTop:"7px",}}>
-          <p>admin@softmarksolutions.com</p>
-        </a>
-      </div>
+
     </footer>
   );
 };
