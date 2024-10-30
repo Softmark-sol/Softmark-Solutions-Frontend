@@ -53,7 +53,7 @@ const PortfolioDetail = () => {
       { path: web9, title: "E-Commerce Excellence", description: "An intuitive and powerful e-commerce website with advanced features, ensuring an enhanced shopping experience." },
     ],
     app: [
-      { path: App1, title: "Fintech App", description: "Android e-wallet solution" },
+      { path: App1, title: "Fintech App", description: "A secure Android e-wallet for effortless financial transactions, enabling quick payments and easy money transfers." },
       { path: App2, title: "Health Care Wallet", description: "An Android app offering secure and easy e-wallet solutions for healthcare transactions and services" },
       { path: App3, title: "Smart Grocery App", description: "A convenient grocery delivery app providing a user-friendly shopping experience with advanced sorting and tracking features." },
       { path: App4, title: "Friendship Network App", description: "An interactive social networking app designed to foster meaningful connections through shared interests and activities." },
@@ -117,7 +117,7 @@ const PortfolioDetail = () => {
     if (type in portfolioData) {
       setPortfolioItems(portfolioData[type]);
     } else {
-      navigate("/404");
+      navigate("/Ourservices");
     }
   }, [type, navigate]);
 
@@ -149,3 +149,5 @@ const PortfolioDetail = () => {
 };
 
 export default PortfolioDetail;
+
+

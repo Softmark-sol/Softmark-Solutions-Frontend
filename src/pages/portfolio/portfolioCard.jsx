@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import "../portfolio/portfolioCard.css"; // Ensure CSS is imported
+import "../portfolio/portfolioCard.css";
 
 const PortfolioCard = ({ title, description, type, icon }) => {
   const navigate = useNavigate();
