@@ -43,7 +43,7 @@
   color: #333;
   font-weight: bold;
   /* margin: 10px 0; */
-  text-align: left;
+  /* text-align: left; */
   width: 100%;
 }
 
@@ -51,7 +51,7 @@
   font-size: .9rem;
   color: #666;
   margin-top: 5px;
-  text-align: left;
+  /* text-align: left; */
 }
 
 /* Cards Container */
