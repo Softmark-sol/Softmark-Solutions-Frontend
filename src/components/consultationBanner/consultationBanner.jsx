@@ -14,7 +14,7 @@ function ConsultationBanner() {
       textAlign: "center",
       borderRadius: "12px",
       color: "#333333",
-      marginTop: "20px"
+      marginTop: "40px"
       // boxShadow: "0 8px 16px rgba(0, 0, 0, 0.1)",
       // transition: "transform 0.3s ease, box-shadow 0.3s ease",
     },
