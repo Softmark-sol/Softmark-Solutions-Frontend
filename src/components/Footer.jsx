@@ -130,9 +130,9 @@ const Footer = () => {
   <div className="footer-contact">
     <img src={locationImage} alt="Location" />
     <p>30 N Gould St R, Sheridan, WY 82801</p>
-  </div>
+  </div> 
 
-  <div className="footer-social" style={{ display: 'flex', justifyContent: 'flex-start', marginTop:'-40px'}}>
+  <div className="footer-social" style={{ display: 'flex', justifyContent: 'center', marginTop:'-30px'}}>
     <a href="https://www.linkedin.com/company/softmark-solutions-llc/" aria-label="LinkedIn">
       <FaLinkedinIn />
     </a>

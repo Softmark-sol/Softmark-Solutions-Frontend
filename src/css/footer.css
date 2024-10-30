@@ -97,6 +97,12 @@
   cursor: 'default';
   font-size: 1rem;
 }
+.footer-right{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 
 .footer-bottom ul li button {
   background: none;
@@ -116,6 +122,10 @@
 
 .footer-contact {
   margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
  
 }
 .footer-contact img {
@@ -126,9 +136,7 @@
 .footer-social {
   display: flex;
   justify-content: center;
-  /* align-items: center; */
-  margin-top: 20px;
-  padding-top: 30px;
+  width: 100%;
   flex-wrap: wrap;
 }
 
@@ -174,7 +182,7 @@
   }
 
   .footer-right {
-    margin-left: 0;
+    /* margin-left: 0; */
     text-align: center;
   }
   .footer-right p {
@@ -207,9 +215,9 @@
       text-align: center;
       margin-top: 10px;
     }
-    .footer-right p {
+    /* .footer-right p {
       text-align: center;
-    }
+    } */
   }
 }
 
