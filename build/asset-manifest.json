@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.2dd2be72.css",
-    "main.js": "/static/js/main.c47623c7.js",
+    "main.css": "/static/css/main.8925b9d5.css",
+    "main.js": "/static/js/main.cce5e10c.js",
     "static/css/117.dd4a2363.chunk.css": "/static/css/117.dd4a2363.chunk.css",
     "static/js/117.b530e035.chunk.js": "/static/js/117.b530e035.chunk.js",
     "static/css/166.dc2d101d.chunk.css": "/static/css/166.dc2d101d.chunk.css",
@@ -9,7 +9,6 @@
     "static/js/904.bec5a2fa.chunk.js": "/static/js/904.bec5a2fa.chunk.js",
     "static/media/animeHero.jpg": "/static/media/animeHero.6aa647fa34191e912249.jpg",
     "static/media/logo2.png": "/static/media/logo2.c36a42fb793b7bc7d3e7.png",
-    "static/media/whoWeAre.jpg": "/static/media/whoWeAre.14a3713a3c973dcd1f2f.jpg",
     "static/media/screencapture-needsandluxuries-pk-2024-10-18-22_58_09.png": "/static/media/screencapture-needsandluxuries-pk-2024-10-18-22_58_09.58cda40bff73b5701fa8.png",
     "static/media/Logo-no-bg.webp": "/static/media/Logo-no-bg.72c88417493402536ae2.webp",
     "static/media/fa-solid-900.ttf": "/static/media/fa-solid-900.bacd5de623fb563b961a.ttf",
@@ -47,6 +46,7 @@
     "static/media/digitalExpertise.png": "/static/media/digitalExpertise.fb398821a185e0a14da3.png",
     "static/media/seo-search-engine-optimization-modish-ecommerce-online-retail-business_31965-75056.jpeg": "/static/media/seo-search-engine-optimization-modish-ecommerce-online-retail-business_31965-75056.b5427fd050d8fec8ef99.jpeg",
     "static/media/App-1.jpg": "/static/media/App-1.cafb40a03df40b7bbe92.jpg",
+    "static/media/whoWeAre.jpg": "/static/media/whoWeAre.3d91ac5afe6acd9dcfa1.jpg",
     "static/media/logo3.png": "/static/media/logo3.55c033de6cd688fca173.png",
     "static/media/USA-Notary.png": "/static/media/USA-Notary.85585ab4c82595b027b0.png",
     "static/media/anime3.jpg": "/static/media/anime3.b725ff073e9808cde6a3.jpg",
@@ -65,6 +65,7 @@
     "static/media/anime22.jpg": "/static/media/anime22.4c7c12fbfcbffceea517.jpg",
     "static/media/logo-design.png": "/static/media/logo-design.a04e317a2b9b5924f4e7.png",
     "static/media/anime16.jpg": "/static/media/anime16.0dca85d344cb2307093a.jpg",
+    "static/media/consultationBg.jpg": "/static/media/consultationBg.5d638698d96b1d892dbd.jpg",
     "static/media/anime21.jpg": "/static/media/anime21.35d21d62318a0ce34d62.jpg",
     "static/media/social-media_1968750.png": "/static/media/social-media_1968750.ddc1de3d667518a5e17a.png",
     "static/media/anime8.jpg": "/static/media/anime8.8444acd88b858f95a24b.jpg",
@@ -98,6 +99,7 @@
     "static/media/web-dev.png": "/static/media/web-dev.8f66e916f1595749349e.png",
     "static/media/sql.png": "/static/media/sql.fbe5ebc3783670d8d7fa.png",
     "static/media/programming.png": "/static/media/programming.4512a22a330a42a43673.png",
+    "static/media/whoWeAreBg.jpg": "/static/media/whoWeAreBg.eb80ac861d3e3cc0885f.jpg",
     "static/media/anime12.jpg": "/static/media/anime12.cad8ca575b912cce7c0e.jpg",
     "static/media/anime14.jpg": "/static/media/anime14.736ce31c3063f2f77c77.jpg",
     "static/media/anime13.jpg": "/static/media/anime13.d75cc8f4133d31e7392f.jpg",
@@ -120,8 +122,8 @@
     "static/media/slick.eot": "/static/media/slick.a4e97f5a2a64f0ab1323.eot",
     "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
-    "main.2dd2be72.css.map": "/static/css/main.2dd2be72.css.map",
-    "main.c47623c7.js.map": "/static/js/main.c47623c7.js.map",
+    "main.8925b9d5.css.map": "/static/css/main.8925b9d5.css.map",
+    "main.cce5e10c.js.map": "/static/js/main.cce5e10c.js.map",
     "117.dd4a2363.chunk.css.map": "/static/css/117.dd4a2363.chunk.css.map",
     "117.b530e035.chunk.js.map": "/static/js/117.b530e035.chunk.js.map",
     "166.dc2d101d.chunk.css.map": "/static/css/166.dc2d101d.chunk.css.map",
@@ -129,7 +131,7 @@
     "904.bec5a2fa.chunk.js.map": "/static/js/904.bec5a2fa.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2dd2be72.css",
-    "static/js/main.c47623c7.js"
+    "static/css/main.8925b9d5.css",
+    "static/js/main.cce5e10c.js"
   ]
 }

@@ -9,40 +9,33 @@ import styled from "@emotion/styled";
 import Fade from "@mui/material/Fade";
 import { useLocation, useNavigate } from "react-router-dom";
 import MyLottieAnimation from "./CallAnimation";
-
 const Navbar = () => {
   const location = useLocation();
   const navigate = useNavigate();
-
   const [servicesAnchorEl, setServicesAnchorEl] = useState(null);
   const [aboutAnchorEl, setAboutAnchorEl] = useState(null);
   const servicesOpen = Boolean(servicesAnchorEl);
   const aboutOpen = Boolean(aboutAnchorEl);
-
   const handleMouseEnter = (event, setAnchor) => {
     setAnchor(event.currentTarget);
   };
-
   const handleMouseLeave = (setAnchor) => {
     setAnchor(null);
   };
-
   const navigateAndClose = (destination, closeMenu) => {
     closeMenu();
     navigate(destination);
   };
-
   const CustomMenu = styled(Menu)`
     .MuiPaper-root {
       background-color: white;
-      border: 1px solid #e0e0e0;
+      border: 1px solid #E0E0E0;
       box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
       padding: 10px;
       border-radius: 8px;
       min-width: 180px;
     }
   `;
-
   const CustomMenuItem = styled(MenuItem)`
     color: #333;
     padding: 12px 20px;
@@ -51,13 +44,11 @@ const Navbar = () => {
     transition: background-color 0.3s, color 0.3s;
     border-left: 2px solid #f3972bc7;
     width: 100%;
-
     &:hover {
       background-color: #f3972bc7;
       color: #fff;
     }
   `;
-
   return (
     <div className="navbar custom-navbar">
       <div className="container">
@@ -77,7 +68,6 @@ const Navbar = () => {
           >
             Home
           </span>
-
           <span
             className="nav-btn"
             aria-controls={servicesOpen ? "services-menu" : undefined}
@@ -131,7 +121,6 @@ const Navbar = () => {
               Anime Art
             </CustomMenuItem>
           </CustomMenu>
-
           {/* About Us Dropdown */}
           <span
             className="nav-btn"
@@ -168,11 +157,9 @@ const Navbar = () => {
               Why Us
             </CustomMenuItem>
           </CustomMenu>
-
           <span className="nav-btn" onClick={() => navigate("/Ourservices")}>
             Our Portfolio
           </span>
-
           <a
             href="https://www.linkedin.com/company/softmark-solutions-llc"
             target="_blank"
@@ -181,7 +168,6 @@ const Navbar = () => {
           >
             Careers
           </a>
-
           <span className="nav-btn contact-us" onClick={() => navigate("/calendly")}>
             <div className="myLottieAnimation">
               <MyLottieAnimation />
@@ -196,5 +182,4 @@ const Navbar = () => {
     </div>
   );
 };
-
 export default Navbar;
