@@ -12,6 +12,7 @@ import SEO from "../assets/portfolio/seo_5538708.png";
 import DigitalMarketing from "../assets/portfolio/social-media_1968750.png";
 import AnimeArt from "../assets/images/anime.png";
 import ScrollReveal from "scrollreveal";
+import ConsultationBanner from "../components/consultationBanner/consultationBanner";
 
 const Ourservices = () => {
   const navigate = useNavigate();
@@ -61,14 +62,16 @@ const Ourservices = () => {
         </div>
       </div>
 
-      <div className="card-heading-service container">
-        <p className="pContainer" style={{display:'flex', justifyContent:'center', alignItems:'center'}}>
+      {/* <div className="card-heading-service container"> */}
+        {/* <p className="pContainer" style={{display:'flex', justifyContent:'center', alignItems:'center'}}>
           Ready to bring your vision to life? Contact us today to explore the possibilities.
-        </p>
-        <button className="contact-btn" onClick={() => navigate("/contactUs")}>
+        </p> */}
+        {/* <button className="contact-btn" onClick={() => navigate("/contactUs")}>
           Contact Us
-        </button>
-      </div>
+        </button> */}
+      {/* </div> */}
+        <ConsultationBanner />
+
 
       <ScrollToTopButton />
     </div>
