@@ -63,9 +63,9 @@ function ConsultationBanner() {
     >
       <h2 style={styles.title}>Start Your Free Consultation</h2>
       <p style={styles.subtitle}>
-        Embark on your journey with a friendly chat with our expert consultants.
+       The first step to reach your goal is a causal conversation with our expert consultants 
         <br />
-        Professional assistance is just a click away!
+        Professional suppport is only a click away
       </p>
       {/* <button
         style={styles.button}

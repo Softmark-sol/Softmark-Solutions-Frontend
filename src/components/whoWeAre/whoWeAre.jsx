@@ -9,7 +9,7 @@ const WhoWeAre = () => {
         <div className="text-container">
           <h2 style={{textAlign:'left'}}>Who We Are</h2>
           <p style={{textAlign:'left'}}>
-            Based in Tennessee, we are a digital marketing and web design agency specializing in SEO. Reach out today for a free consultation and discover how we can drive your growth.
+           We are a digital marketing and web design company located in Wyoming that specialize in SEO, Contact us today for a free consultation on how we can help you grow. 
           </p>
         </div>
         <div className="image-container">
