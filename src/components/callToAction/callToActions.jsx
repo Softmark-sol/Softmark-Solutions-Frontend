@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Swal from 'sweetalert';
-
+import {APiKey} from '../../config/api'
 const CallToAction = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const [email, setEmail] = useState('');
@@ -24,7 +24,7 @@ const CallToAction = () => {
     setLoading(true);
 
     try {
-      const response = await fetch('http://localhost:4000/get-a-proposal', {
+      const response = await fetch('https://api.softmarksolutions.com/get-a-proposal', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
