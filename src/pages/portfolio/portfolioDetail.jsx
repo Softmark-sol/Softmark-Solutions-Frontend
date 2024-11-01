@@ -10,6 +10,8 @@ import web6 from "../../assets/portfolio/web-6.jpg";
 import web7 from "../../assets/portfolio/web-7.jpg";
 import web8 from "../../assets/portfolio/web-8.jpg";
 import web9 from "../../assets/portfolio/screencapture-needsandluxuries-pk-2024-10-18-22_58_09.png";
+import web10 from "../../assets/portfolio/JcRoofin.png";
+import web11 from "../../assets/portfolio/web11-primoScience.png";
 
 import logo1 from "../../assets/logo1.png";
 import logo2 from "../../assets/logo2.png";
@@ -51,6 +53,8 @@ const PortfolioDetail = () => {
       { path: web7, title: "Digital Marketing Solutions", description: "A comprehensive digital marketing website focused on lead generation and brand development." },
       { path: web8, title: "Marketing Agency Portal", description: "A vibrant and dynamic platform designed for a modern marketing agency, optimized for digital campaigns and client engagement" },
       { path: web9, title: "E-Commerce Excellence", description: "An intuitive and powerful e-commerce website with advanced features, ensuring an enhanced shopping experience." },
+      { path: web10, title: "JC-Roofin – Roofing Services Website", description: "A professionally designed website for JC-Roofin showcasing their premium roofing services. It includes a captivating project gallery and authentic customer testimonials to build trust and enhance online visibility." },
+      { path: web11, title: "PrimoScience Labs", description: "An expertly designed website for PrimoScience Labs, showcasing their analytical and bioanalytical services. The site emphasizes precision and reliability, highlighting their commitment to meeting scientific and research needs." },
     ],
     app: [
       { path: App1, title: "Fintech App", description: "A secure Android e-wallet for effortless financial transactions, enabling quick payments and easy money transfers." },
