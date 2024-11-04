@@ -9,23 +9,30 @@ import styled from "@emotion/styled";
 import Fade from "@mui/material/Fade";
 import { useLocation, useNavigate } from "react-router-dom";
 import MyLottieAnimation from "./CallAnimation";
+
 const Navbar = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const [servicesAnchorEl, setServicesAnchorEl] = useState(null);
   const [aboutAnchorEl, setAboutAnchorEl] = useState(null);
+  const [portfolioAnchorEl, setPortfolioAnchorEl] = useState(null);
+
   const servicesOpen = Boolean(servicesAnchorEl);
   const aboutOpen = Boolean(aboutAnchorEl);
+  const portfolioOpen = Boolean(portfolioAnchorEl);
+
   const handleMouseEnter = (event, setAnchor) => {
     setAnchor(event.currentTarget);
   };
   const handleMouseLeave = (setAnchor) => {
     setAnchor(null);
   };
+
   const navigateAndClose = (destination, closeMenu) => {
     closeMenu();
     navigate(destination);
   };
+
   const CustomMenu = styled(Menu)`
     .MuiPaper-root {
       background-color: white;
@@ -38,7 +45,7 @@ const Navbar = () => {
   `;
   const CustomMenuItem = styled(MenuItem)`
     color: #333;
-    padding: 12px 20px;
+    padding: 10px 10px;
     font-family: "Roboto", sans-serif;
     font-size: 14px;
     transition: background-color 0.3s, color 0.3s;
@@ -49,6 +56,7 @@ const Navbar = () => {
       color: #fff;
     }
   `;
+
   return (
     <div className="navbar custom-navbar">
       <div className="container">
@@ -62,10 +70,7 @@ const Navbar = () => {
           />
         </div>
         <div className="navbar-btns">
-          <span
-            className="nav-btn"
-            onClick={() => navigate("/")}
-          >
+          <span className="nav-btn" onClick={() => navigate("/")}>
             Home
           </span>
           <span
@@ -82,14 +87,8 @@ const Navbar = () => {
             open={servicesOpen}
             onClose={() => handleMouseLeave(setServicesAnchorEl)}
             TransitionComponent={Fade}
-            anchorOrigin={{
-              vertical: "bottom",
-              horizontal: "left",
-            }}
-            transformOrigin={{
-              vertical: "top",
-              horizontal: "left",
-            }}
+            anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
+            transformOrigin={{ vertical: "top", horizontal: "left" }}
             MenuListProps={{
               onMouseEnter: () => handleMouseEnter,
               onMouseLeave: () => handleMouseLeave(setServicesAnchorEl),
@@ -119,8 +118,8 @@ const Navbar = () => {
             </CustomMenuItem>
             <CustomMenuItem onClick={() => navigateAndClose("/animeArt", () => setServicesAnchorEl(null))}>
               Anime Art
-            </CustomMenuItem>
-          </CustomMenu>
+            </CustomMenuItem>          </CustomMenu>
+
           {/* About Us Dropdown */}
           <span
             className="nav-btn"
@@ -136,14 +135,8 @@ const Navbar = () => {
             open={aboutOpen}
             onClose={() => handleMouseLeave(setAboutAnchorEl)}
             TransitionComponent={Fade}
-            anchorOrigin={{
-              vertical: "bottom",
-              horizontal: "left",
-            }}
-            transformOrigin={{
-              vertical: "top",
-              horizontal: "left",
-            }}
+            anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
+            transformOrigin={{ vertical: "top", horizontal: "left" }}
             MenuListProps={{
               onMouseEnter: () => handleMouseEnter,
               onMouseLeave: () => handleMouseLeave(setAboutAnchorEl),
@@ -157,9 +150,52 @@ const Navbar = () => {
               Why Us
             </CustomMenuItem>
           </CustomMenu>
-          <span className="nav-btn" onClick={() => navigate("/Ourservices")}>
+
+          {/* Our Portfolio Dropdown */}
+          <span
+            className="nav-btn"
+            aria-controls={portfolioOpen ? "portfolio-menu" : undefined}
+            aria-haspopup="true"
+            onMouseEnter={(e) => handleMouseEnter(e, setPortfolioAnchorEl)}
+            onClick={() => navigate("/Ourservices")}
+          >
             Our Portfolio
           </span>
+          <CustomMenu
+            id="portfolio-menu"
+            anchorEl={portfolioAnchorEl}
+            open={portfolioOpen}
+            
+            onClose={() => handleMouseLeave(setPortfolioAnchorEl)}
+            TransitionComponent={Fade}
+            anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
+            transformOrigin={{ vertical: "top", horizontal: "left" }}
+            MenuListProps={{
+              onMouseEnter: () => handleMouseEnter,
+              onMouseLeave: () => handleMouseLeave(setPortfolioAnchorEl),
+            }}
+            onMouseLeave={() => handleMouseLeave(setPortfolioAnchorEl)}
+          >
+            <CustomMenuItem onClick={() => navigateAndClose("/portfolio-detail/web/Web%20Development", () => setPortfolioAnchorEl(null))}>
+              Web Projects
+            </CustomMenuItem>
+            <CustomMenuItem onClick={() => navigateAndClose("/portfolio-detail/app/App%20Development", () => setPortfolioAnchorEl(null))}>
+              App Projects
+            </CustomMenuItem>
+            <CustomMenuItem onClick={() => navigateAndClose("/portfolio-detail/logo/Logo%20Development", () => setPortfolioAnchorEl(null))}>
+              Logo Projects
+            </CustomMenuItem>
+            <CustomMenuItem onClick={() => navigateAndClose("/portfolio-detail/digital-marketing", () => setPortfolioAnchorEl(null))}>
+              Digital Marketing Projects
+            </CustomMenuItem>
+            <CustomMenuItem onClick={() => navigateAndClose("/portfolio-detail/custom/Custom%20Development", () => setPortfolioAnchorEl(null))}>
+              Custom Software Projects
+            </CustomMenuItem>
+            <CustomMenuItem onClick={() => navigateAndClose("/portfolio-detail/anime/Anime%20Development", () => setPortfolioAnchorEl(null))}>
+              Anime Art Projects
+            </CustomMenuItem>
+          </CustomMenu>
+
           <a
             href="https://www.linkedin.com/company/softmark-solutions-llc"
             target="_blank"
@@ -182,4 +218,5 @@ const Navbar = () => {
     </div>
   );
 };
+
 export default Navbar;
