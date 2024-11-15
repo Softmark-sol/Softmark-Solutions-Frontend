@@ -70,9 +70,9 @@ const Navbar = () => {
           />
         </div>
         <div className="navbar-btns">
-          <span className="nav-btn" onClick={() => navigate("/")}>
+          {/* <span className="nav-btn" onClick={() => navigate("/")}>
             Home
-          </span>
+          </span> */}
           <span
             className="nav-btn"
             aria-controls={servicesOpen ? "services-menu" : undefined}
@@ -150,7 +150,12 @@ const Navbar = () => {
               Why Us
             </CustomMenuItem>
           </CustomMenu>
-
+          <span
+            className="nav-btn"
+            onClick={()=>navigate("/contactUs")}
+          >
+            Contact Us
+          </span>
           {/* Our Portfolio Dropdown */}
           <span
             className="nav-btn"
@@ -195,15 +200,19 @@ const Navbar = () => {
               Anime Art Projects
             </CustomMenuItem>
           </CustomMenu>
-
-          <a
+          <span
+            className="nav-btn"
+          >
+            FAQ's
+          </span>
+          {/* <a
             href="https://www.linkedin.com/company/softmark-solutions-llc"
             target="_blank"
             rel="noreferrer"
             className="nav-btn"
           >
             Careers
-          </a>
+          </a> */}
           <span className="nav-btn contact-us" onClick={() => navigate("/calendly")}>
             <div className="myLottieAnimation">
               <MyLottieAnimation />

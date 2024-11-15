@@ -5,6 +5,7 @@ import GearLottieAnimation from "./Gear-animation";
 import ScrollReveal from "scrollreveal";
 import MarketLottieAnimation from "./Market-animation";
 import { useNavigate } from "react-router-dom";
+import DMLottieAnimation from "../components/DigitalMarketingAnimation";
 
 const LogoParticles = lazy(() => import("./ParticleLogo"));
 
@@ -59,7 +60,8 @@ const HeroSection = () => {
 
         <div className="rightanimation">
           <Suspense>
-            <LogoParticles />
+            {/* <LogoParticles /> */}
+            <DMLottieAnimation />
           </Suspense>
         </div>
       </div>

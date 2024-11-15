@@ -1,0 +1,72 @@
+/* tinder.css */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .cardContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .testimonialCard {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(201, 201, 201, 0.1);
+    width: 350px;
+    max-width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .cardAvatar {
+    margin-bottom: 15px;
+  }
+  
+  .cardContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .cardTitle {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #4599b4;
+    margin-bottom: 10px;
+  }
+  
+  .cardText {
+    font-size: 0.9rem;
+    color: #333;
+    margin-bottom: 15px;
+    padding: 0 10px;
+  }
+  
+  .cardSubContent {
+    font-size: 0.85rem;
+    font-style: italic;
+    color: #555;
+    margin-bottom: 10px;
+  }
+  
+  .starRating {
+    color: #ffd700;
+    font-size: 1.2rem;
+  }
+  
+  .swipe {
+    position: absolute;
+  }
+  
