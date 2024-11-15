@@ -14,7 +14,7 @@ import Techlancer from "../../assets/icons/techlancer.png";
 // Sample data with all client logos and names
 const clients = [
   { name: 'Buzznerd', logo: Buzznerd },
-  { name: 'Flatlead', logo: Flatlead },
+  { name: 'Fleet Lead', logo: Flatlead },
   { name: 'JC Roofing', logo: JcRoofing },
   { name: 'Lawerence', logo: Lawerence },
   { name: 'Primo', logo: Primo },
