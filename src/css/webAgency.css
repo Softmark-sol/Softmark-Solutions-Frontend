@@ -1,0 +1,93 @@
+.who-we-are-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  background-color: #f4f7fa;
+  color: white;
+}
+
+.about-us-container {
+  display: flex;
+  /* flex-direction: row-reverse !important; */
+  /* justify-content: space-between !important; */
+  align-items: center;
+  background-image: url("../assets/images/blueBg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  max-width: 1200px;
+  width: 100%;
+  transition: transform 0.3s ease;
+}
+
+.about-us-container:hover {
+  transform: scale(1.02);
+}
+
+.text-container {
+  text-align: left;
+  max-width: 600px;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: flex-start;
+  /* justify-content: flex-start; */
+  flex-direction: column;
+}
+
+.text-container h2 {
+  font-size: 2rem !important;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+}
+
+.text-container p {
+  font-size: 0.8rem !important;
+  color: #f7f7f7;
+  line-height: 2 !important;
+}
+
+.image-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.about-us-image {
+  width: 85%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 12px;
+}
+
+.text-container h2 {
+  margin-left: 18px !important;
+}
+
+@media (min-width: 768px) {
+  .about-us-container {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 50px;
+  }
+
+  .text-container {
+    text-align: left;
+    max-width: 50%;
+    margin-bottom: 0;
+  }
+
+  .text-container h2 {
+    margin-left: 0px !important;
+  }
+
+  .image-container {
+    max-width: 50%;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
