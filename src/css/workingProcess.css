@@ -1,0 +1,28 @@
+.main-workingProcess{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 1rem;
+}
+
+
+@media (max-width: 787px) {
+    .main-workingProcess{
+        flex-direction: column;
+
+    }
+    .working-card{
+        width: 100% !important;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .hide-img{
+        display: none;
+    }
+    .working-card h4{
+         text-align: center;
+         font-size: 18px;
+    }
+    }

@@ -6,6 +6,7 @@ import Modal from 'react-bootstrap/Modal'
 import Swal from 'sweetalert2'
 import API_CONFIG from '../../../config/api';
 import Spinner from 'react-bootstrap/Spinner'
+import { FaTimes } from 'react-icons/fa'; // Import cross icon
 
 
 const { apiKey } = API_CONFIG;
@@ -27,7 +28,6 @@ function ModalformStandardApp({ isOpened, heading, handleClose }) {
     setShow(isOpened)
   }, [isOpened])
 
-  // State to track form inputs
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -40,7 +40,6 @@ function ModalformStandardApp({ isOpened, heading, handleClose }) {
   })
   const [loading, setLoading] = useState(false)
 
-  // Handle form input changes
   const handleInputChange = (e) => {
     const { id, value, files } = e.target
     if (id === 'Link_to_Graphics') {
@@ -50,7 +49,6 @@ function ModalformStandardApp({ isOpened, heading, handleClose }) {
     }
   }
 
-  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault()
     const requiredFields = ['name', 'email', 'description'];
@@ -74,8 +72,7 @@ function ModalformStandardApp({ isOpened, heading, handleClose }) {
       } else {
         data.append(key, formData[key])
       }
-    }    setLoading(true) // Show loading indicator
-
+    }    setLoading(true) 
 
     const apiEndpoint =
      `${apiKey}/app-standard-plane`
@@ -119,17 +116,24 @@ function ModalformStandardApp({ isOpened, heading, handleClose }) {
       })
       console.error('Error:', error)
     } finally {
-      setLoading(false) // Hide loading indicator
+      setLoading(false) 
     }
 
-    handleClose() // Close the modal after submission
+    handleClose() 
   }
 
   return (
     <>
       <Modal show={show} onHide={handleClose} backdrop='static'>
-        <Modal.Header closeButton>
+        <Modal.Header >
           <Modal.Title>{heading}</Modal.Title>
+          <Button
+          variant="light"
+          onClick={handleClose}
+          style={{ border: 'none', background: 'none', padding: '0' }}
+        >
+          <FaTimes size={24} color="#000" />
+        </Button>
         </Modal.Header>
         <Modal.Body>
           <Form

@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "../css/digital.css";
 import Singlecard from "../components/Singlecard";
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
-import Modal from "react-bootstrap/Modal";
+import Button from 'react-bootstrap/Button'; 
+import { Modal, Form } from 'react-bootstrap'; 
 import axios from "axios";
 import Swal from "sweetalert2";
 import img1 from "../assets/ppc.png";
@@ -16,10 +15,18 @@ import Spinner from "react-bootstrap/Spinner";
 import DMLottieAnimation from "../components/DigitalMarketingAnimation";
 import "../css/Whyus/Btn.scss";
 import Typewriter from "../components/TypeWriter.jsx";
+import { debounce } from "@mui/material";
+import { FaTimes } from 'react-icons/fa'; 
+
+import { useNavigate } from "react-router-dom";
+
+// const Singlecard = React.lazy(() => import('../components/Singlecard'));
+
 
 const { apiKey } = API_CONFIG;
 
 const DigitalMarketing = () => {
+  const navigate = useNavigate()
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -63,13 +70,19 @@ const DigitalMarketing = () => {
     }));
   };
 
-  const handleChange = (e) => {
+  // const handleChange = (e) => {
+  //   const { id, value } = e.target;
+  //   setFormData((prev) => ({
+  //     ...prev,
+  //     [id]: value,
+  //   }));
+  // };
+
+  const handleChange = debounce((e) => {
     const { id, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [id]: value,
-    }));
-  };
+    setFormData((prev) => ({ ...prev, [id]: value }));
+}, 300);
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -139,7 +152,7 @@ const DigitalMarketing = () => {
       });
       console.error("Error:", error);
     } finally {
-      setLoading(false); // Hide loading indicator
+      setLoading(false); 
     }
   };
 
@@ -215,9 +228,17 @@ const DigitalMarketing = () => {
             description={item.desc}
           />
         ))}
+
       </div>
 
+        <div style={{display:'flex',justifyContent:'center', alignItems:'center', marginTop:'15px'}}>
+        <button className="contact-btn" style={{padding:'20px' }} onClick={() => navigate("/portfolio-detail/digital-marketing")}>
+      Discover Our Digital Marketing Portfolio 
+      </button>
+        </div>
+
       <div className="card-heading-service container">
+    
         <h2 className="heading-underline-service">Get Started Today</h2>
         <p className="paragraph">
           Ready to take your digital marketing efforts to the next level?
@@ -245,8 +266,15 @@ const DigitalMarketing = () => {
         </button>
 
         <Modal show={show} onHide={handleClose} backdrop="static">
-          <Modal.Header closeButton>
+          <Modal.Header >
             <Modal.Title>Digital Marketing Plan</Modal.Title>
+            <Button
+          variant="light"
+          onClick={handleClose}
+          style={{ border: 'none', background: 'none', padding: '0' }}
+        >
+          <FaTimes size={24} color="#000" />
+        </Button>
           </Modal.Header>
           <Modal.Body>
             <Form

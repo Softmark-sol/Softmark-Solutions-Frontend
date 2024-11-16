@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../css/navbar.css";
-import Logo from "../assets/images/Logo-no-bg.png";
+import Logo from "../assets/images/Logo-no-bg.webp";
 import LeftDrawer from "./LeftDrawer";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
@@ -13,98 +13,47 @@ import MyLottieAnimation from "./CallAnimation";
 const Navbar = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const [anchorEl, setAnchorEl] = useState(null);
-  const open = Boolean(anchorEl);
+  const [servicesAnchorEl, setServicesAnchorEl] = useState(null);
+  const [aboutAnchorEl, setAboutAnchorEl] = useState(null);
+  const [portfolioAnchorEl, setPortfolioAnchorEl] = useState(null);
 
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
+  const servicesOpen = Boolean(servicesAnchorEl);
+  const aboutOpen = Boolean(aboutAnchorEl);
+  const portfolioOpen = Boolean(portfolioAnchorEl);
+
+  const handleMouseEnter = (event, setAnchor) => {
+    setAnchor(event.currentTarget);
+  };
+  const handleMouseLeave = (setAnchor) => {
+    setAnchor(null);
   };
 
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
-
-  const Contact = () => {
-    // const isHomePage = location.pathname === "/";
-    // if (isHomePage) {
-    //   const contactForm = document.getElementById("form");
-    //   if (contactForm) {
-    //     contactForm.scrollIntoView({ behavior: "smooth" });
-    //   }
-    // } else {
-      navigate("/calendly");
-    // }
-  };
-
-  const Services = () => {
-    const isHomePage = location.pathname === "/";
-    if (isHomePage) {
-      const servicesSection = document.getElementById("services");
-      if (servicesSection) {
-        servicesSection.scrollIntoView({ behavior: "smooth" });
-      }
-    } else {
-      navigate("/services");
-    }
-  };
-
-  const handleMenuItemClick = (destination) => {
-    handleClose();
+  const navigateAndClose = (destination, closeMenu) => {
+    closeMenu();
     navigate(destination);
   };
 
-  const [hoveredItem, setHoveredItem] = useState(null);
-
-  const handleMouseEnter = (index) => {
-    setHoveredItem(index);
-  };
-
-  const handleMouseLeave = () => {
-    setHoveredItem(null);
-  };
-
   const CustomMenu = styled(Menu)`
-    .MuiList-root {
-      display: flex;
-      flex-direction: column;
-    }
     .MuiPaper-root {
-      background-color: #ffffffbd;
-      border: 1px solid #e0e0e0;
+      background-color: white;
+      border: 1px solid #E0E0E0;
       box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
-      padding: 8px;
+      padding: 10px;
       border-radius: 8px;
-      min-width: 120px;
+      min-width: 180px;
     }
   `;
-
   const CustomMenuItem = styled(MenuItem)`
     color: #333;
-    padding: 12px 20px;
+    padding: 10px 10px;
     font-family: "Roboto", sans-serif;
     font-size: 14px;
     transition: background-color 0.3s, color 0.3s;
     border-left: 2px solid #f3972bc7;
-
-    width: 100px;
-
+    width: 100%;
     &:hover {
       background-color: #f3972bc7;
       color: #fff;
-    }
-  `;
-
-  const CustomButtonBase = styled(ButtonBase)`
-    .MuiTouchRipple-root {
-      color: rgba(0, 0, 0, 0.3);
-    }
-
-    .MuiTouchRipple-rippleVisible {
-      opacity: 0.7;
-    }
-
-    .MuiTouchRipple-child {
-      background-color: #4599b4; /* Custom ripple color */
     }
   `;
 
@@ -117,57 +66,154 @@ const Navbar = () => {
             alt="Softmark Solutions Logo"
             className="logo"
             onClick={() => navigate("/")}
+            loading="lazy"
           />
         </div>
         <div className="navbar-btns">
-          <span
-            className={`nav-btn ${hoveredItem === 0 ? "active" : ""}`}
-            onClick={() => navigate("/")}
-            onMouseEnter={() => handleMouseEnter(0)}
-            onMouseLeave={handleMouseLeave}
-          >
+          {/* <span className="nav-btn" onClick={() => navigate("/")}>
             Home
-          </span>
+          </span> */}
           <span
-            className={`nav-btn ${hoveredItem === 1 ? "active" : ""}`}
-            onClick={Services}
-            onMouseEnter={() => handleMouseEnter(1)}
-            onMouseLeave={handleMouseLeave}
+            className="nav-btn"
+            aria-controls={servicesOpen ? "services-menu" : undefined}
+            aria-haspopup="true"
+            onMouseEnter={(e) => handleMouseEnter(e, setServicesAnchorEl)}
           >
             Services
           </span>
+          <CustomMenu
+            id="services-menu"
+            anchorEl={servicesAnchorEl}
+            open={servicesOpen}
+            onClose={() => handleMouseLeave(setServicesAnchorEl)}
+            TransitionComponent={Fade}
+            anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
+            transformOrigin={{ vertical: "top", horizontal: "left" }}
+            MenuListProps={{
+              onMouseEnter: () => handleMouseEnter,
+              onMouseLeave: () => handleMouseLeave(setServicesAnchorEl),
+            }}
+            onMouseLeave={() => handleMouseLeave(setServicesAnchorEl)}
+          >
+            <CustomMenuItem onClick={() => navigateAndClose("/webPlans", () => setServicesAnchorEl(null))}>
+              Web Development
+            </CustomMenuItem>
+            <CustomMenuItem onClick={() => navigateAndClose("/appPlans", () => setServicesAnchorEl(null))}>
+              App Development
+            </CustomMenuItem>
+            <CustomMenuItem onClick={() => navigateAndClose("/logoPlans", () => setServicesAnchorEl(null))}>
+              Logo
+            </CustomMenuItem>
+            <CustomMenuItem onClick={() => navigateAndClose("/digitalMarketing", () => setServicesAnchorEl(null))}>
+              Digital Marketing
+            </CustomMenuItem>
+            <CustomMenuItem onClick={() => navigateAndClose("/seo", () => setServicesAnchorEl(null))}>
+              SEO
+            </CustomMenuItem>
+            <CustomMenuItem onClick={() => navigateAndClose("/ItOutsourcing", () => setServicesAnchorEl(null))}>
+              IT Outsourcing
+            </CustomMenuItem>
+            <CustomMenuItem onClick={() => navigateAndClose("/customSoftware", () => setServicesAnchorEl(null))}>
+              Custom Software
+            </CustomMenuItem>
+            <CustomMenuItem onClick={() => navigateAndClose("/animeArt", () => setServicesAnchorEl(null))}>
+              Anime Art
+            </CustomMenuItem>          </CustomMenu>
+
+          {/* About Us Dropdown */}
           <span
-            className={`nav-btn ${hoveredItem === 2 ? "active" : ""}`}
-            id="fade-button"
-            aria-controls={open ? "fade-menu" : undefined}
+            className="nav-btn"
+            aria-controls={aboutOpen ? "about-menu" : undefined}
             aria-haspopup="true"
-            aria-expanded={open ? "true" : undefined}
-            onClick={handleClick}
-            onMouseEnter={() => handleMouseEnter(2)}
-            onMouseLeave={handleMouseLeave}
+            onMouseEnter={(e) => handleMouseEnter(e, setAboutAnchorEl)}
           >
             About Us
           </span>
-          <span
-            className={`nav-btn ${hoveredItem === 3 ? "active" : ""}`}
-            onClick={() => navigate("/Ourservices")}
-            onMouseEnter={() => handleMouseEnter(3)}
-            onMouseLeave={handleMouseLeave}
+          <CustomMenu
+            id="about-menu"
+            anchorEl={aboutAnchorEl}
+            open={aboutOpen}
+            onClose={() => handleMouseLeave(setAboutAnchorEl)}
+            TransitionComponent={Fade}
+            anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
+            transformOrigin={{ vertical: "top", horizontal: "left" }}
+            MenuListProps={{
+              onMouseEnter: () => handleMouseEnter,
+              onMouseLeave: () => handleMouseLeave(setAboutAnchorEl),
+            }}
+            onMouseLeave={() => handleMouseLeave(setAboutAnchorEl)}
           >
-            Our Work
+            <CustomMenuItem onClick={() => navigateAndClose("/aboutUs", () => setAboutAnchorEl(null))}>
+              About Us
+            </CustomMenuItem>
+            <CustomMenuItem onClick={() => navigateAndClose("/whyUs", () => setAboutAnchorEl(null))}>
+              Why Us
+            </CustomMenuItem>
+          </CustomMenu>
+          <span
+            className="nav-btn"
+            onClick={()=>navigate("/contactUs")}
+          >
+            Contact Us
           </span>
-          <a
+          {/* Our Portfolio Dropdown */}
+          <span
+            className="nav-btn"
+            aria-controls={portfolioOpen ? "portfolio-menu" : undefined}
+            aria-haspopup="true"
+            onMouseEnter={(e) => handleMouseEnter(e, setPortfolioAnchorEl)}
+            onClick={() => navigate("/Ourservices")}
+          >
+            Our Portfolio
+          </span>
+          <CustomMenu
+            id="portfolio-menu"
+            anchorEl={portfolioAnchorEl}
+            open={portfolioOpen}
+            
+            onClose={() => handleMouseLeave(setPortfolioAnchorEl)}
+            TransitionComponent={Fade}
+            anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
+            transformOrigin={{ vertical: "top", horizontal: "left" }}
+            MenuListProps={{
+              onMouseEnter: () => handleMouseEnter,
+              onMouseLeave: () => handleMouseLeave(setPortfolioAnchorEl),
+            }}
+            onMouseLeave={() => handleMouseLeave(setPortfolioAnchorEl)}
+          >
+            <CustomMenuItem onClick={() => navigateAndClose("/portfolio-detail/web/Web%20Development", () => setPortfolioAnchorEl(null))}>
+              Web Projects
+            </CustomMenuItem>
+            <CustomMenuItem onClick={() => navigateAndClose("/portfolio-detail/app/App%20Development", () => setPortfolioAnchorEl(null))}>
+              App Projects
+            </CustomMenuItem>
+            <CustomMenuItem onClick={() => navigateAndClose("/portfolio-detail/logo/Logo%20Development", () => setPortfolioAnchorEl(null))}>
+              Logo Projects
+            </CustomMenuItem>
+            <CustomMenuItem onClick={() => navigateAndClose("/portfolio-detail/digital-marketing", () => setPortfolioAnchorEl(null))}>
+              Digital Marketing Projects
+            </CustomMenuItem>
+            <CustomMenuItem onClick={() => navigateAndClose("/portfolio-detail/custom/Custom%20Development", () => setPortfolioAnchorEl(null))}>
+              Custom Software Projects
+            </CustomMenuItem>
+            <CustomMenuItem onClick={() => navigateAndClose("/portfolio-detail/anime/Anime%20Development", () => setPortfolioAnchorEl(null))}>
+              Anime Art Projects
+            </CustomMenuItem>
+          </CustomMenu>
+          <span
+            className="nav-btn"
+          >
+            FAQ's
+          </span>
+          {/* <a
             href="https://www.linkedin.com/company/softmark-solutions-llc"
             target="_blank"
-            style={{ textDecoration: "none" }}
             rel="noreferrer"
-            className={`nav-btn ${hoveredItem === 4 ? "active" : ""}`}
-            onMouseEnter={() => handleMouseEnter(4)}
-            onMouseLeave={handleMouseLeave}
+            className="nav-btn"
           >
             Careers
-          </a>
-          <span className="nav-btn contact-us" onClick={Contact}>
+          </a> */}
+          <span className="nav-btn contact-us" onClick={() => navigate("/calendly")}>
             <div className="myLottieAnimation">
               <MyLottieAnimation />
             </div>
@@ -178,36 +224,6 @@ const Navbar = () => {
           <LeftDrawer />
         </div>
       </div>
-      <CustomMenu
-        id="fade-menu"
-        anchorEl={anchorEl}
-        open={open}
-        onClose={handleClose}
-        TransitionComponent={Fade}
-        MenuListProps={{
-          "aria-labelledby": "fade-button",
-        }}
-        anchorOrigin={{
-          vertical: "bottom",
-          horizontal: "left",
-        }}
-        transformOrigin={{
-          vertical: "top",
-          horizontal: "left",
-        }}
-      >
-        <CustomButtonBase>
-          <CustomMenuItem onClick={() => handleMenuItemClick("/aboutUs")}>
-            About Us
-          </CustomMenuItem>
-        </CustomButtonBase>
-        <CustomButtonBase>
-          <CustomMenuItem onClick={() => handleMenuItemClick("/whyUs")}>
-            Why Us
-          </CustomMenuItem>
-        </CustomButtonBase>
-      </CustomMenu>
-      <div className={`navbar-line ${hoveredItem !== null ? "active" : ""}`} />
     </div>
   );
 };

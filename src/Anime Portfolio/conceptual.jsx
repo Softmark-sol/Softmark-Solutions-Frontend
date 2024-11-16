@@ -3,46 +3,55 @@ import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import "../css/gallery.css"
 
+import anime5 from '../assets/images/conseptualAnime/anime5.jpg'
+import anime6 from '../assets/images/conseptualAnime/anime6.jpg'
+import anime7 from '../assets/images/conseptualAnime/anime7.jpg'
+import anime8 from '../assets/images/conseptualAnime/anime8.jpg'
+import anime9 from '../assets/images/conseptualAnime/anime9.jpg'
+import anime10 from '../assets/images/conseptualAnime/anime10.jpg'
+import anime11 from '../assets/images/conseptualAnime/anime11.jpg'
+
+
 const itemData = [
   {
-    img: 'https://fsartmania.com/wp-content/uploads/2023/12/Anime-fit-girl-colored-2-576x1024.jpg',
+    img: anime5,
     title: 'portrait',
     rows: 4,
     cols: 3,
   },
   {
-    img: 'https://fsartmania.com/wp-content/uploads/2023/12/Anime-Green-Hair-girl-FB-1-501x1024.jpg',
+    img: anime6,
     title: 'portrait',
     rows: 4,
     cols: 3,
   },
   {
-    img: 'https://fsartmania.com/wp-content/uploads/2024/04/Delphinnea-539x1024.jpg',
+    img: anime7,
     title: 'portrait',
     rows: 4,
     cols: 3,
   },
   {
-    img: 'https://fsartmania.com/wp-content/uploads/2024/04/Mafia-Wolf-485x1024.jpg',
+    img: anime8,
     title: 'portrait',
     rows: 4,
     cols: 3,
   },
   {
-    img: 'https://fsartmania.com/wp-content/uploads/2024/04/Demon-girl-chbi-2-678x1024.jpg',
+    img: anime9,
     title: 'portrait',
     rows: 3,
     cols: 2
   },
   
   {
-    img: 'https://fsartmania.com/wp-content/uploads/2024/04/Spider-girl-RS-768x796.jpg',
+    img: anime10,
     title: 'portrait',
     rows: 3,
     cols: 2,
   },
   {
-    img: 'https://fsartmania.com/wp-content/uploads/2024/04/Bike-Furry-768x838.jpg',
+    img: anime11,
     title: 'portrait',
     rows: 3,
     cols: 2,

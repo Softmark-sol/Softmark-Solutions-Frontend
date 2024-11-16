@@ -7,6 +7,7 @@ import Swal from 'sweetalert2';
 import '../../../css/modal.css'; // Adjust path as per your project structure
 import API_CONFIG from '../../../config/api';
 import Spinner from 'react-bootstrap/Spinner'
+import { FaTimes } from 'react-icons/fa'; // Import cross icon
 
 
 const { apiKey } = API_CONFIG;
@@ -167,8 +168,15 @@ const Modalbusiness = ({ isOpened, heading, handleClose }) => {
   return (
     <div>
       <Modal show={isOpened} onHide={handleClose} backdrop='static'>
-        <Modal.Header closeButton>
+        <Modal.Header>
           <Modal.Title>{heading}</Modal.Title>
+          <Button
+          variant="light"
+          onClick={handleClose}
+          style={{ border: 'none', background: 'none', padding: '0' }}
+        >
+          <FaTimes size={24} color="#000" />
+        </Button>
         </Modal.Header>
         <Modal.Body>
           <Form

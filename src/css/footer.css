@@ -39,7 +39,7 @@
 .footer-top {
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: flex-start; */
   margin-bottom: 20px;
 }
 
@@ -47,7 +47,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  align-items: center;
+  align-items: flex-start;
   padding-top: 20px;
 }
 
@@ -94,8 +94,14 @@
 .footer-right p {
   color: #ffff;
   text-align: left;
-  cursor: pointer;
+  cursor: 'default';
   font-size: 1rem;
+}
+.footer-right{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .footer-bottom ul li button {
@@ -115,7 +121,12 @@
 }
 
 .footer-contact {
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+ 
 }
 .footer-contact img {
   margin-bottom: 20px;
@@ -125,9 +136,7 @@
 .footer-social {
   display: flex;
   justify-content: center;
-  /* align-items: center; */
-  margin-top: 20px;
-  padding-top: 30px;
+  width: 100%;
   flex-wrap: wrap;
 }
 
@@ -149,6 +158,64 @@
   color: #f3f2ef;
 }
 
+.transparent-contact-form {
+  /* margin-top: 20px; */
+  text-align: center;
+}
+
+.transparent-contact-form h4 {
+  margin-bottom: 15px;
+  color: #fff; /* Text color for the heading */
+}
+
+.form-transparent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.form-transparent input,
+.form-transparent textarea {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  border: 1px solid white;
+  background: transparent; /* Makes the background transparent */
+  color: #fff; /* Input text color */
+  font-size: 16px;
+}
+
+.form-transparent input::placeholder,
+.form-transparent textarea::placeholder {
+  color: rgba(255, 255, 255, 0.7); 
+}
+
+.form-transparent input:focus,
+.form-transparent textarea:focus {
+  border: 2px solid #ffff; 
+}
+
+.submit-transparent-button {
+  text-align: left;
+  padding: 10px 20px;
+  background-color: #176dc2;
+  color: #ffff; /* Blue text for the button */
+  border: 2px solid #ffff;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit-transparent-button:hover {
+  background-color: rgb(220, 166, 66);
+  color: #fff;
+}
+/* .contact-form-footer{
+  padding-top: 110px;
+} */
+
 /* Media Queries */
 @media (max-width: 1024px) {
   .footer {
@@ -161,6 +228,15 @@
 }
 
 @media (max-width: 787px) {
+  .footer-intro{
+    width: 100% !important;
+  }
+  .quick-sec{
+    padding-top: 50px;
+  }
+  .contact-form-footer{
+    padding-top: 50px;
+  }
   .footer-bottom {
     flex-direction: column;
     align-items: center;
@@ -173,7 +249,7 @@
   }
 
   .footer-right {
-    margin-left: 0;
+    /* margin-left: 0; */
     text-align: center;
   }
   .footer-right p {
@@ -206,9 +282,9 @@
       text-align: center;
       margin-top: 10px;
     }
-    .footer-right p {
+    /* .footer-right p {
       text-align: center;
-    }
+    } */
   }
 }
 

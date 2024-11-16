@@ -1,10 +1,16 @@
 import React, { useEffect } from "react";
 import "../css/seo.css";
-import PlansSeo from "./PlansSeo";
-import { SeoPlans } from "../components/PlansData";
 import SeoLottieAnimation from "../components/SeoAnimation";
 import Typewriter from "../components/TypeWriter.jsx";
 import { useNavigate } from "react-router-dom";
+import contentlImage from '../assets/images/SeoImages/media-marketing-internet-digital-global_53876-138500.jpg'
+import seoSearchImage from '../assets/images/SeoImages/seo-search-engine-optimization-modish-ecommerce-online-retail-business_31965-45082.jpeg'
+import seoExpertImage from '../assets/images/SeoImages/seo-expert-implementing-schema-markup-enhance-search-engine-results_1314467-47979.jpeg'
+import seoImage from '../assets/images/SeoImages/seo-search-engine-optimization-modish-ecommerce-online-retail-business_31965-75056.jpeg'
+import seoResearchImage from '../assets/images/SeoImages/research.jpeg'
+import seoLinking from '../assets/images/SeoImages/man-is-using-laptop-with-website-web-screen_1282070-12983.jpeg'
+import seoTechnicalAudit from '../assets/images/SeoImages/man-concentrates-data-analysis-computer_999616-2868-removebg-preview.png'
+
 
 const Seo = () => {
   const navigate = useNavigate();
@@ -46,15 +52,18 @@ const Seo = () => {
           <SeoLottieAnimation />
         </div>
       </div>
+      <button className="contact-btn" style={{marginBottom:'20px', padding:'20px'}} onClick={() => navigate("/portfolio-detail/seo/Seo%20Development")}>
+      Discover Our SEO Portfolio 
+      </button>
 
-      <button className="button-primary" onClick={() => navigate('/contactUs')}>Request a Proposal Today!</button>
+      {/* <button className="button-primary" onClick={() => navigate('/contactUs')}>Request a Proposal Today!</button> */}
 
       <h1 className="seo-subheader fade-in-right">Our SEO Services</h1>
 
       <div className="horizontal-fram-seo fade-in-left">
         <div className="seo-animation">
           <img
-            src="https://img.freepik.com/premium-photo/seo-search-engine-optimization-modish-ecommerce-online-retail-business_31965-45082.jpg?w=740"
+            src={seoSearchImage}
             alt="SEO Consultancy"
             className="seo-consultancy-image"
           />
@@ -74,12 +83,12 @@ const Seo = () => {
           A well-functioning website is essential for SEO success. Our technical SEO audit will identify issues that may be holding back your site. We analyze everything, such as site speed, mobile optimization, and crawlability.
           </p>
           <p className="seo-p">
-          After the audit, we’ll provide actionable recommendations that can help improve your site’s performance. Our goal is to make sure that your website is both user-friendly and search engine-friendly.
+          After the audit, we’ll provide crawlability and actionable recommendations that can help improve your site’s performance. Our goal is to make sure that your website is both user-friendly and SEO.
           </p>
         </div>
         <div className="seo-animation">
           <img
-            src="https://img.freepik.com/premium-photo/seo-expert-implementing-schema-markup-enhance-search-engine-results_1314467-47979.jpg?w=740"
+            src={seoTechnicalAudit}
             alt="Technical SEO Audit"
             className="responsive-image"
           />
@@ -89,7 +98,7 @@ const Seo = () => {
       <div className="horizontal-fram-seo fade-in-left">
         <div className="seo-animation">
           <img
-            src="https://img.freepik.com/premium-photo/seo-search-engine-optimization-modish-ecommerce-online-retail-business_31965-75056.jpg?w=740"
+            src={seoImage}
             alt="Keyword & Market Research"
             className="responsive-image"
           />
@@ -114,7 +123,7 @@ const Seo = () => {
         </div>
         <div className="seo-animation">
           <img
-            src="https://img.freepik.com/premium-photo/high-angle-view-laptop-table_1048944-21879260.jpg?w=740"
+            src={seoResearchImage}
             alt="Onsite SEO"
             className="responsive-image"
           />
@@ -124,7 +133,7 @@ const Seo = () => {
       <div className="horizontal-fram-seo fade-in-left">
         <div className="seo-animation">
           <img
-            src="https://img.freepik.com/free-vector/link-building-concept_23-2148006397.jpg?t=st=1725035854~exp=1725039454~hmac=6f3735464b4e85128daa3b118d72031323fc444847fcffe95023e7f37031dad9&w=740"
+            src={seoLinking}
             alt="Link Building"
             className="custom-image"
           />
@@ -146,12 +155,14 @@ const Seo = () => {
         </div>
         <div className="seo-animation">
           <img
-            src="https://img.freepik.com/free-photo/media-marketing-internet-digital-global_53876-138500.jpg?t=st=1725035498~exp=1725039098~hmac=a052258fd39bc003975ed534906a5fcaeb40006e1c09ecb924df5820de5ee335&w=740"
+          src={contentlImage}
             alt="Content Marketing"
             className="responsive-image"
           />
         </div>
       </div>
+
+ 
 
       <h1>Are you ready to take your SEO to the next level?</h1>
       <p className="seo-p custom-text">

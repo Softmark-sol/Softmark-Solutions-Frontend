@@ -1,0 +1,84 @@
+/* styles.css */
+
+.button {
+    position: relative;
+    background-color: #2d2d2d; /* bg-neutral-800 */
+    height: 4rem; /* h-16 */
+    width: 16rem; /* w-64 */
+    border: 1px solid #d1d5db; /* border, text color */
+    text-align: left;
+    padding: 0.75rem; /* p-3 */
+    color: #f9fafb; /* text-gray-50 */
+    font-size: 1rem; /* text-base */
+    font-weight: 700; /* font-bold */
+    border-radius: 0.5rem; /* rounded-lg */
+    overflow: hidden;
+    text-decoration: underline; /* underline */
+    text-underline-offset: 0.5rem; /* underline-offset-2 */
+  }
+  
+  .button:hover {
+    border-color: #fca5a5; /* hover:border-rose-300 */
+    text-decoration: underline;
+    text-underline-offset: 1rem; /* hover:underline-offset-4 */
+    color: #fca5a5; /* hover:text-rose-300 */
+  }
+  
+  .button:hover .before {
+    box-shadow: 20px 20px 20px 30px rgba(162, 28, 175, 0.5); /* hover:before:[box-shadow:...] */
+    right: 3rem; /* hover:before:right-12 */
+    bottom: -2rem; /* hover:before:-bottom-8 */
+    filter: blur(5px); /* hover:before:blur */
+  }
+  
+  .button:hover .after {
+    right: -2rem; /* hover:after:-right-8 */
+  }
+  
+  .button .before, .button .after {
+    content: '';
+    position: absolute;
+    z-index: 10;
+    border-radius: 50%;
+    filter: blur(5px);
+  }
+  
+  .button .before {
+    width: 3rem; /* before:w-12 */
+    height: 3rem; /* before:h-12 */
+    top: 0.25rem; /* before:top-1 */
+    right: 0.25rem; /* before:right-1 */
+    background-color: #8b5cf6; /* before:bg-violet-500 */
+  }
+  
+  .button .after {
+    width: 5rem; /* after:w-20 */
+    height: 5rem; /* after:h-20 */
+    top: 0.75rem; /* after:top-3 */
+    right: 2rem; /* after:right-8 */
+    background-color: #fca5a5; /* after:bg-rose-300 */
+  }
+  
+  /* Hover and Group Hover Effects */
+  .group:hover .button {
+    transition-duration: 500ms; /* hover:duration-500 */
+  }
+  
+  .group:hover .button .before,
+  .group:hover .button .after {
+    transition-duration: 500ms; /* group-hover:before:duration-500 group-hover:after:duration-500 */
+  }
+  
+  .group {
+    display: inline-block;
+    position: relative;
+  }
+  
+  .group:hover .button {
+    transition: all 500ms ease;
+  }
+  
+  .origin-left {
+    transform-origin: left;
+  }
+  

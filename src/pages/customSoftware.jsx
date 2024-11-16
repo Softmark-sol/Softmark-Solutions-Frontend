@@ -37,7 +37,7 @@ const CustomSoftware = () => {
                 </button>
               </div>
             </h5>
-            <div className="CSD-animation">
+            <div className="CSD-animation" >
               <CSDLottieAnimation />
             </div>
           </div>
@@ -49,6 +49,10 @@ const CustomSoftware = () => {
       {/* Section 2 */}
       <SoftwareCapabilitiesCards />
       <SoftwareCards />
+      <div style={{display:'flex',justifyContent:'center', alignItems:'center' , marginTop:'20px'}}>
+      <button className="contact-btn" style={{padding:'20px'}} onClick={() => navigate("/portfolio-detail/custom/Custom%20Development")}>
+      Explore Our Custom Software Development Portfolio          </button>
+          </div>
     </>
   );
 };

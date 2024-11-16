@@ -3,21 +3,25 @@ import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import "../css/gallery.css";
 
+import anime12 from '../assets/images/emoties/anime12.jpg'
+import anime13 from '../assets/images/emoties/anime13.jpg'
+import anime14 from '../assets/images/emoties/anime14.jpg'
+
 const itemData = [
   {
-    img: 'https://fsartmania.com/wp-content/uploads/2024/04/Em1-768x388.jpg',
+    img: anime12,
     title: 'portrait',
     rows: 2,
     cols: 3,
   },
   {
-    img: 'https://fsartmania.com/wp-content/uploads/2024/04/Em2-768x388.jpg',
+    img: anime13,
     title: 'portrait',
     rows: 2,
     cols: 2,
   },
   {
-    img: 'https://fsartmania.com/wp-content/uploads/2024/04/Em3-768x388.jpg',
+    img: anime14,
     title: 'portrait',
     rows: 4,
     cols: 3

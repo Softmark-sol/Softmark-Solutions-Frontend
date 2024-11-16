@@ -4,17 +4,31 @@ import Cards from "../components/Cards";
 import OurClients from "../components/Slider";
 import ContactForm from "../components/ContactForm";
 import ScrollUpButton from "../components/ScrollUpButton";
-import Testimonials from "../components/Testimonials/Testimonials";
+import WhoWeAre from "../components/whoWeAre/whoWeAre";
+import CallToAction from "../components/callToAction/callToActions";
+import InfoCards from "../components/infoCards/infoCards";
+import ConsultationBanner from "../components/consultationBanner/consultationBanner";
+import MarketingSection from "../components/marketingSection/marketingSection";
+import ClientsSection from "../components/clients/clients";
+import WhatClientSays from "../components/whatClientSays/whatClientSays";
+import WorkingProcess from "../components/WorkingProcess";
 
 const Home = () => {
   return (
     <>
       <HeroSection />
-
+      <InfoCards />
+      <ConsultationBanner />
+      {/* <CallToAction /> */}
       <Cards heading={`Our Services`} />
+      <MarketingSection />
+      <WorkingProcess/>
       <OurClients />
-      <Testimonials />
-      <ContactForm />
+      {/* <WhoWeAre /> */}
+      <WhatClientSays />
+      <ClientsSection />
+      {/* <ContactForm /> */}
+      <ConsultationBanner />
       <ScrollUpButton />
     </>
   );

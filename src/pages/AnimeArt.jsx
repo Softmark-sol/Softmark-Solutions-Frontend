@@ -1,12 +1,16 @@
-import { React, useEffect } from "react";
+import React, { useEffect } from "react";
 import Typewriter from "../components/TypeWriter";
 import { useNavigate } from "react-router-dom";
 import "../css/anime.css";
 import AnimePortfolio from "../components/AnimePortfolio";
 import ScrollReveal from "scrollreveal";
 
+import animeHero from '../assets/images/animeHero.jpg';
+import animeSub from '../assets/images/animeSub.jpeg';
+
 const AnimeArt = () => {
   const navigate = useNavigate();
+
   useEffect(() => {
     const sr = ScrollReveal({
       origin: "right",
@@ -16,23 +20,52 @@ const AnimeArt = () => {
       reset: true,
     });
 
-    sr.reveal(".csd-hero-img", {
-      interval: 200,
-    });
-
-    sr.reveal(".main-paragrah-csd", {
-      interval: 200,
-      origin: "left",
-    });
-    sr.reveal(".csd-single-card h5, .main-paragrah-csd h3", {
-      interval: 200,
-      origin: "top",
-    });
-    sr.reveal(".csd-single-card p", {
-      interval: 200,
-      origin: "left",
-    });
+    sr.reveal(".csd-hero-img", { interval: 200 });
+    sr.reveal(".main-paragrah-csd", { interval: 200, origin: "left" });
+    sr.reveal(".csd-single-card h5, .main-paragrah-csd h3", { interval: 200, origin: "top" });
+    sr.reveal(".csd-single-card p", { interval: 200, origin: "left" });
   }, []);
+
+  const services = [
+    {
+      title: "Concept Anime Characters",
+      description:
+        "Immerse yourself in the birth of unique personas as we conceptualize and craft compelling anime characters, each with its own captivating narrative and distinctive features.",
+    },
+    {
+      title: "Anime Fan Art",
+      description:
+        "Witness your favorite anime come alive with our fan art creations. We breathe new life into beloved characters, capturing the essence of the series with meticulous attention to detail.",
+    },
+    {
+      title: "Anime OC (Original Characters)",
+      description:
+        "Unleash your creativity by collaborating with us to bring your Anime Original Characters (OCs) to vivid existence. Every detail is carefully considered to ensure a character that resonates with your vision.",
+    },
+    {
+      title: "Anime Emotes",
+      description:
+        "Elevate your online presence with our custom Anime Emotes. Whether for streaming, messaging, or social media, our expressive emotes inject personality and flair into your digital interactions.",
+    },
+    {
+      title: "Character Sheet",
+      description:
+        "Anime Character sheet is a visual feast, showcasing intricate details such as character design, expressions, attire, and weaponry. Our talented artists pour their passion into every line, color, and nuance, ensuring that each character possesses a unique identity and resonates with distinct personality traits.",
+    },
+  ];
+
+  const renderServiceCards = () =>
+    services.map((service, index) => (
+      <div key={index} className="csd-single-card container anime-card2">
+        <h5 style={{ fontWeight: "bold", textAlign: "center", paddingTop: "20px", fontSize: "1.5rem" }}>
+          {service.title}
+        </h5>
+        <p style={{ textAlign: "center", paddingTop: "20px", fontSize: "1rem" }}>
+          {service.description}
+        </p>
+      </div>
+    ));
+
   return (
     <>
       <div className="main-container container anime">
@@ -41,21 +74,11 @@ const AnimeArt = () => {
         </h2>
         <div className="horizontal-fram-logo">
           <div className="csd-hero">
-            <h5
-              className="main-paragrah-csd main-paragrah anime-h5"
-              style={{ color: "#454545" }}
-            >
-              Bring your vision to life with our expert anime art services. Our
-              talented artists create stunning, detailed designs that capture
-              the essence of Anime. Perfect for custom artwork or branding, we
-              elevate your projects with dynamic, eye-catching artistry.{" "}
+            <h5 className="main-paragrah-csd main-paragrah anime-h5" style={{ color: "#454545" }}>
+              Bring your vision to life with our expert anime art services. Our talented artists create stunning, detailed designs that capture the essence of Anime. Perfect for custom artwork or branding, we elevate your projects with dynamic, eye-catching artistry.
             </h5>
             <div className="csd-hero-img anime-img">
-              <img
-                src="https://img.freepik.com/free-photo/digital-art-style-illustration-graphic-designer_23-2151536949.jpg?t=st=1722263517~exp=1722267117~hmac=ec8ee85ebe3b0ef33d21f097df1bfab69d90e9be571bb7deaa32a52d201531dc&w=740"
-                alt="animeArt"
-                style={{ width: "100%" }}
-              />
+              <img src={animeHero} alt="Anime art example" style={{ width: "100%" }} />
             </div>
           </div>
         </div>
@@ -103,7 +126,7 @@ const AnimeArt = () => {
             </h5>
             <div className="csd-hero-img anime-img">
               <img
-                src="https://fsartmania.com/wp-content/uploads/2023/12/WhatsApp-Image-2023-12-07-at-12.13.15-AM-1-1536x1536.jpeg"
+                src={animeSub}
                 alt="animeArt"
                 style={{ width: "100%", height: "100%" }}
               />
@@ -115,146 +138,22 @@ const AnimeArt = () => {
       <div className="card-heading-service container">
         <h2 className="heading-underline-service">What we do</h2>
         <p className="pContainer" style={{ textAlign: "center" }}>
-          Indulge in a spectrum of artistic services tailored to elevate your
-          anime experience at Fantasy Spectrum Anime ArtMania. Our array of
-          offerings spans the following enchanting realms.
+          Indulge in a spectrum of artistic services tailored to elevate your anime experience at Fantasy Spectrum Anime ArtMania. Our array of offerings spans the following enchanting realms.
         </p>
       </div>
 
       <div className="container cards-container-csd">
-        <div className="csd-single-card container anime-card2">
-          <h5
-            style={{
-              fontWeight: "bold",
-              textAlign: "center",
-              paddingTop: "20px",
-              fontSize: "1.5rem",
-            }}
-          >
-            Concept Anime Characters
-          </h5>
-          <p
-            style={{
-              textAlign: "center",
-              paddingTop: "20px",
-              fontSize: "1rem",
-            }}
-          >
-            Immerse yourself in the birth of unique personas as we conceptualize
-            and craft compelling anime characters, each with its own captivating
-            narrative and distinctive features.
-          </p>
-        </div>
-
-        <div className="csd-single-card container anime-card2">
-          <h5
-            style={{
-              fontWeight: "bold",
-              textAlign: "center",
-              paddingTop: "20px",
-              fontSize: "1.5rem",
-            }}
-          >
-            Anime Fan Art
-          </h5>
-          <p
-            style={{
-              textAlign: "center",
-              paddingTop: "20px",
-              fontSize: "1rem",
-            }}
-          >
-            Witness your favorite anime come alive with our fan art creations.
-            We breathe new life into beloved characters, capturing the essence
-            of the series with meticulous attention to detail.{" "}
-          </p>
-        </div>
-
-        <div className="csd-single-card container anime-card2">
-          <h5
-            style={{
-              fontWeight: "bold",
-              textAlign: "center",
-              paddingTop: "20px",
-              fontSize: "1.5rem",
-            }}
-          >
-            Anime OC (Original Characters){" "}
-          </h5>
-          <p
-            style={{
-              textAlign: "center",
-              paddingTop: "20px",
-              fontSize: "1rem",
-            }}
-          >
-            Unleash your creativity by collaborating with us to bring your Anime
-            Original Characters (OCs) to vivid existence. Every detail is
-            carefully considered to ensure a character that resonates with your
-            vision.{" "}
-          </p>
-        </div>
-
-        <div className="csd-single-card container anime-card anime-card2">
-          <h5
-            style={{
-              fontWeight: "bold",
-              textAlign: "center",
-              paddingTop: "20px",
-              fontSize: "1.5rem",
-            }}
-          >
-            Anime Emotes
-          </h5>
-          <p
-            style={{
-              textAlign: "center",
-              paddingTop: "20px",
-              fontSize: "1rem",
-            }}
-          >
-            Elevate your online presence with our custom Anime Emotes. Whether
-            for streaming, messaging, or social media, our expressive emotes
-            inject personality and flair into your digital interactions.
-          </p>
-        </div>
-
-        <div className="csd-single-card container anime-card anime-card2">
-          <h5
-            style={{
-              fontWeight: "bold",
-              textAlign: "center",
-              paddingTop: "20px",
-              fontSize: "1.5rem",
-            }}
-          >
-            Character Sheet
-          </h5>
-          <p
-            style={{
-              textAlign: "center",
-              paddingTop: "20px",
-              fontSize: "1rem",
-            }}
-          >
-            Anime Character sheet is a visual feast, showcasing intricate
-            details such as character design, expressions, attire, and weaponry.
-            Our talented artists pour their passion into every line, color, and
-            nuance, ensuring that each character possesses a unique identity and
-            resonates with distinct personality traits.
-          </p>
-        </div>
+        {renderServiceCards()}
       </div>
       <AnimePortfolio />
-
+      <div style={{display:'flex', justifyContent:'center', alignItems:'center' }}>
+         <button  style={{padding:'20px'}} className="contact-btn" onClick={() => navigate("/portfolio-detail/anime/Anime%20Development")}>
+            Discover Our Logo Design Portfolio          </button>
+      </div> 
       <div className="card-heading-service container">
         <h2 className="heading-underline-service">Get Started Today</h2>
         <p className="paragraph" style={{ alignItems: "center" }}>
-          Ready to elevate your anime art portfolio? Contact us today to
-          schedule a consultation and discover how our expertise can help you
-          showcase your artwork, connect with your audience, and take your
-          creative vision to the next level. Let's make your anime art shine and
-          stand out online!
+          Ready to elevate your anime art portfolio? Contact us today to schedule a consultation and discover how our expertise can help you showcase your artwork, connect with your audience, and take your creative vision to the next level. Let's make your anime art shine and stand out online!
         </p>
         <button
           onClick={() => navigate("/contactUs")}
@@ -264,9 +163,9 @@ const AnimeArt = () => {
         >
           Get a free Quotation
         </button>
-        <div />
       </div>
     </>
   );
 };
+
 export default AnimeArt;

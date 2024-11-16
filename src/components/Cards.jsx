@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { lazy, Suspense, useEffect, useState } from "react";
 import "../css/Cards.css";
 import Singlecard from "./Singlecard";
 import img1 from "../assets/images/web-dev.png";
@@ -10,22 +10,14 @@ import img6 from "../assets/images/custom.png";
 import img7 from "../assets/images/anime.png";
 import img8 from "../assets/images/outsourcing.png";
 import ScrollReveal from "scrollreveal";
-import ParticleEffect from "./Particles";
+import { useNavigate } from "react-router-dom";
+import ConsultationBanner from "./consultationBanner/consultationBanner";
+import ConsultationBtn from "./Buttons/ConsultationBtn";
+const ParticleEffect = lazy(() => import('./Particles'));
 
 const Cards = ({ heading }) => {
-  useEffect(() => {
-    const sr = ScrollReveal({
-      origin: "bottom",
-      distance: "20px",
-      duration: 500,
-      delay: 200,
-      reset: true, // This will reset the animation every time you scroll
-    });
-
-    sr.reveal(".card-heading-service,.cards-container", {
-      interval: 200, // This will reveal elements one by one
-    });
-  }, []);
+  const [showAll, setShowAll] = useState(false);
+  const navigate = useNavigate()
   const ServicesData = [
     {
       path: img6,
@@ -77,16 +69,39 @@ const Cards = ({ heading }) => {
     },
   ];
 
+  useEffect(() => {
+    const sr = ScrollReveal({
+      origin: "bottom",
+      distance: "20px",
+      duration: 500,
+      delay: 200,
+      reset: true,
+    });
+
+    sr.reveal(".card-heading-service,.cards-container", {
+      interval: 200,
+    });
+    return () => sr.destroy();
+  }, []);
+
+  const location = window.location.pathname;
+
+  const handleSeeMoreClick = () => {
+    navigate("/services")
+  };
+
   return (
     <div style={{ position: "relative", overflow: "hidden" }}>
-      <ParticleEffect />
+      <Suspense fallback={<div>Loading...</div>}>
+        <ParticleEffect />
+      </Suspense>
       <div className="card-heading-service" id="services">
         <h2 className="heading-underline-service" id="services">
           {heading}
         </h2>
       </div>
       <div className="cards-container container">
-        {ServicesData.map((item, index) => (
+        {ServicesData.slice(0, showAll || location !== '/' ? ServicesData.length : 3).map((item, index) => (
           <Singlecard
             key={index}
             path={item.path}
@@ -96,7 +111,12 @@ const Cards = ({ heading }) => {
           />
         ))}
       </div>
-      <div className="animation"> {/* <MyComponent /> */}</div>
+      {location === '/' && !showAll && (
+        // <div className="see-more-button">
+        //   <button onClick={handleSeeMoreClick}>See More</button>
+        // </div>
+        <ConsultationBtn route={"services"} text="See More"/>
+      )}
     </div>
   );
 };
