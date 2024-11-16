@@ -11,6 +11,7 @@ import ConsultationBanner from "../components/consultationBanner/consultationBan
 import MarketingSection from "../components/marketingSection/marketingSection";
 import ClientsSection from "../components/clients/clients";
 import WhatClientSays from "../components/whatClientSays/whatClientSays";
+import WorkingProcess from "../components/WorkingProcess";
 
 const Home = () => {
   return (
@@ -21,6 +22,7 @@ const Home = () => {
       {/* <CallToAction /> */}
       <Cards heading={`Our Services`} />
       <MarketingSection />
+      <WorkingProcess/>
       <OurClients />
       {/* <WhoWeAre /> */}
       <WhatClientSays />
