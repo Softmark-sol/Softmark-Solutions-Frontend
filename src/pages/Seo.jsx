@@ -37,6 +37,7 @@ const Seo = () => {
   }, []);
 
   return (
+    <>
     <div className="seo container">
       <h1 className="seo-h fade-in-left">
         SoftMark Solutions -{" "}
@@ -177,8 +178,9 @@ const Seo = () => {
       </button>
 
       {/* <PlansSeo plans={SeoPlans} /> */}
-      <MoreServices />
     </div>
+      <MoreServices />
+      </>
   );
 };
 

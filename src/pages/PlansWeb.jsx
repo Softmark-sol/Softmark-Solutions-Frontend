@@ -19,6 +19,7 @@ import WebAgency from "../components/webAgency/webAgency.jsx";
 import MoreServices from "../components/moreServices/moreServices.jsx";
 import ServiceForm from "../components/ServiceForm.jsx";
 import { Description } from "@mui/icons-material";
+import PricingCards from "../components/pricingCards/priceCards.jsx";
 
 export default function PlansWeb({ plans }) {
   const navigate = useNavigate();
@@ -120,7 +121,8 @@ export default function PlansWeb({ plans }) {
       </div>
 
       <div className="plans-container container">
-        {plans.map((plan, index) => (
+        <PricingCards pricingPlans={plans}/>
+        {/* {plans.map((plan, index) => (
           <Card
             className={`plan-card plan-card-${index}`}
             key={index}
@@ -134,7 +136,6 @@ export default function PlansWeb({ plans }) {
                     <span className="plan-title">
                       {plan.name}
                     </span>
-                    {/* <span className='plan-price'>{`$${plan.price}/mo`}</span> */}
                     <button
                       className="select-button"
                       onClick={() =>
@@ -160,7 +161,7 @@ export default function PlansWeb({ plans }) {
               </CardContent>
             </CardActionArea>
           </Card>
-        ))}
+        ))} */}
         <button
           className="contact-btn"
           onClick={() =>
