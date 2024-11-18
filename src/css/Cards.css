@@ -64,21 +64,17 @@
   overflow: hidden; /* Prevent overflow issues */
 }
 
-.slick-slide {
-  display: flex !important;
-  justify-content: center; /* Center-align cards */
-}
 
 .card {
-  max-width: 100%; /* Ensure cards don't exceed the viewport width */
-  margin: 0 auto; /* Center cards */
+  max-width: 100%; 
+  margin: 0 auto; 
 }
 
 @media (max-width: 381px) {
   .cards-container .card {
     max-width: 100%; /* Utilize full width for small screens */
     margin: 0; /* Remove extra margins */
-    padding-left: 50px;
-    padding-right: 50px;
+    /* padding-left: 50px;
+    padding-right: 50px; */
   }
 }

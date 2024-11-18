@@ -13,8 +13,10 @@ import ScrollReveal from "scrollreveal";
 import { useNavigate } from "react-router-dom";
 import ConsultationBanner from "./consultationBanner/consultationBanner";
 import ConsultationBtn from "./Buttons/ConsultationBtn";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css"; // Slick CSS
+import "slick-carousel/slick/slick-theme.css"; // Slick Theme CSS
 const ParticleEffect = lazy(() => import('./Particles'));
-
 const Cards = ({ heading }) => {
   const [showAll, setShowAll] = useState(false);
   const navigate = useNavigate()
@@ -90,6 +92,41 @@ const Cards = ({ heading }) => {
     navigate("/services")
   };
 
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    arrows: false,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    swipe: true, 
+  touchMove: true,
+  touchThreshold: 10, 
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
+  };
+
+
   return (
     <div style={{ position: "relative", overflow: "hidden" }}>
       <Suspense fallback={<div>Loading...</div>}>
@@ -101,6 +138,12 @@ const Cards = ({ heading }) => {
         </h2>
       </div>
       <div className="cards-container container">
+      <Slider
+          {...settings}
+          style={{
+            width: "100%",
+            margin: "0 auto", // Centers the slider in the container
+          }}>
         {ServicesData.slice(0, showAll || location !== '/' ? ServicesData.length : 3).map((item, index) => (
           <Singlecard
             key={index}
@@ -110,6 +153,7 @@ const Cards = ({ heading }) => {
             route={item.route}
           />
         ))}
+        </Slider>
       </div>
       {location === '/' && !showAll && (
         // <div className="see-more-button">
