@@ -2,15 +2,47 @@ import React from 'react'
 import Singlecard from "./Singlecard";
 import { SiGooglecontaineroptimizedos } from "react-icons/si";
 import { MdOutlineHighQuality,MdFreeCancellation } from "react-icons/md";
-
+import "slick-carousel/slick/slick.css"; // Slick CSS
+import "slick-carousel/slick/slick-theme.css"; // Slick Theme CSS
 import {
   IoPeopleSharp,
   IoCodeSlash,
   IoRocketSharp,
 } from "react-icons/io5";
+import Slider from 'react-slick';
 
 
 const ItOutMidcards = () => {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    arrows: false,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
+  };
         const ItOUTdata = [
           {
             path: <IoPeopleSharp size={90} color="#4599b4" />,
@@ -59,9 +91,14 @@ const ItOutMidcards = () => {
       </p>
     </div>
     <div className="cards-container container">
+    <Slider
+          {...settings}
+          style={{
+            width: "100%",
+            margin: "0 auto", 
+          }}>
         {ItOUTdata.map((item, index) => (
-          <div className="single-card">
-            {" "}
+          // <div className="single-card">
             <Singlecard
               key={index}
               path={item.path}
@@ -70,8 +107,9 @@ const ItOutMidcards = () => {
               route={item.route}
               isIcon={item.isIcon}
             />
-          </div>
+          // </div>
         ))}
+         </Slider>
       </div>
     </>
   )

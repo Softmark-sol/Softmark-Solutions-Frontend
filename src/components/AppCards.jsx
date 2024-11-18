@@ -6,6 +6,9 @@ import Android from '../assets/images/android.png'
 import IOS from '../assets/images/app-settings.png'
 import AppSetting from '../assets/images/app-store.png'
 import UIUX from '../assets/images/programming.png'
+import Slider from 'react-slick'
+import "slick-carousel/slick/slick.css"; // Slick CSS
+import "slick-carousel/slick/slick-theme.css"; // Slick Theme CSS
 
 const AppCards = ({ heading }) => {
     const AppData = [
@@ -36,7 +39,37 @@ const AppCards = ({ heading }) => {
         }
       ];
       
-      
+      const settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        arrows: false,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 2,
+            },
+          },
+          {
+            breakpoint: 768,
+            settings: {
+              slidesToShow: 1,
+            },
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              slidesToShow: 1,
+            },
+          },
+        ],
+      };
+    
 
   return (
     <div>
@@ -46,6 +79,12 @@ const AppCards = ({ heading }) => {
         </h2>
       </div>
       <div className='cards-container container'>
+      <Slider
+          {...settings}
+          style={{
+            width: "100%",
+            margin: "0 auto", // Centers the slider in the container
+          }}>
         {AppData.map((item, index) => (
           <Singlecard
             key={index}
@@ -55,6 +94,7 @@ const AppCards = ({ heading }) => {
             route={item.route}
           />
         ))}
+        </Slider>
       </div>
     </div>
   )

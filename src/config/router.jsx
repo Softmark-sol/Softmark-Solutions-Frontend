@@ -23,9 +23,6 @@ import ItOutsourcing from '../pages/ItOutsourcing.jsx'
 import PortfolioDetail from "../pages/portfolio/portfolioDetail.jsx";
 import DigitalMarketingPortfolio from '../pages/portfolio/digitalMarketingPortfolio.jsx'
 
-
-
-
 function Router() {
   return (
     <>

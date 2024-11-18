@@ -13,6 +13,8 @@ import Typewriter from "../components/TypeWriter.jsx";
 import PropTypes from "prop-types"; 
 import { useNavigate } from "react-router-dom";
 import ConsultationBanner from "../components/consultationBanner/consultationBanner.jsx";
+import MoreServices from "../components/moreServices/moreServices.jsx";
+import PricingCards from "../components/pricingCards/priceCards.jsx";
 export default function PlansApp({ plans }) {
   const navigate =useNavigate()
   const [showModal, setShowModal] = useState({ open: false, type: "" });
@@ -73,7 +75,8 @@ export default function PlansApp({ plans }) {
       </div>
 
       <div className="plans-container container">
-        {plans.map((plan, index) => (
+      <PricingCards pricingPlans={plans}/>
+        {/* {plans.map((plan, index) => (
           <Card className={`plan-card plan-card-${index}`} key={index}>
             <CardActionArea>
               <CardContent>
@@ -101,7 +104,7 @@ export default function PlansApp({ plans }) {
               </CardContent>
             </CardActionArea>
           </Card>
-        ))}
+        ))} */}
           <button className="contact-btn" style={{padding:'20px'}} onClick={() => navigate("/portfolio-detail/app/App%20Development")}>
           Explore Our Portfolio of Mobile Applications 
           </button>
@@ -135,6 +138,7 @@ export default function PlansApp({ plans }) {
       )}
 
       <ConsultationBanner />
+      <MoreServices />
     </>
   );
 }

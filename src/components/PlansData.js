@@ -1,7 +1,7 @@
 const WebPlans = [
   {
     name: " Basic ",
-    price: "",
+    price: "$20",
     features: [
       "Functional website",
       "1 page",
@@ -12,7 +12,7 @@ const WebPlans = [
   },
   {
     name: "Standard",
-    price: "",
+    price: "$50",
     features: [
       "Functional website",
       "5 page",
@@ -28,7 +28,7 @@ const WebPlans = [
   },
   {
     name: "Premium",
-    price: "",
+    price: "$100",
     features: [
       "Functional website",
       "10 page",
@@ -49,7 +49,7 @@ const WebPlans = [
 export const SeoPlans = [
   {
     name: "03-month Plan",
-    price: "",
+    price: "$20",
     features: [
       "Basic keyword research",
       "On-page optimization",
@@ -61,7 +61,7 @@ export const SeoPlans = [
   },
   {
     name: "06-month Plan",
-    price: "",
+    price: "$50",
     features: [
       "Comprehensive keyword research",
       "On-page and off-page optimization",
@@ -74,7 +74,7 @@ export const SeoPlans = [
   },
   {
     name: "12-month Plan",
-    price: "",
+    price: "$100",
     features: [
       "Advanced keyword research and optimiation",
       "On-page, off-page and technical SEO",
@@ -90,7 +90,7 @@ export const SeoPlans = [
 export const LogoPlans = [
   {
     name: " Basic ",
-    price: "",
+    price: "$20",
     features: [
       "Includes 1 logo concept",
       "Logo transparency",
@@ -100,7 +100,7 @@ export const LogoPlans = [
   },
   {
     name: "Standard",
-    price: "",
+    price: "$50",
     features: [
       "Includes 3 logo concept",
       "Logo transparency",
@@ -113,7 +113,7 @@ export const LogoPlans = [
   },
   {
     name: "Premium",
-    price: "",
+    price: "$100",
     features: [
       "Includes 3 logo concept",
       "Logo transparency",
@@ -125,7 +125,7 @@ export const LogoPlans = [
   },
   {
     name: "Business",
-    price: "",
+    price: "$200",
     features: [
       "Includes 5 logo concept",
       "Logo transparency",
@@ -143,7 +143,7 @@ export const LogoPlans = [
 export const AppPlans = [
   {
     name: " Basic ",
-    price: "",
+    price: "$20",
     features: [
       "Functional Android app",
       "Functional IOS app",
@@ -155,7 +155,7 @@ export const AppPlans = [
   },
   {
     name: "Standard",
-    price: "",
+    price: "$50",
     features: [
       "Functional Android app",
       "Functional IOS app",
@@ -168,7 +168,7 @@ export const AppPlans = [
   },
   {
     name: "Premium",
-    price: "",
+    price: "$100",
     features: [
       "Functional Android app",
       "Functional IOS app",

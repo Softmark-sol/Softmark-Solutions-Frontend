@@ -1,4 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, {
+  useState,
+  useEffect,
+} from "react";
 import axios from "axios";
 import "../css/contactForm.css";
 import mapImage from "../assets/images/google-maps.png";
@@ -8,11 +11,11 @@ import API_CONFIG from "../config/api";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 
-import Breadcrumbs from '@mui/material/Breadcrumbs';
-import Typography from '@mui/material/Typography';
-import Link from '@mui/material/Link';
-import Stack from '@mui/material/Stack';
-import NavigateNextIcon from '@mui/icons-material/NavigateNext';
+import Breadcrumbs from "@mui/material/Breadcrumbs";
+import Typography from "@mui/material/Typography";
+import Link from "@mui/material/Link";
+import Stack from "@mui/material/Stack";
+import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 
 const { apiKey } = API_CONFIG;
 
@@ -42,10 +45,11 @@ const ContactForm = () => {
     phone: "",
     company: "",
     message: "",
-    website:"",
+    website: "",
     serviceType: "",
   });
-  const [phoneError, setPhoneError] = useState("");
+  const [phoneError, setPhoneError] =
+    useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -55,7 +59,9 @@ const ContactForm = () => {
   const handlePhoneChange = (phone, country) => {
     setFormData({ ...formData, phone });
     if (!phone || phone.length < 11) {
-      setPhoneError("Please enter a valid phone number");
+      setPhoneError(
+        "Please enter a valid phone number"
+      );
     } else {
       setPhoneError("");
     }
@@ -75,7 +81,8 @@ const ContactForm = () => {
         Swal.fire({
           position: "top-end",
           icon: "error",
-          title: "Please enter a valid email address",
+          title:
+            "Please enter a valid email address",
           showConfirmButton: false,
           timer: 1500,
         });
@@ -87,27 +94,35 @@ const ContactForm = () => {
         Swal.fire({
           position: "top-end",
           icon: "error",
-          title: "Please enter a valid phone number",
+          title:
+            "Please enter a valid phone number",
           showConfirmButton: false,
           timer: 1500,
         });
         setLoading(false);
         return;
       }
-      if (formData.website && !websiteRegex.test(formData.website)) {
+      if (
+        formData.website &&
+        !websiteRegex.test(formData.website)
+      ) {
         Swal.fire({
-            position: "top-end",
-            icon: "error",
-            title: "Please enter a valid website URL",
-            text: "Make sure it starts with http:// or https://",
-            showConfirmButton: false,
-            timer: 1500,
+          position: "top-end",
+          icon: "error",
+          title:
+            "Please enter a valid website URL",
+          text: "Make sure it starts with http:// or https://",
+          showConfirmButton: false,
+          timer: 1500,
         });
         setLoading(false);
         return;
-    }
+      }
 
-      const response = await axios.post(`${apiKey}/contact-us`, formData);
+      const response = await axios.post(
+        `${apiKey}/contact-us`,
+        formData
+      );
       if (response.status === 200) {
         setFormData({
           name: "",
@@ -116,7 +131,7 @@ const ContactForm = () => {
           company: "",
           message: "",
           serviceType: "",
-          website:"",
+          website: "",
         });
         Swal.fire({
           position: "top-end",
@@ -138,24 +153,77 @@ const ContactForm = () => {
   };
 
   const breadcrumbs = [
-    <div key="1" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '12px' }}>
-      <div style={{ fontSize: '3rem', fontWeight: '600' }}>1</div>
-      <div> We Schedule<br />a call at your<br /> convenience. </div>
+    <div
+      key="1"
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        gap: "12px",
+      }}>
+      <div
+        style={{
+          fontSize: "3rem",
+          fontWeight: "600",
+        }}>
+        1
+      </div>
+      <div>
+        {" "}
+        We Schedule
+        <br />a call at your
+        <br /> convenience.{" "}
+      </div>
     </div>,
-    <div key="2" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '12px' }}>
-      <div style={{ fontSize: '3rem', fontWeight: '600' }}>2</div>
-      <div> We do a<br /> consulting <br /> meeting. </div>
+    <div
+      key="2"
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        gap: "12px",
+      }}>
+      <div
+        style={{
+          fontSize: "3rem",
+          fontWeight: "600",
+        }}>
+        2
+      </div>
+      <div>
+        {" "}
+        We do a<br /> consulting <br /> meeting.{" "}
+      </div>
     </div>,
-    <div key="3" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '12px' }}>
-      <div style={{ fontSize: '3rem', fontWeight: '600' }}>3</div>
-      <div>We prepare a<br /> proposal. </div>
+    <div
+      key="3"
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        gap: "12px",
+      }}>
+      <div
+        style={{
+          fontSize: "3rem",
+          fontWeight: "600",
+        }}>
+        3
+      </div>
+      <div>
+        We prepare a<br /> proposal.{" "}
+      </div>
     </div>,
   ];
 
   return (
     <>
-      <div className="card-heading-service" id="form">
-        <h2 className="heading-underline-service">Get in Touch</h2>
+      <div
+        className="card-heading-service"
+        id="form">
+        <h2 className="heading-underline-service">
+          Get in Touch
+        </h2>
       </div>
 
       <div className="container main-form">
@@ -203,7 +271,9 @@ const ContactForm = () => {
 
         <div className="contactForm-container">
           <div className="form-container container">
-            <form className="contact-form" onSubmit={handleSubmit}>
+            <form
+              className="contact-form"
+              onSubmit={handleSubmit}>
               <div className="form-group">
                 <input
                   type="text"
@@ -238,7 +308,8 @@ const ContactForm = () => {
                   inputProps={{
                     name: "phone",
                     placeholder: "Phone",
-                    className: "form-control phone",
+                    className:
+                      "form-control phone",
                   }}
                 />
                 <input
@@ -249,11 +320,9 @@ const ContactForm = () => {
                   value={formData.company}
                   onChange={handleChange}
                 />
-                
-              
               </div>
               <div className="form-group">
-              <input
+                <input
                   type="text"
                   name="website"
                   className="form-control"
@@ -262,7 +331,6 @@ const ContactForm = () => {
                   onChange={handleChange}
                 />
               </div>
-                  
 
               <div className="form-group">
                 <select
@@ -270,18 +338,34 @@ const ContactForm = () => {
                   className="form-control full-width drop-down"
                   value={formData.serviceType}
                   onChange={handleChange}
-                  required
-                >
-                  <option id="dropdown-placeholder" value="" disabled>
+                  required>
+                  <option
+                    id="dropdown-placeholder"
+                    value=""
+                    disabled>
                     Select a service
                   </option>
-                  <option value="Web Development">Web Development</option>
-                  <option value="Mobile App Development">Mobile App Development</option>
-                  <option value="Search Engine Optimization">Search Engine Optimization</option>
-                  <option value="Digital Marketing">Digital Marketing</option>
-                  <option value="Custom Software Development">Custom Software Development</option>
-                  <option value="Anime Art">Anime Art</option>
-                  <option value="IT Outsourcing">IT Outsourcing</option>
+                  <option value="Web Development">
+                    Web Development
+                  </option>
+                  <option value="Mobile App Development">
+                    Mobile App Development
+                  </option>
+                  <option value="Search Engine Optimization">
+                    Search Engine Optimization
+                  </option>
+                  <option value="Digital Marketing">
+                    Digital Marketing
+                  </option>
+                  <option value="Custom Software Development">
+                    Custom Software Development
+                  </option>
+                  <option value="Anime Art">
+                    Anime Art
+                  </option>
+                  <option value="IT Outsourcing">
+                    IT Outsourcing
+                  </option>
                 </select>
               </div>
               <div className="form-group">
@@ -291,15 +375,19 @@ const ContactForm = () => {
                   placeholder="Write your Message here...."
                   value={formData.message}
                   onChange={handleChange}
-                  required
-                ></textarea>
+                  required></textarea>
               </div>
-              
+
               <div className="btn-container">
-                <button type="submit" disabled={loading}>
+                <button
+                  type="submit"
+                  disabled={loading}>
                   {loading ? (
                     <div>
-                      <div className="spinner"> </div> Sending...
+                      <div className="spinner">
+                        {" "}
+                      </div>{" "}
+                      Sending...
                     </div>
                   ) : (
                     <>
@@ -309,13 +397,13 @@ const ContactForm = () => {
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 24 24"
                             width="24"
-                            height="24"
-                          >
-                            <path fill="none" d="M0 0h24v24H0z"></path>
+                            height="24">
+                            <path
+                              fill="none"
+                              d="M0 0h24v24H0z"></path>
                             <path
                               fill="currentColor"
-                              d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
-                            ></path>
+                              d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"></path>
                           </svg>
                         </div>
                       </div>

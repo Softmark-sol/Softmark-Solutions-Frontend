@@ -23,13 +23,15 @@ const clients = [
 ];
 
 function ClientsSection() {
-  // Slider settings
   const settings = {
-    dots: false,
+    dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 4, // Number of logos to show at a time
+    slidesToShow: 4,
     slidesToScroll: 1,
+    arrows: false,
+    autoplay: true,
+    autoplaySpeed: 1000,
     responsive: [
       {
         breakpoint: 1024,

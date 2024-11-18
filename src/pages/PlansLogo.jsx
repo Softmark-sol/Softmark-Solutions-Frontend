@@ -13,6 +13,8 @@ import Typewriter from "../components/TypeWriter.jsx";
 import PropTypes from "prop-types"; 
 import { useNavigate } from "react-router-dom";
 import ConsultationBanner from "../components/consultationBanner/consultationBanner.jsx";
+import MoreServices from "../components/moreServices/moreServices.jsx";
+import PricingCards from "../components/pricingCards/priceCards.jsx";
 
 export default function Logo({ plans }) {
   const navigate = useNavigate()
@@ -51,7 +53,8 @@ export default function Logo({ plans }) {
       </div>
 
       <div className="plans-container container">
-        {plans.map((plan, index) => (
+      <PricingCards pricingPlans={plans}/>
+        {/* {plans.map((plan, index) => (
           <Card className={`plan-card plan-card-${index} logoPlans`} key={index}>
             <CardActionArea>
               <CardContent>
@@ -80,7 +83,7 @@ export default function Logo({ plans }) {
             </CardActionArea>
           </Card>
 
-        ))}
+        ))} */}
             <button className="contact-btn" onClick={() => navigate("/portfolio-detail/logo/Logo%20Development")}>
             Discover Our Logo Design Portfolio          </button>
       </div>
@@ -119,6 +122,7 @@ export default function Logo({ plans }) {
       )}
 
 <ConsultationBanner />
+<MoreServices />
     </>
   );
 }

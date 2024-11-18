@@ -1,9 +1,12 @@
 .main-workingProcess{
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: flex-start;
-    padding: 1rem;
+    /* padding: 1rem; */
+}
+.workingCards{
+    width: 50%;
 }
 
 
@@ -24,5 +27,8 @@
     .working-card h4{
          text-align: center;
          font-size: 18px;
+    }
+    .workingCards{
+        width: 100%;
     }
     }

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "../css/digital.css";
 import Singlecard from "../components/Singlecard";
-import Button from 'react-bootstrap/Button'; 
-import { Modal, Form } from 'react-bootstrap'; 
+import Button from "react-bootstrap/Button";
+import { Modal, Form } from "react-bootstrap";
 import axios from "axios";
 import Swal from "sweetalert2";
 import img1 from "../assets/ppc.png";
@@ -16,17 +16,19 @@ import DMLottieAnimation from "../components/DigitalMarketingAnimation";
 import "../css/Whyus/Btn.scss";
 import Typewriter from "../components/TypeWriter.jsx";
 import { debounce } from "@mui/material";
-import { FaTimes } from 'react-icons/fa'; 
+import { FaTimes } from "react-icons/fa";
 
 import { useNavigate } from "react-router-dom";
-
+import MoreServices from "../components/moreServices/moreServices.jsx";
+import "slick-carousel/slick/slick.css"; // Slick CSS
+import "slick-carousel/slick/slick-theme.css"; // Slick Theme CSS
+import Slider from "react-slick";
 // const Singlecard = React.lazy(() => import('../components/Singlecard'));
-
 
 const { apiKey } = API_CONFIG;
 
 const DigitalMarketing = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -81,12 +83,47 @@ const DigitalMarketing = () => {
   const handleChange = debounce((e) => {
     const { id, value } = e.target;
     setFormData((prev) => ({ ...prev, [id]: value }));
-}, 300);
+  }, 300);
 
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    arrows: false,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const requiredFields = ["name", "email", "description","access_and_permissions"];
+    const requiredFields = [
+      "name",
+      "email",
+      "description",
+      "access_and_permissions",
+    ];
     for (const field of requiredFields) {
       if (!formData[field]) {
         Swal.fire({
@@ -100,8 +137,8 @@ const DigitalMarketing = () => {
     setLoading(true); // Show loading indicator
 
     try {
-
-      const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(com|pk|net|org|edu|gov|int|mil|biz|info|io|co|ac|ae|af|ag|ai|al|am|an|ao|aq|ar|as|at|au|aw|ax|az|ba|bb|bd|be|bf|bg|bh|bi|bj|bm|bn|bo|br|bs|bt|bv|bw|by|bz|ca|cc|cd|cf|cg|ch|ci|ck|cl|cm|cn|co|cr|cu|cv|cx|cy|cz|de|dj|dk|dm|do|dz|ec|ee|eg|eh|er|es|et|eu|fi|fj|fk|fm|fo|fr|ga|gb|gd|ge|gf|gg|gh|gi|gl|gm|gn|gp|gq|gr|gs|gt|gu|gw|gy|hk|hm|hn|hr|ht|hu|id|ie|il|im|in|io|iq|ir|is|it|je|jm|jo|jp|ke|kg|kh|ki|km|kn|kp|kr|kw|ky|kz|la|lb|lc|li|lk|lr|ls|lt|lu|lv|ly|ma|mc|md|me|mg|mh|mk|ml|mm|mn|mo|mp|mq|mr|ms|mt|mu|mv|mw|mx|my|mz|na|nc|ne|nf|ng|ni|nl|no|np|nr|nu|nz|om|pa|pe|pf|pg|ph|pk|pl|pm|pn|pr|ps|pt|pw|py|qa|re|ro|rs|ru|rw|sa|sb|sc|sd|se|sg|sh|si|sj|sk)$/;
+      const emailRegex =
+        /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(com|pk|net|org|edu|gov|int|mil|biz|info|io|co|ac|ae|af|ag|ai|al|am|an|ao|aq|ar|as|at|au|aw|ax|az|ba|bb|bd|be|bf|bg|bh|bi|bj|bm|bn|bo|br|bs|bt|bv|bw|by|bz|ca|cc|cd|cf|cg|ch|ci|ck|cl|cm|cn|co|cr|cu|cv|cx|cy|cz|de|dj|dk|dm|do|dz|ec|ee|eg|eh|er|es|et|eu|fi|fj|fk|fm|fo|fr|ga|gb|gd|ge|gf|gg|gh|gi|gl|gm|gn|gp|gq|gr|gs|gt|gu|gw|gy|hk|hm|hn|hr|ht|hu|id|ie|il|im|in|io|iq|ir|is|it|je|jm|jo|jp|ke|kg|kh|ki|km|kn|kp|kr|kw|ky|kz|la|lb|lc|li|lk|lr|ls|lt|lu|lv|ly|ma|mc|md|me|mg|mh|mk|ml|mm|mn|mo|mp|mq|mr|ms|mt|mu|mv|mw|mx|my|mz|na|nc|ne|nf|ng|ni|nl|no|np|nr|nu|nz|om|pa|pe|pf|pg|ph|pk|pl|pm|pn|pr|ps|pt|pw|py|qa|re|ro|rs|ru|rw|sa|sb|sc|sd|se|sg|sh|si|sj|sk)$/;
 
       if (!emailRegex.test(formData.email)) {
         Swal.fire({
@@ -152,7 +189,7 @@ const DigitalMarketing = () => {
       });
       console.error("Error:", error);
     } finally {
-      setLoading(false); 
+      setLoading(false);
     }
   };
 
@@ -192,21 +229,20 @@ const DigitalMarketing = () => {
           <Typewriter strings={["Igniting Your Digital Presence"]} />
         </h2>
         <div className="horizontal-fram-digital">
-        <div style={{width:'100%'}}>
-          <h5 className="main-para">
-          At Softmark Solutions we specialize in delivering tailored digital
-          marketing solutions that drive growth, engagement, and results for
-          businesses of all sizes. From strategic planning to flawless
-          execution, we're here to elevate your online presence and help you
-          achieve your business goals.
-        </h5>
+          <div style={{ width: "100%" }}>
+            <h5 className="main-para">
+              At Softmark Solutions we specialize in delivering tailored digital
+              marketing solutions that drive growth, engagement, and results for
+              businesses of all sizes. From strategic planning to flawless
+              execution, we're here to elevate your online presence and help you
+              achieve your business goals.
+            </h5>
           </div>
-        
-        <div className="DM-animation">
-          <DMLottieAnimation />
+
+          <div className="DM-animation">
+            <DMLottieAnimation />
+          </div>
         </div>
-        </div>
-          
       </div>
       <div className="card-heading-service container">
         <h2 className="heading-underline-service">Our Approach</h2>
@@ -220,25 +256,42 @@ const DigitalMarketing = () => {
         </p>
       </div>
       <div className="main-cards container">
-        {services.map((item, index) => (
-          <Singlecard
-            key={index}
-            path={item.path}
-            title={item.title}
-            description={item.desc}
-          />
-        ))}
-
+        <Slider
+          {...settings}
+          style={{
+            width: "100%",
+            margin: "0 auto", // Centers the slider in the container
+          }}
+        >
+          {services.map((item, index) => (
+            <Singlecard
+              key={index}
+              path={item.path}
+              title={item.title}
+              description={item.desc}
+            />
+          ))}
+        </Slider>
       </div>
 
-        <div style={{display:'flex',justifyContent:'center', alignItems:'center', marginTop:'15px'}}>
-        <button className="contact-btn" style={{padding:'20px' }} onClick={() => navigate("/portfolio-detail/digital-marketing")}>
-      Discover Our Digital Marketing Portfolio 
-      </button>
-        </div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          marginTop: "15px",
+        }}
+      >
+        <button
+          className="contact-btn"
+          style={{ padding: "20px" }}
+          onClick={() => navigate("/portfolio-detail/digital-marketing")}
+        >
+          Discover Our Digital Marketing Portfolio
+        </button>
+      </div>
 
       <div className="card-heading-service container">
-    
         <h2 className="heading-underline-service">Get Started Today</h2>
         <p className="paragraph">
           Ready to take your digital marketing efforts to the next level?
@@ -266,15 +319,15 @@ const DigitalMarketing = () => {
         </button>
 
         <Modal show={show} onHide={handleClose} backdrop="static">
-          <Modal.Header >
+          <Modal.Header>
             <Modal.Title>Digital Marketing Plan</Modal.Title>
             <Button
-          variant="light"
-          onClick={handleClose}
-          style={{ border: 'none', background: 'none', padding: '0' }}
-        >
-          <FaTimes size={24} color="#000" />
-        </Button>
+              variant="light"
+              onClick={handleClose}
+              style={{ border: "none", background: "none", padding: "0" }}
+            >
+              <FaTimes size={24} color="#000" />
+            </Button>
           </Modal.Header>
           <Modal.Body>
             <Form
@@ -404,6 +457,7 @@ const DigitalMarketing = () => {
         </Modal>
       </div>
       <ScrollToTopButton />
+      <MoreServices />
     </div>
   );
 };
