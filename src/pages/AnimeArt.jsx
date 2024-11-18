@@ -8,6 +8,7 @@ import ScrollReveal from "scrollreveal";
 import animeHero from '../assets/images/animeHero.jpg';
 import animeSub from '../assets/images/animeSub.jpeg';
 import MoreServices from "../components/moreServices/moreServices";
+import ServiceForm from "../components/ServiceForm";
 
 const AnimeArt = () => {
   const navigate = useNavigate();
@@ -69,6 +70,15 @@ const AnimeArt = () => {
 
   return (
     <>
+    <ServiceForm 
+  title={"Best Anime Art Services"} 
+  description={
+    "Our anime art services bring your imagination to life with stunning and detailed artwork. Whether it's custom character designs, illustrations, or storytelling visuals, we specialize in creating captivating anime-style art tailored to your vision and preferences."
+  } 
+  buttonText={"Get In Touch"} 
+  route={"contactUs"} 
+/>
+
       <div className="main-container container anime">
         <h2>
           <Typewriter strings={["Where Your Vision Meets Anime Excellence"]} />

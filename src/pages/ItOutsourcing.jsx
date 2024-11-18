@@ -10,11 +10,21 @@ import ItOutMidcards from "../components/ItOutMidcards.jsx";
 import ItOutBottomCards from "../components/ItOutBottomCards.jsx";
 import BarChart from "../components/BarChart.jsx";
 import MoreServices from "../components/moreServices/moreServices.jsx";
+import ServiceForm from "../components/ServiceForm.jsx";
 
 const ItOutsourcing = () => {
   const navigate = useNavigate();
   return (
     <>
+    <ServiceForm 
+  title={"Best IT Outsourcing Services"} 
+  description={
+    "Our IT outsourcing services provide businesses with cost-effective and scalable solutions for managing IT operations. From software development and technical support to cloud management and cybersecurity, we ensure high-quality services that help you focus on your core business goals."
+  } 
+  buttonText={"Get In Touch"} 
+  route={"contactUs"} 
+/>
+
       <div className="main-container container">
         <h2>
           <Typewriter strings={["#1 IT Outsourcing Services Provider"]} />

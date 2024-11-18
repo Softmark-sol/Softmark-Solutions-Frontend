@@ -234,7 +234,7 @@ const ServiceForm = ({ title, description, buttonText, route }) => {
           <div className="text-area" style={{paddingTop:'80px'}}>
       <h1>{title}</h1>
       <p>{description}</p>
-      <div className="container" style={{ display: "flex", justifyContent: "flex-start" }}>
+      <div className="formBtn" style={{ display: "flex", justifyContent: "flex-start",alignItems:'flex-start' }}>
         <ConsultationBtn route={route} text={buttonText} />
       </div>
       <div style={{display:'flex',justifyContent:'flex-start',alignItems:'center',width:'60%',paddingTop:'40px'}}>

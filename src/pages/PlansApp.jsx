@@ -15,6 +15,7 @@ import { useNavigate } from "react-router-dom";
 import ConsultationBanner from "../components/consultationBanner/consultationBanner.jsx";
 import MoreServices from "../components/moreServices/moreServices.jsx";
 import PricingCards from "../components/pricingCards/priceCards.jsx";
+import ServiceForm from "../components/ServiceForm.jsx";
 export default function PlansApp({ plans }) {
   const navigate =useNavigate()
   const [showModal, setShowModal] = useState({ open: false, type: "" });
@@ -29,6 +30,15 @@ export default function PlansApp({ plans }) {
 
   return (
     <>
+    <ServiceForm
+  title={"Best App Development Services"} 
+  description={
+    "Our custom app development services include designing and developing mobile applications tailored to your needs. We focus on building user-friendly, high-performance apps with seamless functionality for Android and iOS platforms, ensuring exceptional user experience and scalability."
+  } 
+  buttonText={"Get In Touch"} 
+  route={"contactUs"} 
+/>
+
       <div className="main-container container">
         <h2>
           SoftMark Solutions -{" "}
