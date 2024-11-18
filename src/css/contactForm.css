@@ -114,6 +114,7 @@
 .text-area{
   width: 60%;
   padding-top: 2rem;
+  color: #1B65B0;
 }
 
 .text-area p{
@@ -386,5 +387,37 @@ select.form-control {
 @media (max-width: 255px) {
   .btn-container button {
     padding: 2px;
+  }
+}
+
+.info-block {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.info-item i {
+  font-size: 1.2rem;
+  color: #4599b4;
+}
+
+.info-item p {
+  margin: 0;
+  color: #333;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .info-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
   }
 }
