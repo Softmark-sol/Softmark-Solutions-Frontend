@@ -8,10 +8,10 @@ import icon3 from '../assets/images/wor-icon3.webp'
 
 const WorkingProcess = () => {
   return (
-    <div className='main-workingProcess' style={{ padding: '2rem', backgroundColor: '#f2f9ff' }}>
+    <div className='main-workingProcess' style={{ padding: '1rem', backgroundColor: '#f2f9ff' }}>
       {/* Section 1: Cards */}
-      <div style={{ width:'50%' }}>
-        <h5 className='container' style={{ textAlign: 'left', color: 'rgb(220, 166, 66)' }}>Our Working Process</h5>
+      <div className='workingCards'>
+        <h4 className='container' style={{ textAlign: 'left', color: 'rgb(220, 166, 66)' }}>Our Working Process</h4>
         <h2 className='container' style={{ color: '#4599b4', fontWeight: 'bold' }}>
           Our Easy and Understandable <br /> Working Process
         </h2>
@@ -22,7 +22,7 @@ const WorkingProcess = () => {
             <img src={icon1} alt="Consultation Icon" style={{ width: '60%' }} />
           </div>
           <div >
-            <h3  style={{ color: '#4599b4', fontWeight: 'bold' }}>01. Initial Consultation & Goal <br /> Setting</h3>
+            <h4  style={{ color: '#4599b4', fontWeight: 'bold' }}>01. Initial Consultation & Goal <br /> Setting</h4>
             <p style={{ color: 'gray',textAlign:'left', fontSize:'1rem' }}>
               Our digital marketing agency team begins with a detailed discussion to understand your business, target audience, and objectives.
             </p>
