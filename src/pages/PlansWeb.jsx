@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import { CardActionArea } from "@mui/material";
@@ -17,6 +17,8 @@ import { useNavigate } from "react-router-dom";
 import ConsultationBanner from "../components/consultationBanner/consultationBanner.jsx";
 import WebAgency from "../components/webAgency/webAgency.jsx";
 import MoreServices from "../components/moreServices/moreServices.jsx";
+import ServiceForm from "../components/ServiceForm.jsx";
+import { Description } from "@mui/icons-material";
 
 export default function PlansWeb({ plans }) {
   const navigate = useNavigate();
@@ -49,6 +51,9 @@ export default function PlansWeb({ plans }) {
 
   return (
     <>
+    <ServiceForm title={"Best Website Development Services"} description={"Our custom website development services include the tasks associated with the process of designing a website. They consist of all the actions, operations, system updates, etc. needed for maintaining the performance of a website, improving user experience and speed."}
+    buttonText={"Get In Touch"} route={"contactUs"}
+    />
       <div className="main-container container">
         <h2>
           SoftMark Solutions -{" "}
