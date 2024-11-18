@@ -5,7 +5,7 @@ import GearLottieAnimation from "./Gear-animation";
 import ScrollReveal from "scrollreveal";
 import MarketLottieAnimation from "./Market-animation";
 import { useNavigate } from "react-router-dom";
-import DMLottieAnimation from "../components/DigitalMarketingAnimation";
+import DMLottieAnimation from "../components/HeroAnimation";
 
 const LogoParticles = lazy(() => import("./ParticleLogo"));
 
