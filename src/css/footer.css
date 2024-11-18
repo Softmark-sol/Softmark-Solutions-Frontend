@@ -262,6 +262,15 @@
 }
 
 @media (max-width: 600px) {
+  .footer-contact{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .findUs{
+    padding-left: 30px;
+    padding-top: 30px;
+  }
   .footer-bottom {
     padding: 20px 10px;
 
