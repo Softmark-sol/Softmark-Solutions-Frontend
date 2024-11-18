@@ -13,6 +13,9 @@ import {
   IoPuzzleSharp,
 } from "react-icons/io5";
 import { AiOutlineDeliveredProcedure } from "react-icons/ai";
+import "slick-carousel/slick/slick.css"; // Slick CSS
+import "slick-carousel/slick/slick-theme.css"; // Slick Theme CSS
+import Slider from "react-slick";
 
 const CSD_Cards = ({ heading }) => {
   const CSDdata = [
@@ -80,6 +83,38 @@ const CSD_Cards = ({ heading }) => {
     });
   }, []);
 
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    arrows: false,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
+  };
+
+
   return (
     <div>
       {/* <div className="card-heading-service" id="services">
@@ -88,9 +123,14 @@ const CSD_Cards = ({ heading }) => {
         </h2>
       </div> */}
       <div className="cards-container container">
+      <Slider
+          {...settings}
+          style={{
+            width: "100%",
+            margin: "0 auto", // Centers the slider in the container
+          }}>
         {CSDdata.map((item, index) => (
-          <div className="single-card">
-            {" "}
+          // <div className="single-card">
             <Singlecard
               key={index}
               path={item.path}
@@ -99,8 +139,9 @@ const CSD_Cards = ({ heading }) => {
               route={item.route}
               isIcon={item.isIcon}
             />
-          </div>
+          // </div>
         ))}
+        </Slider>
       </div>
     </div>
   );

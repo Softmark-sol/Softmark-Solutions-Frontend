@@ -48,7 +48,7 @@ const WebCards = ({ heading }) => {
     slidesToScroll: 1,
     arrows: false,
     autoplay: true,
-    autoplaySpeed: 1000,
+    autoplaySpeed: 2000,
     responsive: [
       {
         breakpoint: 1024,
