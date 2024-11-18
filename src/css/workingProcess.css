@@ -1,10 +1,13 @@
 .main-workingProcess{
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: flex-start;
-    padding: 1rem;
+    /* padding: 1rem; */
 }
+/* .hide-img img{
+    width: 50%;
+} */
 
 
 @media (max-width: 787px) {
