@@ -4,9 +4,9 @@ import {
   CardContent,
   Typography,
 } from "@mui/material";
-import Slider from "react-slick"; // Import React Slick Slider
-import "slick-carousel/slick/slick.css"; // Slick CSS
-import "slick-carousel/slick/slick-theme.css"; // Slick Theme CSS
+import Slider from "react-slick"; 
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css"; 
 import Projects from "../../assets/icons/projects.png";
 import Websites from "../../assets/icons/websites.png";
 import Review from "../../assets/icons/reviws.png";
@@ -36,16 +36,16 @@ const InfoCards = () => {
     },
   ];
 
-  // State to handle hover effect
   const [hovered, setHovered] = useState(null);
 
-  // Slick Slider settings
   const settings = {
-    dots: true, // Pagination dots
-    infinite: true, // Infinite scrolling
-    speed: 500, // Transition speed
-    slidesToShow: 3, // Number of slides to show at once
-    slidesToScroll: 1, // Number of slides to scroll per swipe
+    dots: true, 
+    infinite: true, 
+    speed: 500, 
+    slidesToShow: 3,
+    slidesToScroll: 1, 
+    autoplay: true,
+    autoplaySpeed: 2000,
     responsive: [
       {
         breakpoint: 1024,
@@ -104,10 +104,10 @@ const InfoCards = () => {
               }}
               onMouseEnter={() =>
                 setHovered(index)
-              } // Set hover state when entering
+              } 
               onMouseLeave={() =>
                 setHovered(null)
-              } // Reset hover state when leaving
+              } 
             >
               <CardContent>
                 <div>

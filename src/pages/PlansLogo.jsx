@@ -15,6 +15,7 @@ import { useNavigate } from "react-router-dom";
 import ConsultationBanner from "../components/consultationBanner/consultationBanner.jsx";
 import MoreServices from "../components/moreServices/moreServices.jsx";
 import PricingCards from "../components/pricingCards/priceCards.jsx";
+import ServiceForm from "../components/ServiceForm.jsx";
 
 export default function Logo({ plans }) {
   const navigate = useNavigate()
@@ -30,6 +31,15 @@ export default function Logo({ plans }) {
 
   return (
     <>
+    <ServiceForm 
+  title={"Best Logo Designing Services"} 
+  description={
+    "Our professional logo designing services focus on creating visually appealing and memorable logos that reflect your brand identity. We ensure that your logo communicates your business values, leaving a lasting impression and fostering brand recognition across all platforms."
+  } 
+  buttonText={"Get Your Logo"} 
+  route={"contactUs"} 
+/>
+
       <div className="main-container container">
         <h2>
           <Typewriter strings={["Transform Your Brand with SoftMark Solutions"]} />

@@ -11,15 +11,13 @@ import img7 from "../assets/images/anime.png";
 import img8 from "../assets/images/outsourcing.png";
 import ScrollReveal from "scrollreveal";
 import { useNavigate } from "react-router-dom";
-import ConsultationBanner from "./consultationBanner/consultationBanner";
 import ConsultationBtn from "./Buttons/ConsultationBtn";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css"; // Slick CSS
-import "slick-carousel/slick/slick-theme.css"; // Slick Theme CSS
-const ParticleEffect = lazy(() => import('./Particles'));
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+const ParticleEffect = lazy(() => import("./Particles"));
 const Cards = ({ heading }) => {
-  const [showAll, setShowAll] = useState(false);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const ServicesData = [
     {
       path: img6,
@@ -89,7 +87,7 @@ const Cards = ({ heading }) => {
   const location = window.location.pathname;
 
   const handleSeeMoreClick = () => {
-    navigate("/services")
+    navigate("/services");
   };
 
   const settings = {
@@ -101,9 +99,6 @@ const Cards = ({ heading }) => {
     arrows: false,
     autoplay: true,
     autoplaySpeed: 2000,
-    swipe: true, 
-  touchMove: true,
-  touchThreshold: 10, 
     responsive: [
       {
         breakpoint: 1024,
@@ -126,7 +121,6 @@ const Cards = ({ heading }) => {
     ],
   };
 
-
   return (
     <div style={{ position: "relative", overflow: "hidden" }}>
       <Suspense fallback={<div>Loading...</div>}>
@@ -137,30 +131,31 @@ const Cards = ({ heading }) => {
           {heading}
         </h2>
       </div>
-      <div className="cards-container container">
-      <Slider
+      <div className="cards-container container serviceCards">
+        {/* <Slider
           {...settings}
           style={{
             width: "100%",
-            margin: "0 auto", // Centers the slider in the container
-          }}>
-        {ServicesData.slice(0, showAll || location !== '/' ? ServicesData.length : 3).map((item, index) => (
-          <Singlecard
-            key={index}
-            path={item.path}
-            title={item.title}
-            description={item.desc}
-            route={item.route}
-          />
-        ))}
-        </Slider>
+            margin: "0 auto", 
+          }}
+        > */}
+          {ServicesData.slice(
+            0,
+            location !== "/" ? ServicesData.length : 3
+          ).map((item, index) => (
+            <Singlecard
+              key={index}
+              path={item.path}
+              title={item.title}
+              description={item.desc}
+              route={item.route}
+            />
+          ))}
+        {/* </Slider> */}
       </div>
-      {location === '/' && !showAll && (
-        // <div className="see-more-button">
-        //   <button onClick={handleSeeMoreClick}>See More</button>
-        // </div>
-        <ConsultationBtn route={"services"} text="See More"/>
-      )}
+      {location === "/" && (
+        <ConsultationBtn route={"services"} text="See More" />
+       )} 
     </div>
   );
 };

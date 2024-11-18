@@ -138,7 +138,7 @@ const PricingCards = ({pricingPlans}) => {
               </CardContent>
 
               <Box
-                sx={{
+                sx={{ 
                   textAlign: "center",
                   padding: "10px",
                   backgroundColor: "white",

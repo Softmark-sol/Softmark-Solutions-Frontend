@@ -324,7 +324,7 @@ const Footer = () => {
 
         <div className="footer-right" style={{ cursor: "default",  }}>
   <div className="footer-contact">
-    <h4>FIND US</h4>
+    <h4 className="findUs">FIND US</h4>
     <p>
       <i className="fa fa-home" aria-hidden="true"></i> 30 N Gould St R, Sheridan, WY 82801
     </p>

@@ -11,6 +11,7 @@ import seoResearchImage from '../assets/images/SeoImages/research.jpeg'
 import seoLinking from '../assets/images/SeoImages/man-is-using-laptop-with-website-web-screen_1282070-12983.jpeg'
 import seoTechnicalAudit from '../assets/images/SeoImages/man-concentrates-data-analysis-computer_999616-2868-removebg-preview.png'
 import MoreServices from "../components/moreServices/moreServices.jsx";
+import ServiceForm from "../components/ServiceForm.jsx";
 
 
 const Seo = () => {
@@ -38,6 +39,15 @@ const Seo = () => {
 
   return (
     <>
+    <ServiceForm 
+  title={"Best SEO Services"} 
+  description={
+    "Our expert SEO services are designed to improve your website's visibility, drive organic traffic, and enhance online presence. We specialize in keyword optimization, on-page and off-page SEO, technical SEO audits, and content strategies to help you rank higher on search engines and achieve measurable results."
+  } 
+  buttonText={"Get In Touch"} 
+  route={"contactUs"} 
+/>
+
     <div className="seo container">
       <h1 className="seo-h fade-in-left">
         SoftMark Solutions -{" "}

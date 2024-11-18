@@ -23,6 +23,7 @@ import MoreServices from "../components/moreServices/moreServices.jsx";
 import "slick-carousel/slick/slick.css"; // Slick CSS
 import "slick-carousel/slick/slick-theme.css"; // Slick Theme CSS
 import Slider from "react-slick";
+import ServiceForm from "../components/ServiceForm.jsx";
 // const Singlecard = React.lazy(() => import('../components/Singlecard'));
 
 const { apiKey } = API_CONFIG;
@@ -218,6 +219,14 @@ const DigitalMarketing = () => {
 
   return (
     <div>
+      <ServiceForm 
+  title={"Digital Marketing Solutions"} 
+  description={
+    "Our digital marketing services help businesses boost their online presence through tailored strategies. From SEO and social media marketing to content creation and paid advertising, we aim to drive traffic, engage audiences, and enhance brand visibility to maximize your business growth."
+  } 
+  buttonText={"Get In Touch"} 
+  route={"contactUs"} 
+/>
       <div className="container main-container">
         <h2
           style={{

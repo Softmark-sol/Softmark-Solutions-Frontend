@@ -8,12 +8,22 @@ import SoftwareCapabilitiesCards from "../components/SoftwareCapabilitiesCards.j
 import SoftwareCards from "../components/SoftwareCards.jsx";
 import CSDLottieAnimation from "../components/CSD-Animation.jsx";
 import MoreServices from "../components/moreServices/moreServices.jsx";
+import ServiceForm from "../components/ServiceForm.jsx";
 
 const CustomSoftware = () => {
   const navigate = useNavigate();
 
   return (
     <>
+    <ServiceForm 
+  title={"Best Custom Software Development Services"} 
+  description={
+    "Our custom software development services provide tailored solutions designed to meet your unique business needs. From concept to deployment, we focus on delivering scalable, secure, and innovative software applications that streamline operations and drive growth."
+  } 
+  buttonText={"Get In Touch"} 
+  route={"contactUs"} 
+/>
+
       {/* Section 1 */}
       <div className="main-container container">
         <h2>

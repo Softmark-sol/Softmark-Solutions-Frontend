@@ -420,4 +420,7 @@ select.form-control {
     align-items: center;
     text-align: left;
   }
+  .formBtn{
+    padding-left: 16px !important;
+  }
 }

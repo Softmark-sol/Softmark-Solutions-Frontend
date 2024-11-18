@@ -12,7 +12,6 @@ import MarketingSection from "../components/marketingSection/marketingSection";
 import ClientsSection from "../components/clients/clients";
 import WhatClientSays from "../components/whatClientSays/whatClientSays";
 import WorkingProcess from "../components/WorkingProcess";
-import PricingCards from "../components/pricingCards/priceCards";
 
 const Home = () => {
   return (
@@ -30,7 +29,6 @@ const Home = () => {
       <ClientsSection />
       {/* <ContactForm /> */}
       <ConsultationBanner />
-      {/* <PricingCards /> */}
       <ScrollUpButton />
     </>
   );
