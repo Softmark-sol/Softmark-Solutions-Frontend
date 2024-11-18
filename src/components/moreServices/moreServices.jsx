@@ -51,6 +51,7 @@ const MoreServices = () => {
         backgroundColor: "#E7F3FF",
         padding: "3rem 1rem",
         textAlign: "center",
+        marginTop: "50px"
       }}
     >
       <Typography

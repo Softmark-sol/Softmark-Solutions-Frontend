@@ -87,7 +87,7 @@ const WebCards = ({ heading }) => {
           {...settings}
           style={{
             width: "100%",
-            margin: "0 auto", // Centers the slider in the container
+            margin: "0 auto",
           }}>
           {Webdata.map((item, index) => (
             <div
