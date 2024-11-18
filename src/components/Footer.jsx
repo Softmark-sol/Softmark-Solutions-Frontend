@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useState } from 'react';
+import Swal from 'sweetalert2';
+import 'sweetalert2/dist/sweetalert2.min.css'; // Import SweetAlert CSS
 import "../css/footer.css";
 import { useNavigate } from "react-router-dom";
 import { BsTwitterX } from "react-icons/bs";
 import { FaFacebookF } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
+
+import axios from 'axios';
+
 
 import Logo from "../assets/images/Logo-no-bg.webp";
 
@@ -15,22 +20,171 @@ import Logo from "../assets/images/Logo-no-bg.webp";
 // import { ScrollTrigger } from "gsap/ScrollTrigger";
 import locationImage from "../assets/map.png";
 
-// gsap.registerPlugin(ScrollTrigger);
 
-const ContactForm = () => (
-  <div className="transparent-contact-form">
-    <h4 style={{textAlign:'left'}}>CONTACT US</h4>
-    <form className="form-transparent">
-      <input type="text" placeholder="Enter your name" required />
-      <input type="email" placeholder="Enter your email" required />
-      <input type="url" placeholder="Enter your website URL" />
-      <textarea placeholder="Enter your message" rows="4" required></textarea>
-      <button type="submit" className="submit-transparent-button">
-        Submit
-      </button>
-    </form>
-  </div>
-);
+const ContactForm = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    // phone: '',
+    // company: '',
+    message: '',
+    // serviceType: '',
+    website: '',
+  });
+  const [loading, setLoading] = useState(false);
+  const [phoneError, setPhoneError] = useState(false);
+
+  const apiKey = 'http://localhost:4000'; // Replace with your actual API endpoint
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    // Regex patterns for email and website validation
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    // const websiteRegex = /^(https?:\/\/)?(www\.)?[a-zA-Z0-9-]+(\.[a-zA-Z]{2,})+$/;
+    // const phoneRegex = /^[0-9]{10}$/; // Basic phone validation (10 digits)
+
+    // Validate email
+    if (!emailRegex.test(formData.email)) {
+      Swal.fire({
+        position: 'top-end',
+        icon: 'error',
+        title: 'Please enter a valid email address',
+        showConfirmButton: false,
+        timer: 1500,
+      });
+      setLoading(false);
+      return;
+    }
+
+    // Validate phone number
+    if (formData.phone) {
+      setPhoneError(true);
+      Swal.fire({
+        position: 'top-end',
+        icon: 'error',
+        title: 'Please enter a valid phone number (10 digits)',
+        showConfirmButton: false,
+        timer: 1500,
+      });
+      setLoading(false);
+      return;
+    } else {
+      setPhoneError(false);
+    }
+
+    // Validate website URL
+    if (formData.website) {
+      Swal.fire({
+        position: 'top-end',
+        icon: 'error',
+        title: 'Please enter a valid website URL',
+        text: 'Make sure it starts with http:// or https://',
+        showConfirmButton: false,
+        timer: 1500,
+      });
+      setLoading(false);
+      return;
+    }
+
+   
+
+    try {
+      const response = await axios.post(`${apiKey}/contact-us`, formData);
+
+      if (response.status === 200) {
+        setFormData({
+          name: '',
+          email: '',
+          // phone: '',
+          // company: '',
+          message: '',
+          website: '',
+        });
+
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'Message sent successfully',
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      }
+    } catch (error) {
+      console.log('Failed to send message. Please try again later.', error.message);
+      Swal.fire({
+        position: 'top-end',
+        icon: 'error',
+        title: 'Oops...',
+        text: 'There was an issue with sending your message. Please try again later.',
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  return (
+    <div className="transparent-contact-form">
+      <h4 style={{ textAlign: 'left' }}>CONTACT US</h4>
+      <form className="form-transparent" onSubmit={handleSubmit}>
+        <input
+          type="text"
+          name="name"
+          value={formData.name}
+          placeholder="Enter your name"
+          onChange={handleChange}
+          required
+        />
+        <input
+          type="email"
+          name="email"
+          value={formData.email}
+          placeholder="Enter your email"
+          onChange={handleChange}
+          required
+        />
+        {/* <input
+          type="text"
+          name="company"
+          value={formData.company}
+          placeholder="Enter your company name"
+          onChange={handleChange}
+        /> */}
+        <input
+          type="url"
+          name="website"
+          value={formData.website}
+          placeholder="Enter your website URL"
+          onChange={handleChange}
+        />
+        <textarea
+          name="message"
+          value={formData.message}
+          placeholder="Enter your message"
+          rows="4"
+          onChange={handleChange}
+          required
+        ></textarea>
+       
+        <button type="submit" className="submit-transparent-button">
+          {loading ? 'Submitting...' : 'Submit'}
+        </button>
+      </form>
+    </div>
+  );
+};
+
 
 
 const Footer = () => {
