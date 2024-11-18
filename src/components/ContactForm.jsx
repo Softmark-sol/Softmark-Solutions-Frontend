@@ -228,71 +228,45 @@ const ContactForm = () => {
 
       <div className="container main-form">
         <div className="text-area">
-          <h1>
-            We’re here to help you <br /> grow
-          </h1>
-          <p>
-            Feel free to reach out to us through
-            your preferred method of contact. We
-            are eager to connect with you and
-            explore how our team can contribute to
-            your success.
-          </p>
-          <div className="more-detail">
-            <div>
-              Phone number : <br />
-              +1 (646) 535-6323
-            </div>
-            <div>
-              Email address : <br />
-              <a
-                href="mailto:admin@softmarksolutions.com"
-                style={{
-                  textDecoration: "none",
-                  color: "black",
-                }}>
+        <h1>Feel Free to Contact Us</h1>
+        <p>
+      For technical website development services, including custom and WordPress website development services, look no further. 
+      Our agency is dedicated to providing comprehensive web design and development services personalized to your specific needs. 
+      Feel free to contact us for unparalleled solutions.
+    </p>
+          <div className="info-block">
+          <div className="info-item">
+        <i className="fas fa-map-marker-alt"></i>
+        <p>
+        30 N Gould St R Sheridan WY 82801</p>
+      </div>
+      
+
+          <div className="info-block">
+          <div className="info-item">
+        <i className="fas fa-envelope"></i>
+
+        <a href="mailto:admin@softmarksolutions.com" style={{ textDecoration: 'none', color: 'black' }}>
                 admin@softmarksolutions.com
-              </a>
-            </div>
+              </a>      </div>
+     
+            {/* <div>
+              <a className="location-btn" target="new" href="https://www.google.com/maps/place/30+N+Gould+St,+Sheridan,+WY+82801,+USA/@44.7977678,-106.9575236,17z/data=!3m1!4b1!4m6!3m5!1s0x5335fabc2a66677f:0x8f85bd068d1afb8a!8m2!3d44.7977678!4d-106.9549487!16s%2Fg%2F11c43v9yzm?entry=ttu">View in map</a>
+              </div> */}
           </div>
 
-          <div className="location-detail">
-            <div className="location-subContainer">
-              <div>
-                <img
-                  src={mapImage}
-                  width={30}
-                  alt="Map location"
-                />
+          <div className="info-item">
+        <i className="fas fa-phone"></i>
+        <p>+1 (646) 535-6323</p>
+      </div>
               </div>
-              <div>
-                30 N Gould St R Sheridan WY 82801
-              </div>
-            </div>
-            <div>
-              <a
-                className="location-btn"
-                target="new"
-                href="https://www.google.com/maps/place/30+N+Gould+St,+Sheridan,+WY+82801,+USA/@44.7977678,-106.9575236,17z/data=!3m1!4b1!4m6!3m5!1s0x5335fabc2a66677f:0x8f85bd068d1afb8a!8m2!3d44.7977678!4d-106.9549487!16s%2Fg%2F11c43v9yzm?entry=ttu">
-                View in map
-              </a>
-            </div>
-          </div>
 
-          <h2 style={{ paddingTop: "14px" }}>
-            What happens next?
-          </h2>
-          <Stack
-            spacing={2}
-            style={{ paddingTop: "10px" }}>
-            <Breadcrumbs
-              separator={
-                <NavigateNextIcon fontSize="small" />
-              }
-              aria-label="breadcrumb">
+          {/* <h2 style={{ paddingTop: '14px' }}>What happens next?</h2>
+          <Stack spacing={2} style={{ paddingTop: '10px' }}>
+            <Breadcrumbs separator={<NavigateNextIcon fontSize="small" />} aria-label="breadcrumb">
               {breadcrumbs}
             </Breadcrumbs>
-          </Stack>
+          </Stack> */}
         </div>
 
         <div className="contactForm-container">
@@ -397,7 +371,7 @@ const ContactForm = () => {
               <div className="form-group">
                 <textarea
                   name="message"
-                  className="form-control full-width"
+                  className="form-control"
                   placeholder="Write your Message here...."
                   value={formData.message}
                   onChange={handleChange}
@@ -447,3 +421,4 @@ const ContactForm = () => {
 };
 
 export default ContactForm;
+
