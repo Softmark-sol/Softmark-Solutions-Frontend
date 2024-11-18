@@ -75,7 +75,7 @@ function Router() {
           {/* Services Component */}
           <Route
             path='/services'
-            element={<Cards heading={`Our Services`} />}
+            element={<Cards heading={`Our Services`} />} 
           />
 
 

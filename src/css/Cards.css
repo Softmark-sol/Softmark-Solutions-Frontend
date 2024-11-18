@@ -38,14 +38,6 @@
   }
 }
 
-.cards-container {
-  width: 100%;
-  padding-top: 30px;
-  /* margin-bottom: 30px !important; */
-  /* background-color: beige;
-  height: 400px; */
-}
-
 .card-title,
 .card-desc {
   transition: filter 0.4s ease-in-out;
@@ -61,12 +53,16 @@
   display: flex;
   justify-content: center;
   width: 100%;
+  padding-top: 30px;
 }
-
 
 .card {
   max-width: 100%; 
   margin: 0 auto; 
+}
+
+.serviceCards{
+  flex-wrap: wrap !important;
 }
 
 @media (max-width: 381px) {
