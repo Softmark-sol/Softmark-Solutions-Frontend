@@ -10,6 +10,7 @@ import seoImage from '../assets/images/SeoImages/seo-search-engine-optimization-
 import seoResearchImage from '../assets/images/SeoImages/research.jpeg'
 import seoLinking from '../assets/images/SeoImages/man-is-using-laptop-with-website-web-screen_1282070-12983.jpeg'
 import seoTechnicalAudit from '../assets/images/SeoImages/man-concentrates-data-analysis-computer_999616-2868-removebg-preview.png'
+import MoreServices from "../components/moreServices/moreServices.jsx";
 
 
 const Seo = () => {
@@ -176,6 +177,7 @@ const Seo = () => {
       </button>
 
       {/* <PlansSeo plans={SeoPlans} /> */}
+      <MoreServices />
     </div>
   );
 };

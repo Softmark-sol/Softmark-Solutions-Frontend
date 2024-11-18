@@ -16,6 +16,7 @@ import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import ConsultationBanner from "../components/consultationBanner/consultationBanner.jsx";
 import WebAgency from "../components/webAgency/webAgency.jsx";
+import MoreServices from "../components/moreServices/moreServices.jsx";
 
 export default function PlansWeb({ plans }) {
   const navigate = useNavigate();
@@ -187,6 +188,7 @@ export default function PlansWeb({ plans }) {
 
       <ConsultationBanner />
       <WebAgency />
+      <MoreServices />
     </>
   );
 }

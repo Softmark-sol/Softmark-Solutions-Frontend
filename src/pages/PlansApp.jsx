@@ -13,6 +13,7 @@ import Typewriter from "../components/TypeWriter.jsx";
 import PropTypes from "prop-types"; 
 import { useNavigate } from "react-router-dom";
 import ConsultationBanner from "../components/consultationBanner/consultationBanner.jsx";
+import MoreServices from "../components/moreServices/moreServices.jsx";
 export default function PlansApp({ plans }) {
   const navigate =useNavigate()
   const [showModal, setShowModal] = useState({ open: false, type: "" });
@@ -135,6 +136,7 @@ export default function PlansApp({ plans }) {
       )}
 
       <ConsultationBanner />
+      <MoreServices />
     </>
   );
 }

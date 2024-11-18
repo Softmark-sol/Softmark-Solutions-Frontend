@@ -7,6 +7,7 @@ import ScrollReveal from "scrollreveal";
 
 import animeHero from '../assets/images/animeHero.jpg';
 import animeSub from '../assets/images/animeSub.jpeg';
+import MoreServices from "../components/moreServices/moreServices";
 
 const AnimeArt = () => {
   const navigate = useNavigate();
@@ -164,6 +165,7 @@ const AnimeArt = () => {
           Get a free Quotation
         </button>
       </div>
+      <MoreServices />
     </>
   );
 };

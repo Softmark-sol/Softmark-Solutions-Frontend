@@ -13,6 +13,7 @@ import Typewriter from "../components/TypeWriter.jsx";
 import PropTypes from "prop-types"; 
 import { useNavigate } from "react-router-dom";
 import ConsultationBanner from "../components/consultationBanner/consultationBanner.jsx";
+import MoreServices from "../components/moreServices/moreServices.jsx";
 
 export default function Logo({ plans }) {
   const navigate = useNavigate()
@@ -119,6 +120,7 @@ export default function Logo({ plans }) {
       )}
 
 <ConsultationBanner />
+<MoreServices />
     </>
   );
 }

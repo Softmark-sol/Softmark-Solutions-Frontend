@@ -19,6 +19,7 @@ import { debounce } from "@mui/material";
 import { FaTimes } from 'react-icons/fa'; 
 
 import { useNavigate } from "react-router-dom";
+import MoreServices from "../components/moreServices/moreServices.jsx";
 
 // const Singlecard = React.lazy(() => import('../components/Singlecard'));
 
@@ -404,6 +405,7 @@ const DigitalMarketing = () => {
         </Modal>
       </div>
       <ScrollToTopButton />
+      <MoreServices />
     </div>
   );
 };
