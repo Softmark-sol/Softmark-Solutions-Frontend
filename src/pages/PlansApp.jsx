@@ -62,8 +62,20 @@ export default function PlansApp({ plans }) {
 
       <div className="card-heading-service">
         <h2 className="heading-underline-service">
-          Our Mobile App Development Services
+        Custom Mobile App Solutions
         </h2>
+        <div className="container text" style={{marginTop:'2rem'}}>
+  <p>
+    The mobile app development services offered by our agency encompass every step of creating exceptional mobile applications. These include planning, designing, developing, and deploying apps that deliver seamless performance, enhanced user experience, and optimal functionality.
+  </p>
+  <p>
+    Our expertise ranges from developing simple utility apps to complex mobile platforms like e-commerce apps, social networking apps, and enterprise solutions. We utilize advanced technologies and frameworks, including Swift, Kotlin, Flutter, React Native, and more.
+  </p>
+  <p>
+    A well-crafted mobile app not only elevates user engagement but also helps drive business success. Our skilled team is dedicated to providing customized mobile app solutions tailored to your specific needs.
+  </p>
+</div>
+
       </div>
 
       <div className="upcards">

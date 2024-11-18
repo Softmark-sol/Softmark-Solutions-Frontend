@@ -90,8 +90,19 @@ export default function PlansWeb({ plans }) {
 
       <div className="card-heading-service">
         <h2 className="heading-underline-service">
-          Our Web Development Services
+        Custom Web Development Solutions
         </h2>
+      </div>
+      <div className="container text" >
+        <p>
+        The web development services that our web development agency offers, do include the tasks associated with the process of designing a website. They consist of all the actions, operations, system updates, etc. needed for maintaining the performance of a website, improving user experience and speed
+        </p>
+        <p>
+        These services include creating plain text pages for complex applications like social networks and electronic business. Many web developers use different languages for developing the website like HTML, JAVA, CSS, etc.
+        </p>
+        <p>
+        The more customized a website is, the better will be its display and functioning. We have a highly skilled team for performing all such tasks and providing you with a well-designed website.
+        </p>
       </div>
       <div className="upcards">
         <WebCards />
