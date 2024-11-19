@@ -229,7 +229,7 @@ const ContactForm = () => {
       <div className="container main-form">
         <div className="text-area">
         <h1>Feel Free to Contact Us</h1>
-        <p>
+        <p style={{lineHeight:2.2}}>
       For technical website development services, including custom and WordPress website development services, look no further. 
       Our agency is dedicated to providing comprehensive web design and development services personalized to your specific needs. 
       Feel free to contact us for unparalleled solutions.

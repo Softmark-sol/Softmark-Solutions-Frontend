@@ -33,9 +33,9 @@ const ItOutTopCards = () => {
   ];
   return (
     <div>
-      <div className="cards-container container">
+      <div className="cards-container container" >
         {ItOUTdata.map((item, index) => (
-          <div className="single-card">
+          <div className="single-card" >
             {" "}
             <Singlecard
               key={index}

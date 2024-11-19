@@ -9,6 +9,7 @@ import animeHero from '../assets/images/animeHero.jpg';
 import animeSub from '../assets/images/animeSub.jpeg';
 import MoreServices from "../components/moreServices/moreServices";
 import ServiceForm from "../components/ServiceForm";
+import ContactForm from "../components/ContactForm.jsx";
 
 const AnimeArt = () => {
   const navigate = useNavigate();
@@ -176,6 +177,8 @@ const AnimeArt = () => {
         </button>
       </div>
       <MoreServices />
+      <ContactForm/>
+
     </>
   );
 };
