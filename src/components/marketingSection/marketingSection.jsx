@@ -33,10 +33,10 @@ const MarketingSection = () => {
         </Grid>
 
         <Grid item xs={12} md={6}>
-          <Typography variant="h4" component="h2" gutterBottom textAlign="left" color="#4599B4" fontWeight="bold">
+          <Typography variant="h4" component="h2" gutterBottom textAlign="left" color="#4599B4" fontWeight="bold" className="container">
             Creative Digital Marketing Agency With Proven Success Rate
           </Typography>
-          <Typography variant="body1" paragraph textAlign="left">
+          <Typography variant="body1" paragraph textAlign="left" className="container">
             Who is willing to work with a trustworthy digital marketing company
             that provides services of your choice? Well, of course the business
             oriented minds. All Star Technologies brings to you a variety of
@@ -46,7 +46,7 @@ const MarketingSection = () => {
             have top brains working with us on clients’ projects and breaking
             their own success records.
           </Typography>
-          <Typography variant="body1" paragraph textAlign="left">
+          <Typography variant="body1" paragraph textAlign="left" className="container">
             Your desired outcomes are just a few clicks away. Select the service
             of your choice and get assistance from our passionate and skilled
             digital marketing agency staff. We guarantee timely response and

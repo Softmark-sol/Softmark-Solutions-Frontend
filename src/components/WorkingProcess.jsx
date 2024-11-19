@@ -8,15 +8,16 @@ import icon3 from '../assets/images/wor-icon3.webp'
 
 const WorkingProcess = () => {
   return (
-    <div className='main-workingProcess' style={{ padding: '1rem', backgroundColor: '#f2f9ff' }}>
+    <div className='main-workingProcess' style={{ padding: '', backgroundColor: '#f2f9ff' }}>
       {/* Section 1: Cards */}
       <div className='workingCards'>
+        
+        <div className='cards-container container ' style={{ display: 'grid', padding:'4rem', gap: '1rem', gridTemplateColumns: '1fr',  }}>
+        {/* Card 1 */}
         <h4 className='container' style={{ textAlign: 'left', color: 'rgb(220, 166, 66)' }}>Our Working Process</h4>
         <h2 className='container' style={{ color: '#4599b4', fontWeight: 'bold' }}>
           Our Easy and Understandable <br /> Working Process
         </h2>
-        <div className='cards-container container' style={{ display: 'grid', gap: '1rem', gridTemplateColumns: '1fr', marginBottom: '3rem' }}>
-        {/* Card 1 */}
         <div className='working-card' style={{ display: 'flex', gap: '1rem', padding: '2rem', backgroundColor: '#fff', borderRadius: '8px', boxShadow: '0 4px 6px rgba(0,0,0,0.1)' }}>
           <div style={{ width: '50%',  display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <img src={icon1} alt="Consultation Icon" style={{ width: '60%' }} />
@@ -60,7 +61,7 @@ const WorkingProcess = () => {
 
       {/* Section 2: Image */}
       <div className='hide-img' >
-        <img src={working} style={{ width: '100%', borderRadius: '8px', paddingTop:'150px' }} alt="Working team" />
+        <img src={working} style={{ width: '100%', height:'100%', borderRadius: '8px', }} alt="Working team" />
       </div>
     </div>
   );

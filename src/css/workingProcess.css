@@ -1,11 +1,15 @@
 .main-workingProcess{
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-start;
     /* padding: 1rem; */
 }
 .workingCards{
+    width: 50%;
+    margin-bottom: 2rem;
+}
+.hide-img{
     width: 50%;
 }
 
