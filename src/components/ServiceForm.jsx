@@ -253,7 +253,7 @@ const ServiceForm = ({ title, description, buttonText, route }) => {
         
     
             <div className="contactForm-container">
-              <div className="form-container container">
+              <div className="form-container container" style={{height:'100vh'}} >
                 <form
                   className="contact-form"
                   onSubmit={handleSubmit}>
@@ -354,7 +354,7 @@ const ServiceForm = ({ title, description, buttonText, route }) => {
                   <div className="form-group">
                     <textarea
                       name="message"
-                      className="form-control full-width"
+                      className="form-control "
                       placeholder="Write your Message here...."
                       value={formData.message}
                       onChange={handleChange}
@@ -379,8 +379,8 @@ const ServiceForm = ({ title, description, buttonText, route }) => {
                               <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 24 24"
-                                width="24"
-                                height="24">
+                                width="20"
+                                height="20">
                                 <path
                                   fill="none"
                                   d="M0 0h24v24H0z"></path>
