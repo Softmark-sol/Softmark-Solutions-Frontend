@@ -98,21 +98,21 @@ const Navbar = () => {
           >
             <CustomMenuItem
               onClick={() =>
-                navigateAndClose("/webPlans", () => setServicesAnchorEl(null))
+                navigateAndClose("/website-development-services", () => setServicesAnchorEl(null))
               }
             >
               Web Development
             </CustomMenuItem>
             <CustomMenuItem
               onClick={() =>
-                navigateAndClose("/appPlans", () => setServicesAnchorEl(null))
+                navigateAndClose("/app-development-services", () => setServicesAnchorEl(null))
               }
             >
               App Development
             </CustomMenuItem>
             <CustomMenuItem
               onClick={() =>
-                navigateAndClose("/logoPlans", () => setServicesAnchorEl(null))
+                navigateAndClose("/graphics-design-services", () => setServicesAnchorEl(null))
               }
             >
               Logo
@@ -128,7 +128,7 @@ const Navbar = () => {
             </CustomMenuItem>
             <CustomMenuItem
               onClick={() =>
-                navigateAndClose("/seo", () => setServicesAnchorEl(null))
+                navigateAndClose("/seo-services", () => setServicesAnchorEl(null))
               }
             >
               SEO
@@ -144,7 +144,7 @@ const Navbar = () => {
             </CustomMenuItem>
             <CustomMenuItem
               onClick={() =>
-                navigateAndClose("/customSoftware", () =>
+                navigateAndClose("/software-development-services", () =>
                   setServicesAnchorEl(null)
                 )
               }
@@ -153,7 +153,7 @@ const Navbar = () => {
             </CustomMenuItem>
             <CustomMenuItem
               onClick={() =>
-                navigateAndClose("/animeArt", () => setServicesAnchorEl(null))
+                navigateAndClose("/anime-art-services", () => setServicesAnchorEl(null))
               }
             >
               Anime Art

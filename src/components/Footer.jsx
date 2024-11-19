@@ -335,10 +335,10 @@ const Footer = () => {
                 <button onClick={() => navigate("/ItOutsourcing")}>IT Outsourcing</button>
               </li>
               <li>
-                <button onClick={() => navigate("/customSoftware")}>Custom Software</button>
+                <button onClick={() => navigate("/software-development-services")}>Custom Software</button>
               </li>
               <li>
-                <button onClick={() => navigate("/animeArt")}>Anime Art</button>
+                <button onClick={() => navigate("/anime-art-services")}>Anime Art</button>
               </li>
             </ul>
            

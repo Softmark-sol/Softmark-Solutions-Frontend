@@ -51,7 +51,7 @@ const secondMap = [
     imageUrl:azure,
     alt: "azure",
   },
-  { imageUrl: Seo, alt: "seo" },
+  { imageUrl: Seo, alt: "seo-services" },
   { imageUrl: DigitalMarketing, alt: "digital marketing" },
   {
     imageUrl: DockerLogo,
