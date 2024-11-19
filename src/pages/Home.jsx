@@ -20,10 +20,11 @@ const Home = () => {
       <InfoCards />
       <ConsultationBanner />
       {/* <CallToAction /> */}
-      <Cards heading={`Our Services`} />
       <MarketingSection />
-      <WorkingProcess/>
+      <Cards heading={`Our Services`} />
       <OurClients />
+      <WorkingProcess/>
+      <ConsultationBanner />
       {/* <WhoWeAre /> */}
       <WhatClientSays />
       <ClientsSection />

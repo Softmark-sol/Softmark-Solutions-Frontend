@@ -7,6 +7,8 @@ import '../css/Plans.css'
 import ModalformSeo from '../components/Modal/Seo/Modal-Seo'
 import { useNavigate } from 'react-router-dom'
 import ConsultationBanner from '../components/consultationBanner/consultationBanner'
+import ContactForm from "../components/ContactForm.jsx";
+import MoreServices from "../components/moreServices/moreServices.jsx";
 
 
 export default function PlansSeo({ plans }) {
@@ -63,6 +65,10 @@ export default function PlansSeo({ plans }) {
         handleClose={handleCloseModal}
       />
       <ConsultationBanner />
+      <MoreServices />
+
+      <ContactForm/>
+
     </>
   )
 }

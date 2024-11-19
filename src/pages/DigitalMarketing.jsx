@@ -25,6 +25,7 @@ import "slick-carousel/slick/slick-theme.css"; // Slick Theme CSS
 import Slider from "react-slick";
 import ServiceForm from "../components/ServiceForm.jsx";
 // const Singlecard = React.lazy(() => import('../components/Singlecard'));
+import ContactForm from "../components/ContactForm.jsx";
 
 const { apiKey } = API_CONFIG;
 
@@ -467,6 +468,8 @@ const DigitalMarketing = () => {
       </div>
       <ScrollToTopButton />
       <MoreServices />
+      <ContactForm/>
+
     </div>
   );
 };

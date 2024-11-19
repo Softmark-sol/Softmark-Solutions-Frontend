@@ -9,6 +9,7 @@ import SoftwareCards from "../components/SoftwareCards.jsx";
 import CSDLottieAnimation from "../components/CSD-Animation.jsx";
 import MoreServices from "../components/moreServices/moreServices.jsx";
 import ServiceForm from "../components/ServiceForm.jsx";
+import ContactForm from "../components/ContactForm.jsx";
 
 const CustomSoftware = () => {
   const navigate = useNavigate();
@@ -79,6 +80,8 @@ const CustomSoftware = () => {
         </button>
       </div>
       <MoreServices />
+      <ContactForm/>
+
     </>
   );
 };

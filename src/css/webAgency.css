@@ -9,8 +9,6 @@
 
 .about-us-container {
   display: flex;
-  /* flex-direction: row-reverse !important; */
-  /* justify-content: space-between !important; */
   align-items: center;
   background-image: url("../assets/images/blueBg.jpg");
   background-size: cover;
@@ -42,7 +40,7 @@
   font-size: 2rem !important;
   font-weight: 700;
   color: #ffffff;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
 }
 
 .text-container p {
@@ -58,7 +56,7 @@
 }
 
 .about-us-image {
-  width: 85%;
+  width: 95%;
   max-width: 600px;
   height: auto;
   border-radius: 12px;

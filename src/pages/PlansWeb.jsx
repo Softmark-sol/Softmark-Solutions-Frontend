@@ -21,6 +21,8 @@ import ServiceForm from "../components/ServiceForm.jsx";
 import { Description } from "@mui/icons-material";
 import PricingCards from "../components/pricingCards/priceCards.jsx";
 
+import ContactForm from "../components/ContactForm.jsx";
+
 export default function PlansWeb({ plans }) {
   const navigate = useNavigate();
 
@@ -55,7 +57,29 @@ export default function PlansWeb({ plans }) {
     <ServiceForm title={"Best Website Development Services"} description={"Our custom website development services include the tasks associated with the process of designing a website. They consist of all the actions, operations, system updates, etc. needed for maintaining the performance of a website, improving user experience and speed."}
     buttonText={"Get In Touch"} route={"contactUs"}
     />
-      <div className="main-container container">
+    
+
+      <div className="card-heading-service">
+        <h2 className="heading-underline-service">
+        Custom Web Development Solutions
+        </h2>
+      </div>
+      <div className="container text" >
+        <p>
+        The web development services that our web development agency offers, do include the tasks associated with the process of designing a website. They consist of all the actions, operations, system updates, etc. needed for maintaining the performance of a website, improving user experience and speed
+        </p>
+        <p>
+        These services include creating plain text pages for complex applications like social networks and electronic business. Many web developers use different languages for developing the website like HTML, JAVA, CSS, etc.
+        </p>
+        <p>
+        The more customized a website is, the better will be its display and functioning. We have a highly skilled team for performing all such tasks and providing you with a well-designed website.
+        </p>
+      </div>
+      <div className="upcards">
+        <WebCards />
+      </div>
+
+         <div className="main-container container">
         <h2>
           SoftMark Solutions -{" "}
           <Typewriter
@@ -86,27 +110,7 @@ export default function PlansWeb({ plans }) {
             <WebLottieAnimation />
           </div>
         </div>
-      </div>
-
-      <div className="card-heading-service">
-        <h2 className="heading-underline-service">
-        Custom Web Development Solutions
-        </h2>
-      </div>
-      <div className="container text" >
-        <p>
-        The web development services that our web development agency offers, do include the tasks associated with the process of designing a website. They consist of all the actions, operations, system updates, etc. needed for maintaining the performance of a website, improving user experience and speed
-        </p>
-        <p>
-        These services include creating plain text pages for complex applications like social networks and electronic business. Many web developers use different languages for developing the website like HTML, JAVA, CSS, etc.
-        </p>
-        <p>
-        The more customized a website is, the better will be its display and functioning. We have a highly skilled team for performing all such tasks and providing you with a well-designed website.
-        </p>
-      </div>
-      <div className="upcards">
-        <WebCards />
-      </div>
+      </div> 
 
       <div className="main-container container">
         {/* <ParticleEffect /> */}
@@ -206,6 +210,7 @@ export default function PlansWeb({ plans }) {
       <ConsultationBanner />
       <WebAgency />
       <MoreServices />
+      <ContactForm/>
     </>
   );
 }
