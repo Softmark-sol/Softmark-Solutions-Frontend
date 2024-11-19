@@ -4,7 +4,6 @@ import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import TinderCardSlider from "../react-tinder-card/tinderCard";
 
-// Example images for the slider
 const images = [
   "https://via.placeholder.com/300x400?text=Image+1",
   "https://via.placeholder.com/300x400?text=Image+2",
@@ -30,7 +29,7 @@ const MarketingSection = () => {
         padding: { xs: 2, sm: 4, md: 8 },
         backgroundColor: "#f5f5f5",
         borderRadius: 2,
-        marginTop:'-50px'
+        // marginTop:'-50px'
       }}
       
     >

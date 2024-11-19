@@ -5,7 +5,7 @@ import ConsultationBtn from "../Buttons/ConsultationBtn";
 
 const WebAgency = () => {
   return (
-    <div className="who-we-are-section container">
+    <div className="who-we-are-section">
       <div className="about-us-container">
         <div className="text-container">
           <h2 style={{ textAlign: "left" }}>
@@ -34,11 +34,11 @@ const WebAgency = () => {
             maintaining a modern and approachable
             aesthetic.
           </p>
-          <ConsultationBtn text="Get in touch" />
+          <div style={{marginTop: "-20px"}}><ConsultationBtn text="Get in touch" /></div>
         </div>
         <div className="image-container">
           <img
-            src={Img}
+            src="https://img.freepik.com/premium-photo/medium-shot-man-working-laptop_23-2150323514.jpg?w=826"
             alt="Who we are"
             className="about-us-image"
           />

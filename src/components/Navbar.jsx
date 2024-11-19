@@ -36,13 +36,14 @@ const Navbar = () => {
   const CustomMenu = styled(Menu)`
     .MuiPaper-root {
       background-color: white;
-      border: 1px solid #E0E0E0;
+      border: 1px solid #e0e0e0;
       box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
       padding: 10px;
       border-radius: 8px;
       min-width: 180px;
     }
   `;
+  
   const CustomMenuItem = styled(MenuItem)`
     color: #333;
     padding: 10px 10px;
@@ -95,30 +96,69 @@ const Navbar = () => {
             }}
             onMouseLeave={() => handleMouseLeave(setServicesAnchorEl)}
           >
-            <CustomMenuItem onClick={() => navigateAndClose("/webPlans", () => setServicesAnchorEl(null))}>
+            <CustomMenuItem
+              onClick={() =>
+                navigateAndClose("/webPlans", () => setServicesAnchorEl(null))
+              }
+            >
               Web Development
             </CustomMenuItem>
-            <CustomMenuItem onClick={() => navigateAndClose("/appPlans", () => setServicesAnchorEl(null))}>
+            <CustomMenuItem
+              onClick={() =>
+                navigateAndClose("/appPlans", () => setServicesAnchorEl(null))
+              }
+            >
               App Development
             </CustomMenuItem>
-            <CustomMenuItem onClick={() => navigateAndClose("/logoPlans", () => setServicesAnchorEl(null))}>
+            <CustomMenuItem
+              onClick={() =>
+                navigateAndClose("/logoPlans", () => setServicesAnchorEl(null))
+              }
+            >
               Logo
             </CustomMenuItem>
-            <CustomMenuItem onClick={() => navigateAndClose("/digitalMarketing", () => setServicesAnchorEl(null))}>
+            <CustomMenuItem
+              onClick={() =>
+                navigateAndClose("/digitalMarketing", () =>
+                  setServicesAnchorEl(null)
+                )
+              }
+            >
               Digital Marketing
             </CustomMenuItem>
-            <CustomMenuItem onClick={() => navigateAndClose("/seo", () => setServicesAnchorEl(null))}>
+            <CustomMenuItem
+              onClick={() =>
+                navigateAndClose("/seo", () => setServicesAnchorEl(null))
+              }
+            >
               SEO
             </CustomMenuItem>
-            <CustomMenuItem onClick={() => navigateAndClose("/ItOutsourcing", () => setServicesAnchorEl(null))}>
+            <CustomMenuItem
+              onClick={() =>
+                navigateAndClose("/ItOutsourcing", () =>
+                  setServicesAnchorEl(null)
+                )
+              }
+            >
               IT Outsourcing
             </CustomMenuItem>
-            <CustomMenuItem onClick={() => navigateAndClose("/customSoftware", () => setServicesAnchorEl(null))}>
+            <CustomMenuItem
+              onClick={() =>
+                navigateAndClose("/customSoftware", () =>
+                  setServicesAnchorEl(null)
+                )
+              }
+            >
               Custom Software
             </CustomMenuItem>
-            <CustomMenuItem onClick={() => navigateAndClose("/animeArt", () => setServicesAnchorEl(null))}>
+            <CustomMenuItem
+              onClick={() =>
+                navigateAndClose("/animeArt", () => setServicesAnchorEl(null))
+              }
+            >
               Anime Art
-            </CustomMenuItem>          </CustomMenu>
+            </CustomMenuItem>{" "}
+          </CustomMenu>
 
           {/* About Us Dropdown */}
           <span
@@ -143,17 +183,22 @@ const Navbar = () => {
             }}
             onMouseLeave={() => handleMouseLeave(setAboutAnchorEl)}
           >
-            <CustomMenuItem onClick={() => navigateAndClose("/aboutUs", () => setAboutAnchorEl(null))}>
+            <CustomMenuItem
+              onClick={() =>
+                navigateAndClose("/aboutUs", () => setAboutAnchorEl(null))
+              }
+            >
               About Us
             </CustomMenuItem>
-            <CustomMenuItem onClick={() => navigateAndClose("/whyUs", () => setAboutAnchorEl(null))}>
+            <CustomMenuItem
+              onClick={() =>
+                navigateAndClose("/whyUs", () => setAboutAnchorEl(null))
+              }
+            >
               Why Us
             </CustomMenuItem>
           </CustomMenu>
-          <span
-            className="nav-btn"
-            onClick={()=>navigate("/contactUs")}
-          >
+          <span className="nav-btn" onClick={() => navigate("/contactUs")}>
             Contact Us
           </span>
           {/* Our Portfolio Dropdown */}
@@ -170,7 +215,6 @@ const Navbar = () => {
             id="portfolio-menu"
             anchorEl={portfolioAnchorEl}
             open={portfolioOpen}
-            
             onClose={() => handleMouseLeave(setPortfolioAnchorEl)}
             TransitionComponent={Fade}
             anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
@@ -181,30 +225,67 @@ const Navbar = () => {
             }}
             onMouseLeave={() => handleMouseLeave(setPortfolioAnchorEl)}
           >
-            <CustomMenuItem onClick={() => navigateAndClose("/portfolio-detail/web/Web%20Development", () => setPortfolioAnchorEl(null))}>
+            <CustomMenuItem
+              onClick={() =>
+                navigateAndClose(
+                  "/portfolio-detail/web/Web%20Development",
+                  () => setPortfolioAnchorEl(null)
+                )
+              }
+            >
               Web Projects
             </CustomMenuItem>
-            <CustomMenuItem onClick={() => navigateAndClose("/portfolio-detail/app/App%20Development", () => setPortfolioAnchorEl(null))}>
+            <CustomMenuItem
+              onClick={() =>
+                navigateAndClose(
+                  "/portfolio-detail/app/App%20Development",
+                  () => setPortfolioAnchorEl(null)
+                )
+              }
+            >
               App Projects
             </CustomMenuItem>
-            <CustomMenuItem onClick={() => navigateAndClose("/portfolio-detail/logo/Logo%20Development", () => setPortfolioAnchorEl(null))}>
+            <CustomMenuItem
+              onClick={() =>
+                navigateAndClose(
+                  "/portfolio-detail/logo/Logo%20Development",
+                  () => setPortfolioAnchorEl(null)
+                )
+              }
+            >
               Logo Projects
             </CustomMenuItem>
-            <CustomMenuItem onClick={() => navigateAndClose("/portfolio-detail/digital-marketing", () => setPortfolioAnchorEl(null))}>
+            <CustomMenuItem
+              onClick={() =>
+                navigateAndClose("/portfolio-detail/digital-marketing", () =>
+                  setPortfolioAnchorEl(null)
+                )
+              }
+            >
               Digital Marketing Projects
             </CustomMenuItem>
-            <CustomMenuItem onClick={() => navigateAndClose("/portfolio-detail/custom/Custom%20Development", () => setPortfolioAnchorEl(null))}>
+            <CustomMenuItem
+              onClick={() =>
+                navigateAndClose(
+                  "/portfolio-detail/custom/Custom%20Development",
+                  () => setPortfolioAnchorEl(null)
+                )
+              }
+            >
               Custom Software Projects
             </CustomMenuItem>
-            <CustomMenuItem onClick={() => navigateAndClose("/portfolio-detail/anime/Anime%20Development", () => setPortfolioAnchorEl(null))}>
+            <CustomMenuItem
+              onClick={() =>
+                navigateAndClose(
+                  "/portfolio-detail/anime/Anime%20Development",
+                  () => setPortfolioAnchorEl(null)
+                )
+              }
+            >
               Anime Art Projects
             </CustomMenuItem>
           </CustomMenu>
-          <span
-            className="nav-btn"
-          >
-            FAQ's
-          </span>
+          <span className="nav-btn">FAQ's</span>
           {/* <a
             href="https://www.linkedin.com/company/softmark-solutions-llc"
             target="_blank"
@@ -213,7 +294,10 @@ const Navbar = () => {
           >
             Careers
           </a> */}
-          <span className="nav-btn contact-us" onClick={() => navigate("/calendly")}>
+          <span
+            className="nav-btn contact-us"
+            onClick={() => navigate("/calendly")}
+          >
             <div className="myLottieAnimation">
               <MyLottieAnimation />
             </div>
