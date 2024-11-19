@@ -17,14 +17,14 @@ import img8 from "../../assets/images/outsourcing.png";
 const MoreServices = () => {
   const navigate = useNavigate();
   const cardData = [
-    { icon: img3, label: "SEO", route: "/seo-services" },
-    { icon: img2, label: "App Development", route: "/app-development-services" },
+    { icon: img3, label: "SEO", route: "/services/seo-services" },
+    { icon: img2, label: "App Development", route: "/services/app-development-services" },
     { icon: img4, label: "Digital Marketing", route: "/digitalMarketing" },
-    { icon: img5, label: "Logo Designing", route: "/graphics-design-services" },
-    { icon: img1, label: "Web Development", route: "/website-development-services" },
-    { icon: img8, label: "IT Outsourcing", route: "/ItOutsourcing" },
-    { icon: img6, label: "Custom Software", route: "/software-development-services" },
-    { icon: img7, label: "Anime Art", route: "/anime-art-services" },
+    { icon: img5, label: "Logo Designing", route: "/services/graphics-design-services" },
+    { icon: img1, label: "Web Development", route: "/services/website-development-services" },
+    { icon: img8, label: "IT Outsourcing", route: "/services/ItOutsourcing" },
+    { icon: img6, label: "Custom Software", route: "/services/software-development-services" },
+    { icon: img7, label: "Anime Art", route: "/services/anime-art-services" },
   ];
 
   const [hovered, setHovered] = useState(null);

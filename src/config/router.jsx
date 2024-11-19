@@ -35,19 +35,19 @@ function Router() {
           <Route path='/' element={<Home />} />
 
           {/* Web Plans Page */}
-          <Route path='/website-development-services' element={<PlansWeb plans={WebPlans} />} />
+          <Route path='/services/website-development-services' element={<PlansWeb plans={WebPlans} />} />
 
           {/* App Plans Page */}
-          <Route path='/app-development-services' element={<PlansApp plans={AppPlans} />} />
+          <Route path='/services/app-development-services' element={<PlansApp plans={AppPlans} />} />
 
           {/* Logo Page */}
-          <Route path='/graphics-design-services' element={<Logo plans={LogoPlans} />} />
+          <Route path='/services/graphics-design-services' element={<Logo plans={LogoPlans} />} />
 
           {/* Custom Software Development Page */}
-          <Route path='/software-development-services' element={<CustomSoftware  />} />
+          <Route path='/services/software-development-services' element={<CustomSoftware  />} />
 
           {/* Anime Art Page */}
-          <Route path='/anime-art-services' element={<AnimeArt  />} />
+          <Route path='/services/anime-art-services' element={<AnimeArt  />} />
 
           {/* About Us Page */}
           <Route path='/aboutUs' element={<AboutUs />} />
@@ -59,7 +59,7 @@ function Router() {
           <Route path='/whyUs' element={<WhyUs />} />
 
           {/* SEO Page*/}
-          <Route path='/seo-services' element={<Seo />} />
+          <Route path='/services/seo-services' element={<Seo />} />
 
           {/* Our Work Page*/}
           <Route path='/Ourservices' element={<Ourservices />} />
@@ -87,7 +87,7 @@ function Router() {
 
           {/* ItOutsourcing Component */}
           <Route
-            path='/ItOutsourcing'
+            path='/services/ItOutsourcing'
             element={<ItOutsourcing/>}
           />
 

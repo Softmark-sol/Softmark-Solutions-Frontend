@@ -332,13 +332,13 @@ const Footer = () => {
                 <button onClick={() => navigate("/logoPlans")}>Logo Designing</button>
               </li>
               <li>
-                <button onClick={() => navigate("/ItOutsourcing")}>IT Outsourcing</button>
+                <button onClick={() => navigate("/services/ItOutsourcing")}>IT Outsourcing</button>
               </li>
               <li>
-                <button onClick={() => navigate("/software-development-services")}>Custom Software</button>
+                <button onClick={() => navigate("/services/software-development-services")}>Custom Software</button>
               </li>
               <li>
-                <button onClick={() => navigate("/anime-art-services")}>Anime Art</button>
+                <button onClick={() => navigate("/services/anime-art-services")}>Anime Art</button>
               </li>
             </ul>
            

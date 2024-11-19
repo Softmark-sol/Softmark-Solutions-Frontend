@@ -23,31 +23,31 @@ const Cards = ({ heading }) => {
       path: img6,
       title: "Custom Software Development",
       desc: "Softmark Solutions offers customized, tailored solutions that perfectly align with your business needs.",
-      route: "/software-development-services",
+      route: "/services/software-development-services",
     },
     {
       path: img8,
       title: "IT Outsourcing",
       desc: "Cut your business costs and focus on your core competencies with our tailored IT outsourcing services we deliver efficient, high-quality solutions that drive your business forward.",
-      route: "/ItOutsourcing",
+      route: "/services/ItOutsourcing",
     },
     {
       path: img1,
       title: "Web Development",
       desc: "Transforming your digital vision into reality with expert web development services. Empower your online presence with cutting-edge design and functionality.",
-      route: "/website-development-services",
+      route: "/services/website-development-services",
     },
     {
       path: img2,
       title: "Mobile App Development",
       desc: "Crafting seamless and intuitive mobile experiences tailored to your unique vision. From concept to launch, trust our team to bring your app idea to life with precision and innovation.",
-      route: "/app-development-services",
+      route: "/services/app-development-services",
     },
     {
       path: img3,
       title: "Search Engine Optimization",
       desc: "Maximize your online visibility and drive organic traffic to your website with our strategic SEO solutions. Dominate search engine rankings and connect with your target audience effectively.",
-      route: "/seo-services",
+      route: "/services/seo-services",
     },
     {
       path: img4,
@@ -59,13 +59,13 @@ const Cards = ({ heading }) => {
       path: img7,
       title: "Anime Art",
       desc: "Create anime characters and scenes with Japanese animation styles using sketching, inking, and coloring. Utilize digital tools for expressive, dynamic visuals ideal for comics and animations.",
-      route: "/anime-art-services",
+      route: "/services/anime-art-services",
     },
     {
       path: img5,
       title: "Logo Design",
       desc: "Unlock the power of visual identity with our bespoke logo designs. Let us bring your brand's story to life through creativity and precision. Elevate your online presence with our professional logo design services.",
-      route: "/graphics-design-services",
+      route: "/services/graphics-design-services",
     },
   ];
 

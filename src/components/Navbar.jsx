@@ -98,21 +98,21 @@ const Navbar = () => {
           >
             <CustomMenuItem
               onClick={() =>
-                navigateAndClose("/website-development-services", () => setServicesAnchorEl(null))
+                navigateAndClose("/services/website-development-services", () => setServicesAnchorEl(null))
               }
             >
               Web Development
             </CustomMenuItem>
             <CustomMenuItem
               onClick={() =>
-                navigateAndClose("/app-development-services", () => setServicesAnchorEl(null))
+                navigateAndClose("/services/app-development-services", () => setServicesAnchorEl(null))
               }
             >
               App Development
             </CustomMenuItem>
             <CustomMenuItem
               onClick={() =>
-                navigateAndClose("/graphics-design-services", () => setServicesAnchorEl(null))
+                navigateAndClose("/services/graphics-design-services", () => setServicesAnchorEl(null))
               }
             >
               Logo
@@ -128,14 +128,14 @@ const Navbar = () => {
             </CustomMenuItem>
             <CustomMenuItem
               onClick={() =>
-                navigateAndClose("/seo-services", () => setServicesAnchorEl(null))
+                navigateAndClose("/services/seo-services", () => setServicesAnchorEl(null))
               }
             >
               SEO
             </CustomMenuItem>
             <CustomMenuItem
               onClick={() =>
-                navigateAndClose("/ItOutsourcing", () =>
+                navigateAndClose("/services/ItOutsourcing", () =>
                   setServicesAnchorEl(null)
                 )
               }
@@ -144,7 +144,7 @@ const Navbar = () => {
             </CustomMenuItem>
             <CustomMenuItem
               onClick={() =>
-                navigateAndClose("/software-development-services", () =>
+                navigateAndClose("/services/software-development-services", () =>
                   setServicesAnchorEl(null)
                 )
               }
@@ -153,7 +153,7 @@ const Navbar = () => {
             </CustomMenuItem>
             <CustomMenuItem
               onClick={() =>
-                navigateAndClose("/anime-art-services", () => setServicesAnchorEl(null))
+                navigateAndClose("/services/anime-art-services", () => setServicesAnchorEl(null))
               }
             >
               Anime Art
