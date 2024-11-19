@@ -12,6 +12,7 @@ import seoLinking from '../assets/images/SeoImages/man-is-using-laptop-with-webs
 import seoTechnicalAudit from '../assets/images/SeoImages/man-concentrates-data-analysis-computer_999616-2868-removebg-preview.png'
 import MoreServices from "../components/moreServices/moreServices.jsx";
 import ServiceForm from "../components/ServiceForm.jsx";
+import ContactForm from "../components/ContactForm.jsx";
 
 
 const Seo = () => {
@@ -190,6 +191,8 @@ const Seo = () => {
       {/* <PlansSeo plans={SeoPlans} /> */}
     </div>
       <MoreServices />
+      <ContactForm/>
+
       </>
   );
 };

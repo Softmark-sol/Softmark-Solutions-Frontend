@@ -16,6 +16,10 @@ import ConsultationBanner from "../components/consultationBanner/consultationBan
 import MoreServices from "../components/moreServices/moreServices.jsx";
 import PricingCards from "../components/pricingCards/priceCards.jsx";
 import ServiceForm from "../components/ServiceForm.jsx";
+import ContactForm from "../components/ContactForm.jsx";
+
+
+
 export default function PlansApp({ plans }) {
   const navigate =useNavigate()
   const [showModal, setShowModal] = useState({ open: false, type: "" });
@@ -161,6 +165,8 @@ export default function PlansApp({ plans }) {
 
       <ConsultationBanner />
       <MoreServices />
+      <ContactForm/>
+
     </>
   );
 }

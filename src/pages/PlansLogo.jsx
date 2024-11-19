@@ -16,6 +16,8 @@ import ConsultationBanner from "../components/consultationBanner/consultationBan
 import MoreServices from "../components/moreServices/moreServices.jsx";
 import PricingCards from "../components/pricingCards/priceCards.jsx";
 import ServiceForm from "../components/ServiceForm.jsx";
+import ContactForm from "../components/ContactForm.jsx";
+
 
 export default function Logo({ plans }) {
   const navigate = useNavigate()
@@ -133,6 +135,8 @@ export default function Logo({ plans }) {
 
 <ConsultationBanner />
 <MoreServices />
+<ContactForm/>
+
     </>
   );
 }
