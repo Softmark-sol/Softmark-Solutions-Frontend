@@ -27,10 +27,10 @@
   width: 392px;
 }
 .hero-image {
-  background-image: url("../assets/images/bg2.jpg"); /* Path to your background image */
+  /* background-image: url("https://img.freepik.com/free-vector/white-abstract-background_52683-54522.jpg?uid=R154366527&ga=GA1.1.842879808.1729249015&semt=ais_hybrid");  */
   background-size: cover; /* Ensures the image covers the entire div */
   background-position: center; /* Centers the image */
-  background-repeat: no-repeat; /* Prevents the image from repeating */
+  /* background-repeat: no-repeat;  */
   display: flex;
   justify-content: center;
   align-items: center;

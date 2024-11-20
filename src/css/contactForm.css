@@ -106,7 +106,7 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: flex-start !important;
   padding-top: 8px;
   gap: 1.5rem;
 
@@ -392,13 +392,15 @@ select.form-control {
 
 .info-block {
   display: flex;
+  justify-content: center;
   flex-direction: column;
   gap: 20px;
 }
 
 .info-item {
   display: flex;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: center !important;
   gap: 20px;
 }
 
@@ -414,12 +416,12 @@ select.form-control {
 }
 
 @media (max-width: 768px) {
-  .info-block {
+  /* .info-block {
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: left;
-  }
+  } */
   .formBtn{
     padding-left: 16px !important;
   }
