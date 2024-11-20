@@ -27,7 +27,8 @@
   width: 392px;
 }
 .hero-image {
-  background-image: url("../assets/images/bg2.jpg"); /* Path to your background image */
+  /* background-image: url("../assets/images/bg2.jpg"); Path to your background image */
+  background-image: url("../assets/background-image.jpeg"); /* Path to your background image */
   background-size: cover; /* Ensures the image covers the entire div */
   background-position: center; /* Centers the image */
   background-repeat: no-repeat; /* Prevents the image from repeating */

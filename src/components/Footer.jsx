@@ -29,7 +29,7 @@ const ContactForm = () => {
   const [loading, setLoading] = useState(false);
   const [phoneError, setPhoneError] = useState(false);
 
-  const apiKey = "api.softmarksolutions.com";
+  const apiKey = "https://api.softmarksolutions.com";
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -37,7 +37,7 @@ const ContactForm = () => {
 
     // Regex patterns for email and website validation
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    // const websiteRegex = /^(https?:\/\/)?(www\.)?[a-zA-Z0-9-]+(\.[a-zA-Z]{2,})+$/;
+    const websiteRegex = /^(https?:\/\/)?(www\.)?[a-zA-Z0-9-]+(\.[a-zA-Z]{2,})+$/;
     // const phoneRegex = /^[0-9]{10}$/; // Basic phone validation (10 digits)
 
     // Validate email
@@ -70,12 +70,11 @@ const ContactForm = () => {
     }
 
     // Validate website URL
-    if (formData.website) {
+    if (formData.website && formData.emailRegex) {
       Swal.fire({
         position: "top-end",
         icon: "error",
         title: "Please enter a valid website URL",
-        text: "Make sure it starts with http:// or https://",
         showConfirmButton: false,
         timer: 1500,
       });
@@ -90,7 +89,7 @@ const ContactForm = () => {
         setFormData({
           name: "",
           email: "",
-          // phone: '',
+          phone: '',
           // company: '',
           message: "",
           website: "",
