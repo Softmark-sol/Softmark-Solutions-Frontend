@@ -231,7 +231,7 @@ const ServiceForm = ({ title, description, buttonText, route }) => {
     
           <div className="container main-form">
 
-          <div className="text-area" style={{paddingTop:'80px'}}>
+          <div className="text-area" style={{paddingTop:'50px'}}>
       <h1>{title}</h1>
       <p>{description}</p>
       <div className="formBtn" style={{ display: "flex", justifyContent: "flex-start",alignItems:'flex-start' }}>
@@ -253,7 +253,7 @@ const ServiceForm = ({ title, description, buttonText, route }) => {
         
     
             <div className="contactForm-container">
-              <div className="form-container container" style={{height:'100vh'}} >
+              <div className="form-container container"  >
                 <form
                   className="contact-form"
                   onSubmit={handleSubmit}>
