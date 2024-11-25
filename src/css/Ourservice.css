@@ -29,7 +29,7 @@
 }
 .cards-container{
   display: flex;
-  flex-direction: row !important;
+  flex-direction: column !important;
 }
 
 .pContainer {
