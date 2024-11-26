@@ -119,7 +119,7 @@ const Navbar = () => {
             </CustomMenuItem>
             <CustomMenuItem
               onClick={() =>
-                navigateAndClose("/digitalMarketing", () =>
+                navigateAndClose("/services/social-media-marketing-services", () =>
                   setServicesAnchorEl(null)
                 )
               }
@@ -257,7 +257,7 @@ const Navbar = () => {
             </CustomMenuItem>
             <CustomMenuItem
               onClick={() =>
-                navigateAndClose("/portfolio-detail/digital-marketing", () =>
+                navigateAndClose("/portfolio-detail/social-media-marketing", () =>
                   setPortfolioAnchorEl(null)
                 )
               }
