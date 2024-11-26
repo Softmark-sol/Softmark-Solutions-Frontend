@@ -53,8 +53,8 @@ const Ourservices = () => {
           </div>
         </div>
       </div> 
-      <div className="cards-container">
-        <h2 className="heading-underline-service container " style={{display:'flex',justifyContent:'center',alignItems:'center' , marginTop:'20px', marginBottom: "50px"}} >Our Portfolio</h2>
+      <div className="cards-container portfolio-container">
+        <h2 className="heading-underline-service container" style={{display:'flex',justifyContent:'center',alignItems:'center' , marginTop:'20px', marginBottom: "50px"}} >Our Portfolio</h2>
         <div className="service-cards-grid">
           {services.map((item, index) => (
             <PortfolioCard key={index} {...item} />

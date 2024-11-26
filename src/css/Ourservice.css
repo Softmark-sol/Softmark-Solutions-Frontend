@@ -29,6 +29,10 @@
 }
 .cards-container{
   display: flex;
+  flex-direction: row !important;
+}
+
+.portfolio-container{
   flex-direction: column !important;
 }
 
