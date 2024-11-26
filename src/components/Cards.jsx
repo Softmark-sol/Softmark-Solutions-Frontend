@@ -53,7 +53,7 @@ const Cards = ({ heading }) => {
       path: img4,
       title: "Digital Marketing",
       desc: "Amplify your brand's reach and engagement through strategic digital marketing campaigns. From social media management to content creation, let us elevate your online presence and drive measurable results",
-      route: "/digitalMarketing",
+      route: "/services/social-media-marketing-services",
     },
     {
       path: img7,
