@@ -56,7 +56,7 @@ function Router() {
           <Route path='/aboutUs' element={<AboutUs />} />
 
           {/* Digital Marketing Page */}
-          <Route path='/digitalMarketing' element={<DigitalMarketing plans={SocialMediaPlans} />} />
+          <Route path='/services/social-media-marketing-services' element={<DigitalMarketing />} />
 
           {/* Why Page */}
           <Route path='/whyUs' element={<WhyUs />} />
@@ -71,7 +71,7 @@ function Router() {
           <Route path='/contactUs' element={<ContactForm />} />
           
           <Route path="/portfolio-detail/:type/:title" element={<PortfolioDetail />} />
-          <Route path="/portfolio-detail/digital-marketing" element={<DigitalMarketingPortfolio />} />
+          <Route path="/portfolio-detail/social-media-marketing" element={<DigitalMarketingPortfolio />} />
 
 
 
