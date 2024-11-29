@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.bfc1fcdf.css",
-    "main.js": "/static/js/main.de2f578b.js",
+    "main.css": "/static/css/main.70cc47d8.css",
+    "main.js": "/static/js/main.14c241d8.js",
     "static/css/117.dd4a2363.chunk.css": "/static/css/117.dd4a2363.chunk.css",
     "static/js/117.b530e035.chunk.js": "/static/js/117.b530e035.chunk.js",
     "static/css/166.dc2d101d.chunk.css": "/static/css/166.dc2d101d.chunk.css",
@@ -85,13 +85,19 @@
     "static/media/digital-marketing.png": "/static/media/digital-marketing.3b9e8710fdf65a16d991.png",
     "static/media/anime5.jpg": "/static/media/anime5.1e44cb3ffda886639e6e.jpg",
     "static/media/working.webp": "/static/media/working.7c48423256d23b24a258.webp",
+    "static/media/nft.png": "/static/media/nft.d86777317b7371ed929c.png",
+    "static/media/tokenization.png": "/static/media/tokenization.02fca740250cb1740e30.png",
     "static/media/react.png": "/static/media/react.ac9979693620f0a96231.png",
+    "static/media/crypto.png": "/static/media/crypto.485b14f79869770a06ae.png",
     "static/media/softmarklogo.svg.png": "/static/media/softmarklogo.svg.3e03a8d275c8eab9c34e.png",
+    "static/media/smartContract.png": "/static/media/smartContract.6147fd32bffca64cd3dc.png",
     "static/media/vue.png": "/static/media/vue.bec218f67f4878703d03.png",
     "static/media/video.png": "/static/media/video.b3bfce0026b6fdbf089e.png",
     "static/media/anime17.jpg": "/static/media/anime17.b932522ea4d5dab21400.jpg",
+    "static/media/defi.png": "/static/media/defi.adf90dade9ddf97ef211.png",
     "static/media/custom.png": "/static/media/custom.31e9554c6dd407970a52.png",
     "static/media/clients.png": "/static/media/clients.b4c8d27d230f718c3cca.png",
+    "static/media/blockchain.png": "/static/media/blockchain.976d67dfe118058a9393.png",
     "static/media/anime6.jpg": "/static/media/anime6.1e216e2ad6b47a9f034a.jpg",
     "static/media/outsourcing.png": "/static/media/outsourcing.76434416744e95004056.png",
     "static/media/custum-Software-Development.png": "/static/media/custum-Software-Development.c05adbdfab6f4bc30662.png",
@@ -120,6 +126,7 @@
     "static/media/mobile.png": "/static/media/mobile.d88ec36c889ea5a99296.png",
     "static/media/seo_5538708.png": "/static/media/seo_5538708.4ff4dbbe941d545c63f6.png",
     "static/media/expertise.jpg": "/static/media/expertise.32725254d7851e777ee0.jpg",
+    "static/media/dapps.png": "/static/media/dapps.8a50022eb5091cd84658.png",
     "static/media/inovation.jpg": "/static/media/inovation.236d6e08dcf65baa4c53.jpg",
     "static/media/websites.png": "/static/media/websites.bba6067851d96168e4a5.png",
     "static/media/docker.png": "/static/media/docker.c1f953a3ead577c05d04.png",
@@ -141,8 +148,8 @@
     "static/media/sassify.avif": "/static/media/sassify.454d880038a5079daee5.avif",
     "static/media/wor-icon3.webp": "/static/media/wor-icon3.696e51422cbeb1ab901e.webp",
     "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
-    "main.bfc1fcdf.css.map": "/static/css/main.bfc1fcdf.css.map",
-    "main.de2f578b.js.map": "/static/js/main.de2f578b.js.map",
+    "main.70cc47d8.css.map": "/static/css/main.70cc47d8.css.map",
+    "main.14c241d8.js.map": "/static/js/main.14c241d8.js.map",
     "117.dd4a2363.chunk.css.map": "/static/css/117.dd4a2363.chunk.css.map",
     "117.b530e035.chunk.js.map": "/static/js/117.b530e035.chunk.js.map",
     "166.dc2d101d.chunk.css.map": "/static/css/166.dc2d101d.chunk.css.map",
@@ -150,7 +157,7 @@
     "904.bec5a2fa.chunk.js.map": "/static/js/904.bec5a2fa.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.bfc1fcdf.css",
-    "static/js/main.de2f578b.js"
+    "static/css/main.70cc47d8.css",
+    "static/js/main.14c241d8.js"
   ]
 }
