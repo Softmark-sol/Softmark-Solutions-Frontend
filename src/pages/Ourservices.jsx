@@ -35,6 +35,7 @@ const Ourservices = () => {
     { title: "App Development", description: "iOS and Android apps tailored to your needs, ensuring seamless functionality and user engagement.", type: "app", icon: AppIcon },
     { title: "Logo Design", description: "Creative logos that capture the essence of your brand, providing a strong visual identity.", type: "logo", icon: logoIcon },
     { title: "Custom Software Development", description: "Bespoke software solutions designed to meet your unique business requirements and enhance efficiency.", type: "custom", icon: CustomSoftware },
+    { title: "Blockchain Services", description: "Secure, scalable blockchain solutions for innovation and transparency.", type: "blockchain", icon: CustomSoftware },
     // { title: "SEO", description: "Strategic search engine optimization techniques to improve your online visibility and drive organic traffic.", type: "seo", icon: SEO },
     { title: "Digital Marketing", description: "Comprehensive digital marketing strategies that boost brand awareness and engage your target audience.", type: "digital", icon: DigitalMarketing },
     { title: "Anime Art", description: "Vibrant and captivating anime-style artwork tailored to bring your characters and stories to life.", type: "anime", icon: AnimeArt },

@@ -8,7 +8,7 @@ import ContactForm from '../components/ContactForm'
 import Ourservices from '../pages/Ourservices'
 import ScrollToTop from '../components/ScrollTop'
 import Cards from '../components/Cards'
-import WebPlans, { LogoPlans } from '../components/PlansData'
+import WebPlans, { LogoPlans, SocialMediaPlans } from '../components/PlansData'
 import { AppPlans } from '../components/PlansData'
 import DigitalMarketing from '../pages/DigitalMarketing'
 import PlansWeb from '../pages/PlansWeb'
@@ -22,6 +22,7 @@ import Calendly from '../components/Calendly/Calendly.jsx'
 import ItOutsourcing from '../pages/ItOutsourcing.jsx'
 import PortfolioDetail from "../pages/portfolio/portfolioDetail.jsx";
 import DigitalMarketingPortfolio from '../pages/portfolio/digitalMarketingPortfolio.jsx'
+import BlockChain from '../pages/blockchain/blockchain.jsx'
 
 function Router() {
   return (
@@ -36,6 +37,8 @@ function Router() {
 
           {/* Web Plans Page */}
           <Route path='/services/website-development-services' element={<PlansWeb plans={WebPlans} />} />
+
+          <Route path='/services/blockchain-services' element={<BlockChain />} />
 
           {/* App Plans Page */}
           <Route path='/services/app-development-services' element={<PlansApp plans={AppPlans} />} />
@@ -53,7 +56,7 @@ function Router() {
           <Route path='/aboutUs' element={<AboutUs />} />
 
           {/* Digital Marketing Page */}
-          <Route path='/digitalMarketing' element={<DigitalMarketing />} />
+          <Route path='/digitalMarketing' element={<DigitalMarketing plans={SocialMediaPlans} />} />
 
           {/* Why Page */}
           <Route path='/whyUs' element={<WhyUs />} />

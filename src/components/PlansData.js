@@ -87,6 +87,45 @@ export const SeoPlans = [
   },
 ];
 
+export const SocialMediaPlans = [
+  {
+    name: "Basic",
+    price: "$30",
+    features: [
+      "Basic content creation and scheduling",
+      "Profile optimization for up to 2 platforms",
+      "Monthly performance reports",
+      "Engagement monitoring and response",
+      "Ideal for startups or small businesses testing social media marketing",
+    ],
+  },
+  {
+    name: "Standard",
+    price: "$70",
+    features: [
+      "Custom content strategy and creation",
+      "Management of up to 3 platforms",
+      "Monthly analytics and insights reporting",
+      "Campaign setup and execution",
+      "Audience growth and engagement strategies",
+      "Suitable for growing businesses seeking consistent social presence",
+    ],
+  },
+  {
+    name: "Premium",
+    price: "$150",
+    features: [
+      "Comprehensive social media strategy",
+      "Management of up to 5 platforms",
+      "Advanced analytics and ROI tracking",
+      "Targeted ad campaigns and budget optimization",
+      "Regular content updates, contests, and promotions",
+      "Perfect for businesses focused on long-term growth and brand building",
+    ],
+  },
+];
+
+
 export const LogoPlans = [
   {
     name: " Basic ",

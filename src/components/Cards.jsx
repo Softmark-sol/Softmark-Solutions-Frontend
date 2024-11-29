@@ -9,6 +9,7 @@ import img5 from "../assets/images/logo-design.png";
 import img6 from "../assets/images/custom.png";
 import img7 from "../assets/images/anime.png";
 import img8 from "../assets/images/outsourcing.png";
+import img9 from "../assets/icons/blockchain.png";
 import ScrollReveal from "scrollreveal";
 import { useNavigate } from "react-router-dom";
 import ConsultationBtn from "./Buttons/ConsultationBtn";
@@ -66,6 +67,12 @@ const Cards = ({ heading }) => {
       title: "Logo Design",
       desc: "Unlock the power of visual identity with our bespoke logo designs. Let us bring your brand's story to life through creativity and precision. Elevate your online presence with our professional logo design services.",
       route: "/services/graphics-design-services",
+    },
+    {
+      path: img9,
+      title: "Blockchain Services",
+      desc: "Transform your ideas with secure, scalable blockchain solutions. From smart contracts to DApps, we deliver innovation and transparency for your business.",
+      route: "/services/blockchain-services",
     },
   ];
 

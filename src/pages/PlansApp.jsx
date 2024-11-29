@@ -10,7 +10,7 @@ import ModalformPremiumApp from "../components/Modal/app-dev/Modal-App-Premium";
 import AppCards from "../components/AppCards";
 import MobileLottieAnimation from "../components/MobileAnimation";
 import Typewriter from "../components/TypeWriter.jsx";
-import PropTypes from "prop-types"; 
+import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
 import ConsultationBanner from "../components/consultationBanner/consultationBanner.jsx";
 import MoreServices from "../components/moreServices/moreServices.jsx";
@@ -18,10 +18,8 @@ import PricingCards from "../components/pricingCards/priceCards.jsx";
 import ServiceForm from "../components/ServiceForm.jsx";
 import ContactForm from "../components/ContactForm.jsx";
 
-
-
 export default function PlansApp({ plans }) {
-  const navigate =useNavigate()
+  const navigate = useNavigate();
   const [showModal, setShowModal] = useState({ open: false, type: "" });
   const [selectedPlan, setSelectedPlan] = useState("");
 
@@ -34,14 +32,14 @@ export default function PlansApp({ plans }) {
 
   return (
     <>
-    <ServiceForm
-  title={"Best App Development Services"} 
-  description={
-    "Our custom app development services include designing and developing mobile applications tailored to your needs. We focus on building user-friendly, high-performance apps with seamless functionality for Android and iOS platforms, ensuring exceptional user experience and scalability."
-  } 
-  buttonText={"Get In Touch"} 
-  route={"contactUs"} 
-/>
+      <ServiceForm
+        title={"Best App Development Services"}
+        description={
+          "Our custom app development services include designing and developing mobile applications tailored to your needs. We focus on building user-friendly, high-performance apps with seamless functionality for Android and iOS platforms, ensuring exceptional user experience and scalability."
+        }
+        buttonText={"Get In Touch"}
+        route={"contactUs"}
+      />
 
       <div className="main-container container">
         <h2>
@@ -53,10 +51,10 @@ export default function PlansApp({ plans }) {
             In today's mobile-first world, having a robust and intuitive mobile
             application is essential for reaching and engaging your audience. At
             SoftMark Solutions, we specialize in developing high-quality mobile
-            apps that deliver seamless user experiences and drive business growth.
-            From concept to launch, our team is committed to providing innovative
-            solutions that meet your specific needs and keep you ahead in the
-            competitive mobile landscape.
+            apps that deliver seamless user experiences and drive business
+            growth. From concept to launch, our team is committed to providing
+            innovative solutions that meet your specific needs and keep you
+            ahead in the competitive mobile landscape.
           </h5>
           <div className="mobile">
             <MobileLottieAnimation />
@@ -66,20 +64,30 @@ export default function PlansApp({ plans }) {
 
       <div className="card-heading-service">
         <h2 className="heading-underline-service">
-        Custom Mobile App Solutions
+          Custom Mobile App Solutions
         </h2>
-        <div className="container text" style={{marginTop:'2rem'}}>
-  <p>
-    The mobile app development services offered by our agency encompass every step of creating exceptional mobile applications. These include planning, designing, developing, and deploying apps that deliver seamless performance, enhanced user experience, and optimal functionality.
-  </p>
-  <p>
-    Our expertise ranges from developing simple utility apps to complex mobile platforms like e-commerce apps, social networking apps, and enterprise solutions. We utilize advanced technologies and frameworks, including Swift, Kotlin, Flutter, React Native, and more.
-  </p>
-  <p>
-    A well-crafted mobile app not only elevates user engagement but also helps drive business success. Our skilled team is dedicated to providing customized mobile app solutions tailored to your specific needs.
-  </p>
-</div>
-
+        <div className="container text" style={{ marginTop: "2rem" }}>
+          <p>
+            The mobile app development services offered by our agency encompass
+            every step of creating exceptional mobile applications. These
+            include planning, designing, developing, and deploying apps that
+            deliver seamless performance, enhanced user experience, and optimal
+            functionality.
+          </p>
+          <p>
+            Our expertise ranges from developing simple utility apps to complex
+            mobile platforms like e-commerce apps, social networking apps, and
+            enterprise solutions. We utilize advanced technologies and
+            frameworks, including Swift, Kotlin, Flutter, React Native, and
+            more.
+          </p>
+          <p>
+            A well-crafted mobile app not only elevates user engagement but also
+            helps drive business success. Our skilled team is dedicated to
+            providing customized mobile app solutions tailored to your specific
+            needs.
+          </p>
+        </div>
       </div>
 
       <div className="upcards">
@@ -101,7 +109,7 @@ export default function PlansApp({ plans }) {
       </div>
 
       <div className="plans-container container">
-      <PricingCards pricingPlans={plans}/>
+        <PricingCards pricingPlans={plans} />
         {/* {plans.map((plan, index) => (
           <Card className={`plan-card plan-card-${index}`} key={index}>
             <CardActionArea>
@@ -131,9 +139,13 @@ export default function PlansApp({ plans }) {
             </CardActionArea>
           </Card>
         ))} */}
-          <button className="contact-btn" style={{padding:'20px'}} onClick={() => navigate("/portfolio-detail/app/App%20Development")}>
-          Explore Our Portfolio of Mobile Applications 
-          </button>
+        <button
+          className="contact-btn"
+          style={{ padding: "20px" }}
+          onClick={() => navigate("/portfolio-detail/app/App%20Development")}
+        >
+          Explore Our Portfolio of Mobile Applications
+        </button>
       </div>
 
       {/* Conditionally render modal based on selected plan type */}
@@ -165,8 +177,7 @@ export default function PlansApp({ plans }) {
 
       <ConsultationBanner />
       <MoreServices />
-      <ContactForm/>
-
+      <ContactForm />
     </>
   );
 }

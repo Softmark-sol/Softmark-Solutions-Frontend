@@ -157,7 +157,14 @@ const Navbar = () => {
               }
             >
               Anime Art
-            </CustomMenuItem>{" "}
+            </CustomMenuItem>
+            <CustomMenuItem
+              onClick={() =>
+                navigateAndClose("/services/blockchain-services", () => setServicesAnchorEl(null))
+              }
+            >
+              Blockchain
+            </CustomMenuItem>
           </CustomMenu>
 
           {/* About Us Dropdown */}

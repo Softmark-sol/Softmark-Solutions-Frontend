@@ -13,6 +13,7 @@ import img5 from "../../assets/images/logo-design.png";
 import img6 from "../../assets/images/custom.png";
 import img7 from "../../assets/images/anime.png";
 import img8 from "../../assets/images/outsourcing.png";
+import img9 from "../../assets/icons/blockchain.png";
 
 const MoreServices = () => {
   const navigate = useNavigate();
@@ -25,6 +26,7 @@ const MoreServices = () => {
     { icon: img8, label: "IT Outsourcing", route: "/services/ItOutsourcing" },
     { icon: img6, label: "Custom Software", route: "/services/software-development-services" },
     { icon: img7, label: "Anime Art", route: "/services/anime-art-services" },
+    { icon: img9, label: "Blockchain Services", route: "/services/blockchain-services" },
   ];
 
   const [hovered, setHovered] = useState(null);
