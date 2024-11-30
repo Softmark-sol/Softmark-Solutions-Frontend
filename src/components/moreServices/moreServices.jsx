@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Box, Card, CardContent, Typography } from "@mui/material";
+import {
+  Box,
+  Card,
+  CardContent,
+  Typography,
+} from "@mui/material";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -18,15 +23,53 @@ import img9 from "../../assets/icons/blockchain.png";
 const MoreServices = () => {
   const navigate = useNavigate();
   const cardData = [
-    { icon: img3, label: "SEO", route: "/services/seo-services" },
-    { icon: img2, label: "App Development", route: "/services/app-development-services" },
-    { icon: img4, label: "Digital Marketing", route: "/digitalMarketing" },
-    { icon: img5, label: "Logo Designing", route: "/services/graphics-design-services" },
-    { icon: img1, label: "Web Development", route: "/services/website-development-services" },
-    { icon: img8, label: "IT Outsourcing", route: "/services/ItOutsourcing" },
-    { icon: img6, label: "Custom Software", route: "/services/software-development-services" },
-    { icon: img7, label: "Anime Art", route: "/services/anime-art-services" },
-    { icon: img9, label: "Blockchain Services", route: "/services/blockchain-services" },
+    {
+      icon: img3,
+      label: "SEO",
+      route: "/services/seo-services",
+    },
+    {
+      icon: img2,
+      label: "App Development",
+      route: "/services/app-development-services",
+    },
+    {
+      icon: img4,
+      label: "Digital Marketing",
+      route: "/digitalMarketing",
+    },
+    {
+      icon: img5,
+      label: "Logo Designing",
+      route: "/services/graphics-design-services",
+    },
+    {
+      icon: img1,
+      label: "Web Development",
+      route:
+        "/services/website-development-services",
+    },
+    {
+      icon: img8,
+      label: "IT Outsourcing",
+      route: "/services/ItOutsourcing",
+    },
+    {
+      icon: img6,
+      label: "Custom Software",
+      route:
+        "/services/software-development-services",
+    },
+    {
+      icon: img7,
+      label: "Anime Art",
+      route: "/services/anime-art-services",
+    },
+    {
+      icon: img9,
+      label: "Blockchain Services",
+      route: "/services/blockchain-services",
+    },
   ];
 
   const [hovered, setHovered] = useState(null);
@@ -41,9 +84,18 @@ const MoreServices = () => {
     autoplaySpeed: 2000,
     slidesToScroll: 1,
     responsive: [
-      { breakpoint: 1024, settings: { slidesToShow: 3 } },
-      { breakpoint: 768, settings: { slidesToShow: 2 } },
-      { breakpoint: 480, settings: { slidesToShow: 1 } },
+      {
+        breakpoint: 1024,
+        settings: { slidesToShow: 3 },
+      },
+      {
+        breakpoint: 768,
+        settings: { slidesToShow: 2 },
+      },
+      {
+        breakpoint: 480,
+        settings: { slidesToShow: 1 },
+      },
     ],
   };
 
@@ -53,33 +105,35 @@ const MoreServices = () => {
         backgroundColor: "#E7F3FF",
         padding: "3rem 1rem",
         textAlign: "center",
-        marginTop: "50px"
-      }}
-    >
+        marginTop: "50px",
+      }}>
       <Typography
         variant="h4"
         sx={{
           fontWeight: "bold",
           color: "#0056A1",
           marginBottom: "1rem",
-          textShadow: "1px 1px 2px rgba(0,0,0,0.2)",
-        }}
-      >
+          // textShadow: "1px 1px 2px rgba(0,0,0,0.2)",
+        }}>
         We Offer More Services Too!
       </Typography>
       <Typography
         variant="h6"
         sx={{
-          color: "#FF6347",
+          color: "#000",
           marginBottom: "2rem",
-          fontStyle: "italic",
-        }}
-      >
-        From Web Development to Anime Art, we cover all your needs with expert
-        precision and creativity.
+        }}>
+        From Web Development to Anime Art, we
+        cover all your needs with expert precision
+        and creativity.
       </Typography>
 
-      <Slider {...settings} style={{ width: "80%", margin: "0 auto" }}>
+      <Slider
+        {...settings}
+        style={{
+          width: "80%",
+          margin: "0 auto",
+        }}>
         {cardData.map((item, index) => (
           <Card
             key={index}
@@ -96,11 +150,13 @@ const MoreServices = () => {
               margin: "0 auto",
               //   transform: hovered === index ? "translateY(-8px)" : "translateY(0)",
               cursor: "pointer",
-              maxWidth: { xs: "300px", md: "270px" },
+              maxWidth: {
+                xs: "300px",
+                md: "270px",
+              },
             }}
             onMouseEnter={() => setHovered(index)}
-            onMouseLeave={() => setHovered(null)}
-          >
+            onMouseLeave={() => setHovered(null)}>
             <CardContent>
               <Box
                 component="img"
@@ -119,11 +175,12 @@ const MoreServices = () => {
                   color: "#F2972A",
                   fontWeight: "bold",
                   fontSize: "1.25rem",
-                  textDecoration: "underline",
+                  textDecoration: "none",
                   cursor: "pointer",
                 }}
-                onClick={() => navigate(item.route)}
-              >
+                onClick={() =>
+                  navigate(item.route)
+                }>
                 {item.label}
               </Typography>
             </CardContent>
